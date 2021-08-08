@@ -4,7 +4,7 @@
 
 ## Update !
 
-Hi everyone ! I recently updated the template so that you can now link headers : [[note#header\\|title]], which is done natively in Obsidian. Besides, there are now header links that appear on hover. As my notes get longer and longer, this functionnality became very necessary for meaningful linkings. If you see a bug, please open an issue about it !
+Hi everyone ! I've been very busy lately, so I didn't check all of the issues and the PR, but as I have more free time now I'll restart working on the project. Thanks for all the kind messages by the way!
 
 ## What is this?
 
