@@ -10,8 +10,6 @@ BASEDIR = os.path.abspath(os.path.dirname(__file__))
 env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
 vault = Path(env["vault"])
-print(vault)
-print(env["vault"])
 post = Path(f"{BASEDIR}/_notes")
 img = Path(f"{BASEDIR}/assets/img/")
 
@@ -63,7 +61,6 @@ def get_tab_token(final_text):
 
 def delete_file(filepath):
     for file in os.listdir(post):
-        print(file)
         filepath = os.path.basename(filepath)
         filecheck = os.path.basename(file)
         if filecheck == filepath:
@@ -144,58 +141,56 @@ def convert_internal(line):
         if file.endswith(f"{ft}.md"):
             file = os.path.basename(file)
             check = check_file(file)
-            share = check_share(file)
-            if share:
-                if check != "EXIST":
-                    file_convert(file)
-            line_final = f"[[{destination}\|{ft}]]"
+            if check != "EXIST":
+                file_convert(file)
+        line_final = f"[[{destination}\|{ft}]]"
     return line_final
 
 
 def file_convert(file):
     file_name = os.path.basename(file)
-    print(file)
     if not "_notes" in file:
         if check_file(file_name) != "EXIST":
             data = open(file, "r", encoding="utf-8")
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
+            if "share: false" in lines:
+                return False
             data.close()
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
-                try:
-                    if re.search("\%\%(.*)\%\%", final_text):
-                        #remove comments
-                        final_text="  \n"
-                    elif re.search("==(.*)==", final_text):
-                        final_text=re.sub("( ?)==", "[[", final_text, 1)
-                        final_text=re.sub("( ?)==", "::highlight]]", final_text, 2)
-                    elif re.search(
-                        "(\[{2}|\().*\.(png|jpg|jpeg|gif)", final_text
-                    ):  # CONVERT IMAGE
-                        final_text = move_img(final_text)
-                    elif (
-                        "\\" in final_text.strip()
-                    ):  # New line when using "\n" in obsidian file
-                        final_text = "  "
-                    elif re.search("(\[{2}|\().*", final_text):
-                        # Add internal_link to blog too !
-                        ft = re.search("(\[{2}|\().*", final_text)
-                        ft = ft.group(0)
-                        link = convert_internal(ft)
-                        token, table, table_start, token_start = get_tab_token(
-                            final_text
-                        )
-                        final_text = (
-                            table_start
-                            + token_start
-                            + final_text
-                            + token
-                            + table
-                            + "  \n"
-                        )
-                except TypeError:
-                    final_text = ln + "  \n"
+
+                if re.search("\%\%(.*)\%\%", final_text):
+                    #remove comments
+                    final_text="  \n"
+                elif re.search("==(.*)==", final_text):
+                    final_text=re.sub("==", "[[", final_text, 1)
+                    final_text=re.sub("( ?)==", "::highlight]] ", final_text, 2)
+                elif re.search(
+                    "(\[{2}|\().*\.(png|jpg|jpeg|gif)", final_text
+                ):  # CONVERT IMAGE
+                    final_text = move_img(final_text)
+                elif (
+                    "\\" in final_text.strip()
+                ):  # New line when using "\n" in obsidian file
+                    final_text = "  "
+                elif re.search("(\[{2}|\[).*", final_text):
+                    # Add internal_link to blog too !
+                    ft = re.search("(\[{2}|\[).*", final_text)
+                    ft = ft.group(0)
+                    link = convert_internal(ft)
+                    token, table, table_start, token_start = get_tab_token(
+                        final_text
+                    )
+                    final_text = (
+                        table_start
+                        + token_start
+                        + final_text.replace("|", "\|")
+                        + token
+                        + table
+                        + "  \n"
+                    )
+
                 final.write(final_text)
             final.close()
             return True
@@ -206,32 +201,25 @@ def file_convert(file):
 
 
 def search_share(option=0):
-    index = []
+    filespush = []
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
-            print(file)
-            print(vault)
             if filepath.endswith(".md"):
                 data = open(filepath, "r", encoding="utf-8")
-                for ln in data.readlines():
-                    print(ln)
+                yaml=data.readlines()
+                data.close()
+                for ln in yaml:
                     if "share: true" in ln:
                         if option == 1:
                             delete_file(filepath)
+                            pass
                         check = file_convert(filepath)
                         destination = dest(filepath)
                         if check:
-                            index.append(destination)
-            return index
+                            filespush.append(destination)
+    return filespush
 
-
-def check_share(file):
-    share = True
-    f = open(file, "r", encoding="utf-8")
-    if "share: false" in f.readlines():
-        share = False
-    return share
 
 
 def convert_to_github():
@@ -283,13 +271,12 @@ def convert_to_github():
                         from git import Repo
                         repo = Repo(path)
                         for md in new_files:
-                            if os.path.exists(Path(f"{BASEDIR}/_notes/{md}")):
-                                commit = commit + "\n — " + md
-                            repo.index.add(f"{BASEDIR}/_notes/{md}")
+                            commit = commit + "\n — " + md
+                            repo.index.add(md)
                         repo.index.commit(commit)
                         origin = repo.remote(name="origin")
                         origin.push()
-                        print(f"\n{commit} pushed successfully 🎉")
+                        print(f"\n{commit}\n pushed successfully 🎉")
                     except ImportError:
                         print("Please use Working Copy to push your project")
                 else:
