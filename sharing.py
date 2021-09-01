@@ -230,10 +230,10 @@ def convert_to_github():
     -----
         python3 sharing (filepath) (options)
         Optional option:
-            - --d : Delete file if already exist (update)
+            - --F : Don't delete file if already exist (prevent update)
             - help : print help message
             - filepath: convert just one file
-            - --ng : no commit and no push to github.
+            - --G : no commit and no push to github.
     """
     if len(sys.argv) >= 2:
         if sys.argv[1] == "help":
@@ -243,14 +243,14 @@ def convert_to_github():
             ori = sys.argv[1]
             delopt = ""
             ng = ""
-            if "--d" in sys.argv:
-                delopt = "--d"
-            if "--ng" in sys.argv:
-                ng = "--ng"
-            if os.path.exists(ori) and ori != "--d":
+            if "--F" in sys.argv:
+                delopt = "--F"
+            if "--G" in sys.argv:
+                ng = "--G"
+            if os.path.exists(ori) and ori != "--F":
                 delete_file(ori)
                 check = file_convert(ori)
-                if check and ng != "--ng":
+                if check and ng != "--G":
                     COMMIT = f"{dest} to blog"
                     try:
                         import git
@@ -263,10 +263,10 @@ def convert_to_github():
                         print("File pushed successfully 🎉")
                     except ImportError:
                         print("Please, use Working Copy to push your change")
-            elif delopt == "--d" or ori == "--d":
-                new_files = search_share(1)
+            elif delopt == "--F" or ori == "--F":
+                new_files = search_share()
                 commit = "Add to blog:"
-                if len(new_files) > 0 and ng != "--ng":
+                if len(new_files) > 0 and ng != "--G":
                     try:
                         import git
                         repo = git.Repo(path)
@@ -283,16 +283,15 @@ def convert_to_github():
                     print("File already exists 😶")
     else:
         print("Starting Convert")
-        new_files = search_share()
+        new_files = search_share(1)
         commit = "Add to blog :"
         if len(new_files) > 0:
             try:
                 import git
                 repo = git.Repo(path)
                 for md in new_files:
-                    if os.path.exists(Path(f"{BASEDIR}/_notes/{md}")):
-                        commit = commit + "\n — " + md
-                        repo.git.add(u=True)
+                    commit = commit + "\n — " + md
+                repo.git.add(u=True)
                 repo.index.commit(commit)
                 origin = repo.remote(name="origin")
                 origin.push()
