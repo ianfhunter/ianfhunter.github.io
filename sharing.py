@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import re
 import sys
 import os
@@ -13,14 +11,9 @@ env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
 vault = Path(env["vault"])
 print(vault)
-site = env["site"]
+print(env["vault"])
 post = Path(f"{BASEDIR}/_notes")
 img = Path(f"{BASEDIR}/assets/img/")
-
-# todo: delete comments ?
-# todo: add side support with image
-# todo: add hightlight support
-
 
 def get_token_end(final_text):
     token = ""
@@ -74,7 +67,7 @@ def delete_file(filepath):
         filepath = os.path.basename(filepath)
         filecheck = os.path.basename(file)
         if filecheck == filepath:
-            os.remove(Path(f"{BASEDIR}\_notes\{file}"))
+            os.remove(Path(f"{BASEDIR}\_notes\\{file}"))
             return True
     return False
 
@@ -217,9 +210,12 @@ def search_share(option=0):
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
+            print(file)
+            print(vault)
             if filepath.endswith(".md"):
                 data = open(filepath, "r", encoding="utf-8")
                 for ln in data.readlines():
+                    print(ln)
                     if "share: true" in ln:
                         if option == 1:
                             delete_file(filepath)
@@ -270,7 +266,6 @@ def convert_to_github():
                     COMMIT = f"{dest} to blog"
                     try:
                         from git import Repo
-
                         repo = Repo(Path(f"{BASEDIR}/.git"))
                         destination = dest(ori)
                         repo.index.add(destination)
@@ -280,24 +275,25 @@ def convert_to_github():
                         print("File pushed successfully 🎉")
                     except ImportError:
                         print("Please, use Working Copy to push your change")
-                elif delopt == "--d":
-                    new_files = search_share(1)
-                    commit = "Add to blog:"
-                    if len(new_files) > 0 and ng != "--ng":
-                        try:
-                            from git import Repo
-
-                            repo = Repo(path)
-                            for md in new_files:
-                                if os.path.exists(Path(f"{BASEDIR}/_notes/{md}")):
-                                    commit = commit + "\n — " + md
-                                repo.index.add(f"{BASEDIR}/_notes/{md}")
-                            repo.index.commit(commit)
-                            origin = repo.remote(name="origin")
-                            origin.push()
-                            print(f"\n{commit} pushed successfully 🎉")
-                        except ImportError:
-                            print("Please use Working Copy to push your project")
+            elif delopt == "--d" or ori == "--d":
+                new_files = search_share(1)
+                commit = "Add to blog:"
+                if len(new_files) > 0 and ng != "--ng":
+                    try:
+                        from git import Repo
+                        repo = Repo(path)
+                        for md in new_files:
+                            if os.path.exists(Path(f"{BASEDIR}/_notes/{md}")):
+                                commit = commit + "\n — " + md
+                            repo.index.add(f"{BASEDIR}/_notes/{md}")
+                        repo.index.commit(commit)
+                        origin = repo.remote(name="origin")
+                        origin.push()
+                        print(f"\n{commit} pushed successfully 🎉")
+                    except ImportError:
+                        print("Please use Working Copy to push your project")
+                else:
+                    print("File already exists 😶")
     else:
         print("Starting Convert")
         new_files = search_share()
