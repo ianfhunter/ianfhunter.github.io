@@ -290,8 +290,8 @@ def convert_to_github():
                 for md in new_files:
                     commit = commit + "\n — " + md
                 repo.git.add(u=True)
-                repo.git.commit('-am', f'git commit {commit}')
-                repo.git.push("origin", "HEAD:refs/for/master")
+                origin = repo.remote('origin')
+                origin.push()
                 print(f"{commit} pushed successfully 🎉")
             except ImportError:
                 print("Please use working copy")
