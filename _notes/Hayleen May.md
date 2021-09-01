@@ -96,7 +96,7 @@ Elle adopte le nom de Grimalkin lors de “son passage à l’âge adulte”, bi
   
 # Physique  
   
-→  [[50. Univers/53. Azelyss/53.20. PJ/Hayleen May/Illustration/Illustration\|Références]]  
+→  [[Illustration\|Références]]  
   
   
 *Taille* : 1m70  
