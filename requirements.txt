@@ -1,0 +1,3 @@
+pyimgur
+python-dotenv
+gitpython
