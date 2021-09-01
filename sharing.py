@@ -290,7 +290,7 @@ def convert_to_github():
                 repo = git.Repo()
                 for md in new_files:
                     commit = commit + "\n — " + md
-                repo.git.add(u=True)
+                repo.git.add(".")
                 repo.git.commit("-m", f'git commit {commit}')
                 origin = repo.remote('origin')
                 origin.push()
