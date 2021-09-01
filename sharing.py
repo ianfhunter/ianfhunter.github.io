@@ -253,10 +253,10 @@ def convert_to_github():
                 if check and ng != "--ng":
                     COMMIT = f"{dest} to blog"
                     try:
-                        from git import Repo
-                        repo = Repo(Path(f"{BASEDIR}/.git"))
+                        import git
+                        repo = git.Repo(Path(f"{BASEDIR}/.git"))
                         destination = dest(ori)
-                        repo.index.add(destination)
+                        repo.git.add(u=True)
                         repo.index.commit(COMMIT)
                         origin = repo.remote(name="origin")
                         origin.push()
@@ -268,11 +268,11 @@ def convert_to_github():
                 commit = "Add to blog:"
                 if len(new_files) > 0 and ng != "--ng":
                     try:
-                        from git import Repo
-                        repo = Repo(path)
+                        import git
+                        repo = git.Repo(path)
                         for md in new_files:
                             commit = commit + "\n — " + md
-                            repo.index.add(md)
+                        repo.git.add(u=True)
                         repo.index.commit(commit)
                         origin = repo.remote(name="origin")
                         origin.push()
@@ -287,12 +287,12 @@ def convert_to_github():
         commit = "Add to blog :"
         if len(new_files) > 0:
             try:
-                from git import Repo
-                repo = Repo(path)
+                import git
+                repo = git.Repo(path)
                 for md in new_files:
                     if os.path.exists(Path(f"{BASEDIR}/_notes/{md}")):
                         commit = commit + "\n — " + md
-                        repo.index.add(f"{BASEDIR}/_notes/{md}")
+                        repo.git.add(u=True)
                 repo.index.commit(commit)
                 origin = repo.remote(name="origin")
                 origin.push()
