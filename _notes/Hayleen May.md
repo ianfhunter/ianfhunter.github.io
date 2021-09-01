@@ -20,14 +20,16 @@ tags:
 # RELATIONS  
 ```dataview  
 List  
-[[D:\Documents\Github\Blog/_notes/Hayleen May\|Hayleen May]]  
+From [[Hayleen May]]  
+  
 ```  
 ---  
   
 <h1 align="center"><a href="https://docs.google.com/document/d/1bGOITC8zoes1RLDj6ybWDtKiszTnBq5jZe1icx6itnI/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>    
   
 # IDENTITÉ  
-[[D:\Documents\Github\Blog/_notes/https://lh6.googleusercontent.com/rzSmM8e1pxHowh8iu74khSmuoa1aaWspZbHY3vq9qcfUGrrlylAMLqHMvY84lkailKvWQvIgPYr_hQh4Ac4f6Bx0Xgmp-cY-fevxSDHrHXel8o3AiBEQhCup5jIklBDg_1RNxV_I\|https://lh6.googleusercontent.com/rzSmM8e1pxHowh8iu74khSmuoa1aaWspZbHY3vq9qcfUGrrlylAMLqHMvY84lkailKvWQvIgPYr_hQh4Ac4f6Bx0Xgmp-cY-fevxSDHrHXel8o3AiBEQhCup5jIklBDg_1RNxV_I]]  
+![+side\|-med](https://lh6.googleusercontent.com/rzSmM8e1pxHowh8iu74khSmuoa1aaWspZbHY3vq9qcfUGrrlylAMLqHMvY84lkailKvWQvIgPYr_hQh4Ac4f6Bx0Xgmp-cY-fevxSDHrHXel8o3AiBEQhCup5jIklBDg_1RNxV_I)  
+  
 **Prénom et nom :** Hayleen May    
 *Alias :* Grimalkin  
 **Genre :** F.  
@@ -45,14 +47,16 @@ En outre, en plus de pouvoir invoquer des objets, elle peut incanter pour renfor
   
 #### Avantages :  
 - Invocation d’objet  
-[[D:\Documents\Github\Blog/_notes/invoqué ou non\|invoqué ou non]]  
+- Renforcement d’objet (invoqué ou non)  
+  
 - Renforcement de personnes  
 - Vitesse, force, résistance plus élevé que celle d’un humain “lambda”.  
   
 #### Inconvénients :  
 - En fonction de ce qu’elle veut faire, l’incantation peut être plus ou moins longue. En outre, ses mouvements sont limités lors d’une incantation, car elle doit se concentrer sur le sortilège… Sinon, des effets… Intéressants peuvent survenir.  
 - Elle n’est pas plus forte qu’un démon “moyen”.  
-[[D:\Documents\Github\Blog/_notes/surtout qu’elle est une “hybride”.\|surtout qu’elle est une “hybride”.]]  
+- Sa magie est moins puissante qu’une sorcière entraînée (surtout qu’elle est une “hybride”).  
+  
 - Pour le moment, elle ne peut pas invoquer plus de deux objets à la fois.  
   
 **Circuits magiques** :  Les circuits magiques sont un deuxième système veineux renforçant la magie et le corps d’Hayleen. Cependant, ils ont tendance à chauffer lorsqu’elle les utilise. A partir d’un certain degré d’utilisation, la magie d’Hayleen est trop renforcée et lui échappe, ce qui aboutit généralement à des explosions.  
@@ -94,14 +98,17 @@ Elle adopte le nom de Grimalkin lors de “son passage à l’âge adulte”, bi
   
 # Physique  
   
-[[D:\Documents\Github\Blog/_notes/50. Univers/53. Azelyss/53.20. PJ/Hayleen May/Illustration/Illustration|Références\|50. Univers/53. Azelyss/53.20. PJ/Hayleen May/Illustration/Illustration|Références]]  
+→  [[50. Univers/53. Azelyss/53.20. PJ/Hayleen May/Illustration/Illustration\|Références]]  
+  
   
 *Taille* : 1m70  
 *Poids* : 60kg  
-[[D:\Documents\Github\Blog/_notes/https://lh5.googleusercontent.com/YGkLl1TAv5q7Z5DXwwNlFJwuAjUUVv217w6Nd9uygb-fkhd4GZkXiqC25wy5Ehpr7tW1rwqiZlnLGaNL7vFiKgMflX-ILFLfJv2Dk0J8ImFEimxJs0ufmTOJX44LiddjGQdGSsdM\|https://lh5.googleusercontent.com/YGkLl1TAv5q7Z5DXwwNlFJwuAjUUVv217w6Nd9uygb-fkhd4GZkXiqC25wy5Ehpr7tW1rwqiZlnLGaNL7vFiKgMflX-ILFLfJv2Dk0J8ImFEimxJs0ufmTOJX44LiddjGQdGSsdM]]  
+![+side](https://lh5.googleusercontent.com/YGkLl1TAv5q7Z5DXwwNlFJwuAjUUVv217w6Nd9uygb-fkhd4GZkXiqC25wy5Ehpr7tW1rwqiZlnLGaNL7vFiKgMflX-ILFLfJv2Dk0J8ImFEimxJs0ufmTOJX44LiddjGQdGSsdM)  
+  
 Hayleen est une jeune femme assez bien proportionnée, dans la fleur de l’âge, et qui le fait : c’est une jolie jeune femme.  
   
-[[D:\Documents\Github\Blog/_notes/naturellement blanc, s’entend, assez longs, qu’elle attache souvent en chignons brouillons à l’aide d’aiguilles métalliques, et laissant les autres lâchés. Son visage est seulement dégagé avec de nombreuses barrettes. Elle a une démarche assurée et un air volontaire. Évidemment, on voit rarement ses chignons, puisqu’elle possède d’imposante cornes noires, semblables à celles que possèderait un bélier. Ces dernières ne la gênent pas particulièrement, bien qu’elle ait l’impression qu’on ne voit que ça sur son visage.\|naturellement blanc, s’entend, assez longs, qu’elle attache souvent en chignons brouillons à l’aide d’aiguilles métalliques, et laissant les autres lâchés. Son visage est seulement dégagé avec de nombreuses barrettes. Elle a une démarche assurée et un air volontaire. Évidemment, on voit rarement ses chignons, puisqu’elle possède d’imposante cornes noires, semblables à celles que possèderait un bélier. Ces dernières ne la gênent pas particulièrement, bien qu’elle ait l’impression qu’on ne voit que ça sur son visage.]]  
+La jeune sorcière a des cheveux blancs (naturellement blanc, s’entend), assez longs, qu’elle attache souvent en chignons brouillons à l’aide d’aiguilles métalliques, et laissant les autres lâchés. Son visage est seulement dégagé avec de nombreuses barrettes. Elle a une démarche assurée et un air volontaire. Évidemment, on voit rarement ses chignons, puisqu’elle possède d’imposante cornes noires, semblables à celles que possèderait un bélier. Ces dernières ne la gênent pas particulièrement, bien qu’elle ait l’impression qu’on ne voit que ça sur son visage.   
+  
   
 Son visage, assez rond, laisse entrevoir de lointaines origines asiatiques, qui se remarque surtout dans ses yeux très amandes, aux reflets rouges. Elle a un petit nez, légèrement retroussé. Pour sa bouche, on peut remarquer des lèvres épaisses, sans que cela déforme son visage. Enfin, elle a des taches de rousseurs, et comme elle semble se cogner partout, elle a souvent des pansements sur le visage.  
   
@@ -127,7 +134,8 @@ Salem, un démon donc, l'entraîne tout au long de sa jeunesse et, lors de ses s
 Ces derniers sont normalement extrêmement toxiques, mais la mère d’Hayleen, durant sa grossesse, a réussi à transmettre les siens… Sans faire une fausse couche, de manière évidente, grâce à ses sceaux.  
 Elle adopta le surnom de Grimalkin, un mot d’argot signifiant “Chat noir” et qui, par extension, a fini par simplement signifier “Sorcière”.   
    
-[[D:\Documents\Github\Blog/_notes/souvent des Monstres ne pouvant pas se défendre, et protéger les humains des Marginaux trop violents et dangereux, nommée “Écho”. Sans évidemment dévoiler leur existence. Une paille.\|souvent des Monstres ne pouvant pas se défendre, et protéger les humains des Marginaux trop violents et dangereux, nommée “Écho”. Sans évidemment dévoiler leur existence. Une paille.]]  
+Hayleen continue de grandir et de s'entraîner avec Salem, qui finit par l’introduire au sein d’une Organisation de protection des Marginaux (souvent des Monstres ne pouvant pas se défendre), et protéger les humains des Marginaux trop violents et dangereux, nommée “Écho”. Sans évidemment dévoiler leur existence. Une paille.  
+  
 C’est à partir de là qu’elle apprend pour son père, et qu’elle se décide de se lancer dans une quête personnelle pour mettre fin à ses machinations.   
   
 L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen en tant qu’espionne, car ils se doutent que quelque chose s’y trafique… Et ils veulent savoir quoi.   
@@ -138,12 +146,16 @@ L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen
   
   
 ### Famille  
-[[D:\Documents\Github\Blog/_notes/Salem : Père adoptif,\|Salem : Père adoptif,]]  
+- [[Salem]] : Père adoptif,  
+  
 - Nom inconnu - Peut-être Astaroth : Père biologique d’Hayleen   
 - Nom inconnu — Mère d’Hayleen   
-[[D:\Documents\Github\Blog/_notes/Echo** :\|Echo** :]]  
-[[D:\Documents\Github\Blog/_notes/Mnémosyne : Une ange déchue qui l’a entrainé quelque peu.\|Mnémosyne : Une ange déchue qui l’a entrainé quelque peu.]]  
-[[D:\Documents\Github\Blog/_notes/Zéphyr : Sa maîtresse de magie, et “grande sœur”, bien que Zéphyr ait plus ou moins le même âge que Salem.\|Zéphyr : Sa maîtresse de magie, et “grande sœur”, bien que Zéphyr ait plus ou moins le même âge que Salem.]]  
+##### **[[Echo]]** :   
+  
+- [[Mnémosyne]] : Une ange déchue qui l’a entrainé quelque peu.   
+  
+- [[Zéphyr]] : Sa maîtresse de magie, et “grande sœur”, bien que Zéphyr ait plus ou moins le même âge que Salem.  
+  
   
   
 # Divers  
@@ -154,6 +166,7 @@ L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen
 - Lire le soir  
   
 **Armes :**  
-[[D:\Documents\Github\Blog/_notes/*Invocation uniquement via un coup critique*.\|*Invocation uniquement via un coup critique*.]]  
+- Une copie de l’idée qu’elle se fait d’Excalibur, sous forme d’un Katana très coupant (*Invocation uniquement via un coup critique*).  
+  
 - Des aiguilles qu’elle utilise pour faire ses chignons, plus en arme d’autodéfense quand elle n’a pas le temps d’incanter.   
-[[D:\Documents\Github\Blog/_notes/car elle se bat à l’arme double, à la lame rouge.\|car elle se bat à l’arme double, à la lame rouge.]]  
+- Un autre Katana, plus simple (car elle se bat à l’arme double), à la lame rouge.  
