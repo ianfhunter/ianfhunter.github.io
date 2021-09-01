@@ -287,10 +287,10 @@ def convert_to_github():
         if len(new_files) > 0:
             try:
                 import git
-                repo = git.Repo(path)
+                repo = git.Repo()
                 for md in new_files:
                     commit = commit + "\n — " + md
-                repo.git.add(update=True)
+                repo.git.add(u=True)
                 repo.git.commit("-m", f'git commit {commit}')
                 origin = repo.remote('origin')
                 origin.push()
