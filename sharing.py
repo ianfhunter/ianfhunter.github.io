@@ -262,22 +262,34 @@ def convert_to_github():
                         print(f"{ori} pushed successfully 🎉")
                     except ImportError:
                         print("Please, use Working Copy to push your change")
+                elif check and ng == "--G":
+                    print(f"converted {dest} to blog")
             elif delopt == "--F" or ori == "--F":
                 new_files = search_share()
                 commit = "Add to blog:"
-                if len(new_files) > 0 and ng != "--G":
-                    try:
-                        import git
-                        repo = git.Repo(path)
-                        for md in new_files:
-                            commit = commit + "\n — " + md
-                        repo.git.add(".")
-                        repo.git.commit('-m', f'git commit {commit}')
-                        origin = repo.remote(name='origin')
-                        origin.push()
-                        print(f"\n{commit}\n pushed successfully 🎉")
-                    except ImportError:
-                        print("Please use Working Copy to push your project")
+                if len(new_files) > 0:
+                    if ng !="--G":
+                        try:
+                            import git
+                            repo = git.Repo(path)
+                            for md in new_files:
+                                commit = commit + "\n — " + md
+                            repo.git.add(".")
+                            repo.git.commit('-m', f'git commit {commit}')
+                            origin = repo.remote(name='origin')
+                            origin.push()
+                            print(f"\n{commit}\n pushed successfully 🎉")
+                        except ImportError:
+                            print("Please use Working Copy to push your project")
+                    else:
+                        print(f"Converted {commit}")
+                else:
+                    print("File already exists 😶")
+            elif ori == "--G" or ng =="--G":
+                new_files = search_share()
+                commit = "Add to blog:"
+                if new_files > 0:
+                    print(f"Converted {commit}")
                 else:
                     print("File already exists 😶")
     else:
