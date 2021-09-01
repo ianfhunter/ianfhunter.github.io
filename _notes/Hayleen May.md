@@ -92,7 +92,7 @@ Elle adopte le nom de Grimalkin lors de “son passage à l’âge adulte”, bi
   
 **Peur/Phobies** : Principalement, mourir et son père.  
 **Passion | Hobbies :**  
-- Musique :[[Joue du violoncelle::highlight]]  
+- Musique : [[Joue du violoncelle::highlight]]   
 - La lecture  
   
   

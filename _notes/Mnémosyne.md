@@ -56,7 +56,7 @@ La forme angélique et les pouvoirs liés composent la majeure partie de ses pou
   
 ### Pouvoirs Obsius  
   
-_[[Bloqué::highlight]] : Actuellement, cette forme est bloquée et n'est pas utilisable en l'état._  
+_ [[Bloqué::highlight]]  : Actuellement, cette forme est bloquée et n'est pas utilisable en l'état._  
   
 Issue de sa fusion avec un être informe lors de sa résurrection, Obsius est la part sombre de Mnémosyne.  
 Lorsqu'elle se fait posséder, puisque c'est le seul moyen de débloquer ses pouvoirs, Mnémosyne change physiquement :  
