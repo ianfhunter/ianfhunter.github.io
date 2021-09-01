@@ -256,8 +256,8 @@ def convert_to_github():
                         import git
                         repo = git.Repo(Path(f"{BASEDIR}/.git"))
                         destination = dest(ori)
-                        repo.git.add(u=True)
-                        repo.git.commit('-am', f'git commit {ori}')
+                        repo.git.add(".")
+                        repo.git.commit('-m', f'git commit {ori}')
                         repo.git.push("origin", "HEAD:refs/for/master")
                         print(f"{ori} pushed successfully 🎉")
                     except ImportError:
@@ -271,8 +271,8 @@ def convert_to_github():
                         repo = git.Repo(path)
                         for md in new_files:
                             commit = commit + "\n — " + md
-                        repo.git.add(u=True)
-                        repo.git.commit('-am', f'git commit {commit}')
+                        repo.git.add(".")
+                        repo.git.commit('-m', f'git commit {commit}')
                         origin = repo.remote(name='origin')
                         origin.push()
                         print(f"\n{commit}\n pushed successfully 🎉")
