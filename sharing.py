@@ -272,7 +272,7 @@ def convert_to_github():
                         for md in new_files:
                             commit = commit + "\n — " + md
                         repo.git.add(u=True)
-                        repo.git.commit('-m', f'git commit {commit}')
+                        repo.git.commit('-am', f'git commit {commit}')
                         origin = repo.remote(name='origin')
                         origin.push()
                         print(f"\n{commit}\n pushed successfully 🎉")
