@@ -257,10 +257,9 @@ def convert_to_github():
                         repo = git.Repo(Path(f"{BASEDIR}/.git"))
                         destination = dest(ori)
                         repo.git.add(u=True)
-                        repo.index.commit(COMMIT)
-                        origin = repo.remote(name="origin")
-                        origin.push()
-                        print("File pushed successfully 🎉")
+                        repo.git.commit('-am', f'git commit {ori}')
+                        repo.git.push("origin", "HEAD:refs/for/master")
+                        print(f"{ori} pushed successfully 🎉")
                     except ImportError:
                         print("Please, use Working Copy to push your change")
             elif delopt == "--F" or ori == "--F":
@@ -273,9 +272,8 @@ def convert_to_github():
                         for md in new_files:
                             commit = commit + "\n — " + md
                         repo.git.add(u=True)
-                        repo.index.commit(commit)
-                        origin = repo.remote(name="origin")
-                        origin.push()
+                        repo.git.commit('-am', f'git commit {commit}')
+                        repo.git.push("origin", "HEAD:refs/for/master")
                         print(f"\n{commit}\n pushed successfully 🎉")
                     except ImportError:
                         print("Please use Working Copy to push your project")
@@ -292,9 +290,8 @@ def convert_to_github():
                 for md in new_files:
                     commit = commit + "\n — " + md
                 repo.git.add(u=True)
-                repo.index.commit(commit)
-                origin = repo.remote(name="origin")
-                origin.push()
+                repo.git.commit('-am', f'git commit {commit}')
+                repo.git.push("origin", "HEAD:refs/for/master")
                 print(f"{commit} pushed successfully 🎉")
             except ImportError:
                 print("Please use working copy")
