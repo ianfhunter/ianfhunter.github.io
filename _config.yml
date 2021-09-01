@@ -1,8 +1,8 @@
-title: notenote.link
-name: My linked notebook
-user_description: notenote.link
+title: Owlly House
+name: Owlly House
+user_description: Je partage ici mes fichiers.
 notes_url: "https://notenote.link.netlify.app"
-profile_pic: /assets/img/profile.png
+profile_pic: /assets/img/profile.gif
 favicon: /assets/img/favicon.png
 copyright_name: MIT
 baseurl: "/" # the subpath of your site, e.g. /blog
