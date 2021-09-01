@@ -48,7 +48,6 @@ En outre, en plus de pouvoir invoquer des objets, elle peut incanter pour renfor
 #### Avantages :  
 - Invocation d’objet  
 - Renforcement d’objet (invoqué ou non)  
-  
 - Renforcement de personnes  
 - Vitesse, force, résistance plus élevé que celle d’un humain “lambda”.  
   
@@ -56,7 +55,6 @@ En outre, en plus de pouvoir invoquer des objets, elle peut incanter pour renfor
 - En fonction de ce qu’elle veut faire, l’incantation peut être plus ou moins longue. En outre, ses mouvements sont limités lors d’une incantation, car elle doit se concentrer sur le sortilège… Sinon, des effets… Intéressants peuvent survenir.  
 - Elle n’est pas plus forte qu’un démon “moyen”.  
 - Sa magie est moins puissante qu’une sorcière entraînée (surtout qu’elle est une “hybride”).  
-  
 - Pour le moment, elle ne peut pas invoquer plus de deux objets à la fois.  
   
 **Circuits magiques** :  Les circuits magiques sont un deuxième système veineux renforçant la magie et le corps d’Hayleen. Cependant, ils ont tendance à chauffer lorsqu’elle les utilise. A partir d’un certain degré d’utilisation, la magie d’Hayleen est trop renforcée et lui échappe, ce qui aboutit généralement à des explosions.  
@@ -109,7 +107,6 @@ Hayleen est une jeune femme assez bien proportionnée, dans la fleur de l’âge
   
 La jeune sorcière a des cheveux blancs (naturellement blanc, s’entend), assez longs, qu’elle attache souvent en chignons brouillons à l’aide d’aiguilles métalliques, et laissant les autres lâchés. Son visage est seulement dégagé avec de nombreuses barrettes. Elle a une démarche assurée et un air volontaire. Évidemment, on voit rarement ses chignons, puisqu’elle possède d’imposante cornes noires, semblables à celles que possèderait un bélier. Ces dernières ne la gênent pas particulièrement, bien qu’elle ait l’impression qu’on ne voit que ça sur son visage.   
   
-  
 Son visage, assez rond, laisse entrevoir de lointaines origines asiatiques, qui se remarque surtout dans ses yeux très amandes, aux reflets rouges. Elle a un petit nez, légèrement retroussé. Pour sa bouche, on peut remarquer des lèvres épaisses, sans que cela déforme son visage. Enfin, elle a des taches de rousseurs, et comme elle semble se cogner partout, elle a souvent des pansements sur le visage.  
   
 Le reste de son corps est bien proportionné, mais ce qu’on remarque particulièrement sur ce dernier est la présence de sorte tatouage légèrement transparent, qui recouvre l’ensemble de son corps. Ils sont là de naissance, et sont ce qu’on pourrait nommer “des circuits magiques”. Ils deviennent rouges quand elle utilise ses pouvoirs.  
@@ -135,7 +132,6 @@ Ces derniers sont normalement extrêmement toxiques, mais la mère d’Hayleen, 
 Elle adopta le surnom de Grimalkin, un mot d’argot signifiant “Chat noir” et qui, par extension, a fini par simplement signifier “Sorcière”.   
    
 Hayleen continue de grandir et de s'entraîner avec Salem, qui finit par l’introduire au sein d’une Organisation de protection des Marginaux (souvent des Monstres ne pouvant pas se défendre), et protéger les humains des Marginaux trop violents et dangereux, nommée “Écho”. Sans évidemment dévoiler leur existence. Une paille.  
-  
 C’est à partir de là qu’elle apprend pour son père, et qu’elle se décide de se lancer dans une quête personnelle pour mettre fin à ses machinations.   
   
 L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen en tant qu’espionne, car ils se doutent que quelque chose s’y trafique… Et ils veulent savoir quoi.   
@@ -167,6 +163,5 @@ L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen
   
 **Armes :**  
 - Une copie de l’idée qu’elle se fait d’Excalibur, sous forme d’un Katana très coupant (*Invocation uniquement via un coup critique*).  
-  
 - Des aiguilles qu’elle utilise pour faire ses chignons, plus en arme d’autodéfense quand elle n’a pas le temps d’incanter.   
-- Un autre Katana, plus simple (car elle se bat à l’arme double), à la lame rouge.  
+- Un autre Katana, plus simple (car elle se bat à l’arme double), à la lame rouge.

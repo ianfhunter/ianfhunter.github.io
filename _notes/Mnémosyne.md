@@ -46,12 +46,10 @@ La forme angélique et les pouvoirs liés composent la majeure partie de ses pou
   
 - Sous forme de rayon et de laser ;  
 - Se déplacer rapidement d'un point à un autre (temps qu'il y a de la lumière) ;  
-  
 - Créer une armure de lumière, plus la lumière est forte, plus l'armure est épaisse.  
 - Créer un double de lumière ;  
 - Soigner certaines blessures.  
     Lorsque Mnémosyne prend sa forme angélique, tous ses pouvoirs sont renforcés, mais elle brille de mille feu, au point qu'il devient difficile pour ses alliés (ainsi que ses ennemis) de distinguer leurs environnements.  
-  
     Enfin, sous sa forme angélique, des ailes translucides apparaissent dans son dos et elle devient capable de léviter.  
   
 ### Pouvoirs Obsius  
@@ -81,7 +79,6 @@ En dehors de ses capacités, Némo possède les avantages suivants :
 - Elle ne peut récupérer, d'aucune manière que ce soit, la vue, même sous forme Obsius ou Angélique.  
 - Son auréole est permanente et l'empêche de porter de chapeau. Si elle essaie, "elle a une migraine d'enfer, un peu comme être le passager du pire conducteur de la planète, tout en ayant la pire gueule de bois de sa vie."  
 - Ses ailes réelles ont disparu et elle ne peut pas voler (elle ne peut que léviter, en forme angélique).  
-  
 - Némo est amnésique, elle a perdu une bonne partie de sa puissance et ne sait pas maîtriser Obsius.  
 - Elle **ne sait pas qu'elle est déchue**.  
   
@@ -105,22 +102,19 @@ $~$ Aujourd'hui, Mnémosyne est plus calme, mais elle n'aime pas suivre les gens
 $~$ Sa condition d'aveugle ne la dérange en rien, et elle aime s'en amuser, n'hésitant pas à en rire. Son amnésie, par contre, bien qu'elle n'aime pas le montrer, lui pose problème. La recherche de sa mémoire est actuellement sa quête principale, et elle a l'impression qu'aider l'Écho l'aidera dans cette tâche. Sinon, étant donné son caractère désinvolte et versatile, elle ne ferait pas partie d'une organisation aussi hiérarchisée avec une mission qu'elle considère comme un poil utopique.  
 Contrairement à la majorité des membres de l'Écho, Mnémosyne n'est pas habitée par des idéaux nobles, préférant se diriger vers où le vent et l'amusement la porte.  
 Mais il ne faut pas non plus imaginer Mnémosyne comme une personne sans cœur et égoïste, puisqu'elle n'hésitera pas à venir en aide à une personne dans le besoin (elle trouve ça amusant), quel qu'il soit.  
-  
 Dans les faits, Mnémosyne se fiche royalement de la race des gens, hybride ou humain, voire totalement autre chose. Après tout, elle ne les voit même pas !  
   
 | Aime                               | Déteste      |  
 | ---------------------------------- | ------------ |  
 | Les livres audios                  | Les murs     |  
 | La musique                         | Les insectes |  
-\| La menthe poivrée (spécifiquement) \| Les pommes   \|  
- |  
+| La menthe poivrée (spécifiquement) | Les pommes   |  
   
 **Trivia** :  
   
 - Elle est capable de lire, mais cela lui demande beaucoup d'énergie. Pour ce faire, elle envoie une légère dose de lumière, qui rebondit de manière différente sur l'encre et le papier.  
 - Elle pourra faire pareil pour les murs, mais elle verrait surtout tous les insectes et autres présents dessus, et cela serait plus terrifiant que pratique. Donc elle ne le fait pas et utilise donc une canne pour se diriger la plupart du temps.  
 - Elle perçoit les personnes sous forme de "couleurs" (puisqu'elle voit sous forme de lumière) et n'hésitera pas à appeler les gens selon leur couleur, notamment pour se moquer gentiment.  
-  
   
 **Peurs et phobies** :  
 Pour une raison obscure, Mnémosyne est terrifiée par les insectes. En dehors de ça, rien ne semble réellement effrayer l'ange.  
@@ -137,6 +131,7 @@ _Poids_ : 53kg
 # Histoire  
   
 [Guerre des Anges]  
+  
   
 Elle fit un pas en arrière, tenant la lance de █████ fermement dans ses mains. Elle lui avait arraché des mains quelque jour auparavant, après l'avoir trompé.  
 Elle fit un sourire, regardant son adversaire droit dans les yeux mais, contrairement à elle, il n'était pas amusé.  
@@ -171,6 +166,7 @@ Et arrachant aussi le Grand Ancien à son monde.
 ---  
   
 [Italie ; Année 80]  
+  
 — Tu es sûre que c'est la bonne incantation ?  
 Salem écrasa sa cigarette sous sa botte et observa la forêt sombre autour de lui. Près de lui, la mage se releva, et fixa sur lui ses yeux dorés.  
 — Certaines, à peu de chose près.  
@@ -198,6 +194,7 @@ Depuis, elle faisait parti de l'Echo, une organisation secrète de protection de
 Némo ne vieillissait pas. Ses blessures n'étaient pas grand chose. Elle s'en amusait, ce monde était presque un jeu.  
   
 [ Italie ; Année actuelle]  
+  
   
 — Némo.  
 Des années avaient passés depuis que Mnemosyne "Némo" avait été réveillé par le duo de mage Italien.  
