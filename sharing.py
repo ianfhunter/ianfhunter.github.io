@@ -288,7 +288,7 @@ def convert_to_github():
             elif ori == "--G" or ng =="--G":
                 new_files = search_share()
                 commit = "Add to blog:"
-                if new_files > 0:
+                if len(new_files) > 0:
                     print(f"Converted {commit}")
                 else:
                     print("File already exists 😶")
