@@ -1,6 +1,7 @@
 ---  
 univers: Azelyss  
 original: /  
+share: true  
 type: OC, Fiche  
 alias: Mnemosyne, Némo, Nemo  
 title: Mnémosyne  
