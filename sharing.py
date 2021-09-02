@@ -140,7 +140,6 @@ def convert_internal(line):
     line_final = ""
     if file:
         if file.endswith(f"{ft}.md"):
-            file = os.path.basename(file)
             check = check_file(file)
             if check != "EXIST":
                 file_convert(file)
