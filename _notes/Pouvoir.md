@@ -1,5 +1,6 @@
 ---  
 share: true  
+season: none  
 title: Pouvoir  
 type: Référence  
 state: 🗒️  

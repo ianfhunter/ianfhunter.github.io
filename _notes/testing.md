@@ -1,5 +1,6 @@
 ---  
 share: true  
+season: none  
 ---  
   
 [[note non existante]]  

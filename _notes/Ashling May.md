@@ -1,6 +1,7 @@
 ---  
 share: true  
-title: Référence  
+title: Ashling May  
+alias: Ashling, Ash  
 obsidian_ui_mode: preview  
 type: OC  
 doc: Personnalisé  
