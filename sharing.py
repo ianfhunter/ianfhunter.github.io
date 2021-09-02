@@ -159,6 +159,11 @@ def convert_internal(line):
     return line_final
 
 
+def math_replace(line):
+    if re.match("\$(?!\$)(.*)\$", line) and not re.match("$$(.*)$$", line):
+       line= line.replace("$", "$$")
+    return line
+
 def file_convert(file):
     file_name = os.path.basename(file)
     print(file)
@@ -170,39 +175,39 @@ def file_convert(file):
             data.close()
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
-                try:
-                    if re.search("\%\%(.*)\%\%", final_text):
-                        #remove comments
-                        final_text="  \n"
-                    elif re.search("==(.*)==", final_text):
-                        final_text=re.sub("( ?)==", "[[", final_text, 1)
-                        final_text=re.sub("( ?)==", "::highlight]]", final_text, 2)
-                    elif re.search(
-                        "(\[{2}|\().*\.(png|jpg|jpeg|gif)", final_text
-                    ):  # CONVERT IMAGE
-                        final_text = move_img(final_text)
-                    elif (
-                        "\\" in final_text.strip()
-                    ):  # New line when using "\n" in obsidian file
-                        final_text = "  "
-                    elif re.search("(\[{2}|\().*", final_text):
-                        # Add internal_link to blog too !
-                        ft = re.search("(\[{2}|\().*", final_text)
-                        ft = ft.group(0)
-                        link = convert_internal(ft)
-                        token, table, table_start, token_start = get_tab_token(
-                            final_text
-                        )
-                        final_text = (
-                            table_start
-                            + token_start
-                            + final_text
-                            + token
-                            + table
-                            + "  \n"
-                        )
-                except TypeError:
-                    final_text = ln + "  \n"
+                final_text=transluction_note(final_text)
+                final_text=math_replace(final_text)
+                if re.search("\%\%(.*)\%\%", final_text):
+                    #remove comments
+                    final_text="  \n"
+                elif re.search("==(.*)==", final_text):
+                    final_text=re.sub("==", "[[", final_text, 1)
+                    final_text=re.sub("( ?)==", "::highlight]] ", final_text, 2)
+                elif re.search(
+                    "(\[{2}|\().*\.(png|jpg|jpeg|gif)", final_text
+                ):  # CONVERT IMAGE
+                    final_text = move_img(final_text)
+                elif (
+                    "\\" in final_text.strip()
+                ):  # New line when using "\n" in obsidian file
+                    final_text = "  "
+                elif re.search("(\[{2}|\[).*", final_text):
+                    # Add internal_link to blog too !
+                    ft = re.search("(\[{2}|\[).*", final_text)
+                    ft = ft.group(0)
+                    link = convert_internal(ft)
+                    token, table, table_start, token_start = get_tab_token(
+                        final_text
+                    )
+                    final_text = (
+                        table_start
+                        + token_start
+                        + final_text.replace("|", "\|")
+                        + token
+                        + table
+                        + "  \n"
+                    )
+
                 final.write(final_text)
             final.close()
             return True
