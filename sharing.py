@@ -5,7 +5,8 @@ from dotenv import dotenv_values
 from pathlib import Path
 import shutil
 from datetime import datetime
-
+from pytictoc import TicToc
+t=TicToc()
 
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
@@ -236,6 +237,7 @@ def convert_to_github():
             - filepath: convert just one file
             - --G : no commit and no push to github.
     """
+    t.tic()
     if len(sys.argv) >= 2:
         if sys.argv[1] == "help":
             print(help(convert_to_github))
@@ -301,9 +303,11 @@ def convert_to_github():
                 else:
                     print("File already exists 😶")
     else:
+        t.toc()
         now = datetime.now().strftime("%H:%M:%S")
         print(f"[{now}] Starting Convert")
         new_files = search_share(1)
+        t.toc()
         commit = "Add to blog :"
         if len(new_files) > 0:
             try:
@@ -311,11 +315,12 @@ def convert_to_github():
                 repo = git.Repo(Path(f"{BASEDIR}/.git"))
                 for md in new_files:
                     commit = commit + "\n — " + md
-                repo.git.add(f'{BASEDIR}/_notes/*')
-                repo.git.add(f'{BASEDIR}/assets/img/*')
+                t.toc()
+                repo.git.add(update=True)
+                t.toc()
                 repo.git.commit(m=commit)
-                origin = repo.remote('origin')
-                origin.push()
+                #origin = repo.remote('origin')
+                #origin.push()
                 now=datetime.now().strftime("%H:%M:%S")
                 print(f"[{now}] {commit}\n pushed successfully 🎉")
             except ImportError:
