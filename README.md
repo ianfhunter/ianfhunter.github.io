@@ -36,6 +36,8 @@ You can use some option :
 ### Share all
 By adding, in the yaml of your file, the key `share: true`, you allow the script to publish the file. In fact, the script will read all the files in your vault before selecting the ones meeting the condition.
 
+By default, the script will delete and rewrite all file with `share: true`.
+
 ### Share only a file
 
 The file to be shared does not need to contain `share: true` in its YAML. 
