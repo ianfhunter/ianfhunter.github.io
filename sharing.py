@@ -154,6 +154,7 @@ def transluction_note(line):
         final_text=line.replace("!", "") #remove "!"
         final_text=re.sub("#(.*)]]", "]]", final_text)
         final_text=re.sub("]]", "::rmn-transclude]]", final_text)
+        #Add transluction_note
     return final_text
 
 def file_convert(file):
