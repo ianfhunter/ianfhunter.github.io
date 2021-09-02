@@ -17,10 +17,6 @@ site = env["site"]
 post = Path(f"{BASEDIR}/_notes")
 img = Path(f"{BASEDIR}/assets/img/")
 
-# todo: delete comments ?
-# todo: add side support with image
-# todo: add hightlight support
-
 
 def get_token_end(final_text):
     token = ""
@@ -68,6 +64,39 @@ def get_tab_token(final_text):
     return token_end, table_end, table_start, token_start
 
 
+def retro(file):
+    # Yes, It's stupid, but it's work.
+    # It permit to compare the file in file diff with len(file)
+    # Remove newline and comment
+
+    notes = []
+    for n in file:
+        if n != "  \n" or n != "  " or n != "\n":
+            n = n.replace("  \n", "")
+            n = n.replace("\n", "")
+            notes.append(n)
+    notes = [i for i in notes if i != ""]
+    notes = [i for i in notes if not "%%" in i]
+    return notes
+
+
+def diff_file(file):
+    file_name = os.path.basename(file)
+    if check_file(file_name) == "EXIST":
+        vault = open(file, "r", encoding="utf-8")
+        notes = open(Path(f"{BASEDIR}/_notes/{file_name}"), "r", encoding="utf-8")
+        vault_data = vault.readlines()
+        notes_data = notes.readlines()
+        vault.close()
+        notes.close()
+        vault = retro(vault_data)
+        notes = retro(notes_data)
+        if len(vault) == len(notes):
+            return False
+        else:
+            return True
+
+
 def delete_file(filepath):
     for file in os.listdir(post):
         print(file)
@@ -86,16 +115,17 @@ def get_image(image):
             if image in file:
                 return filepath
 
+
 def move_img(line):
     token, table, table_start, token_start = get_tab_token(line)
     img_flags = re.search("\|(.*)(]{2}|\))", line)
     if img_flags:
-        img_flags=img_flags.group(0)
-        img_flags=img_flags.replace("|", "")
-        img_flags=img_flags.replace("]", "")
-        img_flags=img_flags.replace(")", "")
+        img_flags = img_flags.group(0)
+        img_flags = img_flags.replace("|", "")
+        img_flags = img_flags.replace("]", "")
+        img_flags = img_flags.replace(")", "")
     else:
-        img_flags=""
+        img_flags = ""
     final_text = re.search("(\[{2}|\().*\.(png|jpg|jpeg|gif)", line)
     final_text = final_text.group(0)
     final_text = final_text.replace("(", "")
@@ -106,9 +136,7 @@ def move_img(line):
     if image_path:
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
-        final_text = (
-            f"{table_start}{token_start}![{img_flags}]({final_text}){token}{table}  \n  \n"
-        )
+        final_text = f"{table_start}{token_start}![{img_flags}]({final_text}){token}{table}  \n  \n"
     else:
         final_text = line
     return final_text
@@ -124,11 +152,10 @@ def relative_path(data):
 
 
 def check_file(filepath):
-    check = ""
     for file in os.listdir(post):
         if filepath == file:
-            check = "EXIST"
-    return check
+            return "EXIST"
+    return "NE"
 
 
 def dest(filepath):
@@ -159,30 +186,43 @@ def convert_internal(line):
     return line_final
 
 
+def transluction_note(line):
+    # If file (not image) start with "![[" : transluction with lsn-transclude (exclude image from that)
+    # Note : Doesn't support partial transluction for the moment ; remove title
+    final_text = line
+    if re.match("\!\[{2}", line) and not re.match("(png|jpg|jpeg|gif)", line):
+        final_text = line.replace("!", "")  # remove "!"
+        final_text = re.sub("#(.*)]]", "]]", final_text)
+        final_text = re.sub("]]", "::rmn-transclude]]", final_text)
+        # Add transluction_note
+    return final_text
+
+
 def math_replace(line):
     if re.match("\$(?!\$)(.*)\$", line) and not re.match("$$(.*)$$", line):
-       line= line.replace("$", "$$")
+        line = line.replace("$", "$$")
     return line
+
 
 def file_convert(file):
     file_name = os.path.basename(file)
     print(file)
     if not "_notes" in file:
-        if check_file(file_name) != "EXIST":
+        if not os.path.exists(Path(f"{BASEDIR}/_notes/{file_name}")):
             data = open(file, "r", encoding="utf-8")
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
             data.close()
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
-                final_text=transluction_note(final_text)
-                final_text=math_replace(final_text)
+                final_text = transluction_note(final_text)
+                final_text = math_replace(final_text)
                 if re.search("\%\%(.*)\%\%", final_text):
-                    #remove comments
-                    final_text="  \n"
+                    # remove comments
+                    final_text = "  \n"
                 elif re.search("==(.*)==", final_text):
-                    final_text=re.sub("==", "[[", final_text, 1)
-                    final_text=re.sub("( ?)==", "::highlight]] ", final_text, 2)
+                    final_text = re.sub("==", "[[", final_text, 1)
+                    final_text = re.sub("( ?)==", "::highlight]] ", final_text, 2)
                 elif re.search(
                     "(\[{2}|\().*\.(png|jpg|jpeg|gif)", final_text
                 ):  # CONVERT IMAGE
@@ -192,22 +232,8 @@ def file_convert(file):
                 ):  # New line when using "\n" in obsidian file
                     final_text = "  "
                 elif re.search("(\[{2}|\[).*", final_text):
-                    # Add internal_link to blog too !
-                    ft = re.search("(\[{2}|\[).*", final_text)
-                    ft = ft.group(0)
-                    link = convert_internal(ft)
-                    token, table, table_start, token_start = get_tab_token(
-                        final_text
-                    )
-                    final_text = (
-                        table_start
-                        + token_start
-                        + final_text.replace("|", "\|")
-                        + token
-                        + table
-                        + "  \n"
-                    )
-
+                    # Escape pipe for link name
+                    final_text = final_text.replace("|", "\|") + "  \n"
                 final.write(final_text)
             final.close()
             return True
@@ -224,23 +250,20 @@ def search_share(option=0):
             filepath = sub + os.sep + file
             if filepath.endswith(".md"):
                 data = open(filepath, "r", encoding="utf-8")
-                for ln in data.readlines():
+                yaml = data.readlines()
+                data.close()
+                for ln in yaml:
                     if "share: true" in ln:
                         if option == 1:
+                            if diff_file(filepath):
+                                delete_file(filepath)
+                        if option == 2:
                             delete_file(filepath)
                         check = file_convert(filepath)
                         destination = dest(filepath)
                         if check:
                             index.append(destination)
             return index
-
-
-def check_share(file):
-    share = True
-    f = open(file, "r", encoding="utf-8")
-    if "share: false" in f.readlines():
-        share = False
-    return share
 
 
 def convert_to_github():
@@ -251,7 +274,8 @@ def convert_to_github():
     -----
         python3 sharing (filepath) (options)
         Optional option:
-            - --d : Delete file if already exist (update)
+            - --F : Don't delete file if already exist (prevent update)
+            - --f : Force update (delete all file and reform)
             - help : print help message
             - filepath: convert just one file
             - --ng : no commit and no push to github.
@@ -264,67 +288,125 @@ def convert_to_github():
             ori = sys.argv[1]
             delopt = ""
             ng = ""
-            if "--d" in sys.argv:
-                delopt = "--d"
-            if "--ng" in sys.argv:
-                ng = "--ng"
-            if os.path.exists(ori) and ori != "--d":
-                delete_file(ori)
+            if "--F" in sys.argv:
+                delopt = "--F"
+            elif "--f" in sys.argv:
+                delopt = "--f"
+            if "--G" in sys.argv:
+                ng = "--G"
+            if os.path.exists(ori):
+                if delopt != "--F":
+                    print(
+                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert {ori} with update"
+                    )
+                    delete_file(ori)
+                else:
+                    print(
+                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert {ori} (without update)"
+                    )
                 check = file_convert(ori)
-                if check and ng != "--ng":
-                    COMMIT = f"{dest} to blog"
+                if check and ng != "--G":
+                    print(
+                        f"[{datetime.now().strftime('%H:%M:%S')}] Add {ori} to github"
+                    )
+                    COMMIT = f"{ori} to blog"
                     try:
-                        from git import Repo
+                        import git
 
-                        repo = Repo(Path(f"{BASEDIR}/.git"))
+                        repo = git.Repo(Path(f"{BASEDIR}/.git"))
                         destination = dest(ori)
-                        repo.index.add(destination)
-                        repo.index.commit(COMMIT)
-                        origin = repo.remote(name="origin")
-                        origin.push()
-                        print("File pushed successfully 🎉")
+                        repo.git.add(".")
+                        repo.git.commit("-m", f"{COMMIT}")
+                        repo.git.push("origin", "HEAD:refs/for/master")
+                        print(
+                            f"[{datetime.now().strftime('%H:%M:%S')}] {ori} pushed successfully 🎉"
+                        )
                     except ImportError:
-                        print("Please, use Working Copy to push your change")
-                elif delopt == "--d":
-                    new_files = search_share(1)
-                    commit = "Add to blog:"
-                    if len(new_files) > 0 and ng != "--ng":
-                        try:
-                            from git import Repo
+                        print(
+                            "[{datetime.now().strftime('%H:%M:%S')}] Please, use another way to push your change"
+                        )
+                elif check and ng == "--G":
+                    print(
+                        f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Successfully converted {ori}"
+                    )
+                else:
+                    print(
+                        f"[{datetime.now().strftime('%H:%M:%S')}] Ori already converted"
+                    )
 
-                            repo = Repo(path)
+            else:
+
+                if delopt == "--F":
+                    print(
+                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert without update"
+                    )
+                    new_files = search_share()
+                elif delopt == "--f":
+                    print(
+                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert with force update"
+                    )
+                    new_files = search_share(2)
+                else:
+                    print(
+                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert with update"
+                    )
+                    new_files = search_share(1)
+                commit = "Add to blog:\n"
+                if len(new_files) > 0:
+                    if ng != "--G":
+                        try:
+                            import git
+
+                            repo = git.Repo(Path(f"{BASEDIR}/.git"))
                             for md in new_files:
-                                if os.path.exists(Path(f"{BASEDIR}/_notes/{md}")):
-                                    commit = commit + "\n — " + md
-                                repo.index.add(f"{BASEDIR}/_notes/{md}")
-                            repo.index.commit(commit)
+                                commit = commit + "\n — " + md
+                            repo.git.add(".")
+                            repo.git.commit("-m", f"git commit {commit}")
                             origin = repo.remote(name="origin")
                             origin.push()
-                            print(f"\n{commit} pushed successfully 🎉")
+                            print(
+                                f"[{datetime.now().strftime('%H:%M:%S')} {commit}\n pushed successfully 🎉"
+                            )
                         except ImportError:
-                            print("Please use Working Copy to push your project")
+                            print(
+                                f"[{datetime.now().strftime('%H:%M:%S')}] Please use another way to push your project"
+                            )
+                    else:
+                        print(
+                            f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Converted {commit}"
+                        )
+                else:
+                    print(
+                        f"[{datetime.now().strftime('%H:%M:%S')}] File already exists 😶"
+                    )
+
     else:
-        print("Starting Convert")
-        new_files = search_share()
-        commit = "Add to blog :"
+        print(
+            f"[{datetime.now().strftime('%H:%M:%S')}] Starting Convert with update and push "
+        )
+        new_files = search_share(1)
+        commit = "Add to blog :\n"
         if len(new_files) > 0:
             try:
-                from git import Repo
-                repo = Repo(path)
+                import git
+
+                repo = git.Repo(Path(f"{BASEDIR}/.git"))
                 for md in new_files:
-                    if os.path.exists(Path(f"{BASEDIR}/_notes/{md}")):
-                        commit = commit + "\n — " + md
-                        repo.index.add(f"{BASEDIR}/_notes/{md}")
-                repo.index.commit(commit)
-                origin = repo.remote(name="origin")
+                    commit = commit + "\n — " + md
+                repo.git.add(A=True)
+                repo.git.commit(m=commit)
+                origin = repo.remote("origin")
                 origin.push()
-                print(f"{commit} pushed successfully 🎉")
+                print(
+                    f"[{datetime.now().strftime('%H:%M:%S')}] {commit}\n pushed successfully 🎉"
+                )
             except ImportError:
-                print("Please use working copy")
+                print(
+                    f"[{datetime.now().strftime('%H:%M:%S')}] Please use working copy"
+                )
         else:
-            print("File already exists 😶")
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] File already exists 😶")
 
 
 if __name__ == "__main__":
     convert_to_github()
-
