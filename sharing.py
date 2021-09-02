@@ -211,6 +211,7 @@ def file_convert(file):
             date= re.compile('date:(.*)')
             date_check=list(filter(date.match, lines))
             if len(date_check) == 0: #Prevent to multi add date
+                #Add date to frontmatter
                 lines.insert(2, f"date: {datetime.now().strftime('%d-%m-%y')}\n")
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
