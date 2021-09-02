@@ -157,6 +157,11 @@ def transluction_note(line):
         #Add transluction_note
     return final_text
 
+def math_replace(line):
+    if re.match("\$(?!\$)(.*)\$", line) and not re.match("$$(.*)$$", line):
+       line= line.replace("$", "$$")
+    return line
+
 def file_convert(file):
     file_name = os.path.basename(file)
     if not "_notes" in file:
@@ -170,6 +175,7 @@ def file_convert(file):
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
                 final_text=transluction_note(final_text)
+                final_text=math_replace(final_text)
                 if re.search("\%\%(.*)\%\%", final_text):
                     #remove comments
                     final_text="  \n"
