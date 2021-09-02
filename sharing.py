@@ -41,6 +41,19 @@ def get_table_end(final_text):
             table = " |"
     return table
 
+def diff_file(file):
+    file_name = os.path.basename(file)
+    if check_file(file_name) == "EXIST":
+        vault=open(file, "r", encoding="utf-8")
+        notes=open(Path(f"{BASEDIR}/_notes/{file_name}"), "r", encoding="utf-8")
+        vault_data=vault.readlines()
+        notes_data=notes.readlines()
+        vault.close()
+        notes.close()
+        if vault_data == notes_data:
+            return True
+        else:
+            return False
 
 def get_start_table(final_text):
     table = ""
@@ -218,6 +231,7 @@ def file_convert(file):
 
 def search_share(option=0):
     filespush = []
+    check = False
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
@@ -228,7 +242,8 @@ def search_share(option=0):
                 for ln in yaml:
                     if "share: true" in ln:
                         if option == 1:
-                            delete_file(filepath)
+                            if not diff_file(filepath):
+                                delete_file(filepath)
                         check = file_convert(filepath)
                         destination = dest(filepath)
                         if check:
@@ -254,7 +269,7 @@ def convert_to_github():
         if sys.argv[1] == "help":
             print(help(convert_to_github))
         else:
-            print("Starting convert")
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] Starting convert")
             ori = sys.argv[1]
             delopt = ""
             ng = ""
@@ -263,25 +278,32 @@ def convert_to_github():
             if "--G" in sys.argv:
                 ng = "--G"
             if os.path.exists(ori) and ori != "--F":
-                delete_file(ori)
+                if delopt != "--F":
+                    print(f"[{[{datetime.now().strftime('%H:%M:%S')}]}] Convert {ori} with update")
+                    delete_file(ori)
+                else:
+                    print(f"[{[{datetime.now().strftime('%H:%M:%S')}]}] Convert {ori}")
                 check = file_convert(ori)
                 if check and ng != "--G":
-                    COMMIT = f"{dest} to blog"
+                    print(f"[{[{datetime.now().strftime('%H:%M:%S')}]}] Add {ori} to github")
+                    COMMIT = f"{ori} to blog"
                     try:
                         import git
                         repo = git.Repo(Path(f"{BASEDIR}/.git"))
                         destination = dest(ori)
                         repo.git.add(".")
-                        repo.git.commit('-m', f'git commit {ori}')
+                        repo.git.commit('-m', f'{COMMIT}')
                         repo.git.push("origin", "HEAD:refs/for/master")
                         print(f"{ori} pushed successfully 🎉")
                     except ImportError:
                         print("Please, use Working Copy to push your change")
                 elif check and ng == "--G":
-                    print(f"converted {dest} to blog")
-            elif delopt == "--F" or ori == "--F":
+                    print(f"🎉 Successfully converted {ori}")
+
+            elif (ori == "--F") or (ori == "--G" and delopt == "--F") :
+                print(f"[{[{datetime.now().strftime('%H:%M:%S')}]}] Convert without UPDATE")
                 new_files = search_share()
-                commit = "Add to blog:"
+                commit = "Add to blog:\n"
                 if len(new_files) > 0:
                     if ng !="--G":
                         try:
@@ -293,32 +315,40 @@ def convert_to_github():
                             repo.git.commit('-m', f'git commit {commit}')
                             origin = repo.remote(name='origin')
                             origin.push()
-                            print(f"\n{commit}\n pushed successfully 🎉")
+                            print(f"[{datetime.now().strftime('%H:%M:%S')} {commit}\n pushed successfully 🎉")
                         except ImportError:
                             print("Please use Working Copy to push your project")
                     else:
-                        print(f"Converted {commit}")
+                        print(f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Converted {commit}")
                 else:
                     print("File already exists 😶")
-            elif ori == "--G" or ng =="--G" and delopt != "--F":
+
+            elif ori == "--G" and delopt != "--F": #Don't push + update
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] Convert : No Push \n Update files")
                 new_files = search_share(1)
-                commit = "Add to blog:"
+                commit = "Add to blog:\n"
                 if len(new_files) > 0:
-                    print(f"Converted {commit}")
+                    for md in new_files:
+                        commit = commit + "\n — " + md
+                    print(f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Converted {commit}")
                 else:
-                    print("File already exists 😶")
-            elif ng == "--G" and delopt == "--F":
+                    print(f"[{datetime.now().strftime('%H:%M:%S')}] File already exists 😶")
+
+            elif (ori == "--G" and delopt == "--F") or (ori == "--F" and ng == "--G"): #No push no update
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] Convert : No Push \nNo Update")
                 new_files = search_share()
-                commit = "Add to blog:"
+                commit = "Add to blog:\n"
                 if len(new_files) > 0:
-                    print(f"Converted {commit}")
+                    for md in new_files:
+                        commit = commit + "\n — " + md
+                    print(f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Converted {commit}")
                 else:
-                    print("File already exists 😶")
+                    print(f"[{datetime.now().strftime('%H:%M:%S')}] File already exists 😶")
+
     else:
-        now = datetime.now().strftime("%H:%M:%S")
-        print(f"[{now}] Starting Convert")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] Starting Convert with update and push ")
         new_files = search_share(1)
-        commit = "Add to blog :"
+        commit = "Add to blog :\n"
         if len(new_files) > 0:
             try:
                 import git
@@ -330,7 +360,7 @@ def convert_to_github():
                 origin = repo.remote('origin')
                 origin.push()
                 now=datetime.now().strftime("%H:%M:%S")
-                print(f"[{now}] {commit}\n pushed successfully 🎉")
+                print(f"[{datetime.now().strftime('%H:%M:%S')}] {commit}\n pushed successfully 🎉")
             except ImportError:
                 print("Please use working copy")
         else:
