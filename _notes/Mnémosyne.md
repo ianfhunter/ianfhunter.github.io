@@ -19,7 +19,7 @@ tag:
   
   
   
-![+side](../assets/img/nemo.png)  
+![+side::rmn-transclude](../assets/img/nemo.png)  
   
   
 **Prénom et nom** : Mnémosyne  

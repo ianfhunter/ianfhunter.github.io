@@ -23,7 +23,7 @@ FROM [[Ashling May]]
   
 ---  
 # ─────༺ Présentation ༻─────  
-![+side](../assets/img/Commission Feilyn.png)  
+![+side::rmn-transclude](../assets/img/Commission Feilyn.png)  
   
 **Nom** : May  
 **Prénoms** : Ashling  
@@ -129,9 +129,7 @@ Ashling est une personne plutôt lâche, qui n'aime pas prendre des risques inut
 # [[Pouvoir]]  
   
   
-[[Pouvoir::lsn-transclude]]  
+[[Pouvoir::rmn-transclude]]  
   
-  
-[[Pouvoir::lsn-transclude]]  
   
   

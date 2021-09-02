@@ -152,7 +152,8 @@ def transluction_note(line):
     final_text= line
     if re.match("\!\[{2}", line) and not re.match("(png|jpg|jpeg|gif)", line):
         final_text=line.replace("!", "") #remove "!"
-        final_text=re.sub("#(.*)]]", "::lsn-transclude]]", final_text)
+        final_text=re.sub("#(.*)]]", "]]", final_text)
+        final_text=re.sub("]]", "::rmn-transclude]]", final_text)
     return final_text
 
 def file_convert(file):
