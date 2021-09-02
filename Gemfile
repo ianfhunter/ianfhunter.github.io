@@ -32,3 +32,4 @@ gem 'jekyll-sitemap'
 gem 'kramdown'
 gem 'jekyll-toc'
 gem 'rouge'
+gem "webrick", "~> 1.7"
