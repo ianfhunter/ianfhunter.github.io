@@ -316,7 +316,7 @@ def convert_to_github():
                 for md in new_files:
                     commit = commit + "\n — " + md
                 t.toc()
-                repo.git.add(update=True)
+                repo.git.add(A=True)
                 t.toc()
                 repo.git.commit(m=commit)
                 #origin = repo.remote('origin')
