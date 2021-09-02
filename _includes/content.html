@@ -100,10 +100,10 @@
 
         {%- if url == nil -%}
 
-            {%- assign link_text = '<a style="background-color:#f7e5d3; border-radius: 5px; color: #9b9b9b;" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
+            {%- assign link_text = '<a style="background-color:#f2f2f2; color: #acacac; border-radius: 5px" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
         {%- elsif url == empty -%}
 
-            {%- assign link_text = '<a style="background-color:#f7e5d3; border-radius: 5px; color: #9b9b9b;" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
+            {%- assign link_text = '<a style="background-color:#f2f2f2; color: #acacac; border-radius: 5px" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
 
         {%- else -%}
 
@@ -141,11 +141,11 @@
 
         {%- if url == nil -%}
 
-            {%- assign link_text = '<a style="background-color:#f7e5d3; color: #9b9b9b; border-radius: 5px;" href="' | append: 'javascript:void(0)' | append: '">' | append: alt_title | append: '</a>' -%}
+            {%- assign link_text = '<a style="background-color:#f2f2f2; color: #acacac; border-radius: 5px;" href="' | append: 'javascript:void(0)' | append: '">' | append: alt_title | append: '</a>' -%}
 
         {%- elsif url == empty -%}
 
-            {%- assign link_text = '<a style="background-color:#f7e5d3; color: #9b9b9b; border-radius: 5px;" href="' | append: 'javascript:void(0)' | append: '">' | append: alt_title | append: '</a>' -%}
+            {%- assign link_text = '<a style="background-color:#f2f2f2; color: #acacac; border-radius: 5px;" href="' | append: 'javascript:void(0)' | append: '">' | append: alt_title | append: '</a>' -%}
 
         {%- elsif header_title == "noheader" -%}
 

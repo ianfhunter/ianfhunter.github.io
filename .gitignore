@@ -6,3 +6,5 @@ vendor
 .idea
 .DS_Store
 /.env
+
+.vscode/
