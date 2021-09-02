@@ -330,7 +330,6 @@ def convert_to_github():
                     )
 
             else:
-
                 if delopt == "--F":
                     print(
                         f"[{datetime.now().strftime('%H:%M:%S')}] Convert without update"
@@ -348,13 +347,12 @@ def convert_to_github():
                     new_files = search_share(1)
                 commit = "Add to blog:\n"
                 if len(new_files) > 0:
+                    for md in new_files:
+                        commit = commit + "\n — " + md
                     if ng != "--G":
                         try:
                             import git
-
                             repo = git.Repo(Path(f"{BASEDIR}/.git"))
-                            for md in new_files:
-                                commit = commit + "\n — " + md
                             repo.git.add(".")
                             repo.git.commit("-m", f"git commit {commit}")
                             origin = repo.remote(name="origin")
