@@ -74,6 +74,7 @@ def retro(file):
             notes.append(n)
     notes = [i for i in notes if i != ""]
     notes = [i for i in notes if not "%%" in i]
+    notes= [i for i in notes if not "date:" in i]
     return notes
 
 
@@ -207,6 +208,10 @@ def file_convert(file):
             if "share: false" in lines:
                 return False
             data.close()
+            date= re.compile('date:(.*)')
+            date_check=list(filter(date.match, lines))
+            if len(date_check) == 0: #Prevent to multi add date
+                lines.insert(2, f"date: {datetime.now().strftime('%d-%m-%y')}\n")
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
                 final_text = transluction_note(final_text)
@@ -224,7 +229,7 @@ def file_convert(file):
                 elif (
                     "\\" in final_text.strip()
                 ):  # New line when using "\n" in obsidian file
-                    final_text = "  "
+                    final_text = "  \n"
                 elif re.search("(\[{2}|\[).*", final_text):
                     # Escape pipe for link name
                     final_text = final_text.replace("|", "\|") + "  \n"

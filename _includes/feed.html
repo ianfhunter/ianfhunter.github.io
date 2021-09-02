@@ -1,9 +1,5 @@
 {%- if page.permalink == "/" -%}
     {%- for item in site.notes -%}
-        {%- if item.season == 'none' -%}
-        {%- endif -%}
-    {%- endfor -%}
-    {%- for item in site.notes -%}
 		{%- if item.season != 'none' -%}
 			<div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
 				<a href="{{ item.url }}" style="text-decoration: none; color: #555555;">
@@ -13,7 +9,7 @@
 					</ul>
 					<p style="margin-top: 0px;" class="feed-title">{{ item.title }}</p>
 				{%- else -%}
-					<p class="feed-title">{{ item.title }}</p>
+					<p class="feed-title">{{ item.title | page.date}}</p>
 				{%- endif -%}
 					<p class="feed-excerpt">{{ item.content | strip_html | strip | escape | truncate: 200}}</p>
 				</a>

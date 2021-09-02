@@ -30,13 +30,23 @@ There are several way to use the script :
 You can use some option :
 - `--F` : Don't delete file if already exist.
 - `--G` : Prevent git to commit and push
+- `--f` : Force the update of file (aka delete file)
+
+## Checking differences 
+
+⚠️ By default, the script will check if the file was edited by **checking the number of line**. If the line is exactly the same, the file will be not converted. New line, blank line and comment **are removed** in this checking. 
+
+So, to force update to a single file you can :
+- Use `share <filepath>` directly
+- Use `--f` to force update all file 
+- Continue to work on the file before pushing it.
+- Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
 
 ## Options
-
 ### Share all
 By adding, in the yaml of your file, the key `share: true`, you allow the script to publish the file. In fact, the script will read all the files in your vault before selecting the ones meeting the condition.
 
-By default, the script will delete and rewrite all file with `share: true`.
+By default, the script will check the difference between line [cf checking difference](https://github.com/Mara-Li/owlly-house#checking-difference), and convert only the file with difference. You can use `--f` to force update. 
 
 ### Share only a file
 
