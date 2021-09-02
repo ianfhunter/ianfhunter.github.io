@@ -103,4 +103,4 @@ for i in list:
 code is always inline and give you visibility UNLESS you use adminition plugin with option :)  
 **CODE**  
 ```  
-![[testing]]  
+[[testing]]  

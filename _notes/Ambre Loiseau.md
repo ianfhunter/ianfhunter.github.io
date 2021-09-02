@@ -18,7 +18,7 @@ WHERE original = "Ambre Loiseau"
  ```  
 ---  
   
-<h1 align="center"> ◄ G E N E R A L ►<h1>  
+<h1 align="center"> ◄ G E N E R A L ►</h1>  
   
 **► Nom :** Loiseau  
 **► Prénom :** Ambre  

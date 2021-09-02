@@ -146,6 +146,14 @@ def convert_internal(line):
         line_final = f"[[{destination}\|{ft}]]"
     return line_final
 
+def transluction_note(line):
+    #If file (not image) start with "![[" : transluction with lsn-transclude (exclude image from that)
+    #Note : Doesn't support partial transluction for the moment ; remove title
+    final_text= line
+    if re.match("\!\[{2}", line) and not re.match("(png|jpg|jpeg|gif)", line):
+        final_text=line.replace("!", "") #remove "!"
+        final_text=re.sub("#(.*)]]", "::lsn-transclude]]", final_text)
+    return final_text
 
 def file_convert(file):
     file_name = os.path.basename(file)
@@ -159,7 +167,7 @@ def file_convert(file):
             data.close()
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
-
+                final_text=transluction_note(final_text)
                 if re.search("\%\%(.*)\%\%", final_text):
                     #remove comments
                     final_text="  \n"

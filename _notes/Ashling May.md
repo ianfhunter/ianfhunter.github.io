@@ -23,7 +23,8 @@ FROM [[Ashling May]]
   
 ---  
 # ─────༺ Présentation ༻─────  
-![[Illustration/Commission/Commission Feilyn.png|+side]]  
+![+side](../assets/img/Commission Feilyn.png)  
+  
 **Nom** : May  
 **Prénoms** : Ashling  
 **Surnoms** : Ekraminarok  
@@ -39,6 +40,9 @@ FROM [[Ashling May]]
 **Métier :** Hackeuse – Crackeuse – Étudiante (à ses heures perdues) – Player Killer  
   
 # ──────༺ Physique ༻──────  
+→ [[Illustration Ashling\|Références]]  
+  
+  
 **Yeux** : Bleus  
 **Cheveux** : Roux, longs, souvent attachés en chignons   
 **Taille** : 1m70  
@@ -52,7 +56,6 @@ Lorsqu'elle ne sort pas, elle apprécie les tenues décontractés tel que les jo
   
 Notons que si elle est en "infiltration", elle va se vêtir de vêtement sombres et d'une longue veste noire.   
   
-![[Ashling May —  Illustration/Ashling May —  Illustration]]  
   
   
 # ──────༺ Mental ༻──────  
@@ -126,9 +129,9 @@ Ashling est une personne plutôt lâche, qui n'aime pas prendre des risques inut
 # [[Pouvoir]]  
   
   
-![[Pouvoir#Technomage]]  
+[[Pouvoir::lsn-transclude]]  
   
   
-![[Pouvoir#ELECTROMANCIE]]  
+[[Pouvoir::lsn-transclude]]  
   
   
