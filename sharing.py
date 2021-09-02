@@ -130,6 +130,7 @@ def move_img(line):
     final_text = final_text.replace("[", "")
     final_text = final_text.replace("]", "")
     image_path = get_image(final_text)
+    print(image_path)
     if image_path:
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
