@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 a, p, ul, li, ol, table, span, blockquote {
     color: #555555;
     font-family:  'IBM Plex Sans', Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 21px;  /* Let's set the font-size to something old-man friendly */
+    font-size: 18px;  /* Let's set the font-size to something old-man friendly */
 	line-height: 210%;
 }
 
