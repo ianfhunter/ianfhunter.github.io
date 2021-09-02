@@ -213,6 +213,11 @@ def file_convert(file):
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
             data.close()
+            date= re.compile('date:(.*)')
+            date_check=list(filter(date.match, lines))
+            if len(date_check) == 0: #Prevent to multi add date
+                #Add date to frontmatter
+                lines.insert(2, f"date: {datetime.now().strftime('%d-%m-%y')}\n")
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
                 final_text = transluction_note(final_text)
