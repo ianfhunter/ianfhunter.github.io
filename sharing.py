@@ -4,6 +4,8 @@ import os
 from dotenv import dotenv_values
 from pathlib import Path
 import shutil
+from datetime import datetime
+
 
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
@@ -213,7 +215,6 @@ def search_share(option=0):
                     if "share: true" in ln:
                         if option == 1:
                             delete_file(filepath)
-                            pass
                         check = file_convert(filepath)
                         destination = dest(filepath)
                         if check:
@@ -271,7 +272,7 @@ def convert_to_github():
                     if ng !="--G":
                         try:
                             import git
-                            repo = git.Repo(path)
+                            repo = git.Repo(Path(f"{BASEDIR}/.git"))
                             for md in new_files:
                                 commit = commit + "\n — " + md
                             repo.git.add(".")
@@ -300,20 +301,23 @@ def convert_to_github():
                 else:
                     print("File already exists 😶")
     else:
-        print("Starting Convert")
+        now = datetime.now().strftime("%H:%M:%S")
+        print(f"[{now}] Starting Convert")
         new_files = search_share(1)
         commit = "Add to blog :"
         if len(new_files) > 0:
             try:
                 import git
-                repo = git.Repo()
+                repo = git.Repo(Path(f"{BASEDIR}/.git"))
                 for md in new_files:
                     commit = commit + "\n — " + md
-                repo.git.add(".")
-                repo.git.commit("-m", f'git commit {commit}')
+                repo.git.add(f'{BASEDIR}/_notes/*')
+                repo.git.add(f'{BASEDIR}/assets/img/*')
+                repo.git.commit(m=commit)
                 origin = repo.remote('origin')
                 origin.push()
-                print(f"{commit} pushed successfully 🎉")
+                now=datetime.now().strftime("%H:%M:%S")
+                print(f"[{now}] {commit}\n pushed successfully 🎉")
             except ImportError:
                 print("Please use working copy")
         else:
