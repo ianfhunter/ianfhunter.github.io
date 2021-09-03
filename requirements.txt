@@ -1,4 +1,3 @@
-pyimgur
-python-dotenv~=0.19.0
+python-dotenv
 gitpython
-python-frontmatter~=1.0.0
+python-frontmatter
