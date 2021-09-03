@@ -62,6 +62,7 @@ The script :
 - Supports non existant file (adding a css for that 😉)
 - Supports image flags css (Lithou snippet 🙏)
 - Support normal and external files
+- In case you forgot to add the date, it will put the date of the push (in the frontmatter)
 
 Finally, the plugin will add, commit and push if supported.
 For mobile, I work on ios on some shortcuts.
