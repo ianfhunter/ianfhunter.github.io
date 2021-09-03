@@ -100,7 +100,7 @@ def delete_file(filepath):
         filepath = os.path.basename(filepath)
         filecheck = os.path.basename(file)
         if filecheck == filepath:
-            os.remove(Path(f"{BASEDIR}\_notes\\{file}"))
+            os.remove(Path(f"{BASEDIR}/_notes/{file}"))
             return True
     return False
 
@@ -122,6 +122,7 @@ def move_img(line):
         img_flags = img_flags.replace("|", "")
         img_flags = img_flags.replace("]", "")
         img_flags = img_flags.replace(")", "")
+        img_flags.replace("(", "")
     else:
         img_flags = ""
     final_text = re.search("(\[{2}|\().*\.(png|jpg|jpeg|gif)", line)
@@ -130,8 +131,11 @@ def move_img(line):
     final_text = final_text.replace("%20", " ")
     final_text = final_text.replace("[", "")
     final_text = final_text.replace("]", "")
+    final_text=final_text.replace(')', '')
     image_path = get_image(final_text)
     final_text = os.path.basename(final_text)
+    img_flags = img_flags.replace(final_text, "")
+    img_flags=img_flags.replace('(','')
     if image_path:
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
