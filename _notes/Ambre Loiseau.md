@@ -1,10 +1,11 @@
 ---  
 share: true  
-date: 03-09-21  
+date: 03-09-2021  
 type: OC  
 doc: iframe  
 univers: ❌  
-nname: Ambre Loiseau  
+title: Ambre Loiseau  
+description: Fiche de Ambre Loiseau  
 tag:  
   - OC  
   - ❌  
@@ -12,12 +13,15 @@ tag:
   - Magie  
   - Méchante  
 ---  
+  
 ```dataview  
 table RP  
 FROM "Ecriture/Personnages"  
-WHERE original = "Ambre Loiseau"   
- ```  
+WHERE original = "Ambre Loiseau"  
+```  
+  
 ---  
+  
 $$~$$  
   
 <h1 align="center"> ◄ G E N E R A L ►</h1>  
@@ -34,12 +38,14 @@ $$~$$
 Décrit comme un zombie et infectée par un virus unique, elle est capable de se modifier physiquement. Elle peut créer des excroissances de chaire ou d’os, modifier sa peau pour être plus solide ou simplement pour frapper plus fort. Elle peut se régénérer à l’infini, mais il lui faut un laps de temps plus ou moins long en fonction de ses blessures. De plus, elle a des réflexes qui sont énormément améliorés.  
   
 ## Le lazarus  
+  
 - Transmis par un moustique, ce virus mute rapidement dans l’organisme de l’hôte et semble le tuer au bout de quinze jours. Ambre est le seul cas connu ayant surpassé la mort.  
 - Il ne se transmet que par transfert sanguin et vu l’épaisseur de son sang, bonne chance.  
 - Ce n’est pas une MST.  
-- Les expériences ont montré que tous les êtres vivants testés mourraient après l’infection et ne devenait pas un zombie.   
+- Les expériences ont montré que tous les êtres vivants testés mourraient après l’infection et ne devenait pas un zombie.  
   
 ## Points faibles  
+  
 - Elle ne peut pas créer de la biomasse de rien.  
 - Elle doit obligatoirement manger crue.  
 - Intolérance aux légumes (mais pas aux féculents).  
@@ -51,16 +57,18 @@ Décrit comme un zombie et infectée par un virus unique, elle est capable de se
 - Elle marque facilement les bleus.  
   
 ## Etats des appareils physiologiques  
-- *Vasculaire :* Très lent, elle peut arrêter de respirer pendant vingt minutes, mais elle a besoin de la circulation de son sang pour le virus. Celui-ci s’est inscrit dans son ADN, mais certains organes le produisent en grande quantité.  
-- *Nerveux, Digestif, urinaire, endocrinien :* RAS  
-- *Sensoriel :* plus sensible, notamment au niveau de l’odeur et du son. Cependant, elle sent moins la douleur qu’une personne normale.  
-- *Reproducteur :* Infonctionnel  
-- *Lympho-hématopoïétique :* Toutes les cellules qui composaient l’appareil lymphatique se sont reconverties pour produire le virus.  
-- *Sanguin :* Son sang est rouge foncé, presque noir, ainsi que très épais.  
+  
+- _Vasculaire :_ Très lent, elle peut arrêter de respirer pendant vingt minutes, mais elle a besoin de la circulation de son sang pour le virus. Celui-ci s’est inscrit dans son ADN, mais certains organes le produisent en grande quantité.  
+- _Nerveux, Digestif, urinaire, endocrinien :_ RAS  
+- _Sensoriel :_ plus sensible, notamment au niveau de l’odeur et du son. Cependant, elle sent moins la douleur qu’une personne normale.  
+- _Reproducteur :_ Infonctionnel  
+- _Lympho-hématopoïétique :_ Toutes les cellules qui composaient l’appareil lymphatique se sont reconverties pour produire le virus.  
+- _Sanguin :_ Son sang est rouge foncé, presque noir, ainsi que très épais.  
   
 <h1 align=center>◄ I N F O R M A T I O N S ►</h1>  
   
 ## Personnalité  
+  
 Ambre est décrit comme beaucoup comme étrange. C’est le cas de le dire. Peu impulsive, mais très pas très à l’aise avec les vivants, elle préfère la compagnie des cadavres à qui elle parle et donne des surnoms.  
   
 C’est une jeune femme curieuse, car toujours à la recherche de la vérité, toujours drôle voire ironique sur son état de non-santé. Vous avez toujours rêvé de voir un zombie faire de l’humour morbide ? Vous voilà servi ! De plus, c’est une personne globalement intègre, souvent à cheval sur les règles qui n’aiment pas les choses illégales. Mais bon, elle vit beaucoup à l’écart de la société donc les règles et elle… Elle peut parfois paraître amorphe, voire flemmarde. Elle aime trainer sur le canapé, regarder des séries, et « larver ». En plus d’être un médecin légiste, elle a un côté biologiste, et n’hésite pas à faire des expériences sur elle-même, dans la limite de son intégrité physique et mentale. Par contre, elle se fiche du pouvoir des autres, même lorsqu’ils sont intéressants. Elle peut se montrer particulièrement égoïste par moment.  
@@ -78,8 +86,8 @@ Hein ?
 Oui.  
 Bon.  
   
-  
 ## Parcours  
+  
 D’origine française, Ambre nait dans le sud de la France. Très tôt, elle montre un caractère un peu flemmard, mais aussi une grande intelligence dans de nombreux domaines, notamment les sciences en général.  
   
 Son enfance, sans grande difficulté, malgré le fait qu’elle n’apprécie pas particulièrement la compagnie humaine, se passe sans encombre et évènement notable. Obtenant à la fin du lycée un bac avec mention, elle décide de voyager jusqu’en Irlande faire ses études de médecines, où elle se spécialise en médecine légale et entre dans la police scientifique irlandaise.  
@@ -97,9 +105,11 @@ Malgré l’improbabilité de la situation, elle est déclarée « vivante » et
 <h1 align=center>Autres détails</h1>  
   
 ## Gadget  
-Une montre connectée à sa peau qui analyse en permanence ses calories. Elle lui permet de savoir combien elle en a, qu'elle est son utilisation, et qu'elle est sa limite d'utilisation. Elle sonne quand elle approche de sa limite, ce qui lui permet d'éviter de tomber dans l'extrême et de boulotter les gens car trop affamée pour être “humaine”.   
+  
+Une montre connectée à sa peau qui analyse en permanence ses calories. Elle lui permet de savoir combien elle en a, qu'elle est son utilisation, et qu'elle est sa limite d'utilisation. Elle sonne quand elle approche de sa limite, ce qui lui permet d'éviter de tomber dans l'extrême et de boulotter les gens car trop affamée pour être “humaine”.  
   
 ## Facts  
+  
 → Elle joue dans une série d’invasion zombie, elle sert en outre de consultante à la série.  
 → Son plat de base est les pâtes bolognaises. Elle est devenue très imaginative pour se faire des plats avec juste de la viande crue et des féculents.  
 → Elle a un tatouage sur l’épaule, en forme de double hélice de l’ADN. Elle a aussi un pentacle sur l’omoplate.  
@@ -116,5 +126,3 @@ Une montre connectée à sa peau qui analyse en permanence ses calories. Elle lu
 | Les mystères        |                  |  
 | Dormir              |                  |  
 | Le tarot            |                  |  
-  
-  
