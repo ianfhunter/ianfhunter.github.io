@@ -20,7 +20,7 @@ markdown: kramdown
 
 kramdown:
   input: GFM
-  hard_wrap: false
+  hard_wrap: true
   math_engine: null
   smart_quotes: ["apos", "apos", "quot", "quot"]
   syntax_highlighter: rouge

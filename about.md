@@ -5,10 +5,16 @@ permalink: /about/
 content-type: eg
 ---
 
-Welcome to [[notenote.link::https://github.com/Maxence-L/notenote.link]], a fork of [[Simply Jekyll::https://github.com/raghuveerdotnet/simply-jekyll]]!
+Hello ! 
+Je suis Mara, et je suis étudiante en Santé Publique. Ma grande passion, de mon temps libre, est de faire du RP et coder en python. 
+J'utilise Obsidian depuis Mars 2021 et j'en suis super heureuse, et je suis l'autrice du snippet de pseudo-WYSIWYG et Semi-WYSIWYG (que vous pouvez retrouver [ici](https://github.com/Mara-Li/Obsidian-WYSIWYG)).
 
-I used Obsidian for the last 6 months, to keep track of all of the things I was learning while pivoting my career from Economics to Data Science.
+De plus, pour du RP principalement, je travaille sur un bot (et je recrute) discord. Ce bot se nomme [OWLLY](https://github.com/OwllyBot/Owlly) et est actuellement en beta. Je serais ravie de travailler avec vous.
 
-200 notes later, I felt that my Obsidian space was getting cramped and I began to yearn for a way to access my notes everywhere. Simply-Jekyll appeared as the most satisfactory tool on the web, as I needed wikilinks, search, LateX, and code highlighting. 
+Je suis aussi une grosse joueuse de FFXIV, et je suis sur Moogle (sous le nom de Kara Grimalkin.)
 
-A little bit of dev work and polishing was need to make it compatible with my Obsidian notes. However, the template is now mature enough, so go on an [[How to setup this site\|give it a try!]]
+Et sinon, je suis autiste ASPERGER avec un TDA et je peux être désagréable ou très bizarre. Souvent dans mon coin, je peux être adorable, et je mords.
+
+Bref, 155cm de mauvais caractère.
+
+Ce pseudo blog a pour but de partager mes fichiers Obsidian de manière minimale sans me prendre la tête. 

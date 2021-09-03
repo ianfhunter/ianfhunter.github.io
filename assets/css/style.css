@@ -92,6 +92,7 @@ a, p, ul, li, ol, table, span, blockquote {
     color: #555555;
     font-family:  'IBM Plex Sans', Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 18px;  /* Let's set the font-size to something old-man friendly */
+	line-height: 210%;
 }
 
 p a,
@@ -1466,7 +1467,6 @@ label.margin-toggle:not(.sidenote-number) {
 [id]:hover > a {
     display: inline;
 }
-
 
 /*Image Flags Snippet by Lithou
 http://github.com/lithou/sandbox

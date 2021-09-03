@@ -25,61 +25,61 @@
 
     {%- for item in content_array -%}
 
-    {%- if forloop.index > 1 -%}
-    {%- assign start = item | split:']]' -%}
+        {%- if forloop.index > 1 -%}
+            {%- assign start = item | split:']]' -%}
 
-    {% assign itempart = start[0] | split: "|" %}
-    {% assign alt_link = itempart[1] %}
+            {% assign itempart = start[0] | split: "|" %}
+            {% assign alt_link = itempart[1] %}
 
-    {% assign itempart = itempart[0] | split: "#" %}
-    {%- assign internal_link = itempart[0] -%}
+            {% assign itempart = itempart[0] | split: "#" %}
+            {%- assign internal_link = itempart[0] -%}
 
-    <!-- We need some hacky code to isolate header link -->
-    {%- assign header_link_sub_i = start[0] | split: "|" -%}
-    {%- assign header_link_sub_ii = header_link_sub_i[0] | split: "#" -%}
-    {%- assign header_link = header_link_sub_ii[1] -%}
+            <!-- We need some hacky code to isolate header link -->
+            {%- assign header_link_sub_i = start[0] | split: "|" -%}
+            {%- assign header_link_sub_ii = header_link_sub_i[0] | split: "#" -%}
+            {%- assign header_link = header_link_sub_ii[1] -%}
 
-    {%- assign external_link = itempart[0] | split:external_link_delimiter -%}
-    {%- assign sidenote = itempart[0] | split:sidenote_delimiter -%}
+            {%- assign external_link = itempart[0] | split:external_link_delimiter -%}
+            {%- assign sidenote = itempart[0] | split:sidenote_delimiter -%}
 
 
-    {%- if external_link[1] == nil -%}
+            {%- if external_link[1] == nil -%}
 
-    {%- if internal_link -%}
+                {%- if internal_link -%}
 
-    {%- assign result_notes = site.notes | where: 'title',internal_link -%}
-    {%- assign result_posts = site.posts | where: 'title',internal_link -%}
-    {%- assign result_pages = site.pages | where: 'title',internal_link -%}
+                {%- assign result_notes = site.notes | where: 'title',internal_link -%}
+                {%- assign result_posts = site.posts | where: 'title',internal_link -%}
+                {%- assign result_pages = site.pages | where: 'title',internal_link -%}
 
-    {%- assign internal_links = internal_links | append: link_joiner_delimiter | append: internal_link -%}
-    {%- assign internal_urls = internal_urls | append: link_joiner_delimiter | append: result_notes[0].url | append: result_posts[0].url | append: result_pages[0].url -%}
+                {%- assign internal_links = internal_links | append: link_joiner_delimiter | append: internal_link -%}
+                {%- assign internal_urls = internal_urls | append: link_joiner_delimiter | append: result_notes[0].url | append: result_posts[0].url | append: result_pages[0].url -%}
 
-    {%- endif -%}
+                {%- endif -%}
 
-    {%- if alt_link -%}
-    {%- assign internal_links_alt = internal_links_alt | append: link_joiner_delimiter | append: internal_link -%}
-    {%- assign internal_urls_alt = internal_urls_alt | append: link_joiner_delimiter | append: result_notes[0].url | append: result_posts[0].url | append: result_pages[0].url -%}
-    {%- assign internal_titles_alt = internal_titles_alt | append: link_joiner_delimiter | append: alt_link -%}
+                {%- if alt_link -%}
+                    {%- assign internal_links_alt = internal_links_alt | append: link_joiner_delimiter | append: internal_link -%}
+                    {%- assign internal_urls_alt = internal_urls_alt | append: link_joiner_delimiter | append: result_notes[0].url | append: result_posts[0].url | append: result_pages[0].url -%}
+                    {%- assign internal_titles_alt = internal_titles_alt | append: link_joiner_delimiter | append: alt_link -%}
 
-    {%- if header_link -%}
+                    {%- if header_link -%}
 
-    {%- assign header_links = header_links | append: link_joiner_delimiter | append: header_link -%}
+                        {%- assign header_links = header_links | append: link_joiner_delimiter | append: header_link -%}
 
-    {%- else -%}
+                    {%- else -%}
 
-    {%- assign header_links = header_links | append: link_joiner_delimiter | append: "noheader" -%}
+                        {%- assign header_links = header_links | append: link_joiner_delimiter | append: "noheader" -%}
 
-    {%- endif -%}
+                    {%- endif -%}
 
-    {%- endif -%}
+                {%- endif -%}
 
-    {%- else -%}
+        {%- else -%}
 
-    {%- assign external_links = external_links | append: link_joiner_delimiter | append: external_link[0] -%}
-    {%- assign external_urls = external_urls | append: link_joiner_delimiter | append: external_link[1] -%}
+            {%- assign external_links = external_links | append: link_joiner_delimiter | append: external_link[0] -%}
+            {%- assign external_urls = external_urls | append: link_joiner_delimiter | append: external_link[1] -%}
 
-    {%- endif -%}
-    {%- endif -%}
+            {%- endif -%}
+        {%- endif -%}
     {%- endfor -%}
 
 
@@ -96,32 +96,32 @@
 
     {%- for title in internal_link_array -%}
 
-    {%- assign url = internal_url_array[forloop.index0] -%}
+        {%- assign url = internal_url_array[forloop.index0] -%}
 
-    {%- if url == nil -%}
+        {%- if url == nil -%}
 
-    {%- assign link_text = '<a style="background-color:#ffffc4;" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
-    {%- elsif url == empty -%}
+            {%- assign link_text = '<a style="background-color:#f2f2f2; color: #acacac; border-radius: 5px" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
+        {%- elsif url == empty -%}
 
-    {%- assign link_text = '<a style="background-color:#ffffc4;" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
+            {%- assign link_text = '<a style="background-color:#f2f2f2; color: #acacac; border-radius: 5px" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a>' -%}
 
-    {%- else -%}
+        {%- else -%}
 
-    {%- assign post = site.notes | where: 'title',title -%}
+            {%- assign post = site.notes | where: 'title',title -%}
 
-    {%- if post[0].title == nil -%}
+            {%- if post[0].title == nil -%}
 
-    {%- assign post = site.posts | where: 'title',title -%}
+                {%- assign post = site.posts | where: 'title',title -%}
 
-    {%- endif -%}
+            {%- endif -%}
 
-    {%- assign excerpt = post[0].content | markdownify | strip_html | truncate: 500 | newline_to_br -%}
+            {%- assign excerpt = post[0].content | markdownify | strip_html | truncate: 500 | newline_to_br -%}
 
-    {%- assign link_text = '<span class="tooltip"><a href="' | append: url | append: '">' | append: title | append: '</a><span class="right bottom"><span class="tooltip-title">' | append: title | append: '</span><br/><span class="tooltip-excerpt">' | append: excerpt | append: '</span><i></i></span></span>' -%}
-    {%- endif -%}
+            {%- assign link_text = '<span class="tooltip"><a href="' | append: url | append: '">' | append: title | append: '</a><span class="right bottom"><span class="tooltip-title">' | append: title | append: '</span><br/><span class="tooltip-excerpt">' | append: excerpt | append: '</span><i></i></span></span>' -%}
+        {%- endif -%}
 
-    {%- assign bracket_link = '[[' | append: title | append: ']]' -%}
-    {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
+            {%- assign bracket_link = '[[' | append: title | append: ']]' -%}
+            {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
 
 
     {%- endfor -%}
@@ -135,55 +135,55 @@
 
     {%- for title in internal_link_alt_array -%}
 
-    {%- assign url = internal_url_alt_array[forloop.index0] -%}
-    {%- assign alt_title = internal_titles_alt_array[forloop.index0] -%}
-    {%- assign header_title = header_link_array[forloop.index0] -%}
+        {%- assign url = internal_url_alt_array[forloop.index0] -%}
+        {%- assign alt_title = internal_titles_alt_array[forloop.index0] -%}
+        {%- assign header_title = header_link_array[forloop.index0] -%}
 
-    {%- if url == nil -%}
+        {%- if url == nil -%}
 
-    {%- assign link_text = '<a style="background-color:#ffffc4;" href="' | append: 'javascript:void(0)' | append: '">' | append: alt_title | append: '</a>' -%}
+            {%- assign link_text = '<a style="background-color:#f2f2f2; color: #acacac; border-radius: 5px;" href="' | append: 'javascript:void(0)' | append: '">' | append: alt_title | append: '</a>' -%}
 
-    {%- elsif url == empty -%}
+        {%- elsif url == empty -%}
 
-    {%- assign link_text = '<a style="background-color:#ffffc4;" href="' | append: 'javascript:void(0)' | append: '">' | append: alt_title | append: '</a>' -%}
+            {%- assign link_text = '<a style="background-color:#f2f2f2; color: #acacac; border-radius: 5px;" href="' | append: 'javascript:void(0)' | append: '">' | append: alt_title | append: '</a>' -%}
 
-    {%- elsif header_title == "noheader" -%}
+        {%- elsif header_title == "noheader" -%}
 
-    {%- assign post = site.notes | where: 'title',title -%}
+            {%- assign post = site.notes | where: 'title',title -%}
 
-    {%- assign excerpt = post[0].content | markdownify | strip_html | truncate: 500 | newline_to_br -%}
+            {%- assign excerpt = post[0].content | markdownify | strip_html | truncate: 500 | newline_to_br -%}
 
-    {%- assign link_text = '<span class="tooltip"><a href="' | append: url | append: '">' | append: alt_title | append: '</a><span class="right bottom"><span class="tooltip-title">' | append: post[0].title | append: '</span><br/><span class="tooltip-excerpt">' | append: excerpt | append: '</span><i></i></span></span>' -%}
+            {%- assign link_text = '<span class="tooltip"><a href="' | append: url | append: '">' | append: alt_title | append: '</a><span class="right bottom"><span class="tooltip-title">' | append: post[0].title | append: '</span><br/><span class="tooltip-excerpt">' | append: excerpt | append: '</span><i></i></span></span>' -%}
 
-    {%- assign bracket_link = '[[' | append: title |  append: '|' | append: alt_title | append: ']]' -%}
-    {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
+            {%- assign bracket_link = '[[' | append: title |  append: '|' | append: alt_title | append: ']]' -%}
+            {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
 
-    {%- else  -%}
+        {%- else  -%}
 
-    {%- assign header_correct_link = header_title | replace: " ", "-" | downcase -%}
+            {%- assign header_correct_link = header_title | replace: " ", "-" | downcase -%}
 
-    {%- assign post = site.notes | where: 'title',title -%}
+            {%- assign post = site.notes | where: 'title',title -%}
 
-    {%- assign excerpt = post[0].content | markdownify | strip_html | truncate: 500 | newline_to_br -%}
+            {%- assign excerpt = post[0].content | markdownify | strip_html | truncate: 500 | newline_to_br -%}
 
-    {%- assign link_text = '<span class="tooltip"><a href="' | append: url | append: '#' | append: header_correct_link | append: '">' | append: alt_title | append: '</a><span class="right bottom"><span class="tooltip-title">' | append: post[0].title | append: '</span><br/><span class="tooltip-excerpt">' | append: excerpt | append: '</span><i></i></span></span>' -%}
+            {%- assign link_text = '<span class="tooltip"><a href="' | append: url | append: '#' | append: header_correct_link | append: '">' | append: alt_title | append: '</a><span class="right bottom"><span class="tooltip-title">' | append: post[0].title | append: '</span><br/><span class="tooltip-excerpt">' | append: excerpt | append: '</span><i></i></span></span>' -%}
 
-    {%- assign bracket_link = '[[' | append: title | append: "#" | append: header_title |  append: '|' | append: alt_title | append: ']]' -%}
-    {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
+            {%- assign bracket_link = '[[' | append: title | append: "#" | append: header_title |  append: '|' | append: alt_title | append: ']]' -%}
+            {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
 
-    {%- endif -%}
+        {%- endif -%}
 
     {%- if header_title == "noheader" -%}
 
-    {%- assign bracket_link = '[[' | append: title |  append: '|' | append: alt_title | append: ']]' -%}
-    {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
+            {%- assign bracket_link = '[[' | append: title |  append: '|' | append: alt_title | append: ']]' -%}
+            {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
 
-    {%- else -%}
+        {%- else -%}
 
-    {%- assign bracket_link = '[[' | append: title | append: "#" | append: header_title |  append: '|' | append: alt_title | append: ']]' -%}
-    {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
+            {%- assign bracket_link = '[[' | append: title | append: "#" | append: header_title |  append: '|' | append: alt_title | append: ']]' -%}
+            {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
 
-    {%- endif -%}
+        {%- endif -%}
 
     {%- endfor -%}
 
@@ -207,7 +207,7 @@
     {%- elsif url contains "github.com" or url contains "github.io" -%}
     {%- assign link_text = '<a href="' | append: url | append: '">' | append: title | append: '<sup ><i class="fa fa-github"></i></sup></a>' -%}
     {%- elsif url == "highlight" -%}
-    {%- assign link_text = '<span style="background-color: #DAEDFF; color: #555;">' | append: title | append: '</span>' -%}
+    {%- assign link_text = '<span style="background-color: #FFE3AF; color: #555;">' | append: title | append: '</span>' -%}
     {%- elsif url == "wrap" -%}
     {%- assign link_text = '<div class="boxit">' | append: title | append: '</div>' -%}
     {%- elsif url == "img" -%}

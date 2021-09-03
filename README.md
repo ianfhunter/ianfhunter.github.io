@@ -1,101 +1,103 @@
-# Notenote.link
+⚠️ The script and site are not a replacement for [Obsidian Publish](https://obsidian.md/publish), which is a much more efficient way to share Obsidian files.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7b37d412-1240-44dd-8539-a7001465b57a/deploy-status)](https://app.netlify.com/sites/notenotelink/deploys)
+# Goal 
+Having files written in Markdown on Obsidian, I created a python script in order to semi-automatically share some of my files, on a static site in JEKYLL.
 
-## Update !
+The site uses [notenote.link](https://github.com/Maxence-L/notenote.link) (thanks to Maxence-L) template which is the easiest to set up with Netlify, but there's nothing stopping you to modify the css.
 
-Hi everyone ! I've been very busy lately, so I didn't check all of the issues and the PR, but as I have more free time now I'll restart working on the project. Thanks for all the kind messages by the way!
+# Get Started
 
-## What is this?
+The best way is to fork the original template and delete files in `_notes` (which are the original files).
+Otherwise, just copy `sharing.py` script and use it for your own template.
 
-A digital garden using a custom version of `simply-jekyll`, optimised for integration with [Obsidian](https://obsidian.md). It is more oriented on note-taking and aims to help you build a nice knowledge base that can scale with time. 
+## Requirements
 
-**Demo is here: [notenote.link](https://notenote.link)**
+The script uses : 
+- [PyGithub](https://github.com/PyGithub/PyGithub)
+- [Python-dotenv](https://github.com/theskumar/python-dotenv)
+- [python-frontmatter](https://github.com/eyeseast/python-frontmatter)
 
-If you want to see a more refined example, you can check my notes (in french) at [arboretum.link](https://www.arboretum.link/). Build time is approx. 15 seconds, FYI.
+You can install all with `pip install -r requirements.txt`
 
-Issues are welcome, including feedback ! Don't hesitate to ask if you can't find a solution. 💫
+## Environment
+You need a `.env` file in root containing the path to your obsidian vault. The file looks like this :
+```
+vault="G:\path\vault\"
+```
 
-![screenshot](/assets/img/screenshot.png)
+# Script
+There are several way to use the script :
+- `python3 sharing.py` directly to convert, commit and push all file containing `share: true` in the frontmatter
+- `python3 sharing.py <file>` to convert specific file (without using the frontmatter)
 
-## What is different?
+You can use some option :
+- `--F` : Don't delete file if already exist.
+- `--G` : Prevent git to commit and push
+- `--f` : Force the update of file (aka delete file)
 
-- Markdown is fully-compatible with Obsidian (including Latex delimiters!)
-- There are now only notes (no blog posts).
-- There are cosmetic changes (ADHD-friendly code highlighting, larger font, larger page)
-- Code is now correctly indented
-- Wikilinks, but also alt-text wikilinks (with transclusion!) are usable.
+## Checking differences 
 
-## How do I use this?
+⚠️ By default, the script will check if the file was edited by **checking the number of line**. If the line is exactly the same, the file will be not converted. New line, blank line and comment **are removed** in this checking. 
 
-You can click on this link and let the deploy-to-netlify-for-free-script do the rest !
+So, to force update to a single file you can :
+- Use `share <filepath>` directly
+- Use `--f` to force update all file 
+- Continue to work on the file before pushing it.
+- Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Maxence-L/notenote.link)
+## Options
+### Share all
+By adding, in the yaml of your file, the key `share: true`, you allow the script to publish the file. In fact, the script will read all the files in your vault before selecting the ones meeting the condition.
 
-Follow the [How to setup this site](https://notenote.link/notes/how-to-setup-this-site) guide, written by [raghuveerdotnet](https://github.com/raghuveerdotnet) and then adapted for this fork.
+By default, the script will check the difference between line [(*cf checking difference*)](https://github.com/Mara-Li/owlly-house#checking-differences), and convert only the file with difference. You can use `--f` to force update. 
 
-If you want to use it with Github Pages, it is possible, [please read this](https://github.com/Maxence-L/notenote.link/issues/5#issuecomment-762508069).
+### Share only a file
 
-## How can I participate?
+The file to be shared does not need to contain `share: true` in its YAML. 
 
-Open an issue to share feedback or propose features. Star the repo if you like it! 🌟
+## How it works
 
-## How do I customize this for my needs?
+The script : 
+- Moves file (with `share: true` frontmatter or specific file) in the `_notes` folder
+- Moves image in `assets/img` and convert (with alt support)
+- Converts highlight (`==mark==` to `[[mark::highlight]]`)
+- Converts "normal" writing to GFM markdown (adding `  \n` each `\n`)
+- Supports non existant file (adding a css for that 😉)
+- Supports image flags css (Lithou snippet 🙏)
+- Support normal and external files
+- Frontmatter : In absence of date, add the day's date.
+- Frontmatter : In absence of title, add the file's title.
 
-Things to modify to make it yours:
+Finally, the plugin will add, commit and push if supported.
 
-- Meta content in [\_layouts/post.html](_layouts/post.html):
-    ```html
-    <meta content="My linked notebook" property="og:site_name"/>
-    ```
-- The favicon and profile are here: [assets/img/](assets/img/)
-- The main stuff is in [\_config.yml](_config.yml):
-    ```yaml
-    title: notenotelink.netlify.com
-    name: notenote.link
-    user_description: My linked notebook
+### IOS Shortcuts
 
-    notes_url: "https://notenotelink.netlify.com/"
-    profile_pic: /assets/img/profile.png
-    favicon: /assets/img/favicon.png
-    copyright_name: MIT
+### IOS
+To use the shortcuts, you need : 
+- [Pyto](https://apps.apple.com/fr/app/pyto-python-3/id1436650069)
+- [Toolbox Pro](https://apps.apple.com/fr/app/toolbox-pro-for-shortcuts/id1476205977)
+- [Working Copy](https://workingcopyapp.com/)
 
-    baseurl: "/" # the subpath of your site, e.g. /blog
-    url: "https://notenotelink.netlify.com/" # the base hostname & protocol for your site, e.g. http://example.com
-    encoding: utf-8
-    ```
-- You may want to change the copyright in [\_includes/footer.html](_includes/footer.html):
-   ```html
-   <p id="copyright-notice">Licence MIT</p>
-   ```
+The main shortcut is on RoutineHub (more pratical for version update) : [share one file](https://routinehub.co/shortcut/10044/)
+(it's equivalent to `share <filepath>`)
 
-## How do I remove the "seasons" feature for the notes?
+There is another shortcuts to "share all" files : [Share true file in vault](https://routinehub.co/shortcut/10045/)
+(it's equivalent to `share` without arguments)
 
-Delete what's inside [\_includes/feed.html](_includes/feed.html) and replace it with:
+Note : You first need to clone the repo with Working Copy
 
-```liquid
-{%- if page.permalink == "/" -%}
-    {%- for item in site.notes -%}
-        <div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
-            <a href="{{ item.url }}" style="text-decoration: none; color: #555555;">
-            {%- if item.status == "Ongoing" or item.status == "ongoing" -%}
-                <ul style="padding-left: 20px; margin-top: 20px;" class="tags">
-                    <li style="padding: 0 5px; border-radius: 10px;" class="tag"><b>Status: </b>{{item.status | capitalize }}</li>
-                </ul>
-                <p style="margin-top: 0px;" class="feed-title">{{ item.title }}</p>
-            {%- else -%}
-                <p class="feed-title">{{ item.title }}</p>
-            {%- endif -%}
-                <p class="feed-excerpt">{{ item.content | strip_html | strip | escape | truncate: 200}}</p>
-            </a>
-        </div>
-    {%- endfor -%}
-{%- endif -%}
-````
 
-On command-line, you can run `bundle exec jekyll serve` then go to `localhost:4000` to check the result.
+### Obsidian 
+→ Please use Wikilinks with "short links" (I BEG YOU)
 
-## What's coming?
+## Windows bonus
 
-- [Open-transclude](https://subpixel.space/entries/open-transclude/) integration in the template, if possible.
-- Different themes! - Please tell me which you'd like to have!
+You can add the script as an alias in Powershell via :
+`notepad $PROFILE`
+Then, by adding at the end of the file :
+```sh
+function sharepython ([string]$file) { python3 "path\to\site\folder\sharing.py "$file""}
+New-Alias share sharepython
+```
+So, finally you can just use `share` in powershall to convert, push, commit, your file.
+Also, options are supported with that.
