@@ -55,7 +55,7 @@ By default, the script will check the difference between line [(*cf checking dif
 
 The file to be shared does not need to contain `share: true` in its YAML. 
 
-## Functionnement
+## How it works
 
 The script : 
 - Moves file (with `share: true` frontmatter or specific file) in the `_notes` folder
@@ -69,7 +69,23 @@ The script :
 - Frontmatter : In absence of title, add the file's title.
 
 Finally, the plugin will add, commit and push if supported.
-For mobile, I work on ios on some shortcuts.
+
+### IOS Shortcuts
+
+### IOS
+To use the shortcuts, you need : 
+- [Pyto](https://apps.apple.com/fr/app/pyto-python-3/id1436650069)
+- [Toolbox Pro](https://apps.apple.com/fr/app/toolbox-pro-for-shortcuts/id1476205977)
+- [Working Copy](https://workingcopyapp.com/)
+
+The main shortcut is on RoutineHub (more pratical for version update) : [share one file](https://routinehub.co/shortcut/10044/)
+(it's equivalent to `share <filepath>`)
+
+There is another shortcuts to "share all" files : [Share true file in vault](https://routinehub.co/shortcut/10045/)
+(it's equivalent to `share` without arguments)
+
+Note : You first need to clone the repo with Working Copy
+
 
 ### Obsidian 
 → Please use Wikilinks with "short links" (I BEG YOU)
