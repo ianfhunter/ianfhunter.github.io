@@ -125,6 +125,8 @@ Une montre connectée à sa peau qui analyse en permanence ses calories. Elle lu
   
 ## Goûts  
 $$~$$  
+$$~$$  
+  
 | Aime                | N'aime pas       |  
 | ------------------- | ---------------- |  
 | Rock                | La chair humaine |  

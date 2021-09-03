@@ -106,6 +106,7 @@ def delete_file(filepath):
 
 
 def get_image(image):
+    print(image)
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
