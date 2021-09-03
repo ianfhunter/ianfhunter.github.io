@@ -15,6 +15,9 @@ Otherwise, just copy `sharing.py` script and use it for your own template.
 The script uses : 
 - [PyGithub](https://github.com/PyGithub/PyGithub)
 - [Python-dotenv](https://github.com/theskumar/python-dotenv)
+- [python-frontmatter](https://github.com/eyeseast/python-frontmatter)
+
+You can install all with `pip install -r requirements.txt`
 
 ## Environment
 You need a `.env` file in root containing the path to your obsidian vault. The file looks like this :
@@ -62,7 +65,8 @@ The script :
 - Supports non existant file (adding a css for that 😉)
 - Supports image flags css (Lithou snippet 🙏)
 - Support normal and external files
-- In case you forgot to add the date, it will put the date of the push (in the frontmatter)
+- Frontmatter : In absence of date, add the day's date.
+- Frontmatter : In absence of title, add the file's title.
 
 Finally, the plugin will add, commit and push if supported.
 For mobile, I work on ios on some shortcuts.
