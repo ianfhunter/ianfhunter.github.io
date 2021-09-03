@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import re
 import sys
 import os
@@ -13,6 +15,8 @@ BASEDIR = os.path.abspath(os.path.dirname(__file__))
 env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
 vault = Path(env["vault"])
+print(vault)
+site = env["site"]
 post = Path(f"{BASEDIR}/_notes")
 img = Path(f"{BASEDIR}/assets/img/")
 
@@ -99,16 +103,16 @@ def diff_file(file):
 
 def delete_file(filepath):
     for file in os.listdir(post):
+        print(file)
         filepath = os.path.basename(filepath)
         filecheck = os.path.basename(file)
         if filecheck == filepath:
-            os.remove(Path(f"{BASEDIR}/_notes/{file}"))
+            os.remove(Path(f"{BASEDIR}\_notes\{file}"))
             return True
     return False
 
 
 def get_image(image):
-    image = os.path.basename(image)
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
@@ -118,13 +122,12 @@ def get_image(image):
 
 def move_img(line):
     token, table, table_start, token_start = get_tab_token(line)
-    img_flags = re.search("(\||\+|\-)(.*)(]{1,2}|\))", line)
+    img_flags = re.search("\|(.*)(]{2}|\))", line)
     if img_flags:
         img_flags = img_flags.group(0)
         img_flags = img_flags.replace("|", "")
         img_flags = img_flags.replace("]", "")
         img_flags = img_flags.replace(")", "")
-        img_flags.replace("(", "")
     else:
         img_flags = ""
     final_text = re.search("(\[{2}|\().*\.(png|jpg|jpeg|gif)", line)
@@ -133,11 +136,8 @@ def move_img(line):
     final_text = final_text.replace("%20", " ")
     final_text = final_text.replace("[", "")
     final_text = final_text.replace("]", "")
-    final_text=final_text.replace(')', '')
     image_path = get_image(final_text)
     final_text = os.path.basename(final_text)
-    img_flags = img_flags.replace(final_text, "")
-    img_flags=img_flags.replace('(','')
     if image_path:
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
@@ -182,10 +182,13 @@ def convert_internal(line):
     line_final = ""
     if file:
         if file.endswith(f"{ft}.md"):
+            file = os.path.basename(file)
             check = check_file(file)
-            if check != "EXIST":
-                file_convert(file)
-        line_final = f"[[{destination}\|{ft}]]"
+            share = check_share(file)
+            if share:
+                if check != "EXIST":
+                    file_convert(file)
+            line_final = f"[[{destination}\|{ft}]]"
     return line_final
 
 
@@ -224,6 +227,7 @@ def frontmatter_check(filename):
 
 def file_convert(file):
     file_name = os.path.basename(file)
+    print(file)
     if not "_notes" in file:
         if not os.path.exists(Path(f"{BASEDIR}/_notes/{file_name}")):
             data = open(file, "r", encoding="utf-8")
@@ -250,7 +254,7 @@ def file_convert(file):
                 elif (
                     "\\" in final_text.strip()
                 ):  # New line when using "\n" in obsidian file
-                    final_text = "  \n"
+                    final_text = "  "
                 elif re.search("(\[{2}|\[).*", final_text):
                     # Escape pipe for link name
                     final_text = final_text.replace("|", "\|") + "  \n"
@@ -265,8 +269,7 @@ def file_convert(file):
 
 
 def search_share(option=0):
-    filespush = []
-    check = False
+    index = []
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
@@ -297,13 +300,13 @@ def convert_to_github():
             - --f : Force update (delete all file and reform)
             - help : print help message
             - filepath: convert just one file
-            - --G : no commit and no push to github.
+            - --ng : no commit and no push to github.
     """
     if len(sys.argv) >= 2:
         if sys.argv[1] == "help":
             print(help(convert_to_github))
         else:
-            print(f"[{datetime.now().strftime('%H:%M:%S')}] Starting convert")
+            print("Starting convert")
             ori = sys.argv[1]
             delopt = ""
             ng = ""
@@ -354,6 +357,7 @@ def convert_to_github():
                     )
 
             else:
+
                 if delopt == "--F":
                     print(
                         f"[{datetime.now().strftime('%H:%M:%S')}] Convert without update"
@@ -371,13 +375,13 @@ def convert_to_github():
                     new_files = search_share(1)
                 commit = "Add to blog:\n"
                 if len(new_files) > 0:
-                    for md in new_files:
-                        commit = commit + "\n — " + md
                     if ng != "--G":
                         try:
                             import git
 
                             repo = git.Repo(Path(f"{BASEDIR}/.git"))
+                            for md in new_files:
+                                commit = commit + "\n — " + md
                             repo.git.add(".")
                             repo.git.commit("-m", f"git commit {commit}")
                             origin = repo.remote(name="origin")
