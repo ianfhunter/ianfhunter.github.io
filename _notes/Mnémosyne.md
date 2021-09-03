@@ -1,6 +1,7 @@
 ---  
-date: 03-09-2021
+date: 03-09-2021  
 univers: Azelyss  
+resume: Fiche de Mnémosyne, Surveillante, pour le RP Azelyss.  
 original: /  
 share: true  
 type: OC, Fiche  
@@ -16,8 +17,10 @@ tag:
   - Draft  
   - Histoire  
 ---  
-
-
+  
+  
+  
+  
 ![+side::rmn-transclude](../assets/img/nemo.png)  
   
   
@@ -94,7 +97,7 @@ En dehors de ses capacités, Némo possède les avantages suivants :
   
 $$~$$ Dans sa jeunesse, Mnémosyne était plus chaotique que maintenant. Détestant l'ordre et adorant le chaos, elle n'hésita pas à trahir son camp par simple amusement. Car l'ordre des choses l'ennuie.  
   
-$$~$$ Aujourd'hui, Mnémosyne est plus calme, mais elle n'aime pas suivre les gens et ordre aveuglément, ce qui font qu'elle est très difficile à contrôler pour l'[[Echo]], qui la garde sous surveillance tout en lui laissant bien plus de liberté que la plupart des membres ayant un grade similaire.   
+$$~$$ Aujourd'hui, Mnémosyne est plus calme, mais elle n'aime pas suivre les gens et ordre aveuglément, ce qui font qu'elle est très difficile à contrôler pour l'[[Echo]], qui la garde sous surveillance tout en lui laissant bien plus de liberté que la plupart des membres ayant un grade similaire.  
   
   
 $$~$$ Sa condition d'aveugle ne la dérange en rien, et elle aime s'en amuser, n'hésitant pas à en rire. Son amnésie, par contre, bien qu'elle n'aime pas le montrer, lui pose problème. La recherche de sa mémoire est actuellement sa quête principale, et elle a l'impression qu'aider l'Écho l'aidera dans cette tâche. Sinon, étant donné son caractère désinvolte et versatile, elle ne ferait pas partie d'une organisation aussi hiérarchisée avec une mission qu'elle considère comme un poil utopique.  
@@ -107,7 +110,7 @@ Durant la guerre, par contre, c'était autre chose, car elle avait un tempérame
   
 Avec l'amnésie, Mnémosyne s'est… Quelque peu assagit, on va dire.  
   
-*Note : Si votre personnage était déjà là durant la Grande Guerre des Anges, il est possible de connaître la véritable identité de Mnémosyne, mais le lien entre les deux personnes est difficile, car elle n'a pas la même apparence et caractère.*  
+_Note : Si votre personnage était déjà là durant la Grande Guerre des Anges, il est possible de connaître la véritable identité de Mnémosyne, mais le lien entre les deux personnes est difficile, car elle n'a pas la même apparence et caractère._  
   
 | Aime                               | Déteste      |  
 | ---------------------------------- | ------------ |  
@@ -236,4 +239,4 @@ Ironiquement, Salem était borgne. Avec Némo, il faisait la paire.
   
 - Sa canne, ca compte ?  
   
-$$~$$
+$$~$$  
