@@ -116,7 +116,7 @@ def get_image(image):
 
 def move_img(line):
     token, table, table_start, token_start = get_tab_token(line)
-    img_flags = re.search("\|(.*)(]{2}|\))", line)
+    img_flags = re.search("(\||\+|\-)(.*)(]{1,2}|\))", line)
     if img_flags:
         img_flags = img_flags.group(0)
         img_flags = img_flags.replace("|", "")
