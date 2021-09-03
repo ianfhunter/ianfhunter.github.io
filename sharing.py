@@ -6,6 +6,9 @@ import os
 from dotenv import dotenv_values
 from pathlib import Path
 import shutil
+from datetime import datetime
+import frontmatter
+from io import BytesIO
 
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
@@ -206,6 +209,21 @@ def math_replace(line):
         line = line.replace("$", "$$")
     return line
 
+def frontmatter_check(filename):
+    metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
+    meta = frontmatter.load(metadata)
+    metadata.close()
+    final= open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
+    if not 'date' in meta:
+        now=datetime.now().strftime('%d-%m-%Y')
+        metadata=frontmatter.Post(meta.content, frontmatter.dumps(meta), date=now)
+        update=frontmatter.dumps(metadata)
+        meta=frontmatter.loads(update)
+    if not 'title' in meta:
+        metadata=frontmatter.Post(meta.content, frontmatter.dumps(meta), title=filename)
+        update=frontmatter.dumps(metadata)
+    final.write(frontmatter.dumps(update))
+    return
 
 def file_convert(file):
     file_name = os.path.basename(file)
@@ -213,14 +231,12 @@ def file_convert(file):
     if not "_notes" in file:
         if not os.path.exists(Path(f"{BASEDIR}/_notes/{file_name}")):
             data = open(file, "r", encoding="utf-8")
+            meta=frontmatter.load(data)
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
+            if meta['share'] is False:
+                return
             data.close()
-            date = re.compile("date:(.*)")
-            date_check = list(filter(date.match, lines))
-            if len(date_check) == 0:  # Prevent to multi add date
-                # Add date to frontmatter
-                lines.insert(2, f"date: {datetime.now().strftime('%d-%m-%Y')}\n")
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
                 final_text = transluction_note(final_text)
@@ -244,6 +260,7 @@ def file_convert(file):
                     final_text = final_text.replace("|", "\|") + "  \n"
                 final.write(final_text)
             final.close()
+            frontmatter_check(file_name)
             return True
         else:
             return False
@@ -257,21 +274,18 @@ def search_share(option=0):
         for file in files:
             filepath = sub + os.sep + file
             if filepath.endswith(".md"):
-                data = open(filepath, "r", encoding="utf-8")
-                yaml = data.readlines()
-                data.close()
-                for ln in yaml:
-                    if "share: true" in ln:
-                        if option == 1:
-                            if diff_file(filepath):
-                                delete_file(filepath)
-                        if option == 2:
+                yaml = frontmatter.load(filepath)
+                if yaml['share'] is True:
+                    if option == 1:
+                        if diff_file(filepath):
                             delete_file(filepath)
-                        check = file_convert(filepath)
-                        destination = dest(filepath)
-                        if check:
-                            index.append(destination)
-            return index
+                    if option == 2:
+                        delete_file(filepath)
+                    check = file_convert(filepath)
+                    destination = dest(filepath)
+                    if check:
+                        filespush.append(destination)
+    return filespush
 
 
 def convert_to_github():
