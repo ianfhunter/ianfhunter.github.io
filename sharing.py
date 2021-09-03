@@ -77,6 +77,7 @@ def retro(file):
             notes.append(n)
     notes = [i for i in notes if i != ""]
     notes = [i for i in notes if not "%%" in i]
+    notes = [i for i in notes if not "date:" in i]
     return notes
 
 
@@ -133,6 +134,7 @@ def move_img(line):
     final_text = final_text.replace("[", "")
     final_text = final_text.replace("]", "")
     image_path = get_image(final_text)
+    final_text = os.path.basename(final_text)
     if image_path:
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
@@ -144,6 +146,7 @@ def move_img(line):
 
 def relative_path(data):
     data = data.rstrip() + ".md"
+    data = os.path.basename(data)
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
@@ -213,11 +216,11 @@ def file_convert(file):
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
             data.close()
-            date= re.compile('date:(.*)')
-            date_check=list(filter(date.match, lines))
-            if len(date_check) == 0: #Prevent to multi add date
-                #Add date to frontmatter
-                lines.insert(2, f"date: {datetime.now().strftime('%d-%m-%y')}\n")
+            date = re.compile("date:(.*)")
+            date_check = list(filter(date.match, lines))
+            if len(date_check) == 0:  # Prevent to multi add date
+                # Add date to frontmatter
+                lines.insert(2, f"date: {datetime.now().strftime('%d-%m-%Y')}\n")
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
                 final_text = transluction_note(final_text)
