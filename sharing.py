@@ -131,9 +131,9 @@ def move_img(line):
     final_text = final_text.replace("[", "")
     final_text = final_text.replace("]", "")
     image_path = get_image(final_text)
-    image_name=os.path.basename(image_path)
+    final_text=os.path.basename(final_text)
     if image_path:
-        shutil.copyfile(image_path, f"{img}/{image_name}")
+        shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
         final_text = f"{table_start}{token_start}![{img_flags}]({final_text}){token}{table}  \n  \n"
     else:
