@@ -106,7 +106,7 @@ def delete_file(filepath):
 
 
 def get_image(image):
-    print(os.path.basename(image))
+    image = os.path.basename(image)
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
@@ -131,9 +131,9 @@ def move_img(line):
     final_text = final_text.replace("[", "")
     final_text = final_text.replace("]", "")
     image_path = get_image(final_text)
-    print(image_path)
+    image_name=os.path.basename(image_path)
     if image_path:
-        shutil.copyfile(image_path, f"{img}/{final_text}")
+        shutil.copyfile(image_path, f"{img}/{image_name}")
         final_text = f"../assets/img/{final_text}"
         final_text = f"{table_start}{token_start}![{img_flags}]({final_text}){token}{table}  \n  \n"
     else:
@@ -143,6 +143,7 @@ def move_img(line):
 
 def relative_path(data):
     data = data.rstrip() + ".md"
+    data=os.path.basename(data)
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file

@@ -102,7 +102,8 @@ Une montre connectée à sa peau qui analyse en permanence ses calories. Elle lu
 → Elle joue dans une série d’invasion zombie, elle sert en outre de consultante à la série.  
 → Son plat de base est les pâtes bolognaises. Elle est devenue très imaginative pour se faire des plats avec juste de la viande crue et des féculents.  
 → Elle a un tatouage sur l’épaule, en forme de double hélice de l’ADN. Elle a aussi un pentacle sur l’omoplate.  
-![+pins|018a0f8d69380a0a45810392e008187f](img/018a0f8d69380a0a45810392e008187f.png)  
+![018a0f8d69380a0a45810392e008187f(img/018a0f8d69380a0a45810392e008187f.png](../assets/img/img/018a0f8d69380a0a45810392e008187f.png)  
+  
   
   
   
@@ -124,8 +125,6 @@ Une montre connectée à sa peau qui analyse en permanence ses calories. Elle lu
   
   
 ## Goûts  
-$$~$$  
-  
 | Aime                | N'aime pas       |  
 | ------------------- | ---------------- |  
 | Rock                | La chair humaine |  
