@@ -46,7 +46,7 @@ So, to force update to a single file you can :
 ### Share all
 By adding, in the yaml of your file, the key `share: true`, you allow the script to publish the file. In fact, the script will read all the files in your vault before selecting the ones meeting the condition.
 
-By default, the script will check the difference between line [cf checking difference](https://github.com/Mara-Li/owlly-house#checking-differences), and convert only the file with difference. You can use `--f` to force update. 
+By default, the script will check the difference between line [(*cf checking difference*)](https://github.com/Mara-Li/owlly-house#checking-differences), and convert only the file with difference. You can use `--f` to force update. 
 
 ### Share only a file
 
