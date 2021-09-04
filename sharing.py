@@ -6,7 +6,7 @@ from pathlib import Path
 import shutil
 from datetime import datetime
 import frontmatter
-
+import yaml
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 env = dotenv_values(Path(f"{BASEDIR}/.env"))
@@ -222,7 +222,7 @@ def frontmatter_check(filename):
             meta.content, frontmatter.dumps(meta), title=filename
         )
         update = frontmatter.dumps(metadata)
-    final.write(frontmatter.dumps(update))
+    final.write(update)
     return
 
 
@@ -230,6 +230,7 @@ def file_convert(file):
     file_name = os.path.basename(file)
     if not "_notes" in file:
         if not os.path.exists(Path(f"{BASEDIR}/_notes/{file_name}")):
+            print(file_name)
             data = open(file, "r", encoding="utf-8")
             meta = frontmatter.load(data)
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
@@ -273,18 +274,23 @@ def search_share(option=0):
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
-            if filepath.endswith(".md"):
-                yaml = frontmatter.load(filepath)
-                if yaml["share"] is True:
-                    if option == 1:
-                        if diff_file(filepath):
+            if filepath.endswith(".md") and 'excalidraw' not in filepath:
+                try:
+                    yaml_front = frontmatter.load(filepath)
+                    if "share" in yaml_front and yaml_front["share"] is True:
+                        if option == 1:
+                            if diff_file(filepath):
+                                delete_file(filepath)
+                        if option == 2:
                             delete_file(filepath)
-                    if option == 2:
-                        delete_file(filepath)
-                    check = file_convert(filepath)
-                    destination = dest(filepath)
-                    if check:
-                        filespush.append(destination)
+                        check = file_convert(filepath)
+                        destination = dest(filepath)
+                        if check:
+                            filespush.append(destination)
+                except yaml.scanner.ScannerError:
+                    pass
+
+
     return filespush
 
 
