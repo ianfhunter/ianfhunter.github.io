@@ -6,7 +6,6 @@ from pathlib import Path
 import shutil
 from datetime import datetime
 import frontmatter
-from io import BytesIO
 
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
@@ -75,8 +74,8 @@ def retro(file):
             n = n.replace("\n", "")
             notes.append(n)
     notes = [i for i in notes if i != ""]
-    notes = [i for i in notes if not "%%" in i]
-    notes = [i for i in notes if not "date:" in i]
+    notes = [i for i in notes if "%%" not in i]
+    notes = [i for i in notes if "date:" not in i]
     return notes
 
 
@@ -118,7 +117,7 @@ def get_image(image):
 
 def move_img(line):
     token, table, table_start, token_start = get_tab_token(line)
-    img_flags = re.search("(\||\+|\-)(.*)(]{1,2}|\))", line)
+    img_flags = re.search("[\|\+\-](.*)[]{1,2})]", line)
     if img_flags:
         img_flags = img_flags.group(0)
         img_flags = img_flags.replace("|", "")
@@ -133,11 +132,11 @@ def move_img(line):
     final_text = final_text.replace("%20", " ")
     final_text = final_text.replace("[", "")
     final_text = final_text.replace("]", "")
-    final_text=final_text.replace(')', '')
+    final_text = final_text.replace(")", "")
     image_path = get_image(final_text)
     final_text = os.path.basename(final_text)
     img_flags = img_flags.replace(final_text, "")
-    img_flags=img_flags.replace('(','')
+    img_flags = img_flags.replace("(", "")
     if image_path:
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
@@ -202,35 +201,40 @@ def transluction_note(line):
 
 
 def math_replace(line):
-    if re.match("\$(?!\$)(.*)\$", line) and not re.match("$$(.*)$$", line):
+    if re.match("\$(?!\$)(.*)\$", line) and not re.match("\$\$(.*)\$\$", line):
         line = line.replace("$", "$$")
     return line
+
 
 def frontmatter_check(filename):
     metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
     meta = frontmatter.load(metadata)
+    update = frontmatter.dumps(meta)
     metadata.close()
-    final= open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
-    if not 'date' in meta:
-        now=datetime.now().strftime('%d-%m-%Y')
-        metadata=frontmatter.Post(meta.content, frontmatter.dumps(meta), date=now)
-        update=frontmatter.dumps(metadata)
-        meta=frontmatter.loads(update)
-    if not 'title' in meta:
-        metadata=frontmatter.Post(meta.content, frontmatter.dumps(meta), title=filename)
-        update=frontmatter.dumps(metadata)
+    final = open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
+    if not "date" in meta:
+        now = datetime.now().strftime("%d-%m-%Y")
+        metadata = frontmatter.Post(meta.content, update, date=now)
+        update = frontmatter.dumps(metadata)
+        meta = frontmatter.loads(update)
+    if not "title" in meta:
+        metadata = frontmatter.Post(
+            meta.content, frontmatter.dumps(meta), title=filename
+        )
+        update = frontmatter.dumps(metadata)
     final.write(frontmatter.dumps(update))
     return
+
 
 def file_convert(file):
     file_name = os.path.basename(file)
     if not "_notes" in file:
         if not os.path.exists(Path(f"{BASEDIR}/_notes/{file_name}")):
             data = open(file, "r", encoding="utf-8")
-            meta=frontmatter.load(data)
+            meta = frontmatter.load(data)
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
-            if meta['share'] is False:
+            if meta["share"] is False:
                 return
             data.close()
             for ln in lines:
@@ -266,13 +270,12 @@ def file_convert(file):
 
 def search_share(option=0):
     filespush = []
-    check = False
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
             if filepath.endswith(".md"):
                 yaml = frontmatter.load(filepath)
-                if yaml['share'] is True:
+                if yaml["share"] is True:
                     if option == 1:
                         if diff_file(filepath):
                             delete_file(filepath)
@@ -333,7 +336,6 @@ def convert_to_github():
                         import git
 
                         repo = git.Repo(Path(f"{BASEDIR}/.git"))
-                        destination = dest(ori)
                         repo.git.add(".")
                         repo.git.commit("-m", f"{COMMIT}")
                         repo.git.push("origin", "HEAD:refs/for/master")
