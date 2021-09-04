@@ -37,7 +37,7 @@ You can use some option :
 
 ## Checking differences 
 
-⚠️ By default, the script will check if the file was edited by **checking the number of line**. If the line is exactly the same, the file will be not converted. New line, blank line and comment **are removed** in this checking. 
+⚠️ By default, the script will check if the file was edited by **checking the number of line**. If the line is exactly the same, the file will be not converted. New line, blank line, line escape (`\`) and comment **are removed** in this checking. 
 
 So, to force update to a single file you can :
 - Use `share <filepath>` directly
