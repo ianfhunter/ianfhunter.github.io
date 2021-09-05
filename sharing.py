@@ -63,16 +63,15 @@ def get_tab_token(final_text):
 
 
 def retro(filepath):
-    # Yes, It's stupid, but it's work.
+    # Yes, It's stupid, but it works.
     # It permit to compare the file in file diff with len(file)
     # Remove newline, comment and frontmatter
     notes = []
     metadata=frontmatter.load(filepath)
     file=metadata.content.split('\n')
     for n in file:
-        if n != "  \n" or n != "  " or n != "\n":
-            n = n.replace("  \n", "")
-            n = n.replace("\n", "")
+        if n != '\\':
+            n=n.strip()
             notes.append(n)
     notes = [i for i in notes if i != ""]
     notes = [i for i in notes if "%%" not in i]
@@ -217,6 +216,30 @@ def frontmatter_check(filename):
     final.write(update)
     return
 
+def clipboard(filepath):
+    filename=os.path.basename(filepath)
+    filename=filename.replace('md', '')
+    if sys.platform == 'ios' or sys.platform == 'darwin':
+        try:
+            import pasteboard
+            pasteboard.set_url(f'{post}/{filename}')
+        except ImportError:
+            print('Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
+    elif sys.platform == 'win32':
+        try:
+            import pyperclip
+            pyperclip.copy(f'{post}/{filename}')
+        except ImportError:
+            print(
+                'Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
+    else:
+        print(
+            'Please, report issue with your OS and configuration to check if it '
+            'possible to use another clipboard manager')
+        
+
+
+
 
 def file_convert(file):
     file_name = os.path.basename(file)
@@ -255,6 +278,9 @@ def file_convert(file):
             frontmatter_check(file_name)
             return True
         else:
+            meta = frontmatter.load(file)
+            if not meta['share'] or meta['share'] == False:
+                delete_file(file)
             return False
     else:
         return False
@@ -329,9 +355,9 @@ def convert_to_github():
                         f"[{datetime.now().strftime('%H:%M:%S')}] Add {ori} to github"
                     )
                     COMMIT = f"{ori} to blog"
+                    clipboard(ori)
                     try:
                         import git
-
                         repo = git.Repo(Path(f"{BASEDIR}/.git"))
                         repo.git.add(".")
                         repo.git.commit("-m", f"{COMMIT}")
@@ -373,9 +399,11 @@ def convert_to_github():
                     for md in new_files:
                         commit = commit + "\n — " + md
                     if ng != "--G":
+                        if len(new_files) == 1:
+                            md = ''.join(new_files)
+                            clipboard(md)
                         try:
                             import git
-
                             repo = git.Repo(Path(f"{BASEDIR}/.git"))
                             repo.git.add(".")
                             repo.git.commit("-m", f"git commit {commit}")
@@ -390,7 +418,8 @@ def convert_to_github():
                             )
                     else:
                         print(
-                            f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Converted {commit}"
+                            f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Converted "
+                            f"{commit.replace('Add to blog', '')}"
                         )
                 else:
                     print(
@@ -404,11 +433,17 @@ def convert_to_github():
         new_files = search_share(1)
         commit = "Add to blog :\n"
         if len(new_files) > 0:
+            if len(new_files) == 1:
+                md = ''.join(new_files)
+                clipboard(md)
             try:
                 import git
                 repo = git.Repo(Path(f"{BASEDIR}/.git"))
                 for md in new_files:
                     commit = commit + "\n — " + md
+                if len(new_files) == 1:
+                    md = ''.join(new_files)
+                    clipboard(md)
                 repo.git.add(A=True)
                 repo.git.commit(m=commit)
                 origin = repo.remote("origin")

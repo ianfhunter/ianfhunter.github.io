@@ -1,6 +1,9 @@
----  
-share: true  
----  
+---
+date: 05-09-2021
+share: true
+title: Markdown test
+---
+
 # A. Wysiwyg presentation  
 This is the maximum I can do with only CSS.   
 The only veritable problem is with the Active-Line : Code mirror can’t have, at the same time, active line + Selection, so it will remove it and the selection will “twinkle”.   
@@ -32,7 +35,8 @@ On mobile, the code mirror version used is **Code Mirror 6**, not **Code Mirror 
 #### B.1.1.1. This is a heading 4 #test  
 ##### B.1.1.1.1. This is a heading 5 #test   
 ###### B.1.1.1.1.1. This is a heading 6 #test  
-  *This text will be italic*  
+  
+*This text will be italic*  
 _This will also be italic_  
   
 **This text will be bold**  
@@ -103,4 +107,4 @@ for i in list:
 code is always inline and give you visibility UNLESS you use adminition plugin with option :)  
 **CODE**  
 ```  
-[[testing::rmn-transclude]]  
+[[testing::rmn-transclude]]

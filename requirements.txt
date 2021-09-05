@@ -2,3 +2,7 @@ python-dotenv
 gitpython
 python-frontmatter
 PyYAML
+pyperclip ; plateform_system == "Windows"
+pasteboard ; sys_plateform == "darwin"
+pasteboard ; sys_plateform == "ios"
+
