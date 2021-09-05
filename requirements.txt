@@ -2,7 +2,4 @@ python-dotenv
 gitpython
 python-frontmatter
 PyYAML
-pyperclip ; platform_system == "Windows"
-pasteboard ; sys_platform == "darwin"
-pasteboard ; sys_platform == "ios"
-
+pyperclip

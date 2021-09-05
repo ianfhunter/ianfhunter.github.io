@@ -222,29 +222,25 @@ def frontmatter_check(filename):
 def clipboard(filepath):
     filename=os.path.basename(filepath)
     filename=filename.replace('.md', '')
-    if sys.platform == 'ios' or sys.platform == 'darwin':
+    if sys.platform == 'ios':
         try:
-            # Trying to use pasteboard packages
-            import pasteboard
-            pasteboard.set_url(f'{blog}notes/{filename}')
+            import pasteboard #work with pyto
+            pasteboard.set_url(f'{blog}{filename}')
         except ImportError:
-            print('Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
-    elif sys.platform == 'win32':
+            try:
+                import clipboard #work with pytonista
+                clipboard.set(f'{blog}{filename}')
+            except ImportError:
+                print(
+                    'Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
+    else:
         try:
-            #trying to use Pyperclip on windows
+            #trying to use Pyperclip
             import pyperclip
-            pyperclip.copy(f'{blog}notes/{filename}')
+            pyperclip.copy(f'{blog}{filename}')
         except ImportError:
             print(
                 'Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
-    else:
-        print(
-            'Please, report issue with your OS and configuration to check if it '
-            'possible to use another clipboard manager')
-        
-
-
-
 
 def file_convert(file):
     file_name = os.path.basename(file)

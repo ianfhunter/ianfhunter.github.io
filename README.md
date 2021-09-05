@@ -16,6 +16,7 @@ The script uses :
 - [PyGithub](https://github.com/PyGithub/PyGithub)
 - [Python-dotenv](https://github.com/theskumar/python-dotenv)
 - [python-frontmatter](https://github.com/eyeseast/python-frontmatter)
+- [Pyperclip](https://github.com/asweigart/pyperclip) on Windows/MacOS/Linux | IOS : Pasteboard (Pyto) or clipboard (Pythonista)
 
 You can install all with `pip install -r requirements.txt`
 
@@ -23,7 +24,7 @@ You can install all with `pip install -r requirements.txt`
 You need a `.env` file in root containing the path to your obsidian vault and the link to your blog. The file looks like this :
 ```
 vault="G:\path\vault\"
-blog="https://your-website.netlify.app/"
+blog="https://your-website.netlify.app/notes/"
 ```
 
 # Script
