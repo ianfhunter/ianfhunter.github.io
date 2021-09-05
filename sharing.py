@@ -223,13 +223,13 @@ def clipboard(filepath):
     if sys.platform == 'ios' or sys.platform == 'darwin':
         try:
             import pasteboard
-            pasteboard.set_url(f'{blog}{filename}')
+            pasteboard.set_url(f'{blog}notes/{filename}')
         except ImportError:
             print('Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
     elif sys.platform == 'win32':
         try:
             import pyperclip
-            pyperclip.copy(f'{blog}{filename}')
+            pyperclip.copy(f'{blog}notes/{filename}')
         except ImportError:
             print(
                 'Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
