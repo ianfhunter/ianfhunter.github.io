@@ -62,12 +62,13 @@ def get_tab_token(final_text):
     return token_end, table_end, table_start, token_start
 
 
-def retro(file):
+def retro(filepath):
     # Yes, It's stupid, but it's work.
     # It permit to compare the file in file diff with len(file)
-    # Remove newline and comment
-
+    # Remove newline, comment and frontmatter
     notes = []
+    metadata=frontmatter.load(filepath)
+    file=metadata.content.split('\n')
     for n in file:
         if n != "  \n" or n != "  " or n != "\n":
             n = n.replace("  \n", "")
@@ -75,21 +76,16 @@ def retro(file):
             notes.append(n)
     notes = [i for i in notes if i != ""]
     notes = [i for i in notes if "%%" not in i]
-    notes = [i for i in notes if "date:" not in i]
     return notes
 
 
 def diff_file(file):
     file_name = os.path.basename(file)
     if check_file(file_name) == "EXIST":
-        vault = open(file, "r", encoding="utf-8")
-        notes = open(Path(f"{BASEDIR}/_notes/{file_name}"), "r", encoding="utf-8")
-        vault_data = vault.readlines()
-        notes_data = notes.readlines()
-        vault.close()
-        notes.close()
-        vault = retro(vault_data)
-        notes = retro(notes_data)
+        vault = file
+        notes = Path(f"{BASEDIR}/_notes/{file_name}")
+        vault = retro(vault)
+        notes = retro(notes)
         if len(vault) == len(notes):
             return False
         else:
@@ -216,7 +212,7 @@ def frontmatter_check(filename):
         meta['date'] = now
         meta = frontmatter.loads(frontmatter.dumps(meta))
     if not "title" in meta:
-        meta['title'] = filename.replace(".md","")
+        meta['title'] = filename.replace('.md', '')
         update = frontmatter.dumps(meta)
     final.write(update)
     return
