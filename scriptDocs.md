@@ -67,7 +67,10 @@ The script :
 - Converts "normal" writing to GFM markdown (adding `  \n` each `\n`)
 - Supports non existant file (adding a css for that 😉)
 - Supports image flags css (Lithou snippet 🙏)
-- Support normal and external files
+- Support normal and external files (convert "normal markdown link" to 
+  "wikilinks")
+- Edit link to support transluction (if not `embed: False`)
+- Remove block id (no support)
 - Frontmatter : In absence of date, add the day's date.
 - Frontmatter : In absence of title, add the file's title.
 - Copy the link to your clipboard if one file is edited.

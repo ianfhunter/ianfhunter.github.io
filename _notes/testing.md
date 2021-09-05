@@ -10,14 +10,6 @@ oh, here is [[Markdown test\|internal]]  link here !
 hey check that ! [google](https://www.google.fr) olalala !  
   
   
-# title  
+things to blockid   
   
-[[testing]]  
-  
-  
-## testing 2  
-[[testing#title\|testing]]
-
-frterzer[^1]
-
-[^1]: note
+[[testing::rmn-transclude]]

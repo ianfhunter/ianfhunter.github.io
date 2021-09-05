@@ -272,6 +272,7 @@ def file_convert(file):
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
                 final_text=convert_to_wikilink(final_text)
+                final_text = re.sub('\^\w+', '', final_text) #remove block id
                 if 'embed' in meta.keys() and meta['embed'] == False:
                     final_text = convert_internal(final_text)
                 else:
