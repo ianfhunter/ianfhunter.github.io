@@ -56,7 +56,7 @@ By default, the script will check the difference between line [(*cf checking dif
 
 ### Share only a file
 
-The file to be shared does not need to contain `share: true` in its YAML. 
+The file to be shared does not need to contain `share: true` in its YAML.
 
 ## How it works
 
@@ -76,6 +76,12 @@ Finally, the plugin will add, commit and push if supported.
 
 Note : The clipboard maybe not work in your configuration. I have (and can) only test the script on IOS and Windows, so I use `pyperclip` and `pasteboard` to do that. If you are on MacOS, Linux, Android, please, check your configuration on your python and open an issue if it doesn't work. 
 Note : I **can't** testing on these 3 OS, so I can't create a clipboard option on my own. 
+
+### Frontmatter settings
+- If not present, the plugin will add `date:(today)` and `title: (title of 
+  the document)` to the frontmatter
+- `share: true` : Share the file
+- `embed: false` : remove the transluction (convert to normal wikilinks)
 
 ### IOS Shortcuts
 

@@ -88,6 +88,20 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }  
 
+.footnotes {
+    border-top: 1px dotted lightgrey;
+}
+
+.footnote {
+    display: inline !important;
+}
+
+.footnotes > ol > li,
+.footnotes > ol > li > p {
+    font-size:12px !important;
+    margin: -10px 0 !important;
+}
+
 a, p, ul, li, ol, table, span, blockquote {
     color: #555555;
     font-family:  'IBM Plex Sans', Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;

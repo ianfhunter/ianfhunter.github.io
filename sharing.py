@@ -165,33 +165,38 @@ def dest(filepath):
     return str(dest)
 
 
-def convert_internal(line):
-    ft = line.replace("[", "")
-    ft = ft.replace("]", "")
-    ft = ft.replace("!", "")
-    ft = ft.replace("(", "")
-    ft = ft.replace(")", "")
-    ft = ft.rstrip()
-    file = relative_path(ft)
-    destination = f"{BASEDIR}/_notes/{ft}"
-    line_final = ""
-    if file:
-        if file.endswith(f"{ft}.md"):
-            check = check_file(file)
-            if check != "EXIST":
-                file_convert(file)
-        line_final = f"[[{destination}\|{ft}]]"
-    return line_final
+def convert_no_embed(line):
+    final_text = line
+    if re.match("\!\[{2}", line) and not re.match("(.*)\.(png|jpg|jpeg|gif)", line):
+        final_text = line.replace("!", "")  # remove "!"
+        final_text = re.sub('#\^(.*)', "]]", final_text) #Link to block doesn't work
+    return final_text
 
+
+
+def convert_to_wikilink(line):
+    final_text = line
+    if not re.search('\[\[', final_text) and re.search(
+            '\[(.*)]\((.*)\)', final_text
+            ) and not re.search('https', final_text):  # link : [name](file#title) (and not convert external_link)
+        title = re.search('\[(.*)]', final_text)
+        title = title.group(1)
+        link = re.search('\((.*)\)', final_text)
+        link = link.group(1)
+        link = link.replace('%20', " ")
+        wiki = f"[[{link.replace('.md', '')}|{title}]] "
+        final_text= re.sub('\[(.*)]\((.*)\)', wiki, final_text)
+
+    return final_text
 
 def transluction_note(line):
     # If file (not image) start with "![[" : transluction with rmn-transclude (exclude
     # image from that)
     # Note : Doesn't support partial transluction for the moment ; remove title
     final_text = line
-    if re.match("\!\[{2}", line) and not re.match("(.*)\.(png|jpg|jpeg|gif)", line):
+    if re.search("\!\[", line) and not re.search("(png|jpg|jpeg|gif)", line):
         final_text = line.replace("!", "")  # remove "!"
-        final_text = re.sub("#(.*)]]", "]]", final_text)
+        final_text = re.sub("#(.*)", "]]", final_text)
         final_text = re.sub("]]", "::rmn-transclude]]", final_text)
         # Add transluction_note
     return final_text
@@ -262,11 +267,15 @@ def file_convert(file):
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
             data.close()
-            if not meta["share"] or meta["share"] is False:
+            if 'share' not in meta.keys() or meta["share"] is False:
                 return
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
-                final_text = transluction_note(final_text)
+                final_text=convert_to_wikilink(final_text)
+                if 'embed' in meta.keys() and meta['embed'] == False:
+                    final_text = convert_internal(final_text)
+                else:
+                    final_text = transluction_note(final_text)
                 final_text = math_replace(final_text)
                 if re.search("\%\%(.*)\%\%", final_text):
                     # remove comments
@@ -280,11 +289,14 @@ def file_convert(file):
                     final_text = move_img(final_text)
                 elif (
                     "\\" in final_text.strip()
-                ):  # New line when using "\n" in obsidian file
+                ):  # New line when using "\" in obsidian file
                     final_text = "  \n"
                 elif re.search("(\[{2}|\[).*", final_text):
                     # Escape pipe for link name
-                    final_text = final_text.replace("|", "\|") + "  \n"
+                    final_text = final_text.replace("|", "\|")
+                    # Remove block ID (because it doesn't work)
+                    final_text = re.sub('#\^(.*)]]', "]]", final_text)
+                    final_text = final_text + "  \n"
                 final.write(final_text)
             final.close()
             frontmatter_check(file_name)
