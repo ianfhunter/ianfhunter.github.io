@@ -216,7 +216,7 @@ def frontmatter_check(filename):
         meta['date'] = now
         meta = frontmatter.loads(frontmatter.dumps(meta))
     if not "title" in meta:
-        meta['title'] = filename
+        meta['title'] = filename.replace(".md","")
         update = frontmatter.dumps(meta)
     final.write(update)
     return
