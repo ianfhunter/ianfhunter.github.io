@@ -218,22 +218,25 @@ def frontmatter_check(filename):
         meta["title"] = filename.replace(".md", "")
         update = frontmatter.dumps(meta)
     final.write(update)
+    final.close()
     return
 
 
 def clipboard(filepath):
     filename = os.path.basename(filepath)
     filename = filename.replace(".md", "")
+filename.replace(" ","-")
+clip=f"{blog}{filename}"
     if sys.platform == "ios":
         try:
             import pasteboard  # work with pyto
 
-            pasteboard.set_url(f"{blog}{filename}")
+            pasteboard.set_string(clip)
         except ImportError:
             try:
                 import clipboard  # work with pytonista
 
-                clipboard.set(f"{blog}{filename}")
+                clipboard.set(clip)
             except ImportError:
                 print(
                     "Please, report issue with your OS and configuration to check if it possible to use another clipboard manager"
@@ -243,7 +246,7 @@ def clipboard(filepath):
             # trying to use Pyperclip
             import pyperclip
 
-            pyperclip.copy(f"{blog}{filename}")
+            pyperclip.copy(clip)
         except ImportError:
             print(
                 "Please, report issue with your OS and configuration to check if it possible to use another clipboard manager"
