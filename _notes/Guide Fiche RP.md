@@ -1,4 +1,5 @@
 ---
+date: 01-01-2015
 share: true
 tags:
 - Écriture
@@ -8,6 +9,7 @@ toc: true
 type: Aide
 ---
 
+$$~$$  
 → [[Aide création perso\|Guide long pour créer et écrire un personnage]]   
   
   

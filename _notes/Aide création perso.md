@@ -1,4 +1,5 @@
 ---
+date: 01-01-2015
 share: true
 tags:
 - RP/Aide/Fiche
@@ -8,6 +9,7 @@ toc: true
 type: aide
 ---
 
+$$~$$  
 → [[Guide Fiche RP\|Guide rapide pour écrire une fiche]]  
   
   
