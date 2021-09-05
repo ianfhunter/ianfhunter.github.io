@@ -20,13 +20,14 @@ The script uses :
 You can install all with `pip install -r requirements.txt`
 
 ## Environment
-You need a `.env` file in root containing the path to your obsidian vault. The file looks like this :
+You need a `.env` file in root containing the path to your obsidian vault and the link to your blog. The file looks like this :
 ```
 vault="G:\path\vault\"
+blog="https://your-website.netlify.app/"
 ```
 
 # Script
-There are several way to use the script :
+There are several ways to use the script :
 - `python3 sharing.py` directly to convert, commit and push all file containing `share: true` in the frontmatter
 - `python3 sharing.py <file>` to convert specific file (without using the frontmatter)
 
@@ -44,6 +45,7 @@ So, to force update to a single file you can :
 - Use `--f` to force update all file 
 - Continue to work on the file before pushing it.
 - Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
+- Manually delete the file 
 
 ## Options
 ### Share all
@@ -67,8 +69,12 @@ The script :
 - Support normal and external files
 - Frontmatter : In absence of date, add the day's date.
 - Frontmatter : In absence of title, add the file's title.
+- Copy the link to your clipboard if one file is edited.
 
 Finally, the plugin will add, commit and push if supported.
+
+Note : The clipboard maybe not work in your configuration. I have (and can) only test the script on IOS and Windows, so I use `pyperclip` and `pasteboard` to do that. If you are on MacOS, Linux, Android, please, check your configuration on your python and open an issue if it doesn't work. 
+Note : I **can't** testing on these 3 OS, so I can't create a clipboard option on my own. 
 
 ### IOS Shortcuts
 
