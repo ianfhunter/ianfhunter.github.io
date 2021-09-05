@@ -187,7 +187,6 @@ def convert_internal(line):
         line_final = f"[[{destination}\|{ft}]]"
     return line_final
 
-
 def transluction_note(line):
     # If file (not image) start with "![[" : transluction with lsn-transclude (exclude image from that)
     # Note : Doesn't support partial transluction for the moment ; remove title
@@ -209,19 +208,16 @@ def math_replace(line):
 def frontmatter_check(filename):
     metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
     meta = frontmatter.load(metadata)
-    update = frontmatter.dumps(meta)
+    update=frontmatter.dumps(meta)
     metadata.close()
     final = open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
     if not "date" in meta:
         now = datetime.now().strftime("%d-%m-%Y")
-        metadata = frontmatter.Post(meta.content, update, date=now)
-        update = frontmatter.dumps(metadata)
-        meta = frontmatter.loads(update)
+        meta['date'] = now
+        meta = frontmatter.loads(frontmatter.dumps(meta))
     if not "title" in meta:
-        metadata = frontmatter.Post(
-            meta.content, frontmatter.dumps(meta), title=filename
-        )
-        update = frontmatter.dumps(metadata)
+        meta['title'] = filename
+        update = frontmatter.dumps(meta)
     final.write(update)
     return
 
@@ -230,14 +226,13 @@ def file_convert(file):
     file_name = os.path.basename(file)
     if not "_notes" in file:
         if not os.path.exists(Path(f"{BASEDIR}/_notes/{file_name}")):
-            print(file_name)
             data = open(file, "r", encoding="utf-8")
-            meta = frontmatter.load(data)
+            meta = frontmatter.load(file)
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
-            if meta["share"] is False:
-                return
             data.close()
+            if not meta['share'] or meta["share"] is False:
+                return
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
                 final_text = transluction_note(final_text)
@@ -415,7 +410,6 @@ def convert_to_github():
         if len(new_files) > 0:
             try:
                 import git
-
                 repo = git.Repo(Path(f"{BASEDIR}/.git"))
                 for md in new_files:
                     commit = commit + "\n — " + md
