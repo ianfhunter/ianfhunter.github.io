@@ -219,7 +219,7 @@ def frontmatter_check(filename):
 
 def clipboard(filepath):
     filename=os.path.basename(filepath)
-    filename=filename.replace('md', '')
+    filename=filename.replace('.md', '')
     if sys.platform == 'ios' or sys.platform == 'darwin':
         try:
             import pasteboard
