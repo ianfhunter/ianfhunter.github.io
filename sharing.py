@@ -225,8 +225,8 @@ def frontmatter_check(filename):
 def clipboard(filepath):
     filename = os.path.basename(filepath)
     filename = filename.replace(".md", "")
-filename.replace(" ","-")
-clip=f"{blog}{filename}"
+    filename=filename.replace(" ","-")
+    clip=f"{blog}{filename}"
     if sys.platform == "ios":
         try:
             import pasteboard  # work with pyto
