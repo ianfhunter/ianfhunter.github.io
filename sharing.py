@@ -13,6 +13,7 @@ env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
 vault = Path(env["vault"])
 post = Path(f"{BASEDIR}/_notes")
+blog=env['blog']
 img = Path(f"{BASEDIR}/assets/img/")
 
 
@@ -222,13 +223,13 @@ def clipboard(filepath):
     if sys.platform == 'ios' or sys.platform == 'darwin':
         try:
             import pasteboard
-            pasteboard.set_url(f'{post}/{filename}')
+            pasteboard.set_url(f'{blog}/{filename}')
         except ImportError:
             print('Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
     elif sys.platform == 'win32':
         try:
             import pyperclip
-            pyperclip.copy(f'{post}/{filename}')
+            pyperclip.copy(f'{blog}/{filename}')
         except ImportError:
             print(
                 'Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
