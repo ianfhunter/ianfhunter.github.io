@@ -1,13 +1,13 @@
----  
-univers: Azelyss  
-season: none  
-type: Index  
-share: true  
-alias: Illustration  
-title: Illustration (Hayleen)  
-share: true  
----  
-  
+---
+alias: Illustration
+date: 05-09-2021
+season: none
+share: true
+title: Illustration (Hayleen)
+type: Index
+univers: Azelyss
+---
+
 OC:: [[Hayleen May]]  
   
   
@@ -17,6 +17,4 @@ OC:: [[Hayleen May]]
   
 ![](https://lh5.googleusercontent.com/YGkLl1TAv5q7Z5DXwwNlFJwuAjUUVv217w6Nd9uygb-fkhd4GZkXiqC25wy5Ehpr7tW1rwqiZlnLGaNL7vFiKgMflX-ILFLfJv2Dk0J8ImFEimxJs0ufmTOJX44LiddjGQdGSsdM)  
   
-![](../assets/img/Hayleen.png)  
-  
-D:\Users\Lili\Documents\GitHub\Owlly-house\_notes/testing.https://owlly-house.netlify.app//testing.
+![](../assets/img/Hayleen.png)
