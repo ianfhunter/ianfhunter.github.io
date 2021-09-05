@@ -7,13 +7,13 @@ import shutil
 from datetime import datetime
 import frontmatter
 import yaml
-#Git error fixing
+
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
 vault = Path(env["vault"])
 post = Path(f"{BASEDIR}/_notes")
-blog=env['blog']
+blog = env["blog"]
 img = Path(f"{BASEDIR}/assets/img/")
 
 
@@ -68,11 +68,11 @@ def retro(filepath):
     # It permit to compare the file in file diff with len(file)
     # Remove newline, comment and frontmatter
     notes = []
-    metadata=frontmatter.load(filepath)
-    file=metadata.content.split('\n')
+    metadata = frontmatter.load(filepath)
+    file = metadata.content.split("\n")
     for n in file:
-        if n != '\\':
-            n=n.strip()
+        if n != "\\":
+            n = n.strip()
             notes.append(n)
     notes = [i for i in notes if i != ""]
     notes = [i for i in notes if "%%" not in i]
@@ -183,6 +183,7 @@ def convert_internal(line):
         line_final = f"[[{destination}\|{ft}]]"
     return line_final
 
+
 def transluction_note(line):
     # If file (not image) start with "![[" : transluction with rmn-transclude (exclude
     # image from that)
@@ -205,42 +206,49 @@ def math_replace(line):
 def frontmatter_check(filename):
     metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
     meta = frontmatter.load(metadata)
-    update=frontmatter.dumps(meta)
+    update = frontmatter.dumps(meta)
     metadata.close()
     final = open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
     if not "date" in meta.keys():
         now = datetime.now().strftime("%d-%m-%Y")
-        meta['date'] = now
+        meta["date"] = now
         update = frontmatter.dumps(meta)
         meta = frontmatter.loads(update)
     if not "title" in meta.keys():
-        meta['title'] = filename.replace('.md', '')
+        meta["title"] = filename.replace(".md", "")
         update = frontmatter.dumps(meta)
     final.write(update)
     return
 
+
 def clipboard(filepath):
-    filename=os.path.basename(filepath)
-    filename=filename.replace('.md', '')
-    if sys.platform == 'ios':
+    filename = os.path.basename(filepath)
+    filename = filename.replace(".md", "")
+    if sys.platform == "ios":
         try:
-            import pasteboard #work with pyto
-            pasteboard.set_url(f'{blog}{filename}')
+            import pasteboard  # work with pyto
+
+            pasteboard.set_url(f"{blog}{filename}")
         except ImportError:
             try:
-                import clipboard #work with pytonista
-                clipboard.set(f'{blog}{filename}')
+                import clipboard  # work with pytonista
+
+                clipboard.set(f"{blog}{filename}")
             except ImportError:
                 print(
-                    'Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
+                    "Please, report issue with your OS and configuration to check if it possible to use another clipboard manager"
+                )
     else:
         try:
-            #trying to use Pyperclip
+            # trying to use Pyperclip
             import pyperclip
-            pyperclip.copy(f'{blog}{filename}')
+
+            pyperclip.copy(f"{blog}{filename}")
         except ImportError:
             print(
-                'Please, report issue with your OS and configuration to check if it possible to use another clipboard manager')
+                "Please, report issue with your OS and configuration to check if it possible to use another clipboard manager"
+            )
+
 
 def file_convert(file):
     file_name = os.path.basename(file)
@@ -251,7 +259,7 @@ def file_convert(file):
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
             data.close()
-            if not meta['share'] or meta["share"] is False:
+            if not meta["share"] or meta["share"] is False:
                 return
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
@@ -280,7 +288,7 @@ def file_convert(file):
             return True
         else:
             meta = frontmatter.load(file)
-            if not meta['share'] or meta['share'] == False:
+            if not meta["share"] or meta["share"] == False:
                 delete_file(file)
             return False
     else:
@@ -292,7 +300,7 @@ def search_share(option=0):
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
-            if filepath.endswith(".md") and 'excalidraw' not in filepath:
+            if filepath.endswith(".md") and "excalidraw" not in filepath:
                 try:
                     yaml_front = frontmatter.load(filepath)
                     if "share" in yaml_front and yaml_front["share"] is True:
@@ -307,7 +315,6 @@ def search_share(option=0):
                             filespush.append(destination)
                 except yaml.scanner.ScannerError:
                     pass
-
 
     return filespush
 
@@ -359,6 +366,7 @@ def convert_to_github():
                     clipboard(ori)
                     try:
                         import git
+
                         repo = git.Repo(Path(f"{BASEDIR}/.git"))
                         repo.git.add(".")
                         repo.git.commit("-m", f"{COMMIT}")
@@ -401,10 +409,11 @@ def convert_to_github():
                         commit = commit + "\n — " + md
                     if ng != "--G":
                         if len(new_files) == 1:
-                            md = ''.join(new_files)
+                            md = "".join(new_files)
                             clipboard(md)
                         try:
                             import git
+
                             repo = git.Repo(Path(f"{BASEDIR}/.git"))
                             repo.git.add(".")
                             repo.git.commit("-m", f"git commit {commit}")
@@ -435,15 +444,16 @@ def convert_to_github():
         commit = "Add to blog :\n"
         if len(new_files) > 0:
             if len(new_files) == 1:
-                md = ''.join(new_files)
+                md = "".join(new_files)
                 clipboard(md)
             try:
                 import git
+
                 repo = git.Repo(Path(f"{BASEDIR}/.git"))
                 for md in new_files:
                     commit = commit + "\n — " + md
                 if len(new_files) == 1:
-                    md = ''.join(new_files)
+                    md = "".join(new_files)
                     clipboard(md)
                 repo.git.add(A=True)
                 repo.git.commit(m=commit)
