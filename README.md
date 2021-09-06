@@ -39,7 +39,9 @@ You can use some option :
 
 ## Checking differences 
 
-⚠️ By default, the script will check if the file was edited by **checking the number of line**. If the line is exactly the same, the file will be not converted. New line, blank line, line escape (`\`) and comment **are removed** in this checking. 
+⚠️ By default, the script will check if the file was edited by **checking 
+the number of line** and with the name of the metadata (without date/title).
+If the line is exactly the same, the file will be not converted. New line, blank line, line escape (`\`) and comment **are removed** in this checking. 
 
 So, to force update to a single file you can :
 - Use `share <filepath>` directly
@@ -47,6 +49,7 @@ So, to force update to a single file you can :
 - Continue to work on the file before pushing it.
 - Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
 - Manually delete the file 
+- Add or edit the metadata (unless date/title). 
 
 ## Options
 ### Share all

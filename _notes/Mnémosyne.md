@@ -1,27 +1,25 @@
 ---
 alias: Mnemosyne, Némo, Nemo
+category: Fiche RP
 date: 03-09-2021
 genre: PJ
 original: /
 race: Ange
-resume: Fiche de Mnémosyne, Surveillante, pour le RP Azelyss.
+resume: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
 share: true
 state: "\U0001F4DD"
 tag:
 - Fiche
 - PJ
 - RP/Azelyss/Fiche/PJ
-- Draft
+- Ongoing
 - Histoire
 title: Mnémosyne
 type: OC, Fiche
 univers: Azelyss
-category: Fiche RP
 ---
 
-![+side::rmn-transclude](../assets/img/nemo.png)  
-  
-  
+![+side](../assets/img/nemo.png)  
 **Prénom et nom** : Mnémosyne  
 _Alias :_ Némo  
   

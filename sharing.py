@@ -17,52 +17,6 @@ blog = env["blog"]
 img = Path(f"{BASEDIR}/assets/img/")
 
 
-def get_token_end(final_text):
-    token = ""
-    if re.search(".+\{(.*)\}", final_text):
-        token = re.search(".+\{(.*)\}", final_text)
-        token = token.group(1)
-        token = " {" + token + "}"
-    return token
-
-
-def get_token_start(final_text):
-    token = ""
-    if final_text.startswith("{"):
-        token = re.search("\{(.*)\}.+", final_text)
-        token = token.group(1)
-        token = "{" + token + "} "
-    return token
-
-
-def get_table_end(final_text):
-    table = ""
-    if re.search("(\]{2}|\))(.*)", final_text):
-        tab = re.search("(\]{2}|\))(.*)", final_text)
-        tab = tab.group(0)
-        if "|" in tab:
-            table = " |"
-    return table
-
-
-def get_start_table(final_text):
-    table = ""
-    if re.search("\|[\[|\(](.*)", final_text):
-        tab = re.search("\|[\[|\(](.*)", final_text)
-        tab = tab.group(0)
-        if "|" in tab:
-            table = "| "
-    return table
-
-
-def get_tab_token(final_text):
-    token_end = get_token_end(final_text)
-    table_end = get_table_end(final_text)
-    table_start = get_start_table(final_text)
-    token_start = get_token_start(final_text)
-    return token_end, table_end, table_start, token_start
-
-
 def retro(filepath):
     # Yes, It's stupid, but it works.
     # It permit to compare the file in file diff with len(file)
@@ -82,11 +36,18 @@ def retro(filepath):
 def diff_file(file):
     file_name = os.path.basename(file)
     if check_file(file_name) == "EXIST":
-        vault = file
-        notes = Path(f"{BASEDIR}/_notes/{file_name}")
-        vault = retro(vault)
-        notes = retro(notes)
-        if len(vault) == len(notes):
+        vault_path = file
+        notes_path = Path(f"{BASEDIR}/_notes/{file_name}")
+        vault = retro(vault_path)
+        notes = retro(notes_path)
+        # Compare front matter because edit frontmatter is important too
+        meta_notes = frontmatter.load(notes_path)
+        meta_notes.metadata.pop('date', None)
+        meta_notes.metadata.pop('title', None)
+        meta_vault = frontmatter.load(vault_path)
+        meta_vault.metadata.pop('date', None)
+        meta_vault.metadata.pop('title', None)
+        if len(vault) == len(notes) or sorted(meta_notes.metadata.keys()) != sorted(meta_vault.metadata.keys()):
             return False
         else:
             return True
@@ -112,7 +73,6 @@ def get_image(image):
 
 
 def move_img(line):
-    token, table, table_start, token_start = get_tab_token(line)
     img_flags = re.search("[\|\+\-](.*)[]{1,2})]", line)
     if img_flags:
         img_flags = img_flags.group(0)
@@ -136,7 +96,8 @@ def move_img(line):
     if image_path:
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
-        final_text = f"{table_start}{token_start}![{img_flags}]({final_text}){token}{table}  \n  \n"
+        final_text = f"![{img_flags}]({final_text})"
+        final_text = re.sub('!?(\[{1,2}|\().*\.(png|jpg|jpeg|gif)(\]{2}|\))', final_text, line)
     else:
         final_text = line
     return final_text

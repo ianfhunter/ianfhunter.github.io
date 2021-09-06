@@ -1,8 +1,8 @@
 ---
-date: 01-09-2021
+category: none
+date: 06-09-2021
 share: true
 title: Markdown test
-category: Markdown preview
 ---
 
 # A. Wysiwyg presentation  
@@ -75,11 +75,11 @@ _You **can** combine them_
 # E. Link  
 [Obsidian](https://obsidian.md)  
   
-[Link to something](http://www.google.fr)  
+[[http://www.google.fr\|Link to something]]   
   
 [[Note]]  
   
-[ererrr](externlaèlinks.com)  
+[[externlaèlinks.com\|ererrr]]   
   
   
 # F. Quote  
