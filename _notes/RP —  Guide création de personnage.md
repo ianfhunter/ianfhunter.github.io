@@ -1,5 +1,6 @@
 ---
 date: 01-01-2015
+category: Guide
 share: true
 tags:
 - RP/Aide/Fiche

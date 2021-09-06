@@ -2,6 +2,7 @@
 date: 01-09-2021
 share: true
 title: Markdown test
+category: Markdown preview
 ---
 
 # A. Wysiwyg presentation  

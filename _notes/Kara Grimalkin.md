@@ -1,4 +1,5 @@
 ---  
+category: Fiche RP
 title: Kara Grimalkin  
 type: Personnage, OC  
 genre: PJ  

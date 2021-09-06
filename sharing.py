@@ -329,7 +329,7 @@ def search_share(option=0):
                         destination = dest(filepath)
                         if check:
                             filespush.append(destination)
-                except yaml.scanner.ScannerError:
+                except (yaml.scanner.ScannerError, yaml.constructor.ConstructorError) as e :
                     pass
 
     return filespush

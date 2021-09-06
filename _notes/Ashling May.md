@@ -1,22 +1,24 @@
----  
-share: true  
-date: 01-01-2015
-title: Ashling May  
-alias: Ashling, Ash  
-obsidian_ui_mode: preview  
-type: OC  
-doc: Personnalisé  
-genre: PJ  
-univers: ❌  
-tag:  
-  - OC  
-  - ❌  
-  - Humaine  
-  - Magie  
-  - Futuriste  
-  - Ashling-May/Référence  
----  
-  
+---
+alias: Ashling, Ash
+category: Fiche RP
+date: 06-09-2021
+doc: Personnalisé
+genre: PJ
+obsidian_ui_mode: preview
+share: true
+tag:
+- OC
+- ❌
+- Humaine
+- Magie
+- Futuriste
+- Ashling-May/Référence
+title: Ashling May
+type: OC
+univers: ❌
+---
+
+$$~$$  
 ```dataview  
 table state AS Status  
 FROM [[Ashling May]]  
@@ -25,7 +27,7 @@ FROM [[Ashling May]]
   
 ---  
 # ─────༺ Présentation ༻─────  
-![+side::rmn-transclude](../assets/img/Commission Feilyn.png)  
+![+side](../assets/img/Commission Feilyn.png)  
   
 **Nom** : May  
 **Prénoms** : Ashling  
@@ -131,7 +133,4 @@ Ashling est une personne plutôt lâche, qui n'aime pas prendre des risques inut
 # [[Pouvoir]]  
   
   
-[[Pouvoir::rmn-transclude]]  
-  
-  
-  
+[[Pouvoir::rmn-transclude]]

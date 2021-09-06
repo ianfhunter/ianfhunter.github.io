@@ -16,6 +16,7 @@ tag:
 title: Mnémosyne
 type: OC, Fiche
 univers: Azelyss
+category: Fiche RP
 ---
 
 ![+side::rmn-transclude](../assets/img/nemo.png)  
