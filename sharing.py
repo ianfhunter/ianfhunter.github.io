@@ -14,21 +14,18 @@ path = Path(f"{BASEDIR}/.git")  # GIT SHARED
 post = Path(f"{BASEDIR}/_notes")
 img = Path(f"{BASEDIR}/assets/img/")
 
-# Seems to have problem with dotenv with IOS 15
+# Seems to have problem with dotenv with pyto on IOS 15
 try:
     vault = Path(env["vault"])
     blog = env["blog"]
 except keyError: 
-
-    
-    
-
-
+    with open(Path(f"{BASEDIR}/.env")) as f:
+        vault = Path(''.join(f.readlines(1)).replace("vault=", ""))
+        blog = ''.join(f.readlines(2)).replace("blog=", '')
 
 def retro(filepath):
-    # Yes, It's stupid, but it works.
     # It permit to compare the file in file diff with len(file)
-    # Remove newline, comment and frontmatter
+    # Remove newline, comments and frontmatter
     notes = []
     metadata = frontmatter.load(filepath)
     file = metadata.content.split("\n")
@@ -40,6 +37,10 @@ def retro(filepath):
     notes = [i for i in notes if "%%" not in i]
     return notes
 
+def remove_date_title(meta):
+    meta.metadata.pop('date', None)
+    meta.metadata.pop('title', None)
+    return meta.metadata
 
 def diff_file(file):
     file_name = os.path.basename(file)
@@ -50,12 +51,10 @@ def diff_file(file):
         notes = retro(notes_path)
         # Compare front matter because edit frontmatter is important too
         meta_notes = frontmatter.load(notes_path)
-        meta_notes.metadata.pop('date', None)
-        meta_notes.metadata.pop('title', None)
         meta_vault = frontmatter.load(vault_path)
-        meta_vault.metadata.pop('date', None)
-        meta_vault.metadata.pop('title', None)
-        if len(vault) == len(notes) or sorted(meta_notes.metadata.keys()) != sorted(meta_vault.metadata.keys()):
+        metadata_notes=remove_date_title(meta_notes)
+        metadata_vault = remove_date_title(meta_vault)
+        if len(vault) == len(notes) or sorted(metadata_notes.keys()) != sorted(metadata_vault.keys()):
             return False
         else:
             return True
