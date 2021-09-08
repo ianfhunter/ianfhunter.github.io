@@ -15,6 +15,6 @@ things to blockid
   
 [[testing::rmn-transclude]]
 
-{: .note} 
-> **Note**{: .ad-title-note}  
+{: .abstract} 
+> **Note**{: .ad-title-abstract}  
 > test follow
