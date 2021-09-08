@@ -9,12 +9,20 @@ import frontmatter
 import yaml
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
-env = dotenv_values(Path(f"{BASEDIR}/.env"))
+env = dotenv_values('.env')
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
-vault = Path(env["vault"])
 post = Path(f"{BASEDIR}/_notes")
-blog = env["blog"]
 img = Path(f"{BASEDIR}/assets/img/")
+
+# Seems to have problem with dotenv with IOS 15
+try:
+    vault = Path(env["vault"])
+    blog = env["blog"]
+except keyError: 
+
+    
+    
+
 
 
 def retro(filepath):
