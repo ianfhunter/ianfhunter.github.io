@@ -14,3 +14,7 @@ hey check that ! [google](https://www.google.fr) olalala !
 things to blockid   
   
 [[testing::rmn-transclude]]
+
+{: .note} 
+> **Note**{: .ad-title-note}  
+> test follow
