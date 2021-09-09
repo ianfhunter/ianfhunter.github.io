@@ -21,4 +21,8 @@ Admonition preview
 > content  
   
 {: .done}    
-> content
+> content  
+  
+  
+{: .note}    
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla.

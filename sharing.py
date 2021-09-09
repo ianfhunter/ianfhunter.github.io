@@ -81,6 +81,7 @@ def admonition_trad_type(line):
 def admonition_trad_title(line, content_type):
     #Admonition title always are : 'title:(.*)' so...
     ad_title= re.search('title:(.*)', line)
+    title = line
     if ad_title:
         # get content title
         title_group=ad_title.group(1)
@@ -88,11 +89,13 @@ def admonition_trad_title(line, content_type):
         title = re.sub('title:(.*)', title_md, line)
     else:
         if 'collapse:' in line :
-            line = ""
+            title = ""
         elif 'icon:' in line:
-            line = ""
+            title = ""
         elif 'color:' in line:
-            line = ""
+            title = ""
+        elif len(line) == 1:
+            title = ""
         else:
             title = "> " + line #admonition inline
     return title
@@ -100,7 +103,6 @@ def admonition_trad_title(line, content_type):
 def admonition_trad(file_data):
     code_index = 0
     code_dict={}
-    lg = [0,0]
     start = 0
     end = 0
     start_list = []
@@ -116,7 +118,6 @@ def admonition_trad(file_data):
         code = {code_index:(i, j)}
         code_index = code_index+1
         code_dict.update(code)
-    print(code_dict)
     for ad, ln in code_dict.items():
         ad_start = ln[0]
         ad_end = ln[1]
@@ -124,7 +125,6 @@ def admonition_trad(file_data):
         ad_type=ad_type
         code_block = [x for x in range(ad_start+1, ad_end)]
         for fl in code_block:
-            print(fl)
             file_data[fl] = admonition_trad_title(file_data[fl], ad_type)
         file_data[ad_end] = ''
     return file_data
