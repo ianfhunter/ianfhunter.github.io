@@ -2,8 +2,8 @@ title: Owlly House
 name: Owlly House
 user_description: Je partage ici mes fichiers.
 notes_url: "https://owlly-house.netlify.app"
-profile_pic: /assets/img/profile.gif
-favicon: /assets/img/favicon.png
+profile_pic: /assets/site/profile.gif
+favicon: /assets/site/favicon.png
 copyright_name: MIT
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://owlly-house.netlify.app/" # the base hostname & protocol for your site, e.g. http://example.com
@@ -17,6 +17,7 @@ plugins:
   - jekyll-toc
 
 markdown: kramdown
+highlighter: rouge
 
 kramdown:
   input: GFM
