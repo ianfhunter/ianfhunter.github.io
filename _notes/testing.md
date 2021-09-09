@@ -1,16 +1,28 @@
 ---
 category: none
-date: 06-09-2021
+date: 09-09-2021
 season: none
 share: true
 title: testing
 ---
 
-oh, here is [[Markdown test\|internal]]  link here !  
+Admonition preview  
   
-hey check that ! [google](https://www.google.fr) olalala !  
+{: .note}    
+> **Notes**{: .ad-title-note}  
+> content  
+  
+{: .abstract}    
+> **Notes**{: .ad-title-abstract}  
+> content  
+  
+{: .todo}    
+> **Notes**{: .ad-title-todo}  
+> content  
+  
+{: .done}    
+> content  
   
   
-things to blockid   
-  
-[[testing::rmn-transclude]]
+{: .note}    
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla.

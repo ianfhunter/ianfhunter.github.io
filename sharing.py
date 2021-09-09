@@ -9,9 +9,11 @@ import frontmatter
 import yaml
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
-env = dotenv_values('.env')
+env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
+vault = Path(env["vault"])
 post = Path(f"{BASEDIR}/_notes")
+blog = env["blog"]
 img = Path(f"{BASEDIR}/assets/img/")
 
 # Seems to have problem with dotenv with pyto on IOS 15
@@ -59,6 +61,73 @@ def diff_file(file):
         else:
             return True
 
+def admonition_trad_type(line):
+    #Admonition Obsidian : blockquote + ad-
+    # Admonition md template : ```ad-type <content> ```
+    #build dictionnary for different types
+    admonition = {'note':'note', 'seealso': 'note', 'abstract' : 'abstract', 'summary':'abstract', 'tldr': 'abstract', 'info':'todo', 'todo':'todo', 'tip':'tip', 'hint':'tip', 'important':'tip', 'success':'done', 'check':'done', 'done':'done', 'question':'question', 'help': 'question', 'faq':'question',  'warning':'warning', 'caution':'warning', 'attention':'warning', 'failure':'failure', 'fail':'failure', 'missing':'failure', 'danger':'danger', 'error':'danger', 'bug':'bug', 'example':'example', 'exemple':'example', 'quote':'quote', 'cite':'quote'}
+    admonition_type = re.search('```ad-(.*)', line)
+    ad_type = line
+    content_type=""
+    if admonition_type:
+        admonition_type=admonition_type.group(1)
+        if admonition_type.lower() in admonition.keys(): #found type
+            content_type = admonition[admonition_type]
+            ad_type= '{: .'+ content_type +'}  \n'
+        else:
+            ad_type = '{: .note}  \n' #if admonition "personnal" type, use note by default
+    return ad_type, content_type
+
+def admonition_trad_title(line, content_type):
+    #Admonition title always are : 'title:(.*)' so...
+    ad_title= re.search('title:(.*)', line)
+    title = line
+    if ad_title:
+        # get content title
+        title_group=ad_title.group(1)
+        title_md = '> **'+title_group.strip()+'**{: .ad-title-' + content_type + '}'
+        title = re.sub('title:(.*)', title_md, line)
+    else:
+        if 'collapse:' in line :
+            title = ""
+        elif 'icon:' in line:
+            title = ""
+        elif 'color:' in line:
+            title = ""
+        elif len(line) == 1:
+            title = ""
+        else:
+            title = "> " + line #admonition inline
+    return title
+
+def admonition_trad(file_data):
+    code_index = 0
+    code_dict={}
+    start = 0
+    end = 0
+    start_list = []
+    end_list = []
+    for i in range (0, len(file_data)):
+        if re.search('```ad-(.*)', file_data[i]):
+            start = i
+            start_list.append(start)
+        elif re.match('```', file_data[i]) :
+            end = i
+            end_list.append(end)
+    for i,j in zip(start_list, end_list):
+        code = {code_index:(i, j)}
+        code_index = code_index+1
+        code_dict.update(code)
+    for ad, ln in code_dict.items():
+        ad_start = ln[0]
+        ad_end = ln[1]
+        file_data[ad_start], ad_type=admonition_trad_type(file_data[ad_start])
+        ad_type=ad_type
+        code_block = [x for x in range(ad_start+1, ad_end)]
+        for fl in code_block:
+            file_data[fl] = admonition_trad_title(file_data[fl], ad_type)
+        file_data[ad_end] = ''
+    return file_data
 
 def delete_file(filepath):
     for file in os.listdir(post):
@@ -237,6 +306,7 @@ def file_convert(file):
             data.close()
             if 'share' not in meta.keys() or meta["share"] is False:
                 return
+            lines = admonition_trad(lines)
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
                 final_text=convert_to_wikilink(final_text)
