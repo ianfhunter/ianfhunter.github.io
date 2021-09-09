@@ -77,6 +77,7 @@ The script :
 - Frontmatter : In absence of date, add the day's date.
 - Frontmatter : In absence of title, add the file's title.
 - Copy the link to your clipboard if one file is edited.
+- ⭐ Support Admonition Plugin 
 
 Finally, the plugin will add, commit and push if supported.
 
@@ -88,6 +89,34 @@ Note : I **can't** testing on these 3 OS, so I can't create a clipboard option o
   the document)` to the frontmatter
 - `share: true` : Share the file
 - `embed: false` : remove the transluction (convert to normal wikilinks)
+
+### Admonition 
+Admonition work on this blog using CSS and IAL. It use : `{: .type}` and `{: .ad-title-type}`.
+The script will add `**title**{: .ad-title-type}` if found `title:` in the admonition block.
+
+It doesn't support :
+- Collapse
+- Color
+- Icon
+- Custom admonition (convert to note by default)
+Collapse, color, and icon are just removed in the conversion.
+
+The final admonition part will be :
+```md
+{: .admonition-type}
+> **title**{: .ad-title-type}
+> Word
+> Word
+```
+
+If no title is found, the admonition will be one line, as that :
+```md
+{: .admonition-type}
+> Admonition content
+```
+It also supports markdown and latex.
+
+Note : For the custom type, the type become the title of the note, so you don't lost the information about the type.
 
 ### IOS Shortcuts
 
