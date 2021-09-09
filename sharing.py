@@ -75,7 +75,8 @@ def admonition_trad_type(line):
             content_type = admonition[admonition_type]
             ad_type= '{: .'+ content_type +'}  \n'
         else:
-            ad_type = '{: .note}  \n' #if admonition "personnal" type, use note by default
+            ad_type = '{: .note}  \n'
+            content_type= "custom" + admonition_type  #if admonition "personnal" type, use note by default
     return ad_type, content_type
 
 def admonition_trad_title(line, content_type):
@@ -85,6 +86,8 @@ def admonition_trad_title(line, content_type):
     if ad_title:
         # get content title
         title_group=ad_title.group(1)
+        if "custom" in content_type:
+            content_type = "note"
         title_md = '> **'+title_group.strip()+'**{: .ad-title-' + content_type + '}'
         title = re.sub('title:(.*)', title_md, line)
     else:
@@ -99,6 +102,7 @@ def admonition_trad_title(line, content_type):
         else:
             title = "> " + line #admonition inline
     return title
+
 
 def admonition_trad(file_data):
     code_index = 0
@@ -125,6 +129,10 @@ def admonition_trad(file_data):
         ad_type=ad_type
         code_block = [x for x in range(ad_start+1, ad_end)]
         for fl in code_block:
+            if "custom" in ad_type and not re.search('title:(.*)', file_data[fl]):
+                custom_type= ad_type.replace("custom", "")
+                custom_type = custom_type.replace('-', ' ')
+                file_data[ad_start] =  "{: .note}  \n> **" + custom_type.strip().title() + "**  \n"
             file_data[fl] = admonition_trad_title(file_data[fl], ad_type)
         file_data[ad_end] = ''
     return file_data
