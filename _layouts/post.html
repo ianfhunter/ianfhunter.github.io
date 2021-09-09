@@ -28,16 +28,23 @@
     <link rel="icon" href="{{site.favicon}}" type="image/png"/>
     <link href="/assets/css/style.css" rel="stylesheet" media="all" class="default"/>
 	<link rel="stylesheet" href="/assets/css/admonition.css">
+	<link rel="stylesheet" href="/assets/css/highlight.css">
 
     <!--[if IE]>
         <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
     <![endif]-->
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
-
-
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
 </script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+    <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 
 </head>
 
