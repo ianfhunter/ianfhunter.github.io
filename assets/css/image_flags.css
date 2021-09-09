@@ -1,0 +1,344 @@
+/*Image Flags Snippet by Lithou
+http://github.com/lithou/sandbox
+
+
+*/
+
+img {
+    --coremarg: 1%;
+    --extramarg: 1%;
+    /* This margin is used for any added margin between items */
+    --defaultwidth: 60%;
+    /*This is the default width for core flags such as the "side" and "tape" */
+}
+
+
+/* Core Flags */
+
+
+/*side */
+
+img[alt*="+side"] {
+    position: relative;
+    width: var(--defaultwidth) !important;
+    float: right;
+    margin: 0px;
+    margin-left: var(--coremarg);
+}
+
+img[alt*="+side"]>.markdown-embed {
+    margin: 0px;
+}
+
+
+/*tape */
+
+img[alt*="+tape"] {
+    position: relative;
+    float: right;
+    width: var(--defaultwidth) !important;
+    margin-left: var(--coremarg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(2deg);
+}
+
+img[alt*="+tape"]::before {
+    content: "";
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 100px !important;
+    height: 30px;
+    top: 12px;
+    background: rgba(255, 234, 118, 0.377);
+    /*here you can chosse the scotch tape background*/
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    clip-path: polygon(50% 0%, 100% 0%, 98% 10%, 100% 20%, 98% 30%, 100% 40%, 98% 50%, 100% 60%, 98% 70%, 100% 80%, 98% 90%, 100% 100%, 0% 100%, 2% 90%, 0% 80%, 2% 70%, 0% 60%, 2% 50%, 0% 40%, 2% 30%, 0% 20%, 2% 10%, 0% 0%);
+}
+
+img[alt*="-lg"]::before {
+    width: 100px !important;
+    height: 30px;
+}
+
+img[alt*="-med"]::before {
+    width: 70px !important;
+    height: 25px;
+}
+
+img[alt*="-sm"]::before {
+    width: 45px !important;
+    height: 15px;
+    top: 8px;
+}
+
+img[alt*="-thumb"]::before {
+    width: 25px !important;
+    height: 5px;
+    top: 2px;
+}
+
+
+/* Push Pin */
+
+img[alt*="+pin"] {
+    position: relative;
+    float: right;
+    width: var(--defaultwidth) !important;
+    margin: auto;
+    margin-left: var(--coremarg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(2deg);
+}
+
+span[alt*="+pin"]::before {
+    content: "";
+    position: absolute;
+    width: 5px !important;
+    height: 5px;
+    background-color: #4588cc;
+    top: -3%;
+    left: 50%;
+    border: solid #336699 8px;
+    border-radius: 50%;
+    box-shadow: #274d74 -5px 3px 1px;
+}
+
+
+/* Portrait and Landscape */
+
+img[alt*="+portrait"] {
+    float: right;
+    position: relative;
+    width: calc(var(--defaultwidth)/2) !important;
+    vertical-align: middle;
+    clip-path: ellipse(35% 45% at 50% 50%);
+}
+
+span[alt*="+landscape"] {
+    position: relative;
+    width: var(--defaultwidth) !important;
+    float: right;
+    /* background-color:blue; This setting will create a border effect of set color */
+    clip-path: ellipse(46% 36% at 50% 50%);
+}
+
+img[alt*="+landscape"]>img {
+    vertical-align: middle;
+    /* clip-path: ellipse(45% 35% at 50% 50%); */
+}
+
+
+/* Banner and HR
+    
+    Note: images were moved from block elements to inline elements. The HR and Banner elements don't currently work. Will need to change how they are rendered. Commenting them out for now. 
+
+    */
+
+
+/* span[alt*="+banner"]{
+            height: 100px;
+            overflow: hidden;
+
+        } */
+
+
+/* span[alt*="+banner"]>img{
+             margin-top: -130px;
+            } */
+
+
+/* span[alt*="+hr"]{
+            height: 10px;
+            overflow: hidden;
+            border-radius: 20px;
+
+        } */
+
+
+/* span[alt*="+hr"]>img{
+            margin-top: -200px;
+            } */
+
+
+/*Custom Core Flags */
+
+img[alt*="+custom1"] {
+    position: relative;
+    width: var(--defaultwidth) !important;
+    float: right;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+img[alt*="+custom2"] {
+    position: relative;
+    width: var(--defaultwidth) !important;
+    float: right;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+/* Modifier Flags */
+
+
+/* Orientation and position */
+
+img[alt*="-left"] {
+    float: left;
+    margin: 0px;
+    margin-right: var(--extramarg);
+}
+
+img[alt*="-right"] {
+    float: right;
+    margin: 0px;
+    margin-left: var(--extramarg);
+}
+
+img[alt*="-fix"] {
+    position: fixed;
+}
+
+img[alt*="-abs"] {
+    position: absolute;
+}
+
+
+/* Size */
+
+img[alt*="-thumb"] {
+    width: 11.50% !important;
+}
+
+img[alt*="-sm"] {
+    width: 24% !important;
+}
+
+img[alt*="-med"] {
+    width: 32.3333% !important;
+}
+
+img[alt*="-lg"] {
+    width: 49% !important;
+}
+
+img[alt*="-huge"] {
+    width: 67% !important;
+}
+
+img[alt*="-cwidth"] {
+    float: none;
+    margin-left: -10%;
+    width: 120% !important;
+}
+
+
+/* Borders */
+
+span[alt*="-border1"]>img {
+    border: solid black 3px;
+}
+
+span[alt*="-border2"]>img {
+    border: solid white 3px;
+}
+
+span[alt*="-bradius1"]>img {
+    border-radius: 5px;
+}
+
+span[alt*="-bradius2"]>img {
+    border-radius: 20px;
+}
+
+span[alt*="-bradiustl"]>img {
+    border-top-left-radius: 20px;
+}
+
+span[alt*="-bradiusbr"]>img {
+    border-bottom-right-radius: 20px;
+}
+
+span[alt*="-bradiustr"]>img {
+    border-top-right-radius: 20px;
+}
+
+span[alt*="-bradiusbl"]>img {
+    border-bottom-left-radius: 20px;
+}
+
+span[alt*="-bthick"]>img {
+    border-width: 5px;
+}
+
+span[alt*="-bthin"]>img {
+    border-width: 1px;
+}
+
+
+/* img Borders */
+
+img[alt*="-imgborder1"] {
+    border: solid #336699 2px;
+}
+
+img[alt*="-imgborder2"] {
+    border: solid black 2px;
+}
+
+img[alt*="-imgbradius1"] {
+    border-radius: 5px;
+}
+
+img[alt*="-imgbradius2"] {
+    border-radius: 20px;
+}
+
+img[alt*="-cimgbradius1"] {
+    border-radius: 50px;
+}
+
+img[alt*="-shadow1"]>img {
+    box-shadow: darkgrey -2px 2px 2px;
+}
+
+img[alt*="-glow"]>img {
+    box-shadow: darkgrey 0px 0px 20px;
+}
+
+img[alt*="-nofloat"] {
+    float: none
+}
+
+
+/* Hover/Click to Zoom */
+
+
+/* Add any flags desired to enable a zoom for that flag */
+
+img[alt*="+side"]:active,
+img[alt*="+tape"]:active,
+img[alt*="+pin"]:active,
+img[alt*="+portrait"]:active,
+img[alt*="+landscape"]:active {
+    width: 100% !important;
+}
+
+img[alt*="+side"]:not(:active):hover,
+img[alt*="+tape"]:not(:active):hover,
+img[alt*="+pin"]:not(:active):hover,
+img[alt*="+portrait"]:not(:active):hover,
+img[alt*="+landscape"]:not(:active):hover {
+    transform: scale(1.2);
+}
