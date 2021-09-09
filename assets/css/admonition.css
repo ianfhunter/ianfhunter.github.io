@@ -178,7 +178,7 @@ blockquote.done>p:not(strong) {
 /* Question */
 
 .ad-title-question::before {
-    content: '\e86c';
+    content: '\e887';
     color: #64dd17;
     font-family: 'Material Icons';
     vertical-align: bottom;
@@ -212,7 +212,7 @@ blockquote.question>p:not(strong) {
 
 /* Warning */
 
-.ad-title-question::before {
+.ad-title-warning::before {
     content: '\e8b2';
     color: #ff9100;
     font-family: 'Material Icons';
@@ -222,12 +222,12 @@ blockquote.question>p:not(strong) {
     font-size: 24px;
 }
 
-.question {
+.warning {
     padding: 0 !important;
     border-radius: 0 !important;
 }
 
-blockquote.question>p:not(strong) {
+blockquote.warning>p:not(strong) {
     border-left: 3px solid #ff9100;
     padding: 0;
     border-radius: 3px;
@@ -235,7 +235,7 @@ blockquote.question>p:not(strong) {
     padding-left: 10px;
 }
 
-.ad-title-question {
+.ad-title-warning {
     color: #ff9100;
     background-color: rgba(255, 145, 0, .1);
     width: 101%;
@@ -248,7 +248,7 @@ blockquote.question>p:not(strong) {
 /* Failure */
 
 .ad-title-failure::before {
-    content: '\e8b2';
+    content: '\e5c9';
     color: #ff5252;
     font-family: 'Material Icons';
     vertical-align: bottom;
@@ -282,7 +282,7 @@ blockquote.failure>p:not(strong) {
 
 /* danger */
 
-.ad-title-failure::before {
+.ad-title-danger::before {
     content: '\ea0b';
     color: #ff1744;
     font-family: 'Material Icons';
@@ -292,12 +292,12 @@ blockquote.failure>p:not(strong) {
     font-size: 24px;
 }
 
-.failure {
+.danger {
     padding: 0 !important;
     border-radius: 0 !important;
 }
 
-blockquote.failure>p:not(strong) {
+blockquote.danger>p:not(strong) {
     border-left: 3px solid #ff1744;
     padding: 0;
     border-radius: 3px;
@@ -305,7 +305,7 @@ blockquote.failure>p:not(strong) {
     padding-left: 10px;
 }
 
-.ad-title-failure {
+.ad-title-danger {
     color: #ff1744;
     background-color: rgba(255, 23, 68, .1);
     width: 101%;
