@@ -129,10 +129,15 @@ def admonition_trad(file_data):
         ad_type=ad_type
         code_block = [x for x in range(ad_start+1, ad_end)]
         for fl in code_block:
-            if "custom" in ad_type and not re.search('title:(.*)', file_data[fl]):
-                custom_type= ad_type.replace("custom", "")
+            if "custom" in ad_type :
+                custom_type = ad_type.replace("custom", "")
                 custom_type = custom_type.replace('-', ' ')
-                file_data[ad_start] =  "{: .note}  \n> **" + custom_type.strip().title() + "**  \n"
+                ad_title = re.search('title:(.*)', file_data[fl])
+                if not ad_title:
+                    file_data[ad_start] =  "{: .note}  \n> **" + custom_type.strip().title() + "**{: .ad-title-note}  \n"
+                else:
+                    ad_title = ad_title.group(1)
+                    file_data[ad_start] = "{: .note} \n > **[" + custom_type.strip().title() + "] " + ad_title.title()  +"**{: .ad-title-note}  \n"
             file_data[fl] = admonition_trad_title(file_data[fl], ad_type)
         file_data[ad_end] = ''
     return file_data
