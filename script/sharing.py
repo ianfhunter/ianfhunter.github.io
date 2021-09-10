@@ -3,12 +3,15 @@ import sys
 import os
 from dotenv import dotenv_values
 from pathlib import Path
+from pathlib import PurePath
 import shutil
 from datetime import datetime
 import frontmatter
 import yaml
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
+if 'script' in BASEDIR:
+    BASEDIR = PurePath(BASEDIR).parents[0]
 env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
 vault = Path(env["vault"])
@@ -20,7 +23,7 @@ img = Path(f"{BASEDIR}/assets/img/")
 try:
     vault = Path(env["vault"])
     blog = env["blog"]
-except keyError: 
+except KeyError:
     with open(Path(f"{BASEDIR}/.env")) as f:
         vault = Path(''.join(f.readlines(1)).replace("vault=", ""))
         blog = ''.join(f.readlines(2)).replace("blog=", '')
@@ -189,7 +192,7 @@ def move_img(line):
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
         final_text = f"![{img_flags}]({final_text})"
-        final_text = re.sub('!?(\[{1,2}|\().*\.(png|jpg|jpeg|gif)(\]{2}|\))', final_text, line)
+        final_text = re.sub('!?(\[{1,2}|\().*\.(png|jpg|jpeg|gif)(.*)(\]{2}|\))', final_text, line)
     else:
         final_text = line
     return final_text
@@ -253,13 +256,6 @@ def transluction_note(line):
         final_text = re.sub("]]", "::rmn-transclude]]", final_text)
         # Add transluction_note
     return final_text
-
-
-def math_replace(line):
-    if re.match("\$(?!\$)(.*)\$", line) and not re.match("\$\$(.*)\$\$", line):
-        line = line.replace("$", "$$")
-    return line
-
 
 def frontmatter_check(filename):
     metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
@@ -328,12 +324,11 @@ def file_convert(file):
                 final_text=convert_to_wikilink(final_text)
                 final_text = re.sub('\^\w+', '', final_text) #remove block id
                 if 'embed' in meta.keys() and meta['embed'] == False:
-                    final_text = convert_internal(final_text)
+                    final_text = convert_to_wikilink(final_text)
+                    final_text = convert_no_embed(final_text)
                 else:
                     final_text = transluction_note(final_text)
-                final_text = math_replace(final_text)
                 if re.search("\%\%(.*)\%\%", final_text):
-                    # remove comments
                     final_text = "  \n"
                 elif re.search("==(.*)==", final_text):
                     final_text = re.sub("==", "[[", final_text, 1)
