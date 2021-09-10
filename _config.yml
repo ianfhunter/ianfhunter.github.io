@@ -15,6 +15,7 @@ plugins:
   - jekyll-feed 
   - jekyll-sitemap
   - jekyll-toc
+  - jekyll-spaceship
 
 markdown: kramdown
 highlighter: rouge
