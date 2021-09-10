@@ -20,6 +20,7 @@ univers: Azelyss
 ---
 
 ![+side](../assets/img/nemo.png)  
+  
 **Prénom et nom** : Mnémosyne  
 _Alias :_ Némo  
   
@@ -91,14 +92,14 @@ En dehors de ses capacités, Némo possède les avantages suivants :
 | Désinvolte    | Joueuse      |  
 | Versatile     | Décontractée |  
   
-$$~~~~~$$ Dans sa jeunesse, Mnémosyne était plus chaotique que maintenant. Détestant l'ordre et adorant le chaos, elle n'hésita pas à trahir son camp par simple amusement. Car l'ordre des choses l'ennuie.  
+$~~~~~$ Dans sa jeunesse, Mnémosyne était plus chaotique que maintenant. Détestant l'ordre et adorant le chaos, elle n'hésita pas à trahir son camp par simple amusement. Car l'ordre des choses l'ennuie.  
   
-$$~~~~~$$ Aujourd'hui, Mnémosyne est plus calme, mais elle n'aime pas suivre les gens et ordre aveuglément, ce qui font qu'elle est très difficile à contrôler pour l'[[Echo]], qui la garde sous surveillance tout en lui laissant bien plus de liberté que la plupart des membres ayant un grade similaire.  
+$~~~~~$ Aujourd'hui, Mnémosyne est plus calme, mais elle n'aime pas suivre les gens et ordre aveuglément, ce qui font qu'elle est très difficile à contrôler pour l'[[Echo]], qui la garde sous surveillance tout en lui laissant bien plus de liberté que la plupart des membres ayant un grade similaire.  
   
   
-$$~~~~~$$ Sa condition d'aveugle ne la dérange en rien, et elle aime s'en amuser, n'hésitant pas à en rire. Son amnésie, par contre, bien qu'elle n'aime pas le montrer, lui pose problème. La recherche de sa mémoire est actuellement sa quête principale, et elle a l'impression qu'aider l'Écho l'aidera dans cette tâche. Sinon, étant donné son caractère désinvolte et versatile, elle ne ferait pas partie d'une organisation aussi hiérarchisée avec une mission qu'elle considère comme un poil utopique.  
+$~~~~~$ Sa condition d'aveugle ne la dérange en rien, et elle aime s'en amuser, n'hésitant pas à en rire. Son amnésie, par contre, bien qu'elle n'aime pas le montrer, lui pose problème. La recherche de sa mémoire est actuellement sa quête principale, et elle a l'impression qu'aider l'Écho l'aidera dans cette tâche. Sinon, étant donné son caractère désinvolte et versatile, elle ne ferait pas partie d'une organisation aussi hiérarchisée avec une mission qu'elle considère comme un poil utopique.  
   
-$$~$$ Mais il ne faut pas non plus imaginer Mnémosyne comme une personne sans cœur et égoïste, puisqu'elle n'hésitera pas à venir en aide à une personne dans le besoin, quel qu'il soit.  
+$~$ Mais il ne faut pas non plus imaginer Mnémosyne comme une personne sans cœur et égoïste, puisqu'elle n'hésitera pas à venir en aide à une personne dans le besoin, quel qu'il soit.  
 Dans les faits, Mnémosyne se fiche royalement de la race des gens, hybride ou humain, voire totalement autre chose. Après tout, elle ne les voit même pas !  
 Bien qu'elle raconte qu'elle n'est pas habitée de désir noble comme certains membres de l'[[Echo]], elle n'est pas non plus à laisser tomber les gens avec qui elle s'entend. Ce n'est pas non plus une personne lâche et paraît versatile, car incapable de se fixer quelque part.  
   
