@@ -88,8 +88,11 @@ def admonition_trad_title(line, content_type):
         title_group=ad_title.group(1)
         if "custom" in content_type:
             content_type = "note"
-        title_md = '> **'+title_group.strip()+'**{: .ad-title-' + content_type + '}'
-        title = re.sub('title:(.*)', title_md, line)
+        if ad_title == "":
+            title = "> " + line  # admonition inline
+        else:
+            title_md = '> **'+title_group.strip()+'**{: .ad-title-' + content_type + '}'
+            title = re.sub('title:(.*)', title_md, line)
     else:
         if 'collapse:' in line :
             title = ""
