@@ -1,151 +1,101 @@
-⚠️ The script and site are not a replacement for [Obsidian Publish](https://obsidian.md/publish), which is a much more efficient way to share Obsidian files.
+# Notenote.link
 
-# Goal 
-Having files written in Markdown on Obsidian, I created a python script in order to semi-automatically share some of my files, on a static site in JEKYLL.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b37d412-1240-44dd-8539-a7001465b57a/deploy-status)](https://app.netlify.com/sites/notenotelink/deploys)
 
-The site uses [notenote.link](https://github.com/Maxence-L/notenote.link) (thanks to Maxence-L) template which is the easiest to set up with Netlify, but there's nothing stopping you to modify the css.
+## Update !
 
-# Get Started
+Hi everyone ! I've been very busy lately, so I didn't check all of the issues and the PR, but as I have more free time now I'll restart working on the project. Thanks for all the kind messages by the way!
 
-The best way is to fork the original template and delete files in `_notes` (which are the original files).
-Otherwise, just copy `sharing.py` script and use it for your own template.
+## What is this?
 
-## Requirements
+A digital garden using a custom version of `simply-jekyll`, optimised for integration with [Obsidian](https://obsidian.md). It is more oriented on note-taking and aims to help you build a nice knowledge base that can scale with time. 
 
-The script uses : 
-- [PyGithub](https://github.com/PyGithub/PyGithub)
-- [Python-dotenv](https://github.com/theskumar/python-dotenv)
-- [python-frontmatter](https://github.com/eyeseast/python-frontmatter)
-- [Pyperclip](https://github.com/asweigart/pyperclip) on Windows/MacOS/Linux | IOS : Pasteboard (Pyto) or clipboard (Pythonista)
+**Demo is here: [notenote.link](https://notenote.link)**
 
-You can install all with `pip install -r requirements.txt`
+If you want to see a more refined example, you can check my notes (in french) at [arboretum.link](https://www.arboretum.link/). Build time is approx. 15 seconds, FYI.
 
-## Environment
-You need a `.env` file in root containing the path to your obsidian vault and the link to your blog. The file looks like this :
-```
-vault="G:\path\vault\"
-blog="https://your-website.netlify.app/notes/"
-```
+Issues are welcome, including feedback ! Don't hesitate to ask if you can't find a solution. 💫
 
-# Script
-There are several ways to use the script :
-- `python3 sharing.py` directly to convert, commit and push all file containing `share: true` in the frontmatter
-- `python3 sharing.py <file>` to convert specific file (without using the frontmatter)
+![screenshot](/assets/img/screenshot.png)
 
-You can use some option :
-- `--F` : Don't delete file if already exist.
-- `--G` : Prevent git to commit and push
-- `--f` : Force the update of file (aka delete file)
+## What is different?
 
-## Checking differences 
+- Markdown is fully-compatible with Obsidian (including Latex delimiters!)
+- There are now only notes (no blog posts).
+- There are cosmetic changes (ADHD-friendly code highlighting, larger font, larger page)
+- Code is now correctly indented
+- Wikilinks, but also alt-text wikilinks (with transclusion!) are usable.
 
-⚠️ By default, the script will check if the file was edited by **checking 
-the number of line** and with the name of the metadata (without date/title).
-If the line is exactly the same, the file will be not converted. New line, blank line, line escape (`\`) and comment **are removed** in this checking. 
+## How do I use this?
 
-So, to force update to a single file you can :
-- Use `share <filepath>` directly
-- Use `--f` to force update all file 
-- Continue to work on the file before pushing it.
-- Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
-- Manually delete the file 
-- Add or edit the metadata (unless date/title). 
+You can click on this link and let the deploy-to-netlify-for-free-script do the rest !
 
-## Options
-### Share all
-By adding, in the yaml of your file, the key `share: true`, you allow the script to publish the file. In fact, the script will read all the files in your vault before selecting the ones meeting the condition.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Maxence-L/notenote.link)
 
-By default, the script will check the difference between line [(*cf checking difference*)](https://github.com/Mara-Li/yes-another-free-publish/tree/owlly-house#checking-differences), and convert only the file with difference. You can use `--f` to force update. 
+Follow the [How to setup this site](https://notenote.link/notes/how-to-setup-this-site) guide, written by [raghuveerdotnet](https://github.com/raghuveerdotnet) and then adapted for this fork.
 
-### Share only a file
+If you want to use it with Github Pages, it is possible, [please read this](https://github.com/Maxence-L/notenote.link/issues/5#issuecomment-762508069).
 
-The file to be shared does not need to contain `share: true` in its YAML.
+## How can I participate?
 
-## How it works
+Open an issue to share feedback or propose features. Star the repo if you like it! 🌟
 
-The script : 
-- Moves file (with `share: true` frontmatter or specific file) in the `_notes` folder
-- Moves image in `assets/img` and convert (with alt support)
-- Converts highlight (`==mark==` to `[[mark::highlight]]`)
-- Converts "normal" writing to GFM markdown (adding `  \n` each `\n`)
-- Supports non existant file (adding a css for that 😉)
-- Supports image flags css (Lithou snippet 🙏)
-- Support normal and external files (convert "normal markdown link" to 
-  "wikilinks")
-- Edit link to support transluction (if not `embed: False`)
-- Remove block id (no support)
-- Frontmatter : In absence of date, add the day's date.
-- Frontmatter : In absence of title, add the file's title.
-- Copy the link to your clipboard if one file is edited.
-- ⭐ Support Admonition Plugin 
+## How do I customize this for my needs?
 
-Finally, the plugin will add, commit and push if supported.
+Things to modify to make it yours:
 
-Note : The clipboard maybe not work in your configuration. I have (and can) only test the script on IOS and Windows, so I use `pyperclip` and `pasteboard` to do that. If you are on MacOS, Linux, Android, please, check your configuration on your python and open an issue if it doesn't work. 
-Note : I **can't** testing on these 3 OS, so I can't create a clipboard option on my own. 
+- Meta content in [\_layouts/post.html](_layouts/post.html):
+    ```html
+    <meta content="My linked notebook" property="og:site_name"/>
+    ```
+- The favicon and profile are here: [assets/img/](assets/img/)
+- The main stuff is in [\_config.yml](_config.yml):
+    ```yaml
+    title: notenotelink.netlify.com
+    name: notenote.link
+    user_description: My linked notebook
 
-### Frontmatter settings
-- If not present, the plugin will add `date:(today)` and `title: (title of 
-  the document)` to the frontmatter
-- `share: true` : Share the file
-- `embed: false` : remove the transluction (convert to normal wikilinks)
+    notes_url: "https://notenotelink.netlify.com/"
+    profile_pic: /assets/img/profile.png
+    favicon: /assets/img/favicon.png
+    copyright_name: MIT
 
-### Admonition 
-Admonition work on this blog using CSS and IAL. It use : `{: .type}` and `{: .ad-title-type}`.
-The script will add `**title**{: .ad-title-type}` if found `title:` in the admonition block.
+    baseurl: "/" # the subpath of your site, e.g. /blog
+    url: "https://notenotelink.netlify.com/" # the base hostname & protocol for your site, e.g. http://example.com
+    encoding: utf-8
+    ```
+- You may want to change the copyright in [\_includes/footer.html](_includes/footer.html):
+   ```html
+   <p id="copyright-notice">Licence MIT</p>
+   ```
 
-It doesn't support :
-- Collapse
-- Color
-- Icon
-- Custom admonition (convert to note by default)
-Collapse, color, and icon are just removed in the conversion.
+## How do I remove the "seasons" feature for the notes?
 
-The final admonition part will be :
-```md
-{: .admonition-type}
-> **title**{: .ad-title-type}
-> Word
-> Word
-```
+Delete what's inside [\_includes/feed.html](_includes/feed.html) and replace it with:
 
-If no title is found, the admonition will be one line, as that :
-```md
-{: .admonition-type}
-> Admonition content
-```
-It also supports markdown and latex.
+```liquid
+{%- if page.permalink == "/" -%}
+    {%- for item in site.notes -%}
+        <div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
+            <a href="{{ item.url }}" style="text-decoration: none; color: #555555;">
+            {%- if item.status == "Ongoing" or item.status == "ongoing" -%}
+                <ul style="padding-left: 20px; margin-top: 20px;" class="tags">
+                    <li style="padding: 0 5px; border-radius: 10px;" class="tag"><b>Status: </b>{{item.status | capitalize }}</li>
+                </ul>
+                <p style="margin-top: 0px;" class="feed-title">{{ item.title }}</p>
+            {%- else -%}
+                <p class="feed-title">{{ item.title }}</p>
+            {%- endif -%}
+                <p class="feed-excerpt">{{ item.content | strip_html | strip | escape | truncate: 200}}</p>
+            </a>
+        </div>
+    {%- endfor -%}
+{%- endif -%}
+````
 
-Note : For the custom type, the type become the title of the note, so you don't lost the information about the type.
+On command-line, you can run `bundle exec jekyll serve` then go to `localhost:4000` to check the result.
 
-### IOS Shortcuts
+## What's coming?
 
-### IOS
-To use the shortcuts, you need : 
-- [Pyto](https://apps.apple.com/fr/app/pyto-python-3/id1436650069)
-- [Toolbox Pro](https://apps.apple.com/fr/app/toolbox-pro-for-shortcuts/id1476205977)
-- [Working Copy](https://workingcopyapp.com/)
-
-The main shortcut is on RoutineHub (more pratical for version update) : [share one file](https://routinehub.co/shortcut/10044/)
-(it's equivalent to `share <filepath>`)
-
-There is another shortcuts to "share all" files : [Share true file in vault](https://routinehub.co/shortcut/10045/)
-(it's equivalent to `share` without arguments)
-
-Note : You first need to clone the repo with Working Copy
-
-
-### Obsidian 
-→ Please use Wikilinks with "short links" (I BEG YOU)
-
-## Windows bonus
-
-You can add the script as an alias in Powershell via :
-`notepad $PROFILE`
-Then, by adding at the end of the file :
-```sh
-function sharepython ([string]$file) { python3 "path\to\site\folder\sharing.py "$file""}
-New-Alias share sharepython
-```
-So, finally you can just use `share` in powershall to convert, push, commit, your file.
-Also, options are supported with that.
+- [Open-transclude](https://subpixel.space/entries/open-transclude/) integration in the template, if possible.
+- Different themes! - Please tell me which you'd like to have!
