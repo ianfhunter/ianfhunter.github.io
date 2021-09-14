@@ -26,27 +26,7 @@ title: Illustration Ashling
 # 2020  
 ![+left-lg](../assets/img/Unlimited Breaks Point.png)  
 ![+right-lg](../assets/img/Ashling_project_nucleus_.png)  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 ---  
 # 2021  
 ![+zoom](../assets/img/Ashling_x_robot.png)  
@@ -58,8 +38,6 @@ title: Illustration Ashling
 ![-med+right](../assets/img/ref4.png)  
 ![](../assets/img/ref3.png)  
   
-  
 ---  
-  
 # Commission:  
 ![+zoom](../assets/img/Commission Feilyn.png)
