@@ -1,33 +1,42 @@
 ---
-category: Fiche RP - RP/Azelyss/Fiche/PNJ - RP/Azelyss/Relation
+category: Fiche RP
 date: 14-09-2021
-original: /
 race: Démon
+resume: '[AZELYSS] Élement de références pour le personnage de Salem'
 share: true
-state: "\U0001F7E2"
-tags: null
+state: "\U0001F5D2️"
+tags:
+- RP/Azelyss/Fiche/PNJ
+- RP/Azelyss/Relation
 title: Salem
 type: Personnages, PNJ, Notes, Relation
 univers: Azelyss
 ---
 
-# Références  
-**Nom :** /  
-**Prénom** : Salem  
-**Âge** : Plus de 1500  
-**Sexe** : M  
+# ─────༺ Présentation ༻─────  
+**Nom** : Salem  
+**Âge** : ~1500 ans  
+**Genre** : M  
   
-**Apparence** :   
+# ──────༺ Physique ༻──────  
+**Yeux** :   
+**Cheveux** :   
+**Taille** :   
+**Poids** :   
+**Peau** :   
+**Traits notables** :   
+**Cicatrice** :   
+**Style vestimentaire** :   
   
-**Mental** :   
   
-**Pouvoir : **  
-  
-**Élément biographique : **  
+# ──────༺ Mental ༻──────  
+**Défauts** :  
+**Qualité** :   
+**Tempérament :  
   
   
 ---  
-# Relations  
+# ──────༺ Relations ༻──────  
 - Père adoptif de [[Hayleen May]]  
   
 - Ancien allié de [[Iblis]]  
