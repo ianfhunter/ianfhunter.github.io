@@ -10,7 +10,7 @@ import frontmatter
 import yaml
 
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
-if 'script' in BASEDIR:
+if "script" in BASEDIR:
     BASEDIR = PurePath(BASEDIR).parents[0]
 env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
@@ -23,8 +23,9 @@ try:
     blog = env["blog"]
 except KeyError:
     with open(Path(f"{BASEDIR}/.env")) as f:
-        vault = Path(''.join(f.readlines(1)).replace("vault=", ""))
-        blog = ''.join(f.readlines(2)).replace("blog=", '')
+        vault = Path("".join(f.readlines(1)).replace("vault=", ""))
+        blog = "".join(f.readlines(2)).replace("blog=", "")
+
 
 def retro(filepath):
     # It permit to compare the file in file diff with len(file)
@@ -40,10 +41,12 @@ def retro(filepath):
     notes = [i for i in notes if "%%" not in i]
     return notes
 
+
 def remove_date_title(meta):
-    meta.metadata.pop('date', None)
-    meta.metadata.pop('title', None)
+    meta.metadata.pop("date", None)
+    meta.metadata.pop("title", None)
     return meta.metadata
+
 
 def diff_file(file):
     file_name = os.path.basename(file)
@@ -55,96 +58,145 @@ def diff_file(file):
         # Compare front matter because edit frontmatter is important too
         meta_notes = frontmatter.load(notes_path)
         meta_vault = frontmatter.load(vault_path)
-        metadata_notes=remove_date_title(meta_notes)
+        metadata_notes = remove_date_title(meta_notes)
         metadata_vault = remove_date_title(meta_vault)
-        if len(vault) == len(notes) or sorted(metadata_notes.keys()) != sorted(metadata_vault.keys()):
-            return False
+        if len(vault) == len(notes) or sorted(metadata_notes.keys()) == sorted(
+            metadata_vault.keys()
+        ):
+            return False #Not different
         else:
             return True
 
+
 def admonition_trad_type(line):
-    #Admonition Obsidian : blockquote + ad-
+    # Admonition Obsidian : blockquote + ad-
     # Admonition md template : ```ad-type <content> ```
-    #build dictionnary for different types
-    admonition = {'note':'note', 'seealso': 'note', 'abstract' : 'abstract', 'summary':'abstract', 'tldr': 'abstract', 'info':'todo', 'todo':'todo', 'tip':'tip', 'hint':'tip', 'important':'tip', 'success':'done', 'check':'done', 'done':'done', 'question':'question', 'help': 'question', 'faq':'question',  'warning':'warning', 'caution':'warning', 'attention':'warning', 'failure':'failure', 'fail':'failure', 'missing':'failure', 'danger':'danger', 'error':'danger', 'bug':'bug', 'example':'example', 'exemple':'example', 'quote':'quote', 'cite':'quote'}
-    admonition_type = re.search('```ad-(.*)', line)
+    # build dictionnary for different types
+    admonition = {
+        "note": "note",
+        "seealso": "note",
+        "abstract": "abstract",
+        "summary": "abstract",
+        "tldr": "abstract",
+        "info": "todo",
+        "todo": "todo",
+        "tip": "tip",
+        "hint": "tip",
+        "important": "tip",
+        "success": "done",
+        "check": "done",
+        "done": "done",
+        "question": "question",
+        "help": "question",
+        "faq": "question",
+        "warning": "warning",
+        "caution": "warning",
+        "attention": "warning",
+        "failure": "failure",
+        "fail": "failure",
+        "missing": "failure",
+        "danger": "danger",
+        "error": "danger",
+        "bug": "bug",
+        "example": "example",
+        "exemple": "example",
+        "quote": "quote",
+        "cite": "quote",
+    }
+    admonition_type = re.search("```ad-(.*)", line)
     ad_type = line
-    content_type=""
+    content_type = ""
     if admonition_type:
-        admonition_type=admonition_type.group(1)
-        if admonition_type.lower() in admonition.keys(): #found type
+        admonition_type = admonition_type.group(1)
+        if admonition_type.lower() in admonition.keys():  # found type
             content_type = admonition[admonition_type]
-            ad_type= '{: .'+ content_type +'}  \n'
+            ad_type = "{: ." + content_type + "}  \n"
         else:
-            ad_type = '{: .note}  \n'
-            content_type= "custom" + admonition_type  #if admonition "personnal" type, use note by default
+            ad_type = "{: .note}  \n"
+            content_type = (
+                "custom" + admonition_type
+            )  # if admonition "personnal" type, use note by default
     return ad_type, content_type
 
+
 def admonition_trad_title(line, content_type):
-    #Admonition title always are : 'title:(.*)' so...
-    ad_title= re.search('title:(.*)', line)
+    # Admonition title always are : 'title:(.*)' so...
+    ad_title = re.search("title:(.*)", line)
     title = line
     if ad_title:
         # get content title
-        title_group=ad_title.group(1)
+        title_group = ad_title.group(1)
         if "custom" in content_type:
             content_type = "note"
         if ad_title == "":
             title = "> " + line  # admonition inline
         else:
-            title_md = '> **'+title_group.strip()+'**{: .ad-title-' + content_type + '}'
-            title = re.sub('title:(.*)', title_md, line)
+            title_md = (
+                "> **" + title_group.strip() + "**{: .ad-title-" + content_type + "}"
+            )
+            title = re.sub("title:(.*)", title_md, line)
     else:
-        if 'collapse:' in line :
+        if "collapse:" in line:
             title = ""
-        elif 'icon:' in line:
+        elif "icon:" in line:
             title = ""
-        elif 'color:' in line:
+        elif "color:" in line:
             title = ""
         elif len(line) == 1:
             title = ""
         else:
-            title = "> " + line #admonition inline
+            title = "> " + line  # admonition inline
     return title
 
 
 def admonition_trad(file_data):
     code_index = 0
-    code_dict={}
+    code_dict = {}
     start = 0
     end = 0
     start_list = []
     end_list = []
-    for i in range (0, len(file_data)):
-        if re.search('```ad-(.*)', file_data[i]):
+    for i in range(0, len(file_data)):
+        if re.search("```ad-(.*)", file_data[i]):
             start = i
             start_list.append(start)
-        elif re.match('```', file_data[i]) :
+        elif re.match("```", file_data[i]):
             end = i
             end_list.append(end)
-    for i,j in zip(start_list, end_list):
-        code = {code_index:(i, j)}
-        code_index = code_index+1
+    for i, j in zip(start_list, end_list):
+        code = {code_index: (i, j)}
+        code_index = code_index + 1
         code_dict.update(code)
     for ad, ln in code_dict.items():
         ad_start = ln[0]
         ad_end = ln[1]
-        file_data[ad_start], ad_type=admonition_trad_type(file_data[ad_start])
-        ad_type=ad_type
-        code_block = [x for x in range(ad_start+1, ad_end)]
+        file_data[ad_start], ad_type = admonition_trad_type(file_data[ad_start])
+        ad_type = ad_type
+        code_block = [x for x in range(ad_start + 1, ad_end)]
         for fl in code_block:
-            if "custom" in ad_type :
+            if "custom" in ad_type:
                 custom_type = ad_type.replace("custom", "")
-                custom_type = custom_type.replace('-', ' ')
-                ad_title = re.search('title:(.*)', file_data[fl])
+                custom_type = custom_type.replace("-", " ")
+                ad_title = re.search("title:(.*)", file_data[fl])
                 if not ad_title:
-                    file_data[ad_start] =  "{: .note}  \n> **" + custom_type.strip().title() + "**{: .ad-title-note}  \n"
+                    file_data[ad_start] = (
+                        "{: .note}  \n> **"
+                        + custom_type.strip().title()
+                        + "**{: .ad-title-note}  \n"
+                    )
                 else:
                     ad_title = ad_title.group(1)
-                    file_data[ad_start] = "{: .note} \n > **[" + custom_type.strip().title() + "] " + ad_title.title()  +"**{: .ad-title-note}  \n"
+                    file_data[ad_start] = (
+                        "{: .note} \n > **["
+                        + custom_type.strip().title()
+                        + "] "
+                        + ad_title.title()
+                        + "**{: .ad-title-note}  \n"
+                    )
             file_data[fl] = admonition_trad_title(file_data[fl], ad_type)
-        file_data[ad_end] = ''
+        file_data[ad_end] = ""
     return file_data
+
 
 def delete_file(filepath):
     for file in os.listdir(post):
@@ -190,7 +242,9 @@ def move_img(line):
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
         final_text = f"![{img_flags}]({final_text})"
-        final_text = re.sub('!?(\[{1,2}|\().*\.(png|jpg|jpeg|gif)(.*)(\]{2}|\))', final_text, line)
+        final_text = re.sub(
+            "!?(\[{1,2}|\().*\.(png|jpg|jpeg|gif)(.*)(\]{2}|\))", final_text, line
+        )
     else:
         final_text = line
     return final_text
@@ -223,25 +277,27 @@ def convert_no_embed(line):
     final_text = line
     if re.match("\!\[{2}", line) and not re.match("(.*)\.(png|jpg|jpeg|gif)", line):
         final_text = line.replace("!", "")  # remove "!"
-        final_text = re.sub('#\^(.*)', "]]", final_text) #Link to block doesn't work
+        final_text = re.sub("#\^(.*)", "]]", final_text)  # Link to block doesn't work
     return final_text
-
 
 
 def convert_to_wikilink(line):
     final_text = line
-    if not re.search('\[\[', final_text) and re.search(
-            '\[(.*)]\((.*)\)', final_text
-            ) and not re.search('https', final_text):  # link : [name](file#title) (and not convert external_link)
-        title = re.search('\[(.*)]', final_text)
+    if (
+        not re.search("\[\[", final_text)
+        and re.search("\[(.*)]\((.*)\)", final_text)
+        and not re.search("https", final_text)
+    ):  # link : [name](file#title) (and not convert external_link)
+        title = re.search("\[(.*)]", final_text)
         title = title.group(1)
-        link = re.search('\((.*)\)', final_text)
+        link = re.search("\((.*)\)", final_text)
         link = link.group(1)
-        link = link.replace('%20', " ")
+        link = link.replace("%20", " ")
         wiki = f"[[{link.replace('.md', '')}|{title}]] "
-        final_text= re.sub('\[(.*)]\((.*)\)', wiki, final_text)
+        final_text = re.sub("\[(.*)]\((.*)\)", wiki, final_text)
 
     return final_text
+
 
 def transluction_note(line):
     # If file (not image) start with "![[" : transluction with rmn-transclude (exclude
@@ -254,6 +310,7 @@ def transluction_note(line):
         final_text = re.sub("]]", "::rmn-transclude]]", final_text)
         # Add transluction_note
     return final_text
+
 
 def frontmatter_check(filename):
     metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
@@ -277,8 +334,8 @@ def frontmatter_check(filename):
 def clipboard(filepath):
     filename = os.path.basename(filepath)
     filename = filename.replace(".md", "")
-    filename=filename.replace(" ","-")
-    clip=f"{blog}{filename}"
+    filename = filename.replace(" ", "-")
+    clip = f"{blog}{filename}"
     if sys.platform == "ios":
         try:
             import pasteboard  # work with pyto
@@ -314,14 +371,14 @@ def file_convert(file):
             final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
             lines = data.readlines()
             data.close()
-            if 'share' not in meta.keys() or meta["share"] is False:
+            if "share" not in meta.keys() or meta["share"] is False:
                 return
             lines = admonition_trad(lines)
             for ln in lines:
                 final_text = ln.replace("\n", "  \n")
-                final_text=convert_to_wikilink(final_text)
-                final_text = re.sub('\^\w+', '', final_text) #remove block id
-                if 'embed' in meta.keys() and meta['embed'] == False:
+                final_text = convert_to_wikilink(final_text)
+                final_text = re.sub("\^\w+", "", final_text)  # remove block id
+                if "embed" in meta.keys() and meta["embed"] == False:
                     final_text = convert_to_wikilink(final_text)
                     final_text = convert_no_embed(final_text)
                 else:
@@ -343,7 +400,7 @@ def file_convert(file):
                     # Escape pipe for link name
                     final_text = final_text.replace("|", "\|")
                     # Remove block ID (because it doesn't work)
-                    final_text = re.sub('#\^(.*)]]', "]]", final_text)
+                    final_text = re.sub("#\^(.*)]]", "]]", final_text)
                     final_text = final_text + "  \n"
                 final.write(final_text)
             final.close()
@@ -376,7 +433,10 @@ def search_share(option=0):
                         destination = dest(filepath)
                         if check:
                             filespush.append(destination)
-                except (yaml.scanner.ScannerError, yaml.constructor.ConstructorError) as e :
+                except (
+                    yaml.scanner.ScannerError,
+                    yaml.constructor.ConstructorError,
+                ) as e:
                     pass
 
     return filespush
