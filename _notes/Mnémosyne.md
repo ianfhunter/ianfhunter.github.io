@@ -87,8 +87,8 @@ En dehors de ses capacités, Némo possède les avantages suivants :
   
 | Défaut        | Qualité      |  
 | ------------- | ------------ |  
-| Irresponsable | Curieuse     |  
-| Chaotique     | Ingénieuse   |  
+| Railleuse     | Curieuse     |  
+| Sarcastique   | Ingénieuse   |  
 | Désinvolte    | Joueuse      |  
 | Versatile     | Décontractée |  
   
@@ -99,13 +99,15 @@ $~~~~~$ Aujourd'hui, Mnémosyne est plus calme, mais elle n'aime pas suivre les 
   
 $~~~~~$ Sa condition d'aveugle ne la dérange en rien, et elle aime s'en amuser, n'hésitant pas à en rire. Son amnésie, par contre, bien qu'elle n'aime pas le montrer, lui pose problème. La recherche de sa mémoire est actuellement sa quête principale, et elle a l'impression qu'aider l'Écho l'aidera dans cette tâche. Sinon, étant donné son caractère désinvolte et versatile, elle ne ferait pas partie d'une organisation aussi hiérarchisée avec une mission qu'elle considère comme un poil utopique.  
   
-$~$ Mais il ne faut pas non plus imaginer Mnémosyne comme une personne sans cœur et égoïste, puisqu'elle n'hésitera pas à venir en aide à une personne dans le besoin, quel qu'il soit.  
+$~~~~~$ Mais il ne faut pas non plus imaginer Mnémosyne comme une personne sans cœur et égoïste, puisqu'elle n'hésitera pas à venir en aide à une personne dans le besoin, quel qu'il soit.  
 Dans les faits, Mnémosyne se fiche royalement de la race des gens, hybride ou humain, voire totalement autre chose. Après tout, elle ne les voit même pas !  
 Bien qu'elle raconte qu'elle n'est pas habitée de désir noble comme certains membres de l'[[Echo]], elle n'est pas non plus à laisser tomber les gens avec qui elle s'entend. Ce n'est pas non plus une personne lâche et paraît versatile, car incapable de se fixer quelque part.  
   
 Durant la guerre, par contre, c'était autre chose, car elle avait un tempérament bien plus chaotique et a trahis son propre camps littéralement par amusement (à ce qu'on raconte, puisque aujourd'hui, elle n'en sait strictement rien !).  
   
 Avec l'amnésie, Mnémosyne s'est… Quelque peu assagit, on va dire.  
+  
+Elle a un tempérament presque acerbe, n'hésitant pas à ironiser sur sa condition mais aussi railler les gens sur leurs défauts supposé. Elle n'hésite pas à frapper les malendrin avec sa canne, mais elle est plus du genre beau-parleur que dans l'action.... Sauf si cela devient nécessaire. Elle est plutôt agréable à vivre, mange presque de tout et s'amuse avec presque tout.  
   
 _Note : Si votre personnage était déjà là durant la Grande Guerre des Anges, il est possible de connaître la véritable identité de Mnémosyne, mais le lien entre les deux personnes est difficile, car elle n'a pas la même apparence et caractère._  
   
