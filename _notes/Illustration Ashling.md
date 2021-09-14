@@ -7,7 +7,7 @@ share: true
 title: Illustration Ashling
 ---
 
-[[Ashling May\|Ashling::rmn-transclude]]  
+[[Ashling May::rmn-transclude]]  
   
   
 # 2017  

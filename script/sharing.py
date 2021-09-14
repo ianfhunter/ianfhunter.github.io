@@ -307,6 +307,7 @@ def transluction_note(line):
     if re.search("\!\[", line) and not re.search("(png|jpg|jpeg|gif)", line):
         final_text = line.replace("!", "")  # remove "!"
         final_text = re.sub("#(.*)", "]]", final_text)
+        final_text = re.sub('\\|(.*)',"]]", final_text) #remove Alternative title
         final_text = re.sub("]]", "::rmn-transclude]]", final_text)
         # Add transluction_note
     return final_text
