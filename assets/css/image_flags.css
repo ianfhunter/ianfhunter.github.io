@@ -30,6 +30,18 @@ img[alt*="+side"]>.markdown-embed {
     margin: 0px;
 }
 
+img[alt*="+left"] {
+    position: relative;
+    width: var(--defaultwidth) !important;
+    float: right;
+    margin: 0px;
+    margin-left: var(--coremarg);
+}
+
+img[alt*="+left"]>.markdown-embed {
+    margin: 0px;
+}
+
 
 /*tape */
 
@@ -194,19 +206,13 @@ img[alt*="+custom2"] {
 
 /* Orientation and position */
 
-img[alt*="-left"] {
-    float: left;
-    margin: 0px;
-    margin-right: var(--extramarg);
-}
-
-img[alt*="-right"] {
+img[alt*="+right"] {
+    position: relative;
     float: right;
-    margin: 0px;
-    margin-left: var(--extramarg);
 }
 
 img[alt*="-fix"] {
+    width: var(--defaultwidth) !important;
     position: fixed;
 }
 
@@ -328,17 +334,23 @@ img[alt*="-nofloat"] {
 /* Add any flags desired to enable a zoom for that flag */
 
 img[alt*="+side"]:active,
+img[alt*="+left"]:active,
+img[alt*="+right"]:active,
 img[alt*="+tape"]:active,
 img[alt*="+pin"]:active,
 img[alt*="+portrait"]:active,
+img[alt*="+zoom"]:active,
 img[alt*="+landscape"]:active {
     width: 100% !important;
 }
 
 img[alt*="+side"]:not(:active):hover,
+img[alt*="+right"]:not(:active):hover,
+img[alt*="+left"]:not(:active):hover,
 img[alt*="+tape"]:not(:active):hover,
 img[alt*="+pin"]:not(:active):hover,
 img[alt*="+portrait"]:not(:active):hover,
+img[alt*="+zoom"]:not(:active):hover,
 img[alt*="+landscape"]:not(:active):hover {
     transform: scale(1.2);
 }
