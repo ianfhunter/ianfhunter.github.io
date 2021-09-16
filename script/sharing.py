@@ -10,6 +10,7 @@ import shutil
 from datetime import datetime
 import frontmatter
 import yaml
+
 sys.stdin.reconfigure(encoding='utf-8')
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -38,7 +39,8 @@ def retro(filepath):
     metadata = frontmatter.load(filepath)
     file = metadata.content.split("\n")
     for n in file:
-        if n != "\\":
+        n = n.replace('```', '') #remove solo code line ...
+        if n != "\\" :
             n = n.strip()
             notes.append(n)
     notes = [i for i in notes if i != ""]
@@ -64,7 +66,10 @@ def diff_file(file):
         meta_vault = frontmatter.load(vault_path)
         metadata_notes = remove_date_title(meta_notes)
         metadata_vault = remove_date_title(meta_vault)
-        if len(vault) == len(notes) or sorted(metadata_notes.keys()) == sorted(
+        if "Markdown" in file_name:
+            print(len(vault))
+            print(len(notes))
+        if len(vault) == len(notes) and sorted(metadata_notes.keys()) == sorted(
             metadata_vault.keys()
         ):
             return False #Not different
@@ -494,7 +499,6 @@ def convert_to_github():
                     clipboard(ori)
                     try:
                         import git
-
                         repo = git.Repo(Path(f"{BASEDIR}/.git"))
                         repo.git.add(".")
                         repo.git.commit("-m", f"{COMMIT}")
@@ -541,7 +545,6 @@ def convert_to_github():
                             clipboard(md)
                         try:
                             import git
-
                             repo = git.Repo(Path(f"{BASEDIR}/.git"))
                             repo.git.add(".")
                             repo.git.commit("-m", f"git commit {commit}")
