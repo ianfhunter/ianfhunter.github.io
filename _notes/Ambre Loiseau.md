@@ -1,20 +1,20 @@
----  
+---
 category: Fiche RP
-share: true  
-date: 03-09-2017 
-type: OC  
-doc: iframe  
-univers: ❌  
-title: Ambre Loiseau  
-description: Fiche de Ambre Loiseau  
-tag:  
-  - OC  
-  - ❌  
-  - RP/Race/Zombie  
-  - Magie  
-  - Méchante  
----  
-  
+date: 16-09-2021
+doc: iframe
+resume: Fiche de Ambre Loiseau
+share: true
+tag:
+- OC
+- ❌
+- RP/Race/Zombie
+- Magie
+- Méchante
+title: Ambre Loiseau
+type: OC
+univers: ❌
+---
+
 ```dataview  
 table RP  
 FROM "Ecriture/Personnages"  
@@ -23,7 +23,7 @@ WHERE original = "Ambre Loiseau"
   
 ---  
   
-$$~$$  
+$~$  
   
 <h1 align="center"> ◄ G E N E R A L ►</h1>  
   
@@ -114,8 +114,7 @@ Une montre connectée à sa peau qui analyse en permanence ses calories. Elle lu
 → Elle joue dans une série d’invasion zombie, elle sert en outre de consultante à la série.  
 → Son plat de base est les pâtes bolognaises. Elle est devenue très imaginative pour se faire des plats avec juste de la viande crue et des féculents.  
 → Elle a un tatouage sur l’épaule, en forme de double hélice de l’ADN. Elle a aussi un pentacle sur l’omoplate.  
-![+pins(018a0f8d69380a0a45810392e008187f.png](../assets/img/018a0f8d69380a0a45810392e008187f.png)  
-  
+![+pins](../assets/img/018a0f8d69380a0a45810392e008187f.png)   
   
 ## Goûts  
   
@@ -126,4 +125,4 @@ Une montre connectée à sa peau qui analyse en permanence ses calories. Elle lu
 | Les films d'horreur |                  |  
 | Les mystères        |                  |  
 | Dormir              |                  |  
-| Le tarot            |                  |  
+| Le tarot            |                  |

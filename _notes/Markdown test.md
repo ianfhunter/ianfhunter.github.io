@@ -1,9 +1,8 @@
 ---
 category: none
-date: 06-09-2021
+date: 16-09-2021
 share: true
 title: Markdown test
-saison: none
 ---
 
 # A. Wysiwyg presentation  
@@ -26,10 +25,9 @@ Style Settings option :
 - Quote block color  
 - Mobile support.   
   
-```ad-warning  
-title: Mobile support  
-On mobile, the code mirror version used is **Code Mirror 6**, not **Code Mirror 5**. So, activeline doesn’t work. I use another “tricks” to create a WYSIWYG, but it’s not really better than the PC Ver.   
-```  
+{: .warning}    
+> **Mobile support**{: .ad-title-warning}  
+> On mobile, the code mirror version used is **Code Mirror 6**, not **Code Mirror 5**. So, activeline doesn’t work. I use another “tricks” to create a WYSIWYG, but it’s not really better than the PC Ver.   
   
 # B. This is a heading 1 #test  
 ## B.1. This is a heading 2 #test   

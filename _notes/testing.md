@@ -5,4 +5,6 @@ share: true
 title: testing
 ---
 
-Ceci est un test de push depuis shell & obsidian :D
+Ceci est un test de push depuis shell & obsidian :D  
+$~$  
+Et une autre ligne ?

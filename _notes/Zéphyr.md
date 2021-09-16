@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 14-09-2021
+date: 16-09-2021
 genre: PNJ
 name: Zéphyr
 resume: Notes relation & autres pour Zephyr
@@ -20,7 +20,7 @@ univers: Azelyss
 **Genre** : F  
 **Race** : Nephélée (Nymphe céleste associée au vent et la pluie)  
 **Pouvoir :**  
-- Magie Céleste (astromancie) : soin, protection, soutient (boost magie)  
+- Magie Céleste (astromancie) : soin, protection, soutien (boost magie)  
 - Contrôle du vent (aéromancie)  
   
 # ──────༺ Physique ༻──────  
@@ -38,9 +38,16 @@ univers: Azelyss
   
   
 # ──────༺ Mental ༻──────  
-**Défauts** : Versatile ; Excentrique ; Enigmatique ; Imprudente ;   
-**Qualité** : Affectueuse ; Amicale ; Animée ; Attirante ; Dynamique ; Intègre ; Inventive  
-**Tempérament**: Curieuse ; Sincère ; Spontanée   
+| Défaut      | Qualité     |  
+| ----------- | ----------- |  
+| Versatile   | Affectueuse |  
+| Excentrique | Amicale     |  
+| Énigmatique | Animée      |  
+| Imprudente  | Attirante   |  
+|             | Dynamique   |  
+|             | Intègre     |  
+|             | Inventive   |  
+**Tempérament** : Curieuse ; Sincère ; Spontanée   
   
   
 ---  
