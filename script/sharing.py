@@ -497,9 +497,9 @@ def convert_one(ori, delopt, git):
 
 def convert_all(delopt=False, git=False, force=False):
     if git:
-        git_info = "PUSH"
-    else:
         git_info = "NO PUSH"
+    else:
+        git_info = "PUSH"
 
     if delopt:  # preserve
         print(
@@ -520,7 +520,7 @@ def convert_all(delopt=False, git=False, force=False):
     if len(new_files) > 0:
         for md in new_files:
             commit = commit + "\n - " + md
-        if not git:
+        if git is False:
             if len(new_files) == 1:
                 md = "".join(new_files)
                 commit = md
