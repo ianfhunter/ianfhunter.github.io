@@ -28,16 +28,17 @@ blog="https://your-website.netlify.app/notes/"
 ```
 
 # Script
-Usage: `sharing.py  [-h] [--Preserve | --update] [--filepath FILEPATH] [--Github]`
+Usage: `sharing.py  [-h] [--Preserve | --update] [--filepath FILEPATH] [--Git]`
 
 Create file in `_notes`, move image in assets, convert to relative path, add share support, and push to git
 
 Optional arguments:
 -  `-h`, `--help` : Show this help message and exit  
 - `--Preserve`, `--P` : Don't delete file if already exist  
-- `--update`, `--u` : Force update : delete all file and reform.  
-- `--filepath FILEPATH`, `--f FILEPATH` : Filepath of the file you want to convert  
-- `--Github`, `--G` : No commit and no push to github  
+- `--update`, `--U` : Force update : delete all file and reform.  
+- `--filepath FILEPATH`, `--F FILEPATH` : Filepath of the file you want to 
+  convert  
+- `--Git`, `--G` : No commit and no push to git (work for github, gitlab...) 
 
 ## Checking differences 
 
