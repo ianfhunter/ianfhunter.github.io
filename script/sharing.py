@@ -571,8 +571,10 @@ def convert_to_github():
         if ori and os.path.exists(ori):  # Share ONE
             convert_one(ori, delopt, ng)
         else:
+            print('truc')
             convert_all(delopt, ng, force)
     else:
+        print('truc2')
         convert_all(False, False, False)
 
 
