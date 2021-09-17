@@ -1,13 +1,13 @@
 ---
 alias: Illustration
-category: none
-date: 14-09-2021
-season: none
+category: false
+date: 17-09-2021
+feed: false
 share: true
 title: Illustration Ashling
 ---
 
-[[Ashling May::rmn-transclude]]  
+[[Ashling May::rmn-transclude]]
   
   
 # 2017  
@@ -26,7 +26,27 @@ title: Illustration Ashling
 # 2020  
 ![+left-lg](../assets/img/Unlimited Breaks Point.png)  
 ![+right-lg](../assets/img/Ashling_project_nucleus_.png)  
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 ---  
 # 2021  
 ![+zoom](../assets/img/Ashling_x_robot.png)  
@@ -38,6 +58,8 @@ title: Illustration Ashling
 ![-med+right](../assets/img/ref4.png)  
 ![](../assets/img/ref3.png)  
   
+  
 ---  
+  
 # Commission:  
 ![+zoom](../assets/img/Commission Feilyn.png)

@@ -1,9 +1,9 @@
 ---
-category: none
-date: 16-09-2021
+category: false
+date: 17-09-2021
+feed: false
 share: true
 title: testing
-season: none
 ---
 
 Ceci est un test de push depuis shell & obsidian :D  

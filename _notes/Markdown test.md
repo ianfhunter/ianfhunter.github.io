@@ -1,8 +1,8 @@
 ---
-category: none
+category: false
 created: 17-09-2021
 date: 17-09-2021
-season: none
+feed: true
 share: true
 title: Markdown test
 ---

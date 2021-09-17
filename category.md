@@ -20,7 +20,7 @@ content-type: eg
 <main>
 {% assign mydocs = site.notes | group_by: 'category' %}
 {% for cat in mydocs %}
-	{%- if cat.name != 'none' -%} 
+	{%- if cat.name != 'false' -%} 
 <details>
 <summary>{{ cat.name | capitalize | reverse }}</summary>
     <ul>

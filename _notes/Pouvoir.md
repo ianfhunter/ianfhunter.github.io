@@ -1,17 +1,18 @@
----  
-category: none
-date: 01-01-2015
-share: true  
-season: none  
-title: Pouvoir  
-type: Référence  
-state: 🗒️  
-tag:  
-  - Ashling-May/Référence  
-  - RP/Fiche  
-  - Pouvoir  
-  - Futuriste  
----  
+---
+category: Fiche RP
+date: 17-09-2021
+feed: true
+share: true
+state: "\U0001F5D2️"
+tag:
+- Ashling-May/Référence
+- RP/Fiche
+- Pouvoir
+- Futuriste
+title: Pouvoir
+type: Référence
+---
+
 Ref: [[Ashling May]]  
   
   
