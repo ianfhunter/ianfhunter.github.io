@@ -57,6 +57,7 @@ defaults:
 jekyll-spaceship:
   # default enabled processors
   processors:
+    - table-processor
     - mathjax-processor
     - plantuml-processor
     - mermaid-processor
