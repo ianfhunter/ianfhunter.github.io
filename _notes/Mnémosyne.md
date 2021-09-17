@@ -138,6 +138,7 @@ _Poids_ : 53kg
   
 # Histoire  
   
+\[Guerre des Anges]  
   
   
 Elle fit un pas en arrière, tenant la lance de █████ fermement dans ses mains. Elle lui avait arraché des mains quelque jour auparavant, après l'avoir trompé.  
@@ -172,6 +173,7 @@ Et arrachant aussi le Grand Ancien à son monde.
   
 ---  
   
+\[Italie ; Année 80]  
   
 — Tu es sûre que c'est la bonne incantation ?  
 Salem écrasa sa cigarette sous sa botte et observa la forêt sombre autour de lui. Près de lui, la mage se releva, et fixa sur lui ses yeux dorés.  
@@ -199,6 +201,7 @@ Depuis, elle faisait parti de l'Echo, une organisation secrète de protection de
   
 Némo ne vieillissait pas. Ses blessures n'étaient pas grand chose. Elle s'en amusait, ce monde était presque un jeu.  
   
+\[ Italie ; Année actuelle]  
   
   
 — Némo.  
