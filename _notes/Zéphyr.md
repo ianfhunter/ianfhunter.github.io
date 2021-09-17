@@ -38,6 +38,7 @@ univers: Azelyss
   
   
 # ──────༺ Mental ༻──────  
+
 | Défaut      | Qualité     |  
 | ----------- | ----------- |  
 | Versatile   | Affectueuse |  
