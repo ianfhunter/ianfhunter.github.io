@@ -4,14 +4,12 @@ type: OC, Fiche
 univers: Azelyss
 alias: Mnemosyne, Némo, Nemo
 category: Fiche RP
-created: 03-09-2021
 date: 18-09-2021
 genre: PJ
 original: /
 race: Ange
 resume: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
 share: true
-state: "\U0001F4DD"
 tag:
 - Fiche
 - PJ
