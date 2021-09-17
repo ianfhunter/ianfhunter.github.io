@@ -1,4 +1,7 @@
 ---
+title: Mnemosyne
+type: OC, Fiche
+univers: Azelyss
 alias: Mnemosyne, Némo, Nemo
 category: Fiche RP
 created: 03-09-2021
@@ -13,11 +16,8 @@ tag:
 - Fiche
 - PJ
 - RP/Azelyss/Fiche/PJ
-- Ongoing
 - Histoire
-title: Mnémosyne
-type: OC, Fiche
-univers: Azelyss
+
 ---
 
 ![+side](../assets/img/Mnémosyne.png)  
