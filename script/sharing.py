@@ -456,7 +456,6 @@ def search_share(option=0):
 
 def git_push(COMMIT):
     try:
-        print('coucou')
         import git
 
         repo = git.Repo(Path(f"{BASEDIR}/.git"))
@@ -520,11 +519,11 @@ def convert_all(delopt=False, git=False, force=False):
         )
         new_files = search_share(1)
     commit = "Add to blog:\n"
+    print(new_files)
     if len(new_files) > 0:
         for md in new_files:
             commit = commit + "\n - " + md
         if git is False:
-            print('push')
             if len(new_files) == 1:
                 md = "".join(new_files)
                 commit = md
@@ -553,6 +552,7 @@ def convert_to_github():
         "--u",
         help="force update : delete all file and reform.",
         action="store_true",
+        default=False,
     )
     parser.add_argument(
         "--filepath",
