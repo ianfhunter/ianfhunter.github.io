@@ -551,9 +551,7 @@ def convert_to_github():
         "--update",
         "--u",
         help="force update : delete all file and reform.",
-        action="store_true",
-        default=False,
-    )
+        action="store_true")
     parser.add_argument(
         "--filepath",
         "--f",
@@ -570,6 +568,7 @@ def convert_to_github():
     if args.Preserve:
         delopt = True
     force = args.update
+    print(force)
     ng = args.Github
     if ori and os.path.exists(ori):  # Share ONE
         convert_one(ori, delopt, ng)
