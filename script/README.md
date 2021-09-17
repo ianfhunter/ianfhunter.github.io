@@ -28,14 +28,16 @@ blog="https://your-website.netlify.app/notes/"
 ```
 
 # Script
-There are several ways to use the script :
-- `python3 sharing.py` directly to convert, commit and push all file containing `share: true` in the frontmatter
-- `python3 sharing.py <file>` to convert specific file (without using the frontmatter)
+Usage: `sharing.py  [-h] [--Preserve | --update] [--filepath FILEPATH] [--Github]`
 
-You can use some option :
-- `--F` : Don't delete file if already exist.
-- `--G` : Prevent git to commit and push
-- `--f` : Force the update of file (aka delete file)
+Create file in `_notes`, move image in assets, convert to relative path, add share support, and push to git
+
+Optional arguments:
+-  `-h`, `--help` : Show this help message and exit  
+- `--Preserve`, `--P` : Don't delete file if already exist  
+- `--update`, `--u` : Force update : delete all file and reform.  
+- `--filepath FILEPATH`, `--f FILEPATH` : Filepath of the file you want to convert  
+- `--Github`, `--G` : No commit and no push to github  
 
 ## Checking differences 
 
@@ -44,18 +46,18 @@ the number of line** and with the name of the metadata (without date/title).
 If the line is exactly the same, the file will be not converted. New line, blank line, line escape (`\`) and comment **are removed** in this checking. 
 
 So, to force update to a single file you can :
-- Use `share <filepath>` directly
-- Use `--f` to force update all file 
+- Use `share --file <filepath>` directly
+- Use `--u` to force update all file 
 - Continue to work on the file before pushing it.
 - Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
 - Manually delete the file 
-- Add or edit the metadata (unless date/title). 
+- Add or edit the metadata (unless `date`/`title`/`created`). 
 
 ## Options
 ### Share all
 By adding, in the yaml of your file, the key `share: true`, you allow the script to publish the file. In fact, the script will read all the files in your vault before selecting the ones meeting the condition.
 
-By default, the script will check the difference between line [(*cf checking difference*)](https://github.com/Mara-Li/yes-another-free-publish/tree/owlly-house#checking-differences), and convert only the file with difference. You can use `--f` to force update. 
+By default, the script will check the difference between line [(*cf checking difference*)](https://github.com/Mara-Li/yes-another-free-publish/tree/owlly-house#checking-differences), and convert only the file with difference. You can use `--u` to force update. 
 
 ### Share only a file
 
@@ -74,7 +76,7 @@ The script :
   "wikilinks")
 - Edit link to support transluction (if not `embed: False`)
 - Remove block id (no support)
-- Frontmatter : In absence of date, add the day's date.
+- Frontmatter :  Update the date. If there is already a `date` key, save it to `created` and update `date`.
 - Frontmatter : In absence of title, add the file's title.
 - Copy the link to your clipboard if one file is edited.
 - ⭐ Support Admonition Plugin 
@@ -85,10 +87,13 @@ Note : The clipboard maybe not work in your configuration. I have (and can) only
 Note : I **can't** testing on these 3 OS, so I can't create a clipboard option on my own. 
 
 ### Frontmatter settings
-- If not present, the plugin will add `date:(today)` and `title: (title of 
-  the document)` to the frontmatter
 - `share: true` : Share the file
 - `embed: false` : remove the transluction (convert to normal wikilinks)
+
+You can totally use the `owlly-house` branch, who add more option in the yaml ; as :
+- `flux: false` : remove the file from the feed
+- `category` : Add a category for the category page ; `category: false` remove it from this page too.
+- `resume` : Add a resume of the file in the feed. 
 
 ### Admonition 
 Admonition work on this blog using CSS and IAL. It use : `{: .type}` and `{: .ad-title-type}`.
