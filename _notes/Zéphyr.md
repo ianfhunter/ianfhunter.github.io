@@ -38,15 +38,17 @@ univers: Azelyss
   
   
 # ──────༺ Mental ༻──────  
-| Défaut      | Qualité     |  
-| ----------- | ----------- |  
-| Versatile   | Affectueuse |  
-| Excentrique | Amicale     |  
-| Énigmatique | Animée      |  
-| Imprudente  | Attirante   |  
-|             | Dynamique   |  
-|             | Intègre     |  
+
+| Défaut      | Qualité     |
+| ----------- | ----------- |
+| Versatile   | Affectueuse |
+| Excentrique | Amicale     |
+| Énigmatique | Animée      |
+| Imprudente  | Attirante   |
+|             | Dynamique   |
+|             | Intègre     |
 |             | Inventive   |  
+
 **Tempérament** : Curieuse ; Sincère ; Spontanée   
   
   
