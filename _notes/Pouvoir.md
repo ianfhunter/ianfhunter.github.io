@@ -1,7 +1,7 @@
 ---
 category: Fiche RP
 date: 17-09-2021
-feed: true
+flux: true
 share: true
 state: "\U0001F5D2️"
 tag:

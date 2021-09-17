@@ -1,7 +1,7 @@
 ---
 category: false
 date: 17-09-2021
-feed: false
+flux: false
 share: true
 title: testing
 ---

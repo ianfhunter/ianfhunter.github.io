@@ -2,7 +2,7 @@
 category: false
 created: 17-09-2021
 date: 17-09-2021
-feed: true
+flux: true
 share: true
 title: Markdown test
 ---

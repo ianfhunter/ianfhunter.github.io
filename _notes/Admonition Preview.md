@@ -1,7 +1,7 @@
 ---
-category: none
+category: false
 date: 09-09-2021
-season: none
+flux: false
 share: true
 title: Admonition
 ---
