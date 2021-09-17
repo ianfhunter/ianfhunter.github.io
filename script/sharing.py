@@ -496,6 +496,7 @@ def convert_one(ori, delopt, git):
 
 
 def convert_all(delopt=False, git=False, force=False):
+    print(delopt, git, force)
     if git:
         git_info = "NO PUSH"
     else:
@@ -561,18 +562,16 @@ def convert_to_github():
         "--Github", "--G", help="No commit and no push to github", action="store_true"
     )
     args = parser.parse_args()
-    if args:  # arguments
-        ori = args.filepath
-        delopt = False
-        if args.Preserve:
-            delopt = True
-        force = args.update
-        ng = args.Github
-        print(args)
-        if ori and os.path.exists(ori):  # Share ONE
-            convert_one(ori, delopt, ng)
-        else:
-            convert_all(delopt, ng, force)
+    ori = args.filepath
+    delopt = False
+    if args.Preserve:
+        delopt = True
+    force = args.update
+    ng = args.Github
+    if ori and os.path.exists(ori):  # Share ONE
+        convert_one(ori, delopt, ng)
+    else:
+        convert_all(delopt, ng, force)
 
 
 if __name__ == "__main__":
