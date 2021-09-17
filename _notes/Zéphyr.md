@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 16-09-2021
+date: 17-09-2021
 genre: PNJ
 name: Zéphyr
 resume: Notes relation & autres pour Zephyr
@@ -14,7 +14,7 @@ univers: Azelyss
 ---
 
 # ─────༺ Présentation ༻─────  
-  
+![+side](../assets/img/Zephyr.png)  
 **Nom** : Zephyr  
 **Âge** : 1000 ans (environ)  
 **Genre** : F  
@@ -38,17 +38,16 @@ univers: Azelyss
   
   
 # ──────༺ Mental ༻──────  
-
-| Défaut      | Qualité     |
-| ----------- | ----------- |
-| Versatile   | Affectueuse |
-| Excentrique | Amicale     |
-| Énigmatique | Animée      |
-| Imprudente  | Attirante   |
-|             | Dynamique   |
-|             | Intègre     |
+| Défaut      | Qualité     |  
+| ----------- | ----------- |  
+| Versatile   | Affectueuse |  
+| Excentrique | Amicale     |  
+| Énigmatique | Animée      |  
+| Imprudente  | Attirante   |  
+|             | Dynamique   |  
+|             | Intègre     |  
 |             | Inventive   |  
-
+  
 **Tempérament** : Curieuse ; Sincère ; Spontanée   
   
   
