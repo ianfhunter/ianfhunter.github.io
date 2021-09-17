@@ -4,7 +4,6 @@ type: OC, Fiche
 univers: Azelyss
 alias: Mnemosyne, Némo, Nemo
 category: Fiche RP
-date: 18-09-2021
 genre: PJ
 original: /
 race: Ange
