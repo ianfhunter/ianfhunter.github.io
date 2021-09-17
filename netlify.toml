@@ -14,5 +14,3 @@
 [build]
   publish = "_site"
   command = "jekyll build"
-[build.environment]
-  FR='Europe/Paris'
