@@ -4,7 +4,6 @@ created: 17-09-2021
 date: 17-09-2021
 share: true
 title: Markdown test
-season: none
 ---
 
 # A. Wysiwyg presentation  
@@ -17,8 +16,6 @@ I use, here :
 - Outliner   
 - Yin and Yang theme   
   
-$~$  
-$~~$  
   
 **Font used :**  
 - Preview : Tenorite  
