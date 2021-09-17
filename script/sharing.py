@@ -456,6 +456,7 @@ def search_share(option=0):
 
 def git_push(COMMIT):
     try:
+        print('coucou')
         import git
 
         repo = git.Repo(Path(f"{BASEDIR}/.git"))
@@ -522,6 +523,7 @@ def convert_all(delopt=False, git=False, force=False):
         for md in new_files:
             commit = commit + "\n - " + md
         if git is False:
+            print('push')
             if len(new_files) == 1:
                 md = "".join(new_files)
                 commit = md
