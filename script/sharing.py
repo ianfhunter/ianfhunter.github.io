@@ -573,7 +573,7 @@ def convert_to_github():
         else:
             convert_all(delopt, ng, force)
     else:
-        convert_all()
+        convert_all(False, False, False)
 
 
 if __name__ == "__main__":
