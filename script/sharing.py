@@ -10,6 +10,7 @@ import shutil
 from datetime import datetime
 import frontmatter
 import yaml
+import argparse
 
 sys.stdin.reconfigure(encoding="utf-8")
 sys.stdout.reconfigure(encoding="utf-8")
@@ -51,6 +52,7 @@ def retro(filepath):
 def remove_date_title(meta):
     meta.metadata.pop("date", None)
     meta.metadata.pop("title", None)
+    meta.metadata.pop("created", None)
     return meta.metadata
 
 
@@ -319,14 +321,14 @@ def transluction_note(line):
     return final_text
 
 
-def frontmatter_check(filename):
+def frontmatter_check(filename, option=0):
     metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
     meta = frontmatter.load(metadata)
     update = frontmatter.dumps(meta)
     metadata.close()
     final = open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
     if "date" in meta.keys():
-        meta['created'] = meta['date'] #Save old date
+        meta["created"] = meta["date"]  # Save old date
         update = frontmatter.dumps(meta)
         meta = frontmatter.loads(update)
     now = datetime.now().strftime("%d-%m-%Y")
@@ -452,154 +454,126 @@ def search_share(option=0):
     return filespush
 
 
-def convert_to_github():
-    """
-    Create file in _notes, move image in assets, convert to relative path, add share support, and push to git
-    ----
-    Usage
-    -----
-        python3 sharing (filepath) (options)
-        Optional option:
-            - --F : Don't delete file if already exist (prevent update)
-            - --f : Force update (delete all file and reform)
-            - help : print help message
-            - filepath: convert just one file
-            - --G : no commit and no push to github.
-    """
-    if len(sys.argv) >= 2:
-        if sys.argv[1] == "help":
-            print(help(convert_to_github))
-        else:
-            print(f"[{datetime.now().strftime('%H:%M:%S')}] Starting convert")
-            ori = sys.argv[1]
-            delopt = ""
-            ng = ""
-            if "--F" in sys.argv:
-                delopt = "--F"
-            elif "--f" in sys.argv:
-                delopt = "--f"
-            if "--G" in sys.argv:
-                ng = "--G"
-            if os.path.exists(ori):
-                if delopt != "--F":
-                    print(
-                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert {ori} with update"
-                    )
-                    delete_file(ori)
-                else:
-                    print(
-                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert {ori} (without update)"
-                    )
-                check = file_convert(ori)
-                if check and ng != "--G":
-                    print(
-                        f"[{datetime.now().strftime('%H:%M:%S')}] Add {ori} to github"
-                    )
-                    COMMIT = f"{ori} to blog"
-                    clipboard(ori)
-                    try:
-                        import git
-                        repo = git.Repo(Path(f"{BASEDIR}/.git"))
-                        repo.git.add(".")
-                        repo.git.commit("-m", f"{COMMIT}")
-                        repo.git.push("origin", "HEAD:refs/for/master")
-                        print(
-                            f"[{datetime.now().strftime('%H:%M:%S')}] {ori} pushed successfully 🎉"
-                        )
-                    except ImportError:
-                        print(
-                            "[{datetime.now().strftime('%H:%M:%S')}] Please, use another way to push your change"
-                        )
-                elif check and ng == "--G":
-                    print(
-                        f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Successfully converted {ori}"
-                    )
-                else:
-                    print(
-                        f"[{datetime.now().strftime('%H:%M:%S')}] Ori already converted"
-                    )
+def git_push(COMMIT):
+    try:
+        import git
 
-            else:
-                if delopt == "--F":
-                    print(
-                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert without update"
-                    )
-                    new_files = search_share()
-                elif delopt == "--f":
-                    print(
-                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert with force update"
-                    )
-                    new_files = search_share(2)
-                else:
-                    print(
-                        f"[{datetime.now().strftime('%H:%M:%S')}] Convert with update"
-                    )
-                    new_files = search_share(1)
-                commit = "Add to blog:\n"
-                if len(new_files) > 0:
-                    for md in new_files:
-                        commit = commit + "\n — " + md
-                    if ng != "--G":
-                        if len(new_files) == 1:
-                            md = "".join(new_files)
-                            clipboard(md)
-                        try:
-                            import git
+        repo = git.Repo(Path(f"{BASEDIR}/.git"))
+        repo.git.add(".")
+        repo.git.commit("-m", f"{COMMIT}")
+        repo.git.push("origin", "HEAD:refs/for/master")
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] {COMMIT} successfully 🎉")
+    except ImportError:
+        print(
+            "[{datetime.now().strftime('%H:%M:%S')}] Please, use another way to push your change 😶"
+        )
 
-                            repo = git.Repo(Path(f"{BASEDIR}/.git"))
-                            repo.git.add(".")
-                            repo.git.commit("-m", f"git commit {commit}")
-                            origin = repo.remote(name="origin")
-                            origin.push()
-                            print(
-                                f"[{datetime.now().strftime('%H:%M:%S')} {commit}\n pushed successfully 🎉"
-                            )
-                        except ImportError:
-                            print(
-                                f"[{datetime.now().strftime('%H:%M:%S')}] Please use another way to push your project"
-                            )
-                    else:
-                        print(
-                            f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Converted "
-                            f"{commit.replace('Add to blog', '')}"
-                        )
-                else:
-                    print(
-                        f"[{datetime.now().strftime('%H:%M:%S')}] File already exists 😶"
-                    )
 
+def convert_one(ori, delopt, git):
+    file_name = os.path.basename(ori).upper()
+    if delopt is False:
+        print(
+            f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [{file_name}] OPTIONS :\n- UPDATE "
+        )
+        delete_file(ori)
     else:
         print(
-            f"[{datetime.now().strftime('%H:%M:%S')}] Starting Convert with update and push "
+            f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [{file_name}] OPTIONS :\n- PRESERVE"
+        )
+    check = file_convert(ori)
+    if check and not git:
+        COMMIT = f"Pushed {file_name.lower()} to blog"
+        git_push(COMMIT)
+        clipboard(ori)
+    elif check and git:
+        print(
+            f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Successfully converted {file_name.lower()}"
+        )
+    else:
+        print(
+            f"[{datetime.now().strftime('%H:%M:%S')}] {file_name.lower()} already converted 😶"
+        )
+
+
+def convert_all(delopt=False, git=False, force=False):
+    if git:
+        git_info = "PUSH"
+    else:
+        git_info = "NO PUSH"
+
+    if delopt:  # preserve
+        print(
+            f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- PRESERVE FILES"
+        )
+        new_files = search_share()
+    elif force:
+        print(
+            f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- FORCE UPDATE"
+        )
+        new_files = search_share(2)
+    else:
+        print(
+            f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- UPDATE MODIFIED FILES"
         )
         new_files = search_share(1)
-        commit = "Add to blog :\n"
-        if len(new_files) > 0:
+    commit = "Add to blog:\n"
+    if len(new_files) > 0:
+        for md in new_files:
+            commit = commit + "\n - " + md
+        if not git:
             if len(new_files) == 1:
                 md = "".join(new_files)
+                commit = md
                 clipboard(md)
-            try:
-                import git
-
-                repo = git.Repo(Path(f"{BASEDIR}/.git"))
-                for md in new_files:
-                    commit = commit + "\n — " + md
-                if len(new_files) == 1:
-                    md = "".join(new_files)
-                    clipboard(md)
-                repo.git.add(A=True)
-                repo.git.commit(m=commit)
-                origin = repo.remote("origin")
-                origin.push()
-                print(
-                    f"[{datetime.now().strftime('%H:%M:%S')}] {commit}\n pushed successfully 🎉"
-                )
-            except ImportError:
-                print(
-                    f"[{datetime.now().strftime('%H:%M:%S')}] Please use working copy"
-                )
+            commit = f"Add to blog: \n {commit}"
+            git_push(commit)
         else:
-            print(f"[{datetime.now().strftime('%H:%M:%S')}] File already exists 😶")
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 {commit}")
+    else:
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] File already exists 😶")
+
+
+def convert_to_github():
+    parser = argparse.ArgumentParser(
+        description="Create file in _notes, move image in assets, convert to relative path, add share support, and push to git"
+    )
+    group_f = parser.add_mutually_exclusive_group()
+    group_f.add_argument(
+        "--Preserve",
+        "--P",
+        help="Don't delete file if already exist",
+        action="store_true",
+    )
+    group_f.add_argument(
+        "--update",
+        "--u",
+        help="force update : delete all file and reform.",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--filepath",
+        "--f",
+        help="Filepath of the file you want to convert",
+        action="store",
+        required=False,
+    )
+    parser.add_argument(
+        "--Github", "--G", help="No commit and no push to github", action="store_true"
+    )
+    args = parser.parse_args()
+    if args:  # arguments
+        ori = args.filepath
+        delopt = False
+        if args.Preserve:
+            delopt = True
+        force = args.update
+        ng = args.Github
+        if ori and os.path.exists(ori):  # Share ONE
+            convert_one(ori, delopt, ng)
+        else:
+            convert_all(delopt, ng, force)
+    else:
+        convert_all()
 
 
 if __name__ == "__main__":
