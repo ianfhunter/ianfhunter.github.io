@@ -233,7 +233,4 @@ Ironiquement, Salem était borgne. Avec Némo, il faisait la paire.
 **Habitudes** :  
   
 **Armes** :  
-- Sa canne, ca compte ?  
-  
-$~$  
-$~$
+- Sa canne, ca compte ?
