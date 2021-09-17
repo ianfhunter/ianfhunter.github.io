@@ -18,7 +18,7 @@ tag:
 
 ---
 
-![+side](../assets/img/Mnémosyne.png)  
+![+side](../assets/img/Mnemosyne.png)  
   
 **Prénom et nom** : Mnémosyne  
 _Alias :_ Némo  
