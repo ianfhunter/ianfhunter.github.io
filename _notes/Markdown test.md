@@ -1,8 +1,10 @@
 ---
 category: none
-date: 16-09-2021
+created: 17-09-2021
+date: 17-09-2021
 share: true
 title: Markdown test
+season: none
 ---
 
 # A. Wysiwyg presentation  
@@ -14,6 +16,9 @@ I use, here :
 - Style Settings  
 - Outliner   
 - Yin and Yang theme   
+  
+$~$  
+$~~$  
   
 **Font used :**  
 - Preview : Tenorite  
