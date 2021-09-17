@@ -405,7 +405,7 @@ def file_convert(file):
                 ):  # CONVERT IMAGE
                     final_text = move_img(final_text)
                 elif (
-                    "\\" in final_text.strip()
+                    re.fullmatch('\\\\', final_text.strip())
                 ):  # New line when using "\" in obsidian file
                     final_text = "  \n"
                 elif re.search("(\[{2}|\[).*", final_text):
@@ -497,7 +497,6 @@ def convert_one(ori, delopt, git):
 
 
 def convert_all(delopt=False, git=False, force=False):
-    print(delopt, git, force)
     if git:
         git_info = "NO PUSH"
     else:
@@ -519,7 +518,6 @@ def convert_all(delopt=False, git=False, force=False):
         )
         new_files = search_share(1)
     commit = "Add to blog:\n"
-    print(new_files)
     if len(new_files) > 0:
         for md in new_files:
             commit = commit + "\n - " + md
@@ -568,7 +566,6 @@ def convert_to_github():
     if args.Preserve:
         delopt = True
     force = args.update
-    print(force)
     ng = args.Github
     if ori and os.path.exists(ori):  # Share ONE
         convert_one(ori, delopt, ng)
