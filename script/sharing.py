@@ -325,11 +325,14 @@ def frontmatter_check(filename):
     update = frontmatter.dumps(meta)
     metadata.close()
     final = open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
-    if not "date" in meta.keys():
-        now = datetime.now().strftime("%d-%m-%Y")
-        meta["date"] = now
+    if "date" in meta.keys():
+        meta['created'] = meta['date'] #Save old date
         update = frontmatter.dumps(meta)
         meta = frontmatter.loads(update)
+    now = datetime.now().strftime("%d-%m-%Y")
+    meta["date"] = now
+    update = frontmatter.dumps(meta)
+    meta = frontmatter.loads(update)
     if not "title" in meta.keys():
         meta["title"] = filename.replace(".md", "")
         update = frontmatter.dumps(meta)
@@ -496,7 +499,6 @@ def convert_to_github():
                     clipboard(ori)
                     try:
                         import git
-
                         repo = git.Repo(Path(f"{BASEDIR}/.git"))
                         repo.git.add(".")
                         repo.git.commit("-m", f"{COMMIT}")
