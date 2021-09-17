@@ -462,7 +462,8 @@ def git_push(COMMIT):
         repo = git.Repo(Path(f"{BASEDIR}/.git"))
         repo.git.add(".")
         repo.git.commit("-m", f"{COMMIT}")
-        repo.git.push("origin", "HEAD:refs/for/master")
+        origin = repo.remote('origin')
+        origin.push()
         print(f"[{datetime.now().strftime('%H:%M:%S')}] {COMMIT} successfully 🎉")
     except ImportError:
         print(
