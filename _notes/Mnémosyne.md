@@ -1,7 +1,8 @@
 ---
 alias: Mnemosyne, Némo, Nemo
 category: Fiche RP
-date: 03-09-2021
+created: 03-09-2021
+date: 17-09-2021
 genre: PJ
 original: /
 race: Ange
@@ -19,7 +20,7 @@ type: OC, Fiche
 univers: Azelyss
 ---
 
-![+side](../assets/img/nemo.png)  
+![+side](../assets/img/Mnémosyne.png)  
   
 **Prénom et nom** : Mnémosyne  
 _Alias :_ Némo  
@@ -137,7 +138,6 @@ _Poids_ : 53kg
   
 # Histoire  
   
-[Guerre des Anges]  
   
   
 Elle fit un pas en arrière, tenant la lance de █████ fermement dans ses mains. Elle lui avait arraché des mains quelque jour auparavant, après l'avoir trompé.  
@@ -172,7 +172,6 @@ Et arrachant aussi le Grand Ancien à son monde.
   
 ---  
   
-[Italie ; Année 80]  
   
 — Tu es sûre que c'est la bonne incantation ?  
 Salem écrasa sa cigarette sous sa botte et observa la forêt sombre autour de lui. Près de lui, la mage se releva, et fixa sur lui ses yeux dorés.  
@@ -200,7 +199,6 @@ Depuis, elle faisait parti de l'Echo, une organisation secrète de protection de
   
 Némo ne vieillissait pas. Ses blessures n'étaient pas grand chose. Elle s'en amusait, ce monde était presque un jeu.  
   
-[ Italie ; Année actuelle]  
   
   
 — Némo.  
@@ -235,4 +233,7 @@ Ironiquement, Salem était borgne. Avec Némo, il faisait la paire.
 **Habitudes** :  
   
 **Armes** :  
-- Sa canne, ca compte ?
+- Sa canne, ca compte ?  
+  
+$~$  
+$~$
