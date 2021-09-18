@@ -161,7 +161,7 @@
                 relatedItemHTMLTitle.setAttribute("class", "feed-relatedItems");
                 relatedItemHTMLTitle.style.fontSize = "14px";
                 relatedItemHTMLTitle.style.color = "#777";
-                relatedItemHTMLTitle.style.fontWeight = "600";
+                relatedItemHTMLTitle.style.fontWeight = "500";
                 relatedItemHTMLTitle.style.fontFamily = "Fantasque Sans Mono";
                 var relatedItemHTML = document.createElement("ul");
 
