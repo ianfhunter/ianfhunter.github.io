@@ -1,8 +1,8 @@
 ---
 category: false
-created: 17-09-2021
-date: 17-09-2021
-flux: true
+created: 01-07-2021
+date: 20-09-2021
+flux: false
 share: true
 title: Markdown test
 ---
@@ -28,10 +28,11 @@ Style Settings option :
 - Quote block color  
 - Mobile support.   
   
-{: .warning}    
-> **Mobile support**{: .ad-title-warning}  
-> On mobile, the code mirror version used is **Code Mirror 6**, not **Code Mirror 5**. So, activeline doesn’t work. I use another “tricks” to create a WYSIWYG, but it’s not really better than the PC Ver.   
   
+{: .warning}  
+> **Mobile support**{: .ad-title-warning}  
+	On mobile, the code mirror version used is **Code Mirror 6**, not **Code Mirror 5**. So, activeline doesn’t work. I use another “tricks” to create a WYSIWYG, but it’s not really better than the PC Ver.  
+    
 # B. This is a heading 1 #test  
 ## B.1. This is a heading 2 #test   
 ### B.1.1. This is a heading 3 #test  
@@ -59,14 +60,10 @@ _You **can** combine them_
    2. Item 3b  
   
 - [ ] Task  
-  
-- [ ] Task  
-  
-- [ ] tasaa  
-  
-- [ ] Task  
-  
-- Not a task  
+  - [ ] Task  
+  - [ ] tasaa  
+  - [ ] Task  
+  - Not a task  
   
   
 # D. Image   
@@ -76,17 +73,13 @@ _You **can** combine them_
   
 # E. Link  
 [Obsidian](https://obsidian.md)  
-  
-[[http://www.google.fr\|Link to something]]   
-  
-[[Note]]  
-  
-[[externlaèlinks.com\|ererrr]]   
-  
-  
+  [[http://www.google.fr\|Link to something]]   
+  [[Note]]  
+  [[externlaèlinks.com\|ererrr]]   
+    
 # F. Quote  
 > Hello, my little friends, do you love potatoes ?!  
-    
+  
 # G. Tags  
   
 #Draft   
@@ -102,12 +95,10 @@ Center, … :
 ```python  
 print(f"Hello world !")  
 list=["Hello !", "I’m", "Mara"]  
-  
-for i in list:  
+  for i in list:  
 	print(i)  
 [[../Calendrier/17-06-2021]] ← Note that in code you can see ALL ;   
-  
-code is always inline and give you visibility UNLESS you use adminition plugin with option :)  
+  code is always inline and give you visibility UNLESS you use adminition plugin with option :)  
 **CODE**  
 ```  
 [[testing::rmn-transclude]]

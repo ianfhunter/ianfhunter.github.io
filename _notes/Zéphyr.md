@@ -1,13 +1,13 @@
 ---
 category: Fiche RP
-date: 17-09-2021
+date: 20-09-2021
 genre: PNJ
 name: Zéphyr
 resume: Notes relation & autres pour Zephyr
 share: true
 tag:
 - RP/Azelyss/Relation
-- RP/Azelyss/PNJ
+- RP/Azelyss/Fiche/PNJ
 title: Zéphyr
 type: Personnage, PNJ, Notes, Relation
 univers: Azelyss
@@ -38,7 +38,7 @@ univers: Azelyss
   
   
 # ──────༺ Mental ༻──────  
-
+  
 | Défaut      | Qualité     |  
 | ----------- | ----------- |  
 | Versatile   | Affectueuse |  
@@ -55,7 +55,5 @@ univers: Azelyss
 ---  
 # ─────༺ Relation ༻──────  
 - Ami / Ex/Meuf de [[Salem]]  
-  
-- Maître en magie de [[Hayleen May]]  
-  
-- Membre de l'[[Echo]]
+  - Maître en magie de [[Hayleen May]]  
+  - Membre de l'[[Echo]]

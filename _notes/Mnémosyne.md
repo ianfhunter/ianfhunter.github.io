@@ -1,24 +1,27 @@
 ---
-title: Mnemosyne
-date: 18-09-2021
-type: OC, Fiche
-univers: Azelyss
 alias: Mnemosyne, Némo, Nemo
 category: Fiche RP
-genre: PJ
-original: /
-race: Ange
+created: 03-09-2021
+date: 20-09-2021
 resume: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
 share: true
+state: "\U0001F4DD"
 tag:
-- Fiche
-- PJ
+- Fiche/PJ
 - RP/Azelyss/Fiche/PJ
-- Histoire
-
+title: Mnémosyne
+type: OC, Fiche
+univers: Azelyss
 ---
 
-![+side](../assets/img/Mnemosyne.png)  
+%% race:: Ange   
+[[Echo]]:: #Gardien   
+  genre:: PJ  
+original:: /  
+%%  
+  
+  
+![+side](../assets/img/Mnémosyne.png)  
   
 **Prénom et nom** : Mnémosyne  
 _Alias :_ Némo  
@@ -94,15 +97,13 @@ En dehors de ses capacités, Némo possède les avantages suivants :
 $~~~~~$ Dans sa jeunesse, Mnémosyne était plus chaotique que maintenant. Détestant l'ordre et adorant le chaos, elle n'hésita pas à trahir son camp par simple amusement. Car l'ordre des choses l'ennuie.  
   
 $~~~~~$ Aujourd'hui, Mnémosyne est plus calme, mais elle n'aime pas suivre les gens et ordre aveuglément, ce qui font qu'elle est très difficile à contrôler pour l'[[Echo]], qui la garde sous surveillance tout en lui laissant bien plus de liberté que la plupart des membres ayant un grade similaire.  
-  
-  
+    
 $~~~~~$ Sa condition d'aveugle ne la dérange en rien, et elle aime s'en amuser, n'hésitant pas à en rire. Son amnésie, par contre, bien qu'elle n'aime pas le montrer, lui pose problème. La recherche de sa mémoire est actuellement sa quête principale, et elle a l'impression qu'aider l'Écho l'aidera dans cette tâche. Sinon, étant donné son caractère désinvolte et versatile, elle ne ferait pas partie d'une organisation aussi hiérarchisée avec une mission qu'elle considère comme un poil utopique.  
   
 $~~~~~$ Mais il ne faut pas non plus imaginer Mnémosyne comme une personne sans cœur et égoïste, puisqu'elle n'hésitera pas à venir en aide à une personne dans le besoin, quel qu'il soit.  
 Dans les faits, Mnémosyne se fiche royalement de la race des gens, hybride ou humain, voire totalement autre chose. Après tout, elle ne les voit même pas !  
 Bien qu'elle raconte qu'elle n'est pas habitée de désir noble comme certains membres de l'[[Echo]], elle n'est pas non plus à laisser tomber les gens avec qui elle s'entend. Ce n'est pas non plus une personne lâche et paraît versatile, car incapable de se fixer quelque part.  
-  
-Durant la guerre, par contre, c'était autre chose, car elle avait un tempérament bien plus chaotique et a trahis son propre camps littéralement par amusement (à ce qu'on raconte, puisque aujourd'hui, elle n'en sait strictement rien !).  
+  Durant la guerre, par contre, c'était autre chose, car elle avait un tempérament bien plus chaotique et a trahis son propre camps littéralement par amusement (à ce qu'on raconte, puisque aujourd'hui, elle n'en sait strictement rien !).  
   
 Avec l'amnésie, Mnémosyne s'est… Quelque peu assagit, on va dire.  
   
@@ -130,15 +131,25 @@ Pour une raison obscure, Mnémosyne est terrifiée par les insectes. En dehors d
 _Taille :_ 1m60  
 _Poids_ : 53kg  
   
-**Signes distinctifs** :  
+Mnémosyne est une femme de petite taille, assez poids-plume. Sa peau est pâle et ses cheveux gris sont coiffés absolument dans tous les sens — bien que plutôt long.   
+Elle a une démarche plutôt droite, malgré le fait qu'elle s'aide tout le temps de sa canne d'aveugle. Niveau voix, on va dire qu'elle a des accents grincheux et légèrement grinçant. Difficile à expliquer. Comme si elle avait un léger grain dans la voix. Sinon, elle sourit quasiment tout le temps.  
   
-**Style vestimentaire** :  
+Son visage est assez ovale, avec un petit nez et des yeux très légèrement tombants, entièrement blanc — puisqu'il se trouve qu'elle est aveugle. Elle a des lèvres fines et une bouche bien dessinée. Enfin, elle possède de petites tâches de rousseurs sur l'ensemble du visage, mais surtout sur son nez et joues.   
+Notons : elle ne porte pas de lunettes de soleil, puisque cela la gêne fortement pour utiliser ses pouvoirs.   
+  
+  
+**Signes distinctifs** :   
+- Ses yeux blancs ;   
+- Ses tâches de rousseurs ;  
+- Le fait qu'elle sourit tout le temps.   
+  
+**Style vestimentaire** : Elle a un style plutôt décontracté, presque sportif. Elle apprécie les bottines, les longs manteaux en cuir souples, les pulls, mais aussi les pantalons cargo ou les jupes souples. Cela dit, puisqu'elle est aveugle, elle ne fait pas vraiment attention à son apparence.   
+Généralement, les couleurs qu'elle portera seront plutôt neutre, type marron, beige, voire bordeaux.   
   
 # Histoire  
   
 \[Guerre des Anges]  
-  
-  
+    
 Elle fit un pas en arrière, tenant la lance de █████ fermement dans ses mains. Elle lui avait arraché des mains quelque jour auparavant, après l'avoir trompé.  
 Elle fit un sourire, regardant son adversaire droit dans les yeux mais, contrairement à elle, il n'était pas amusé.  
   
@@ -172,8 +183,7 @@ Et arrachant aussi le Grand Ancien à son monde.
 ---  
   
 \[Italie ; Année 80]  
-  
-— Tu es sûre que c'est la bonne incantation ?  
+  — Tu es sûre que c'est la bonne incantation ?  
 Salem écrasa sa cigarette sous sa botte et observa la forêt sombre autour de lui. Près de lui, la mage se releva, et fixa sur lui ses yeux dorés.  
 — Certaines, à peu de chose près.  
 Il eu envie de la frapper.  
@@ -200,13 +210,11 @@ Depuis, elle faisait parti de l'Echo, une organisation secrète de protection de
 Némo ne vieillissait pas. Ses blessures n'étaient pas grand chose. Elle s'en amusait, ce monde était presque un jeu.  
   
 \[ Italie ; Année actuelle]  
-  
-  
+    
 — Némo.  
 Des années avaient passés depuis que Mnemosyne "Némo" avait été réveillé par le duo de mage Italien.  
 C'était la première fois revoyait Salem en 10 ans, depuis la mort de ████. Elle n'avait que très peu croisé [[Hayleen May\|Hayleen]] mais gardait de bon souvenir de la petite hybride.  
-  
-  
+    
 Éloignée de l'Echo et de ses activités pendant un moment, à la recherche de ses propres souvenirs et capacités, elle n'avait pas vraiment suivi les dernières aventures des Italiens.  
   
 Elle haussa donc un sourcil. Cette réunion — Convocation officielle plutôt — ne l'arrangerait pas.  
@@ -222,9 +230,11 @@ Némo haussa un sourcil. En quoi cela concernait l'Echo ? Et elle ?
 Salem avait utilisé une bonne partie de sa puissance pour sceller celle d'Hayleen. Il en savait quelque chose.  
 — La mission consistait en quoi ?  
 — Déjà, la tenir le plus éloigné possible du Coven ███ et de son père. Ensuite, enquêter. J'ai entendu dire que des enfants avaient disparu, et je n'ai plus de nouvelle d'une ancienne Égide, [[Capricorne]]. Je suis pas particulièrement fan des démons mais j'aime bien les avoir à l'œil.  
-  
-Ironiquement, Salem était borgne. Avec Némo, il faisait la paire.  
-—  
+  Ironiquement, Salem était borgne. Avec Némo, il faisait la paire.  
+— Et évidemment, tu l'as envoyé dans cette mission sans la marquer puisqu'elle n'est toujours pas Gardienne. Et tu t'es bien gardé de prévenir Zéphyr, évidemment.  
+Un ange (pas déchu) passa dans la pièce.  
+— Et évidemment, tu préfères envoyer la gentille Ange ?   
+— Je ne peux pas quitter mes fonctions.  
   
 **Famille** :  
 **Passion | Hobbies** :  

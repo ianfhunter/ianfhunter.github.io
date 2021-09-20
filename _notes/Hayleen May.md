@@ -1,43 +1,40 @@
----  
-date: 03-05-2021
+---
+Statut: Étudiant
+alias: Hayleen
 category: Fiche RP
-type: OC, Fiche  
-original: /  
-univers: Azelyss  
-share: true  
-genre: PJ  
-title: Hayleen May  
-alias: Hayleen  
-race: Démon, Sorcière  
-state: 🟢  
-Statut: Étudiant  
-tags:  
-  - Fiche  
-  - PJ  
-  - RP/Azelyss/Fiche/PJ  
-  - RP/Azelyss/Étudiant   
----  
-  
-  
+date: 20-09-2021
+genre: PJ
+race: Démon, Sorcière
+resume: (Azelyss) Fiche de personnage de Hayleen May, une élève demi-démone.
+share: true
+state: "\U0001F7E2"
+tags:
+- Fiche
+- PJ
+- RP/Azelyss/Fiche/PJ
+- RP/Azelyss/Étudiant
+title: Hayleen May
+type: OC, Fiche
+univers: Azelyss
+---
+
 # RELATIONS  
 ```dataview  
 List  
 From [[Hayleen May]]  
-  
-```  
+  ```  
 ---  
   
-<h1 align="center"><a href="https://docs.google.com/document/d/1bGOITC8zoes1RLDj6ybWDtKiszTnBq5jZe1icx6itnI/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>    
+<h1 align="center"><a href="https://docs.google.com/document/d/1bGOITC8zoes1RLDj6ybWDtKiszTnBq5jZe1icx6itnI/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>  
   
 # IDENTITÉ  
 ![+side\|-med](https://lh6.googleusercontent.com/rzSmM8e1pxHowh8iu74khSmuoa1aaWspZbHY3vq9qcfUGrrlylAMLqHMvY84lkailKvWQvIgPYr_hQh4Ac4f6Bx0Xgmp-cY-fevxSDHrHXel8o3AiBEQhCup5jIklBDg_1RNxV_I)  
-  
-**Prénom et nom :** Hayleen May    
+  **Prénom et nom :** Hayleen May  
 *Alias :* Grimalkin  
 **Genre :** F.  
-**Âge :** 23 ans    
+**Âge :** 23 ans  
 **Date de naissance :** 15 août   
-**Race :** Sorcière démone    
+**Race :** Sorcière démone  
 **Maison :** Chimère  
 **Statut :** Élève  
   
@@ -98,13 +95,12 @@ Elle adopte le nom de Grimalkin lors de “son passage à l’âge adulte”, bi
   
 # Physique  
   
-→  [[Illustration (Hayleen)\|Références]]
-  
+→  [[Illustration (Hayleen)\|Illustration]]   
+    
 *Taille* : 1m70  
 *Poids* : 60kg  
 ![+side](https://lh5.googleusercontent.com/YGkLl1TAv5q7Z5DXwwNlFJwuAjUUVv217w6Nd9uygb-fkhd4GZkXiqC25wy5Ehpr7tW1rwqiZlnLGaNL7vFiKgMflX-ILFLfJv2Dk0J8ImFEimxJs0ufmTOJX44LiddjGQdGSsdM)  
-  
-Hayleen est une jeune femme assez bien proportionnée, dans la fleur de l’âge, et qui le fait : c’est une jolie jeune femme.  
+  Hayleen est une jeune femme assez bien proportionnée, dans la fleur de l’âge, et qui le fait : c’est une jolie jeune femme.  
   
 La jeune sorcière a des cheveux blancs (naturellement blanc, s’entend), assez longs, qu’elle attache souvent en chignons brouillons à l’aide d’aiguilles métalliques, et laissant les autres lâchés. Son visage est seulement dégagé avec de nombreuses barrettes. Elle a une démarche assurée et un air volontaire. Évidemment, on voit rarement ses chignons, puisqu’elle possède d’imposante cornes noires, semblables à celles que possèderait un bélier. Ces dernières ne la gênent pas particulièrement, bien qu’elle ait l’impression qu’on ne voit que ça sur son visage.   
   
@@ -144,17 +140,13 @@ L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen
   
 ### Famille  
 - [[Salem]] : Père adoptif,  
+  - [[Abbadonn]] : Père biologique d’Hayleen   
+  - Nom inconnu — Mère d’Hayleen   
   
-- Nom inconnu - Peut-être Astaroth : Père biologique d’Hayleen   
-- Nom inconnu — Mère d’Hayleen   
 ##### **[[Echo]]** :   
-  
-- [[Mnémosyne]] : Une ange déchue qui l’a entrainé quelque peu.   
-  
-- [[Zéphyr]] : Sa maîtresse de magie, et “grande sœur”, bien que Zéphyr ait plus ou moins le même âge que Salem.  
-  
-  
-  
+  - [[Mnémosyne]] : Une ange déchue qui l’a entrainé quelque peu.   
+  - [[Zéphyr]] : Sa maîtresse de magie, et “grande sœur”, bien que Zéphyr ait plus ou moins le même âge que Salem.  
+    
 # Divers  
 **Habitudes :**  
 - Du Kendo le matin  

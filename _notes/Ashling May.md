@@ -1,7 +1,7 @@
 ---
 alias: Ashling, Ash
 category: Fiche RP
-date: 06-09-2021
+date: 20-09-2021
 doc: Personnalisé
 genre: PJ
 obsidian_ui_mode: preview
@@ -18,17 +18,15 @@ type: OC
 univers: ❌
 ---
 
-$$~$$  
+$~$  
 ```dataview  
 table state AS Status  
 FROM [[Ashling May]]  
-  
-```  
+  ```  
   
 ---  
 # ─────༺ Présentation ༻─────  
 ![+side](../assets/img/Commission Feilyn.png)  
-  
 **Nom** : May  
 **Prénoms** : Ashling  
 **Surnoms** : Ekraminarok  
@@ -45,8 +43,7 @@ FROM [[Ashling May]]
   
 # ──────༺ Physique ༻──────  
 → [[Illustration Ashling\|Références]]  
-  
-  
+    
 **Yeux** : Bleus  
 **Cheveux** : Roux, longs, souvent attachés en chignons   
 **Taille** : 1m70  
@@ -131,6 +128,5 @@ Ashling est une personne plutôt lâche, qui n'aime pas prendre des risques inut
 - Elle élève une grenouille. Oui.  
   
 # [[Pouvoir]]  
-  
-  
+    
 [[Pouvoir::rmn-transclude]]
