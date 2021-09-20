@@ -42,17 +42,17 @@ Optional arguments:
 
 ## Checking differences 
 
-⚠️ By default, the script will check if the file was edited by **checking 
-the number of line** and with the name of the metadata (without date/title).
-If the line is exactly the same, the file will be not converted. New line, blank line, line escape (`\`) and comment **are removed** in this checking. 
-
-So, to force update to a single file you can :
+The script will convert all file with `share:true` and check if the contents 
+are differents with the version in `_notes`. The only things that are 
+ignored is the contents of the metadata. If you want absolutely change the 
+metadata you can: 
+- 
 - Use `share --file <filepath>` directly
 - Use `--u` to force update all file 
 - Continue to work on the file before pushing it.
 - Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
 - Manually delete the file 
-- Add or edit the metadata (unless `date`/`title`/`created`). 
+- Add or edit the metadata keys (unless `date`/`title`/`created`). 
 
 ## Options
 ### Share all
@@ -90,6 +90,8 @@ Note : I **can't** testing on these 3 OS, so I can't create a clipboard option o
 ### Frontmatter settings
 - `share: true` : Share the file
 - `embed: false` : remove the transluction (convert to normal wikilinks)
+- `update: false` : Don't update the file at all. 
+
 
 You can totally use the `owlly-house` branch, who add more option in the yaml ; as :
 - `flux: false` : remove the file from the feed
@@ -97,7 +99,7 @@ You can totally use the `owlly-house` branch, who add more option in the yaml ; 
 - `resume` : Add a resume of the file in the feed. 
 
 ### Admonition 
-Admonition work on this blog using CSS and IAL. It use : `{: .type}` and `{: .ad-title-type}`.
+Admonition work on this blog using CSS and IAL. It uses : `{: .type}` and `{: .ad-title-type}`.
 The script will add `**title**{: .ad-title-type}` if found `title:` in the admonition block.
 
 It doesn't support :
@@ -121,6 +123,8 @@ If no title is found, the admonition will be one line, as that :
 > Admonition content
 ```
 It also supports markdown and latex.
+
+The "non-block code" methods of Admonition are also supported.
 
 Note : For the custom type, the type become the title of the note, so you don't lost the information about the type.
 

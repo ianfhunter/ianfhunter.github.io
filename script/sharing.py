@@ -33,49 +33,92 @@ except KeyError:
         blog = "".join(f.readlines(2)).replace("blog=", "")
 
 
-def retro(filepath):
-    # It permit to compare the file in file diff with len(file)
-    # Remove newline, comments and frontmatter
+def retro(filepath, opt=0):
     notes = []
-    metadata = frontmatter.load(filepath)
+    if opt == 0:
+        metadata = frontmatter.load(filepath)
+    else:
+        metadata = frontmatter.loads("".join(filepath))
     file = metadata.content.split("\n")
     for n in file:
-        n = n.replace("```", "")  # remove solo code line ...
-        if n != "\\":
-            n = n.strip()
-            notes.append(n)
-    notes = [i for i in notes if i != ""]
-    notes = [i for i in notes if "%%" not in i]
+        notes.append(n)
     return notes
 
-
-def remove_date_title(meta):
-    meta.metadata.pop("date", None)
-    meta.metadata.pop("title", None)
-    meta.metadata.pop("created", None)
-    return meta.metadata
-
+def remove_frontmatter(meta):
+    meta.pop('date', None)
+    meta.pop('title', None)
+    meta.pop('created', None)
+    return meta
 
 def diff_file(file):
     file_name = os.path.basename(file)
     if check_file(file_name) == "EXIST":
-        vault_path = file
         notes_path = Path(f"{BASEDIR}/_notes/{file_name}")
-        vault = retro(vault_path)
-        notes = retro(notes_path)
-        # Compare front matter because edit frontmatter is important too
-        meta_notes = frontmatter.load(notes_path)
-        meta_vault = frontmatter.load(vault_path)
-        metadata_notes = remove_date_title(meta_notes)
-        metadata_vault = remove_date_title(meta_vault)
-        if len(vault) == len(notes) and sorted(metadata_notes.keys()) == sorted(
-            metadata_vault.keys()
-        ):
-            return False  # Not different
+        retro_old = retro(notes_path)
+        meta_old= frontmatter.load(notes_path)
+        meta_old = remove_frontmatter(meta_old.metadata)
+
+        temp = file_convert(file)
+        front_temp = frontmatter.loads(''.join(temp))
+        meta_new = remove_frontmatter(front_temp.metadata)
+        new_version = retro(temp, 1)
+        if new_version == retro_old and sorted(meta_old.keys()) == sorted(meta_new.keys()):
+            return False
         else:
             return True
+    else:
+        return True #Si le fichier existe pas, il peut pas être identique
+
+# PATH WORKING #
+
+def delete_file(filepath):
+    for file in os.listdir(post):
+        filepath = os.path.basename(filepath)
+        filecheck = os.path.basename(file)
+        if filecheck == filepath:
+            os.remove(Path(f"{BASEDIR}/_notes/{file}"))
+            return True
+    return False
+
+def relative_path(data):
+    data = data.rstrip() + ".md"
+    data = os.path.basename(data)
+    for sub, dirs, files in os.walk(vault):
+        for file in files:
+            filepath = sub + os.sep + file
+            if data == file:
+                return filepath
+def check_file(filepath):
+    for file in os.listdir(post):
+        if filepath == file:
+            return "EXIST"
+    return "NE"
+def dest(filepath):
+    file_name = os.path.basename(filepath)
+    dest = Path(f"{BASEDIR}/_notes/{file_name}")
+    return str(dest)
+
+def frontmatter_check(filename):
+    print(filename)
+    metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
+    meta = frontmatter.load(metadata)
+    update = frontmatter.dumps(meta)
+    metadata.close()
+    final = open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
+    now = datetime.now().strftime("%d-%m-%Y")
+    if not 'update' in meta.keys() or meta['update'] != False:
+        meta["date"] = now
+        update = frontmatter.dumps(meta)
+        meta = frontmatter.loads(update)
+    if not "title" in meta.keys():
+        meta["title"] = filename.replace(".md", "")
+        update = frontmatter.dumps(meta)
+    final.write(update)
+    final.close()
+    return
 
 
+# ADMONITION CURSED THINGS
 def admonition_trad_type(line):
     # Admonition Obsidian : blockquote + ad-
     # Admonition md template : ```ad-type <content> ```
@@ -114,61 +157,109 @@ def admonition_trad_type(line):
     admonition_type = re.search("```ad-(.*)", line)
     ad_type = line
     content_type = ""
+    admo_format = 'block'
     if admonition_type:
         admonition_type = admonition_type.group(1)
         if admonition_type.lower() in admonition.keys():  # found type
             content_type = admonition[admonition_type]
-            ad_type = "{: ." + content_type + "}  \n"
+            ad_type = "\n{: ." + content_type + "}  \n"
         else:
-            ad_type = "{: .note}  \n"
+            ad_type = "\n{: .note}  \n"
             content_type = (
                 "custom" + admonition_type
             )  # if admonition "personnal" type, use note by default
-    return ad_type, content_type
-
-
-def admonition_trad_title(line, content_type):
-    # Admonition title always are : 'title:(.*)' so...
-    ad_title = re.search("title:(.*)", line)
-    title = line
-    if ad_title:
-        # get content title
-        title_group = ad_title.group(1)
-        if "custom" in content_type:
-            content_type = "note"
-        if ad_title == "":
-            title = "> " + line  # admonition inline
+    elif re.search('(!{3}|\?{3})\+? ad-\w+(.*)', line): #Non-block admonition
+        admo_format='MT'
+        admonition_type=re.search('ad-\w+', line).group()
+        admonition_type = admonition_type.replace('ad-', '')
+        if admonition_type.lower() in admonition.keys():
+            content_type=admonition[admonition_type]
+            ad_type="\n{: ." + content_type + "}  \n"
         else:
-            title_md = (
-                "> **" + title_group.strip() + "**{: .ad-title-" + content_type + "}"
+            ad_type = "\n{: .note}  \n"
+            content_type = (
+                "custom" + admonition_type
             )
-            title = re.sub("title:(.*)", title_md, line)
-    else:
-        if "collapse:" in line:
-            title = ""
-        elif "icon:" in line:
-            title = ""
-        elif "color:" in line:
-            title = ""
-        elif len(line) == 1:
-            title = ""
+    return ad_type, content_type, admo_format
+
+def admonition_title_MT(line):
+    title_group = re.search('ad-\w+(.*)', line)
+    if title_group:
+        title_group=title_group.group(1)
+        if re.search('\w+', title_group):
+            title_MT = title_group
         else:
-            title = "> " + line  # admonition inline
+            title_MT = 'inline'
+    else:
+        title_MT = 'not'
+    return title_MT
+
+def admonition_title_block (line):
+    ad_title = re.search("title:(.*)", line)
+    if ad_title:
+        ad_title=ad_title.group(1)
+        if len(ad_title) > 0:
+            title_block = ad_title
+        else:
+            title_block = 'inline'
+    else:
+        title_block = 'not'
+    return title_block
+
+def admonition_title(title, content_type, format):
+    # ⚠ Nous sommes sur la DEUXIÈME LIGNE (ad_start+1) : Il n'y aura JAMAIS le content type ici, qui est TOUJOURS sur ad_start
+    # trois type de format :
+        # inline = {: .content_type} \n > line
+        # not : = {: .content_type} \n **content_type**{: .ad-title-type}
+        # title : = '{: .content_type} \n **title**{: .ad-title-type}
+    if title == 'inline':
+        admo_title = '>' + title
+    elif title == 'not':
+        if 'custom' in content_type:
+            content_type=content_type.replace("custom", '')
+            title_format='[' + content_type.strip().title() + ']'
+            content_type = 'note'
+        else:
+            title_format = content_type.strip().title()
+        admo_title = '> **' + title_format + "**{: .ad-title-" + content_type.strip() + '}'
+    else:
+        if 'custom' in content_type:
+            content_type=content_type.replace('custom', '')
+            title_format='[' + content_type.strip().title() + '] ' + title.strip()
+            admo_title = '> **' + title_format + '**{: .ad-title-note}\n'
+        else:
+            title_format = title.strip()
+            admo_title = '> **'+ title_format +'**{: .ad-title-' + content_type.strip() + '}\n'
+    return admo_title
+
+
+def admonition_trad_content(line):
+    if "collapse:" in line:
+        title = ""
+    elif "icon:" in line:
+        title = ""
+    elif "color:" in line:
+        title = ""
+    elif len(line) == 1:
+        title = ""
+    else:
+        if line[-1] == "\n":
+            title = "\t" + line + ""
+        else:
+            title = "\t" + line + "\n"
     return title
 
 
 def admonition_trad(file_data):
     code_index = 0
     code_dict = {}
-    start = 0
-    end = 0
     start_list = []
     end_list = []
     for i in range(0, len(file_data)):
-        if re.search("```ad-(.*)", file_data[i]):
+        if re.search("```ad-(.*)", file_data[i]) or re.search('(!{3}|\?{3})\+? ad-\w+(.*)', file_data[i]):
             start = i
             start_list.append(start)
-        elif re.match("```", file_data[i]):
+        elif re.match("```", file_data[i]) or re.match('--- admonition', file_data[i]):
             end = i
             end_list.append(end)
     for i, j in zip(start_list, end_list):
@@ -178,43 +269,35 @@ def admonition_trad(file_data):
     for ad, ln in code_dict.items():
         ad_start = ln[0]
         ad_end = ln[1]
-        file_data[ad_start], ad_type = admonition_trad_type(file_data[ad_start])
-        ad_type = ad_type
-        code_block = [x for x in range(ad_start + 1, ad_end)]
-        for fl in code_block:
-            if "custom" in ad_type:
-                custom_type = ad_type.replace("custom", "")
-                custom_type = custom_type.replace("-", " ")
-                ad_title = re.search("title:(.*)", file_data[fl])
-                if not ad_title:
-                    file_data[ad_start] = (
-                        "{: .note}  \n> **"
-                        + custom_type.strip().title()
-                        + "**{: .ad-title-note}  \n"
-                    )
+        file_data[ad_start], ad_type, ad_format = admonition_trad_type(file_data[ad_start])
+        inter=ad_start
+        if ad_format == 'MT':
+            inter = ad_start+2
+            if ad_format == 'MT':
+                title = admonition_title_MT(file_data[ad_start])
+                if title != 'not':
+                    file_data[ad_start + 1] = admonition_title(title, ad_type, ad_format) # title
                 else:
-                    ad_title = ad_title.group(1)
-                    file_data[ad_start] = (
-                        "{: .note} \n > **["
-                        + custom_type.strip().title()
-                        + "] "
-                        + ad_title.title()
-                        + "**{: .ad-title-note}  \n"
-                    )
-            file_data[fl] = admonition_trad_title(file_data[fl], ad_type)
-        file_data[ad_end] = ""
+                    file_data[ad_start+1] = admonition_title(title, ad_type, ad_format) + '\n' + admonition_trad_content(file_data[ad_start+1])
+                    file_data[ad_start + 1] = file_data[ad_start + 1]
+        elif ad_format == 'block':
+            inter = ad_start+2
+            title = admonition_title_block(file_data[ad_start+1])
+            if title != 'not':
+                file_data[ad_start + 1] = admonition_title(title, ad_type, ad_format)
+            else:
+                file_data[ad_start + 1] = admonition_title(title, ad_type, ad_format) + '\n' + admonition_trad_content(file_data[ad_start + 1])
+                file_data[ad_start + 1] = file_data[ad_start + 1]
+        code_block = [x for x in range(inter, ad_end)]
+        for fl in code_block:
+            data = admonition_trad_content(file_data[fl].strip())
+            if data.strip() != '':
+                file_data[fl] = data
+        file_data[ad_end]='  '
     return file_data
 
 
-def delete_file(filepath):
-    for file in os.listdir(post):
-        filepath = os.path.basename(filepath)
-        filecheck = os.path.basename(file)
-        if filecheck == filepath:
-            os.remove(Path(f"{BASEDIR}/_notes/{file}"))
-            return True
-    return False
-
+# IMAGES
 
 def get_image(image):
     image = os.path.basename(image)
@@ -224,10 +307,9 @@ def get_image(image):
             if image in file:
                 return filepath
 
-
 def move_img(line):
     img_flags = re.search("[\|\+\-](.*)[]{1,2})]", line)
-    if img_flags:
+    if img_flags and not re.search('\-\d+', line):
         img_flags = img_flags.group(0)
         img_flags = img_flags.replace("|", "")
         img_flags = img_flags.replace("]", "")
@@ -258,28 +340,14 @@ def move_img(line):
     return final_text
 
 
-def relative_path(data):
-    data = data.rstrip() + ".md"
-    data = os.path.basename(data)
-    for sub, dirs, files in os.walk(vault):
-        for file in files:
-            filepath = sub + os.sep + file
-            if data == file:
-                return filepath
 
 
-def check_file(filepath):
-    for file in os.listdir(post):
-        if filepath == file:
-            return "EXIST"
-    return "NE"
-
-
-def dest(filepath):
-    file_name = os.path.basename(filepath)
-    dest = Path(f"{BASEDIR}/_notes/{file_name}")
-    return str(dest)
-
+def excalidraw_convert(line):
+    if '.excalidraw' in line:
+        #take the png img from excalidraw
+        line = line.replace('.excalidraw', '.excalidraw.png')
+        line = line.replace('.md', '')
+    return line
 
 def convert_no_embed(line):
     final_text = line
@@ -312,35 +380,12 @@ def transluction_note(line):
     # image from that)
     # Note : Doesn't support partial transluction for the moment ; remove title
     final_text = line
-    if re.search("\!\[", line) and not re.search("(png|jpg|jpeg|gif)", line):
+    if re.search("\!\[", line) and not re.search("(png|jpg|jpeg|gif)", line) and not re.search('https', line):
         final_text = line.replace("!", "")  # remove "!"
         final_text = re.sub("#(.*)", "]]", final_text)
         final_text = re.sub("\\|(.*)", "]]", final_text)  # remove Alternative title
         final_text = re.sub("]]", "::rmn-transclude]]", final_text)
-        # Add transluction_note
     return final_text
-
-
-def frontmatter_check(filename, option=0):
-    metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
-    meta = frontmatter.load(metadata)
-    update = frontmatter.dumps(meta)
-    metadata.close()
-    final = open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
-    if "date" in meta.keys():
-        meta["created"] = meta["date"]  # Save old date
-        update = frontmatter.dumps(meta)
-        meta = frontmatter.loads(update)
-    now = datetime.now().strftime("%d-%m-%Y")
-    meta["date"] = now
-    update = frontmatter.dumps(meta)
-    meta = frontmatter.loads(update)
-    if not "title" in meta.keys():
-        meta["title"] = filename.replace(".md", "")
-        update = frontmatter.dumps(meta)
-    final.write(update)
-    final.close()
-    return
 
 
 def clipboard(filepath):
@@ -373,55 +418,16 @@ def clipboard(filepath):
                 "Please, report issue with your OS and configuration to check if it possible to use another clipboard manager"
             )
 
-
-def file_convert(file, option=0):
+def file_write(file, contents):
     file_name = os.path.basename(file)
-    if not "_notes" in file:
+    if contents == '':
+        return False
+    else:
         if not os.path.exists(Path(f"{BASEDIR}/_notes/{file_name}")):
-            data = open(file, "r", encoding="utf-8")
-            meta = frontmatter.load(file)
-            final = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
-            lines = data.readlines()
-            data.close()
-            if option ==1:
-                if "share" not in meta.keys() or meta["share"] is False:
-                    meta["share"] = True
-                    update = frontmatter.dumps(meta)
-                    meta = frontmatter.loads(update)
-            else:
-                if "share" not in meta.keys() or meta["share"] is False:
-                    return
-            lines = admonition_trad(lines)
-            for ln in lines:
-                final_text = ln.replace("\n", "  \n")
-                final_text = convert_to_wikilink(final_text)
-                final_text = re.sub("\^\w+", "", final_text)  # remove block id
-                if "embed" in meta.keys() and meta["embed"] == False:
-                    final_text = convert_to_wikilink(final_text)
-                    final_text = convert_no_embed(final_text)
-                else:
-                    final_text = transluction_note(final_text)
-                if re.search("\%\%(.*)\%\%", final_text):
-                    final_text = "  \n"
-                elif re.search("==(.*)==", final_text):
-                    final_text = re.sub("==", "[[", final_text, 1)
-                    final_text = re.sub("( ?)==", "::highlight]] ", final_text, 2)
-                elif re.search(
-                    "(\[{2}|\().*\.(png|jpg|jpeg|gif)", final_text
-                ):  # CONVERT IMAGE
-                    final_text = move_img(final_text)
-                elif (
-                    re.fullmatch('\\\\', final_text.strip())
-                ):  # New line when using "\" in obsidian file
-                    final_text = "  \n"
-                elif re.search("(\[{2}|\[).*", final_text):
-                    # Escape pipe for link name
-                    final_text = final_text.replace("|", "\|")
-                    # Remove block ID (because it doesn't work)
-                    final_text = re.sub("#\^(.*)]]", "]]", final_text)
-                    final_text = final_text + "  \n"
-                final.write(final_text)
-            final.close()
+            new_notes = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
+            for line in contents:
+                new_notes.write(line)
+            new_notes.close()
             frontmatter_check(file_name)
             return True
         else:
@@ -429,12 +435,65 @@ def file_convert(file, option=0):
             if not meta["share"] or meta["share"] == False:
                 delete_file(file)
             return False
+
+def file_convert(file, option=0):
+    final =[]
+    file_name = os.path.basename(file)
+    if not "_notes" in file:
+        data = open(file, "r", encoding="utf-8")
+        meta = frontmatter.load(file)
+        lines = data.readlines()
+        data.close()
+        if option == 1:
+            if "share" not in meta.keys() or meta["share"] is False:
+                meta["share"] = True
+                update = frontmatter.dumps(meta)
+                meta = frontmatter.loads(update)
+        else:
+            if "share" not in meta.keys() or meta["share"] is False or meta['update'] in meta.keys() or meta['update'] is False:
+                return False
+        lines = admonition_trad(lines)
+        for ln in lines:
+            final_text = ln.replace("  \n", '\n')
+            final_text = final_text.replace("\n", "  \n")
+            final_text = convert_to_wikilink(final_text)
+            final_text=excalidraw_convert(final_text)
+            if re.search("\^\w+", final_text) and not re.search('\[\^\w+\]', final_text):
+                final_text = re.sub("\^\w+", "", final_text)  # remove block id
+            if "embed" in meta.keys() and meta["embed"] == False:
+                final_text = convert_to_wikilink(final_text)
+                final_text = convert_no_embed(final_text)
+            else:
+                final_text = transluction_note(final_text)
+            if re.search("\%\%(.*)\%\%", final_text):
+                final_text = "  \n"
+            elif re.search("==(.*)==", final_text):
+                final_text = re.sub("==", "[[", final_text, 1)
+                final_text = re.sub("( ?)==", "::highlight]] ", final_text, 2)
+            elif re.search(
+                "(\[{2}|\().*\.(png|jpg|jpeg|gif)", final_text
+            ):  # CONVERT IMAGE
+                final_text = move_img(final_text)
+            elif (
+                re.fullmatch('\\\\', final_text.strip())
+            ):  # New line when using "\" in obsidian file
+                final_text = "  \n"
+            elif re.search("(\[{2}|\[).*", final_text):
+                # Escape pipe for link name
+                final_text = final_text.replace("|", "\|")
+                # Remove block ID (because it doesn't work)
+                final_text = re.sub("#\^(.*)]]", "]]", final_text)
+                final_text = final_text + "  "
+            final.append(final_text)
+        return final
+
     else:
-        return False
+        return final
 
 
 def search_share(option=0):
     filespush = []
+    check = False
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
@@ -445,9 +504,12 @@ def search_share(option=0):
                         if option == 1:
                             if diff_file(filepath):
                                 delete_file(filepath)
+                                contents = file_convert(filepath)
+                                check = file_write(filepath, contents)
                         if option == 2:
                             delete_file(filepath)
-                        check = file_convert(filepath)
+                            contents = file_convert(filepath)
+                            check = file_write(filepath, contents)
                         destination = dest(filepath)
                         if check:
                             filespush.append(destination)
@@ -487,7 +549,8 @@ def convert_one(ori, delopt, git):
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [{file_name}] OPTIONS :\n- PRESERVE"
         )
-    check = file_convert(ori, 1)
+    contents = file_convert(ori, 1)
+    check = file_write(ori, contents)
     if check and not git:
         COMMIT = f"Pushed {file_name.lower()} to blog"
         git_push(COMMIT)
