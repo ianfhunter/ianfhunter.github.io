@@ -466,8 +466,8 @@ def file_convert(file, option=0):
                 final_text = convert_no_embed(final_text)
             else:
                 final_text = transluction_note(final_text)
-            if re.search("\%\%(.*)\%\%", final_text):
-                final_text = "  \n"
+            if re.search("\%\%(.*)\%\%", final_text, re.DOTALL):
+                final_text = ""
             elif re.search("==(.*)==", final_text):
                 final_text = re.sub("==", "[[", final_text, 1)
                 final_text = re.sub("( ?)==", "::highlight]] ", final_text, 2)
