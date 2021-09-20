@@ -50,9 +50,11 @@ def remove_frontmatter(meta):
     meta.pop('created', None)
     return meta
 
-def diff_file(file):
+def diff_file(file, update=0):
     file_name = os.path.basename(file)
-    if check_file(file_name) == "EXIST":
+    if check_file(file_name) == "EXIST" :
+        if update == 1 : #Update : False / Don't check
+            return False
         notes_path = Path(f"{BASEDIR}/_notes/{file_name}")
         retro_old = retro(notes_path)
         meta_old= frontmatter.load(notes_path)
@@ -99,14 +101,13 @@ def dest(filepath):
     return str(dest)
 
 def frontmatter_check(filename):
-    print(filename)
     metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
     meta = frontmatter.load(metadata)
     update = frontmatter.dumps(meta)
     metadata.close()
     final = open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
     now = datetime.now().strftime("%d-%m-%Y")
-    if not 'update' in meta.keys() or meta['update'] != False:
+    if not 'current' in meta.keys() or meta['current'] != False:
         meta["date"] = now
         update = frontmatter.dumps(meta)
         meta = frontmatter.loads(update)
@@ -493,6 +494,7 @@ def file_convert(file, option=0):
 
 def search_share(option=0):
     filespush = []
+    update = 0
     check = False
     for sub, dirs, files in os.walk(vault):
         for file in files:
@@ -503,10 +505,11 @@ def search_share(option=0):
                     if "share" in yaml_front and yaml_front["share"] is True :
                         if option == 1:
                             if 'update' not in yaml_front or ('update' in yaml_front and yaml_front['update'] is True):
-                                if diff_file(filepath):
-                                    delete_file(filepath)
-                                    contents = file_convert(filepath)
-                                    check = file_write(filepath, contents)
+                                update = 1
+                            if diff_file(filepath, update):
+                                delete_file(filepath)
+                                contents = file_convert(filepath)
+                                check = file_write(filepath, contents)
                         if option == 2:
                             delete_file(filepath)
                             contents = file_convert(filepath)

@@ -91,7 +91,7 @@ Note : I **can't** testing on these 3 OS, so I can't create a clipboard option o
 - `share: true` : Share the file
 - `embed: false` : remove the transluction (convert to normal wikilinks)
 - `update: false` : Don't update the file at all. 
-
+- `current: false` : Don't update the date
 
 You can totally use the `owlly-house` branch, who add more option in the yaml ; as :
 - `flux: false` : remove the file from the feed
