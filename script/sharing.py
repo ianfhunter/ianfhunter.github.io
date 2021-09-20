@@ -452,8 +452,6 @@ def file_convert(file, option=0):
         else:
             if "share" not in meta.keys() or meta["share"] is False :
                 return final
-            elif 'update' not in meta.keys() or meta['update'] is False:
-                return final
         lines = admonition_trad(lines)
         for ln in lines:
             final_text = ln.replace("  \n", '\n')
@@ -502,12 +500,13 @@ def search_share(option=0):
             if filepath.endswith(".md") and "excalidraw" not in filepath:
                 try:
                     yaml_front = frontmatter.load(filepath)
-                    if "share" in yaml_front and yaml_front["share"] is True or "update" not in yaml_front or ("update" in yaml_front and yaml_front['update'] is False):
+                    if "share" in yaml_front and yaml_front["share"] is True :
                         if option == 1:
-                            if diff_file(filepath):
-                                delete_file(filepath)
-                                contents = file_convert(filepath)
-                                check = file_write(filepath, contents)
+                            if 'update' not in yaml_front or ('update' in yaml_front and yaml_front['update'] is True):
+                                if diff_file(filepath):
+                                    delete_file(filepath)
+                                    contents = file_convert(filepath)
+                                    check = file_write(filepath, contents)
                         if option == 2:
                             delete_file(filepath)
                             contents = file_convert(filepath)
