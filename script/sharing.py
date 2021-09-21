@@ -466,8 +466,8 @@ def file_convert(file, option=0):
                 final_text = convert_no_embed(final_text)
             else:
                 final_text = transluction_note(final_text)
-            if re.search("\%\%(.*)\%\%", final_text, re.DOTALL):
-                final_text = ""
+            if re.search("\%{2}(.*)\%{2}", final_text, re.DOTALL):
+                final_text = re.sub('\%{2}(.*)\%{2}', '', final_text)
             elif re.search("==(.*)==", final_text):
                 final_text = re.sub("==", "[[", final_text, 1)
                 final_text = re.sub("( ?)==", "::highlight]] ", final_text, 2)
@@ -504,8 +504,10 @@ def search_share(option=0):
                     yaml_front = frontmatter.load(filepath)
                     if "share" in yaml_front and yaml_front["share"] is True :
                         if option == 1:
-                            if 'update' not in yaml_front or ('update' in yaml_front and yaml_front['update'] is True):
+                            if 'update' in yaml_front and yaml_front['update'] is False:
                                 update = 1
+                            else:
+                                update=0
                             if diff_file(filepath, update):
                                 delete_file(filepath)
                                 contents = file_convert(filepath)

@@ -2,7 +2,7 @@
 alias: Mnemosyne, Némo, Nemo
 category: Fiche RP
 created: 03-09-2021
-date: 20-09-2021
+date: 21-09-2021
 resume: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
 share: true
 state: "\U0001F4DD"
@@ -14,13 +14,6 @@ type: OC, Fiche
 univers: Azelyss
 ---
 
-%% race:: Ange   
-[[Echo]]:: #Gardien   
-  genre:: PJ  
-original:: /  
-%%  
-  
-  
 ![+side](../assets/img/Mnémosyne.png)  
   
 **Prénom et nom** : Mnémosyne  
@@ -128,10 +121,11 @@ Pour une raison obscure, Mnémosyne est terrifiée par les insectes. En dehors d
   
 # Physique  
   
-_Taille :_ 1m60  
-_Poids_ : 53kg  
+_Taille :_ 1m80  
+_Poids_ : 60 kg  
   
-Mnémosyne est une femme de petite taille, assez poids-plume. Sa peau est pâle et ses cheveux gris sont coiffés absolument dans tous les sens — bien que plutôt long.   
+Mnémosyne est une femme de grande taille, mais assez poids-plume : De fait, elle apparaît parfois comme une sorte de squelettes sur patte, et elle joue beaucoup sur cette apparence.   
+Sa peau est pâle et ses cheveux gris sont coiffés absolument dans tous les sens — bien que plutôt long.   
 Elle a une démarche plutôt droite, malgré le fait qu'elle s'aide tout le temps de sa canne d'aveugle. Niveau voix, on va dire qu'elle a des accents grincheux et légèrement grinçant. Difficile à expliquer. Comme si elle avait un léger grain dans la voix. Sinon, elle sourit quasiment tout le temps.  
   
 Son visage est assez ovale, avec un petit nez et des yeux très légèrement tombants, entièrement blanc — puisqu'il se trouve qu'elle est aveugle. Elle a des lèvres fines et une bouche bien dessinée. Enfin, elle possède de petites tâches de rousseurs sur l'ensemble du visage, mais surtout sur son nez et joues.   
@@ -234,14 +228,41 @@ Salem avait utilisé une bonne partie de sa puissance pour sceller celle d'Hayle
 — Et évidemment, tu l'as envoyé dans cette mission sans la marquer puisqu'elle n'est toujours pas Gardienne. Et tu t'es bien gardé de prévenir Zéphyr, évidemment.  
 Un ange (pas déchu) passa dans la pièce.  
 — Et évidemment, tu préfères envoyer la gentille Ange ?   
-— Je ne peux pas quitter mes fonctions.  
+— Je ne peux pas quitter mes fonctions. Puis, si on excepte Zéphyr, tu es la personne la plus rapide que je connaisse.  
+Elle soupira. Qu'est-ce qu'elle pouvait faire ? Et puis… Elle était intriguée par cette histoire d'Académie. Après tout, dès qu'il y avait des monstres — et surtout des démons — en jeu, elle espérait pouvoir retrouver des brides de sa mémoire perdue.   
+— De toute façon, je n'ai pas vraiment le choix, argua-t-elle. Et puis, je suis intriguée. J'irai récupérer ta gamine au passage.  
+Il grogna pour toute réponse, alors qu'elle s'éclipsait. Il refusait d'appeler Hayleen comme sa fille — officiellement — mais tout le monde savait que dans les faits…  
   
-**Famille** :  
+\[Présent \| Italie]  
+    
+Elle avait raté la grande bagarre.   
+C'était surtout la seule chose auquel elle pensait, depuis qu'elle avait récupéré Hayleen. Sérieusement, si elle avait été présente, elle aurait probablement pu faire quelque chose, non ? Ça l'énervait.   
+Pauvres gosses. Tant de mort, de défaites et souffrance, pendant que les adultes — enfin, adulte, certains enfants avaient le triple de son âge — se doraient la pilule au soleil.   
+Elle avait senti quelque chose, en se baladant au village. Quelque chose qui l'attirait et intriguait. Puis, il y avait suffisamment de démon — et si peu d'ange ! — pour qu'elle en soit attiré.  
+  
+— Je vais suivre Hayleen la semaine prochaine, dit-elle à Salem. Je pense que… Je peux espérer retrouver des morceaux que j'ai perdus.   
+  
+Salem haussa un sourcil ; Il était tard, et Hayleen dormait.  
+  
+— Comme tu veux. Ça fera un agent de l'Echo de plus là-bas. Vu ce qu'il s'est passé, ça ne serait pas de trop. De toute façon, de manière évidente, nous ne sommes pas une armée et personne parmi les Égides en enverrai. Puis, il y a Capricorne. Ils ont probablement pas envie de la croiser.  
+  
+Elle haussa les épaules. Qu'est-ce que ça pourrait bien lui faire ? Elle se fichait de la politique de l'Echo.  
+  
+— En tout cas, ça me va. Et je pense qu'Hayleen serait d'accord. De toute façon-  
+— Ce n'est pas comme si elle avait le choix ? Dit la concernée, les cheveux en bataille et l'œil endormi.  
+  
+**Et c'est ainsi que Mnémosyne devint surveillante à l'Académie**  
+  
+**Famille** : Aucune connue ;   
 **Passion | Hobbies** :  
+- Fumer ;   
+- Écouter les livres audios de science-fiction  
+- L'astrologie ; Cartomancie ; Astronomie  
+- Le dessin (elle dessine… En étant aveugle.)  
   
 # Divers  
-  
 **Habitudes** :  
+- Rien de bien particulier, pour être honnête.  
   
 **Armes** :  
 - Sa canne, ca compte ?
