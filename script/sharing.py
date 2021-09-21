@@ -512,6 +512,8 @@ def search_share(option=0):
                                 delete_file(filepath)
                                 contents = file_convert(filepath)
                                 check = file_write(filepath, contents)
+                            else:
+                                check = False
                         if option == 2:
                             delete_file(filepath)
                             contents = file_convert(filepath)
