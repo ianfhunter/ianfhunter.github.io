@@ -507,7 +507,7 @@ def search_share(option=0):
                             if 'update' in yaml_front and yaml_front['update'] is False:
                                 update = 1
                             else:
-                                update=0
+                                update = 0
                             if diff_file(filepath, update):
                                 delete_file(filepath)
                                 contents = file_convert(filepath)
