@@ -18,7 +18,7 @@ type: OC, Fiche
 univers: Azelyss
 ---
 
-# RELATIONS  
+# DATA  
 ```dataview  
 List  
 From [[Hayleen May]]  
@@ -146,6 +146,8 @@ L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen
 ##### **[[Echo]]** :   
   - [[Mnémosyne]] : Une ange déchue qui l’a entrainé quelque peu.   
   - [[Zéphyr]] : Sa maîtresse de magie, et “grande sœur”, bien que Zéphyr ait plus ou moins le même âge que Salem.  
+    
+→ [[Carnet  — Hayleen\|Relation]]  
     
 # Divers  
 **Habitudes :**  

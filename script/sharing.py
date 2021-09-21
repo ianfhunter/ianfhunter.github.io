@@ -72,7 +72,6 @@ def diff_file(file, update=0):
         return True #Si le fichier existe pas, il peut pas être identique
 
 # PATH WORKING #
-
 def delete_file(filepath):
     for file in os.listdir(post):
         filepath = os.path.basename(filepath)
