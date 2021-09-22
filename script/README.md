@@ -52,7 +52,12 @@ metadata you can:
 - Continue to work on the file before pushing it.
 - Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
 - Manually delete the file 
-- Add or edit the metadata keys (unless `date`/`title`/`created`). 
+- Add or edit the metadata keys (unless `date`/`title`/`created`/`update`). 
+
+:warning: In case you have two files with the same name but :
+- In different folder
+- With different sharing statut
+The script will bug because **I don't check folder** (It's volontary). In this unique case, you need to rename one of the files. 
 
 ## Options
 ### Share all
