@@ -11,6 +11,7 @@ from datetime import datetime
 import frontmatter
 import yaml
 import argparse
+import glob
 
 sys.stdin.reconfigure(encoding="utf-8")
 sys.stdout.reconfigure(encoding="utf-8")
@@ -80,6 +81,16 @@ def delete_file(filepath):
             os.remove(Path(f"{BASEDIR}/_notes/{file}"))
             return True
     return False
+
+def delete_not_exist():
+    #for file in poste : if file not in vault : delete file
+    vault_file=[]
+    for filename in glob.iglob(vault + "**/**", recursive=True):
+        vault_file.append(os.path.basename(filename))
+    for file in glob.iglob(post+"/**"):
+        if file not in vault_file:
+            os.remove(Path(f"{post}/{os.path.basename(file)}"))
+
 
 def relative_path(data):
     data = data.rstrip() + ".md"
