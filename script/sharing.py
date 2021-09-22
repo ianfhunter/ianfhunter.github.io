@@ -89,23 +89,17 @@ def delete_not_exist():
     for filename in glob.iglob(f"{vault}**/**", recursive=True):
         vault_file.append(os.path.basename(filename))
     for file in glob.iglob(f"{post}/**"):
-        if file not in vault_file:
-            os.remove(Path(f"{post}/{os.path.basename(file)}"))
+        if os.path.basename(file) not in vault_file:
+            os.remove(Path(file))
 
-
-def relative_path(data):
-    data = data.rstrip() + ".md"
-    data = os.path.basename(data)
-    for sub, dirs, files in os.walk(vault):
-        for file in files:
-            filepath = sub + os.sep + file
-            if data == file:
-                return filepath
 def check_file(filepath):
-    for file in os.listdir(post):
-        if filepath == file:
-            return "EXIST"
-    return "NE"
+    post_file = []
+    for file in glob.iglob(f"{post}/**"):
+        post_file.append(os.path.basename(file))
+    if filepath in post_file:
+        return 'EXIST'
+    else:
+        return "NE"
 def dest(filepath):
     file_name = os.path.basename(filepath)
     dest = Path(f"{BASEDIR}/_notes/{file_name}")
@@ -505,7 +499,6 @@ def file_convert(file, option=0):
 
 def search_share(option=0, stop_share=1):
     filespush = []
-    update = 0
     check = False
     for sub, dirs, files in os.walk(vault):
         for file in files:
@@ -556,7 +549,7 @@ def git_push(COMMIT):
         print(f"[{datetime.now().strftime('%H:%M:%S')}] {COMMIT} successfully 🎉")
     except ImportError:
         print(
-            "[{datetime.now().strftime('%H:%M:%S')}] Please, use another way to push your change 😶"
+            f"[{datetime.now().strftime('%H:%M:%S')}] Please, use another way to push your change 😶"
         )
 
 
@@ -597,7 +590,7 @@ def convert_all(delopt=False, git=False, force=False, stop_share=0):
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- PRESERVE FILES"
         )
-        new_files = search_share(stop_share)
+        new_files = search_share(0,stop_share)
     elif force:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- FORCE UPDATE"
@@ -665,6 +658,8 @@ def blog():
     if not args.keep:
         delete_not_exist()
         stop_share=1
+    else:
+        stop_share = 0
     if ori :
         if os.path.exists(ori): #Share ONE
             convert_one(ori, delopt, ng)
