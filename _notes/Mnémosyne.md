@@ -1,8 +1,8 @@
 ---
-alias: Mnemosyne, Némo, Nemo, Mnémosyne
+alias: Mnemosyne, Némo, Nemo
 category: Fiche RP
 created: 03-09-2021
-date: 22-09-2021
+date: 21-09-2021
 resume: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
 share: true
 state: "\U0001F4DD"
@@ -207,7 +207,7 @@ Némo ne vieillissait pas. Ses blessures n'étaient pas grand chose. Elle s'en a
     
 — Némo.  
 Des années avaient passés depuis que Mnemosyne "Némo" avait été réveillé par le duo de mage Italien.  
-C'était la première fois revoyait Salem en 10 ans, depuis la mort de ████. Elle n'avait que très peu croisé [[Fiche — Hayleen May\|Hayleen]] mais gardait de bon souvenir de la petite hybride.  
+C'était la première fois revoyait Salem en 10 ans, depuis la mort de ████. Elle n'avait que très peu croisé [[Hayleen May\|Hayleen]] mais gardait de bon souvenir de la petite hybride.  
     
 Éloignée de l'Echo et de ses activités pendant un moment, à la recherche de ses propres souvenirs et capacités, elle n'avait pas vraiment suivi les dernières aventures des Italiens.  
   

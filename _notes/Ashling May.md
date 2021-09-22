@@ -1,7 +1,7 @@
 ---
 alias: Ashling, Ash
 category: Fiche RP
-date: 22-09-2021
+date: 20-09-2021
 doc: Personnalisé
 genre: PJ
 obsidian_ui_mode: preview

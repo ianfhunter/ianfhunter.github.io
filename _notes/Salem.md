@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 22-09-2021
+date: 20-09-2021
 race: Démon
 resume: (AZELYSS) Élement de références pour le personnage de Salem
 share: true
@@ -37,6 +37,6 @@ univers: Azelyss
   
 ---  
 # ──────༺ Relations ༻──────  
-- Père adoptif de [[Fiche — Hayleen May]]  
+- Père adoptif de [[Hayleen May]]  
   - Ancien allié de [[Iblis]]  
   - Ex-Ami-Mec de [[Zéphyr]]

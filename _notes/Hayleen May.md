@@ -1,8 +1,10 @@
 ---
-alias: Hayleen, Hayleen May
+Statut: Étudiant
+alias: Hayleen
 category: Fiche RP
-date: 22-09-2021
+date: 21-09-2021
 genre: PJ
+race: Démon, Sorcière
 resume: (Azelyss) Fiche de personnage de Hayleen May, une élève demi-démone.
 share: true
 state: "\U0001F7E2"
@@ -19,7 +21,7 @@ univers: Azelyss
 # DATA  
 ```dataview  
 List  
-From [[Fiche — Hayleen May]]  
+From [[Hayleen May]]  
   ```  
 ---  
   
@@ -131,6 +133,8 @@ C’est à partir de là qu’elle apprend pour son père, et qu’elle se déci
   
 L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen en tant qu’espionne, car ils se doutent que quelque chose s’y trafique… Et ils veulent savoir quoi.   
   
+## Mise à jour 1  
+  
 ## Relation   
   
   
@@ -143,7 +147,7 @@ L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen
   - [[Mnémosyne]] : Une ange déchue qui l’a entrainé quelque peu.   
   - [[Zéphyr]] : Sa maîtresse de magie, et “grande sœur”, bien que Zéphyr ait plus ou moins le même âge que Salem.  
     
-→ [[Hayleen May\|Relation]]  
+→ [[Carnet  — Hayleen\|Relation]]  
     
 # Divers  
 **Habitudes :**  

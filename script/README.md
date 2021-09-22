@@ -28,19 +28,17 @@ blog="https://your-website.netlify.app/notes/"
 ```
 
 # Script
-Usage: `sharing.py  [-h] [--Preserve | --update] [--filepath FILEPATH] 
-[--Git] [--Keep]`
+Usage: `sharing.py  [-h] [--Preserve | --update] [--filepath FILEPATH] [--Git]`
 
 Create file in `_notes`, move image in assets, convert to relative path, add share support, and push to git
 
 Optional arguments:
-- `-h`, `--help` : Show this help message and exit  
+-  `-h`, `--help` : Show this help message and exit  
 - `--Preserve`, `--P` : Don't delete file if already exist  
 - `--update`, `--U` : Force update : delete all file and reform.  
 - `--filepath FILEPATH`, `--F FILEPATH` : Filepath of the file you want to 
   convert  
 - `--Git`, `--G` : No commit and no push to git (work for github, gitlab...) 
-- `--Keep, --K` : Keep file deleted from vault
 
 ## Checking differences 
 
@@ -48,11 +46,11 @@ The script will convert all file with `share:true` and check if the contents
 are differents with the version in `_notes`. The only things that are 
 ignored is the contents of the metadata. If you want absolutely change the 
 metadata you can: 
-
+- 
 - Use `share --file <filepath>` directly
 - Use `--u` to force update all file 
 - Continue to work on the file before pushing it.
-- Add a newline 
+- Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
 - Manually delete the file 
 - Add or edit the metadata keys (unless `date`/`title`/`created`). 
 

@@ -85,11 +85,11 @@ def delete_file(filepath):
 def delete_not_exist():
     #for file in poste : if file not in vault : delete file
     vault_file=[]
-    for filename in glob.iglob(f'{vault}**/**', recursive=True):
+    for filename in glob.iglob(vault + "**/**", recursive=True):
         vault_file.append(os.path.basename(filename))
-    for file in glob.iglob(f'{post}/**'):
+    for file in glob.iglob(post+"/**"):
         if file not in vault_file:
-            os.remove(file)
+            os.remove(Path(f"{post}/{os.path.basename(file)}"))
 
 
 def relative_path(data):
@@ -628,36 +628,32 @@ def blog():
     group_f = parser.add_mutually_exclusive_group()
     group_f.add_argument(
         "--preserve",
-        "--p",
+        "--P",
         help="Don't delete file if already exist",
         action="store_true",
     )
     group_f.add_argument(
         "--update",
-        "--u",
+        "--U",
         help="force update : delete all file and reform.",
         action="store_true")
     parser.add_argument(
         "--filepath",
-        "--f",
+        "--F",
         help="Filepath of the file you want to convert",
         action="store",
         required=False,
     )
     parser.add_argument(
-        "--git", "--g", help="No commit and no push to git", action="store_true"
+        "--Git", "--G", help="No commit and no push to git", action="store_true"
     )
-    parser.add_argument('--keep', "--k", help= "Keep file deleted from vault", action='store_true')
     args = parser.parse_args()
-    print(args)
     ori = args.filepath
     delopt = False
     if args.preserve:
         delopt = True
     force = args.update
-    ng = args.git
-    if not args.keep:
-        delete_not_exist()
+    ng = args.Git
     if ori :
         if os.path.exists(ori): #Share ONE
             convert_one(ori, delopt, ng)

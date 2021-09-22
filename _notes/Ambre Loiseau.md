@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 22-09-2021
+date: 16-09-2021
 doc: iframe
 resume: Fiche de Ambre Loiseau
 share: true
@@ -13,7 +13,6 @@ tag:
 title: Ambre Loiseau
 type: OC
 univers: ❌
-update: false
 ---
 
 ```dataview  
