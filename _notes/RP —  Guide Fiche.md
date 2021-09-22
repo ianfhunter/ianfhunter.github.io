@@ -1,6 +1,7 @@
 ---
-date: 01-01-2015
 category: Guide
+created: 01-01-2015
+date: 22-09-2021
 share: true
 tags:
 - Écriture
@@ -8,11 +9,11 @@ tags:
 title: RP —  Guide Fiche
 toc: true
 type: Aide
+update: false
 ---
 
 → [[RP —  Guide création de personnage]]   
-  
-  
+    
 # Description mentale  
 ## Généralité  
 - Sociabilité  

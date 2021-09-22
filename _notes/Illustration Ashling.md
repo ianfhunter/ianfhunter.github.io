@@ -1,15 +1,15 @@
 ---
 alias: Illustration
 category: false
-date: 17-09-2021
+date: 22-09-2021
 flux: false
 share: true
 title: Illustration Ashling
+update: false
 ---
 
 [[Ashling May::rmn-transclude]]
-  
-  
+    
 # 2017  
 ![+side](../assets/img/Ref 2017.png)  
 ![+left-medium](../assets/img/Ashling hermite.png)  
