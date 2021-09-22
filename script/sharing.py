@@ -49,6 +49,7 @@ def remove_frontmatter(meta):
     meta.pop('date', None)
     meta.pop('title', None)
     meta.pop('created', None)
+    meta.pop('update', None)
     return meta
 
 def diff_file(file, update=0):
@@ -85,9 +86,9 @@ def delete_file(filepath):
 def delete_not_exist():
     #for file in poste : if file not in vault : delete file
     vault_file=[]
-    for filename in glob.iglob(vault + "**/**", recursive=True):
+    for filename in glob.iglob(f"{vault}**/**", recursive=True):
         vault_file.append(os.path.basename(filename))
-    for file in glob.iglob(post+"/**"):
+    for file in glob.iglob(f"{post}/**"):
         if file not in vault_file:
             os.remove(Path(f"{post}/{os.path.basename(file)}"))
 
@@ -502,7 +503,7 @@ def file_convert(file, option=0):
         return final
 
 
-def search_share(option=0):
+def search_share(option=0, stop_share=1):
     filespush = []
     update = 0
     check = False
@@ -531,6 +532,9 @@ def search_share(option=0):
                         destination = dest(filepath)
                         if check:
                             filespush.append(destination)
+                    else:
+                        if stop_share == 1:
+                            delete_file(filepath)
                 except (
                     yaml.scanner.ScannerError,
                     yaml.constructor.ConstructorError,
@@ -583,7 +587,7 @@ def convert_one(ori, delopt, git):
         )
 
 
-def convert_all(delopt=False, git=False, force=False):
+def convert_all(delopt=False, git=False, force=False, stop_share=0):
     if git:
         git_info = "NO PUSH"
     else:
@@ -593,17 +597,17 @@ def convert_all(delopt=False, git=False, force=False):
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- PRESERVE FILES"
         )
-        new_files = search_share()
+        new_files = search_share(stop_share)
     elif force:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- FORCE UPDATE"
         )
-        new_files = search_share(2)
+        new_files = search_share(2, stop_share)
     else:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- UPDATE MODIFIED FILES"
         )
-        new_files = search_share(1)
+        new_files = search_share(1, stop_share)
     commit = "Add to blog:\n"
     if len(new_files) > 0:
         for md in new_files:
@@ -628,32 +632,39 @@ def blog():
     group_f = parser.add_mutually_exclusive_group()
     group_f.add_argument(
         "--preserve",
+        "--p",
         "--P",
         help="Don't delete file if already exist",
         action="store_true",
     )
     group_f.add_argument(
         "--update",
+        "--u",
         "--U",
         help="force update : delete all file and reform.",
         action="store_true")
     parser.add_argument(
         "--filepath",
+        "--f",
         "--F",
         help="Filepath of the file you want to convert",
         action="store",
         required=False,
     )
     parser.add_argument(
-        "--Git", "--G", help="No commit and no push to git", action="store_true"
+        "--git", "--g", "--G", help="No commit and no push to git", action="store_true"
     )
+    parser.add_argument('--keep', "--k", help = "Keep deleted file from vault and removed shared file", action="store_true")
     args = parser.parse_args()
     ori = args.filepath
     delopt = False
     if args.preserve:
         delopt = True
     force = args.update
-    ng = args.Git
+    ng = args.git
+    if not args.keep:
+        delete_not_exist()
+        stop_share=1
     if ori :
         if os.path.exists(ori): #Share ONE
             convert_one(ori, delopt, ng)
@@ -661,7 +672,7 @@ def blog():
             print(f"Error : {ori} doesn't exist.")
             return
     else:
-        convert_all(delopt, ng, force)
+        convert_all(delopt, ng, force, stop_share)
 
 
 if __name__ == "__main__":
