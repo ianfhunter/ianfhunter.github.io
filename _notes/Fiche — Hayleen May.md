@@ -136,7 +136,7 @@ L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen
   
 ### Famille  
 - [[Salem]] : Père adoptif,  
-  - [[Abbadonn]] : Père biologique d’Hayleen   
+  - ████████ : Père biologique d’Hayleen   
   - Nom inconnu — Mère d’Hayleen   
   
 ##### **[[Echo]]** :   
