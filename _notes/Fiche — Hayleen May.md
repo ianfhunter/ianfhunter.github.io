@@ -140,7 +140,7 @@ L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen
   - Nom inconnu — Mère d’Hayleen   
   
 ##### **[[Echo]]** :   
-  - [[Mnémosyne]] : Une ange déchue qui l’a entrainé quelque peu.   
+  - [[Fiche — Mnémosyne\|Mnémosyne]] : Une ange déchue qui l’a entrainé quelque peu.   
   - [[Zéphyr]] : Sa maîtresse de magie, et “grande sœur”, bien que Zéphyr ait plus ou moins le même âge que Salem.  
     
 → [[Hayleen May\|Relation]]  
