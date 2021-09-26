@@ -1,37 +1,23 @@
 ---
 layout: post
-title: Catégorie
-permalink: /category/
+title: Notes
+permalink: /feed/
 content-type: eg
 ---
-
-<style>
-.category-content a {
-    text-decoration: none;
-    color: #4183c4;
-}
-
-.category-content a:hover {
-    text-decoration: underline;
-    color: #4183c4;
-}
-</style>
-
 <main>
-{% assign mydocs = site.notes | group_by: 'category' %}
-{% for cat in mydocs %}
-	{%- if cat.name != 'false' -%} 
-<details>
-<summary>{{ cat.name | capitalize | reverse }}</summary>
-    <ul>
-      {% assign items = cat.items | sort: 'title' %}
-      {% for item in items %}
-        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-      {% endfor %}
-    </ul>
-</details>
-{%- endif -%}
-{% endfor %}
-<br/>
-<br/>
+	{%- for item in site.notes reversed -%}
+		{%- if item.flux != false-%}
+			<div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
+				<a href="{{ item.url }}" style="text-decoration: none; color: #555555;">
+					<ul style="padding-left: 20px; margin-top: 20px;" class="tags">
+						<li style="padding: 0 5px; border-radius: 10px;" class="tag">{{item.date | date_to_string | capitalize }}</li>
+					</ul>
+					<p style="margin-top: 0px;" class="feed-title">{{ item.title }}</p>
+					<p class="feed-excerpt">{{item.resume }}</p>
+				</a>
+			</div>
+		{%- endif -%}
+	{%- endfor -%}
+	<br/>
+    <br/>
 </main>
