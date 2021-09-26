@@ -55,5 +55,5 @@ univers: Azelyss
 ---  
 # ─────༺ Relation ༻──────  
 - Ami / Ex/Meuf de [[Salem]]  
-  - Maître en magie de [[Fiche — Hayleen May]]  
+  - Maître en magie de [[Fiche — Hayleen May\|Hayleen May]]  
   - Membre de l'[[Echo]]
