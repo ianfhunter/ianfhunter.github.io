@@ -1504,3 +1504,21 @@ img[src*='#center'] {
 [id]:hover>a {
     display: inline;
 }
+
+
+/* Dataview */
+
+.language-dataview {
+    display: none;
+}
+
+/* tags */
+
+.tag_content {
+    background-color: #80cbee67;
+    border: 1px solid #0493ec;
+    border-radius: 8px;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: #1d588f;
+}

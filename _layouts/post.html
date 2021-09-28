@@ -38,7 +38,6 @@
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
 
-
 </head>
 
 <body>
@@ -72,20 +71,8 @@
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
         });
     </script>
-	<script>
-const details = document.querySelectorAll("details");
-console.log(details)
-details.forEach((targetDetail) => {
-    targetDetail.addEventListener("click", () => {
-        // Close all the details that are not targetDetail.
-        details.forEach((detail) => {
-            if (detail !== targetDetail) {
-                detail.removeAttribute("open");
-            }
-        });
-    });
-});
-</script>
+	<script type="text/javascript" src="../assets/js/summary.js"></script>
+
     {%- include contextmenu.html -%}
 	{%- include text-expand.html -%}
 </body>
