@@ -85,7 +85,7 @@ The script :
 - Frontmatter :  Update the date. If there is already a `date` key, save it to `created` and update `date`.
 - Frontmatter : In absence of title, add the file's title.
 - Copy the link to your clipboard if one file is edited.
-- ⭐ Support Admonition Plugin 
+- ⭐ Support Admonition Plugin (⚠ Doesn't support admonition "no blocks")
 
 Finally, the plugin will add, commit and push if supported.
 

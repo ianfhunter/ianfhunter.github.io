@@ -18,7 +18,6 @@ plugins:
   - jekyll-spaceship
 
 markdown: kramdown
-highlighter: rouge
 
 kramdown:
   input: GFM
@@ -26,6 +25,7 @@ kramdown:
   math_engine: null
   smart_quotes: ["apos", "apos", "quot", "quot"]
   syntax_highlighter: rouge
+  default_lang: markdown
 
 
 sass:

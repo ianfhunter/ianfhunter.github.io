@@ -125,121 +125,11 @@ def frontmatter_check(filename):
 
 
 # ADMONITION CURSED THINGS
-def admonition_trad_type(line):
-    # Admonition Obsidian : blockquote + ad-
-    # Admonition md template : ```ad-type <content> ```
-    # build dictionnary for different types
-    admonition = {
-        "note": "note",
-        "seealso": "note",
-        "abstract": "abstract",
-        "summary": "abstract",
-        "tldr": "abstract",
-        "info": "todo",
-        "todo": "todo",
-        "tip": "tip",
-        "hint": "tip",
-        "important": "tip",
-        "success": "done",
-        "check": "done",
-        "done": "done",
-        "question": "question",
-        "help": "question",
-        "faq": "question",
-        "warning": "warning",
-        "caution": "warning",
-        "attention": "warning",
-        "failure": "failure",
-        "fail": "failure",
-        "missing": "failure",
-        "danger": "danger",
-        "error": "danger",
-        "bug": "bug",
-        "example": "example",
-        "exemple": "example",
-        "quote": "quote",
-        "cite": "quote",
-    }
-    admonition_type = re.search("```ad-(.*)", line)
-    ad_type = line
-    content_type = ""
-    admo_format = 'block'
-    if admonition_type:
-        admonition_type = admonition_type.group(1)
-        if admonition_type.lower() in admonition.keys():  # found type
-            content_type = admonition[admonition_type]
-            ad_type = "\n{: ." + content_type + "}  \n"
-        else:
-            ad_type = "\n{: .note}  \n"
-            content_type = (
-                "custom" + admonition_type
-            )  # if admonition "personnal" type, use note by default
-    elif re.search('(!{3}|\?{3})\+? ad-\w+(.*)', line): #Non-block admonition
-        admo_format='MT'
-        admonition_type=re.search('ad-\w+', line).group()
-        admonition_type = admonition_type.replace('ad-', '')
-        if admonition_type.lower() in admonition.keys():
-            content_type=admonition[admonition_type]
-            ad_type="\n{: ." + content_type + "}  \n"
-        else:
-            ad_type = "\n{: .note}  \n"
-            content_type = (
-                "custom" + admonition_type
-            )
-    return ad_type, content_type, admo_format
 
-def admonition_title_MT(line):
-    title_group = re.search('ad-\w+(.*)', line)
-    if title_group:
-        title_group=title_group.group(1)
-        if re.search('\w+', title_group):
-            title_MT = title_group
-        else:
-            title_MT = 'inline'
-    else:
-        title_MT = 'not'
-    return title_MT
-
-def admonition_title_block (line):
-    ad_title = re.search("title:(.*)", line)
-    if ad_title:
-        ad_title=ad_title.group(1)
-        if len(ad_title) > 0:
-            title_block = ad_title
-        else:
-            title_block = 'inline'
-    else:
-        title_block = 'not'
-    return title_block
-
-def admonition_title(title, content_type, format):
-    # ⚠ Nous sommes sur la DEUXIÈME LIGNE (ad_start+1) : Il n'y aura JAMAIS le content type ici, qui est TOUJOURS sur ad_start
-    # trois type de format :
-        # inline = {: .content_type} \n > line
-        # not : = {: .content_type} \n **content_type**{: .ad-title-type}
-        # title : = '{: .content_type} \n **title**{: .ad-title-type}
-    if title == 'inline':
-        admo_title = '>' + title
-    elif title == 'not':
-        if 'custom' in content_type:
-            content_type=content_type.replace("custom", '')
-            title_format='[' + content_type.strip().title() + ']'
-            content_type = 'note'
-        else:
-            title_format = content_type.strip().title()
-        admo_title = '> **' + title_format + "**{: .ad-title-" + content_type.strip() + '}'
-    else:
-        if 'custom' in content_type:
-            content_type=content_type.replace('custom', '')
-            title_format='[' + content_type.strip().title() + '] ' + title.strip()
-            admo_title = '> **' + title_format + '**{: .ad-title-note}\n'
-        else:
-            title_format = title.strip()
-            admo_title = '> **'+ title_format +'**{: .ad-title-' + content_type.strip() + '}\n'
-    return admo_title
 
 
 def admonition_trad_content(line):
+    title = line
     if "collapse:" in line:
         title = ""
     elif "icon:" in line:
@@ -248,11 +138,6 @@ def admonition_trad_content(line):
         title = ""
     elif len(line) == 1:
         title = ""
-    else:
-        if line[-1] == "\n":
-            title = "\t" + line + ""
-        else:
-            title = "\t" + line + "\n"
     return title
 
 
@@ -262,10 +147,10 @@ def admonition_trad(file_data):
     start_list = []
     end_list = []
     for i in range(0, len(file_data)):
-        if re.search("```ad-(.*)", file_data[i]) or re.search('(!{3}|\?{3})\+? ad-\w+(.*)', file_data[i]):
+        if re.search("```ad-(.*)", file_data[i]):
             start = i
             start_list.append(start)
-        elif re.match("```", file_data[i]) or re.match('--- admonition', file_data[i]):
+        elif re.match("```", file_data[i]) or re.match('--- admonition', file_data[i]) :
             end = i
             end_list.append(end)
     for i, j in zip(start_list, end_list):
@@ -275,31 +160,10 @@ def admonition_trad(file_data):
     for ad, ln in code_dict.items():
         ad_start = ln[0]
         ad_end = ln[1]
-        file_data[ad_start], ad_type, ad_format = admonition_trad_type(file_data[ad_start])
-        inter=ad_start
-        if ad_format == 'MT':
-            inter = ad_start+2
-            if ad_format == 'MT':
-                title = admonition_title_MT(file_data[ad_start])
-                if title != 'not':
-                    file_data[ad_start + 1] = admonition_title(title, ad_type, ad_format) # title
-                else:
-                    file_data[ad_start+1] = admonition_title(title, ad_type, ad_format) + '\n' + admonition_trad_content(file_data[ad_start+1])
-                    file_data[ad_start + 1] = file_data[ad_start + 1]
-        elif ad_format == 'block':
-            inter = ad_start+2
-            title = admonition_title_block(file_data[ad_start+1])
-            if title != 'not':
-                file_data[ad_start + 1] = admonition_title(title, ad_type, ad_format)
-            else:
-                file_data[ad_start + 1] = admonition_title(title, ad_type, ad_format) + '\n' + admonition_trad_content(file_data[ad_start + 1])
-                file_data[ad_start + 1] = file_data[ad_start + 1]
-        code_block = [x for x in range(inter, ad_end)]
-        for fl in code_block:
-            data = admonition_trad_content(file_data[fl].strip())
-            if data.strip() != '':
-                file_data[fl] = data
+        file_data[ad_start] = file_data[ad_start].replace('```ad-', '!!!ad-')
         file_data[ad_end]='  '
+        for i in range(ad_start, ad_end):
+            file_data[i] = admonition_trad_content(file_data[i])
     return file_data
 
 

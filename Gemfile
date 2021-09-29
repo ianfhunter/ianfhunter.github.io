@@ -34,3 +34,4 @@ gem 'jekyll-toc'
 gem 'rouge'
 gem "webrick", "~> 1.7"
 gem 'jekyll-spaceship'
+gem 'kramdown-syntax-coderay'
