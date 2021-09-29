@@ -9,30 +9,6 @@ details.forEach((targetDetail) => {
     });
 });
 
-var tagsWord = function(target) {
-    var html = target.innerHTML;
-    const regex = /(#[A-Za-zÀ-ÖØ-öø-ÿ]+)/gi;
-    const found = html.match(regex, 'g');
-    const link = /<a style="(.*)/gi
-    const link_found = html.match(link)
-        if (found) {
-        length = found.length
-        for (var i = 0; i < length; i++) {
-            if (link_found) {
-                for (var j = 0; j <link_found.length; j++) {
-                    if (!link_found[j].includes(found[i])) {
-                        html = html.replace(found[i], '<span class="tag_content">' + found[i] + '</span>');
-                    }
-                }
-            } else {
-                html = html.replace(found[i], '<span class="tag_content">' + found[i] + '</span>');
-
-            }
-            target.innerHTML = html;
-        }
-    }
-}
-tagsWord(document.querySelector(".content"));
 
 var admonition_title = function (target, type) {
     var html = target.innerHTML;

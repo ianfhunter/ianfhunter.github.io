@@ -1,4 +1,8 @@
---- layout: stylesheet ---
+---
+layout: stylesheet
+---
+
+
 /******************************************************
  *             PREDEFINE TAGS CSS                     *
 *******************************************************/
@@ -496,7 +500,7 @@ a {
 /* Style the collapsible content. Note: hidden by default */
 
 .toc {
-    padding: 10 18px;
+    padding: 10px 18px;
     display: none;
     overflow: hidden;
     border-radius: 5px;
@@ -1514,11 +1518,16 @@ img[src*='#center'] {
 
 /* tags */
 
-.tag_content {
+.hashtag {
     background-color: #80cbee67;
     border: 1px solid #0493ec;
     border-radius: 8px;
     padding-right: 5px;
     padding-left: 5px;
     color: #1d588f;
+    text-decoration: none !important;
+}
+.hashtag:hover {
+    text-decoration: none !important;
+    background-color: rgba(0, 171, 255, 0.4) !important;
 }
