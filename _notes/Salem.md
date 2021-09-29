@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 22-09-2021
+date: 29-09-2021
 race: Démon
 resume: (AZELYSS) Élement de références pour le personnage de Salem
 share: true
@@ -17,6 +17,8 @@ univers: Azelyss
 **Nom** : Salem  
 **Âge** : ~1500 ans  
 **Genre** : M  
+**Race** : Démon   
+**Pouvoirs** :   
   
 # ──────༺ Physique ༻──────  
 **Yeux** :   
@@ -37,6 +39,7 @@ univers: Azelyss
   
 ---  
 # ──────༺ Relations ༻──────  
-- Père adoptif de [[Fiche — Hayleen May]]  
+- Père adoptif de [[Hayleen May]]  
   - Ancien allié de [[Iblis]]  
-  - Ex-Ami-Mec de [[Zéphyr]]
+  - Ex-Ami-Mec de [[Zéphyr]]  
+  - Chef [[Echo]] : Chevalier

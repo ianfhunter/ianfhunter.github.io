@@ -1,0 +1,59 @@
+---
+category: Azelyss
+date: 29-09-2021
+name: Echo
+resume: Note diverses sur le groupe de l'Echo
+share: true
+tag:
+- RP/Azelyss/Echo
+title: Echo
+type: Notes, Informations
+univers: Azelyss
+---
+
+```dataview  
+LIST  
+FROM [[Echo]]  
+  WHERE !contains(file.name, "!")  
+```  
+  
+  
+---  
+  
+L'Écho est une organisation secrète, dont on ne connait pas la date de création. Certains remontent jusqu'à au moins 1000 ans, mais personne ne sait quand exactement, et encore qui et pourquoi.   
+  
+Très active jusqu'au milieu du XXe Siècle, l'organisation a été quasiment détruite lors de la seconde guerre mondiale, dans une guerre secrète contre d'autres organisation aujourd'hui disparu.  
+  
+Aujourd'hui, l'organisation est constitué de petits groupes indépendants mais ayant (la plupart du temps) les mêmes valeurs : protéger les monstres, d'eux-même, et des humains. Il existe cependant de nombreux buts, valeurs, pour chaque membres, tant les groupes — et membres — sont indépendants. C'est d'ailleurs une source de conflit réguliers entres les membres, lorsque le point de vue entre eux divergent violemment. L'histoire de l'Écho est donc parsemé   
+  
+On ne rejoint pas l'Écho n'importe comment : généralement, l'hérédité, ou les rapports de maître à élève ou de protection prime.   
+  
+Les membres de l'Écho sont très chaotiques, sans organisations précises ou claire : la fin justifie les moyens. Certains vont employer des moyens meurtrier, presque guerrier. D'autres préfère rester dans l'ombre. Dans tous les cas, tous les membres essaient de garder un oeil sur la planète et la plupart ignore royalement les évènements du Domaines.   
+  
+Les chefs de l'Écho — les Égides — ne sont pas identifiés et chaque cellules est dirigée différemment par un **chevalier**. Cependant, nombreux sont les membres préférant rester indépendant ou en petit groupe.  
+  
+Généralement, les cellules communiquent très peu entre elle, bien qu'il existe des messagers (souvent des monstres ayant des capacités de déplacement ou communication sur de grande distance). De plus, l'Écho n'hésite pas à employer les technologies humaines et se mêler à eux. De fait, les communications de l'Écho se fait tout simplement par téléphone et internet.  
+Cependant, l'Écho utilise aussi une technique de **marquage**, fonctionnant sous forme de tatouage invisibles. En employant certains sortilèges, des mots peuvent apparaître et être transmis à toutes les personnes marquée. Illisible pour les non marqués, cela permet la communication sans aucun autre moyen et sur de grandes distance.  
+Tous les **gardiens** sont marqués au moment où ils le deviennent. Cependant, graver des mots (que ce soit par la réception ou l'envoie) est très douloureux, donc cette technique n'est réservé que pour les communications urgentes et sensibles.  
+  
+Au final, c'est une organisation très mêlée à la vie humaine, faisant presque un lien entre les deux mondes, et visant à protéger le statu quo. Leur petit nombre, suite aux guerres récentes, les empêche cependant d'accomplir entièrement leur mission.   
+  
+---  
+  
+**Grade :**   
+*Les membres à partir du grade de Chevalier ont le choix de coordonner, ou non, certaines régions ou diriger des projets plus spécifiques. Ils sont peu nombreux et ne peuvent pas réellement avoir l'œil sur le monde entier, mais ils tentent de se tenir au courant d'environ tout.*  
+1. #Égide : Coordonne l'organisation à l'échelle planétaire. À l'heure actuel, il n'en existe que cinq. La plupart des membres connaissent les Égides de nom.   
+2. #Paladin : Surveille l'ensemble des évènements d'un pays. Ils sont peu nombreux, et se sont surtout des anciens Chevaliers qui ont accomplis des actes héroïques — du point de vue de l'organisation. La plupart le sont devenus suite à la Seconde Guerre Mondiale.   
+3. #Chevalier : Les chevaliers coordonne un groupe, sans de régions précise. Certains chevaliers, grâce à leurs actions, choisissent de rester en solitaire.  
+4. #Gardien : Membre d'un groupe, sous la direction d'un chevalier, ils ont le droit de prendre un initié ou un apprenti.   
+5. #Initié : Un apprenti passe directement comme initié après ses 18 ans. De fait, si un nouveau membre est un adulte, il est directement initié.   
+6. #Apprenti : Ce grade est réservé aux enfants uniquement, souvent les enfants des membres de l'organisation, ou des orphelins pris sous leur aile.   
+  
+**Membres actifs** :   
+* [[Mnémosyne]] : #Gardien   
+  * [[Hayleen May]] : #Gardien   
+  * [[Salem]] : #Chevalier   
+  * [[Zéphyr]] : #Paladin   
+    
+**Membres retirés** :  
+- [[Capricorne]] : Retiré, ancienne #Égide

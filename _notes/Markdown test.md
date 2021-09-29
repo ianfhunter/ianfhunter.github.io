@@ -1,7 +1,7 @@
 ---
 category: false
 created: 01-07-2021
-date: 20-09-2021
+date: 29-09-2021
 flux: false
 share: true
 title: Markdown test
@@ -28,10 +28,9 @@ Style Settings option :
 - Quote block color  
 - Mobile support.   
   
-  
-{: .warning}  
-> **Mobile support**{: .ad-title-warning}  
-	On mobile, the code mirror version used is **Code Mirror 6**, not **Code Mirror 5**. So, activeline doesn’t work. I use another “tricks” to create a WYSIWYG, but it’s not really better than the PC Ver.  
+!!!ad-warning  
+title: Mobile support  
+On mobile, the code mirror version used is **Code Mirror 6**, not **Code Mirror 5**. So, activeline doesn’t work. I use another “tricks” to create a WYSIWYG, but it’s not really better than the PC Ver.   
     
 # B. This is a heading 1 #test  
 ## B.1. This is a heading 2 #test   
@@ -75,7 +74,7 @@ _You **can** combine them_
 [Obsidian](https://obsidian.md)  
   [[http://www.google.fr\|Link to something]]   
   [[Note]]  
-  [[externlaèlinks.com\|ererrr]]   
+  [[externlaèlinks.com\|ererrr]]  
     
 # F. Quote  
 > Hello, my little friends, do you love potatoes ?!  
