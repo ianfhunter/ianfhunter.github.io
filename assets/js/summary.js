@@ -9,22 +9,6 @@ details.forEach((targetDetail) => {
     });
 });
 
-
-var admo_title = function (select_html) {
-    let html_truc = document.querySelector(select_html).innerHTML
-    console.log(html_truc)
-    const p_title = /title:(.*)/gi
-    const adm_title = html_truc.match(p_title)
-    if (adm_title) {
-        for (var j = 0; j < adm_title.length; j++) {
-            html_truc = html_truc.replace(adm_title[j],
-                "<span class='title-" + select_html.replace('.', '') + "'>" +
-                adm_title[j].replace('title:', '') + "</span><br>")
-        }
-        return html_truc
-    }
-}
-
 var admo_noblock = function (target) {
     var html = target.innerHTML;
     let select = '';
@@ -45,27 +29,40 @@ var admo_noblock = function (target) {
             select = found_p[i].replace("!!!ad-", '');
             select = select.replace("???ad-", '');
             select = select.replace('<p>', '')
-            if (adm.includes(select)) {
-                query = "<p class = 'admo-" + select + "'>"
-                select_html = '.admo-' + select
-            } else {
-                query = "<p class='admo-note'>";
-                select_html = '.admo-note'
-            }
-            const replaced = new RegExp(`<p>[!?]{3}ad-${select}`)
+            query = "<p class='admo-note'>";
+            select_html = '.admo-note'
+            const replaced = new RegExp(`<p>[!?]{3}ad-${select}`, 'gi')
             const replaceit = html.match(replaced)
+            console.log(html)
             for (var j = 0; j < replaceit.length; j++) {
-                html = html.replace('<br>', '')
-                html = html.replace(replaceit[j], query);
-                html = html.replace('<br>', '')
-                target.innerHTML = html;
-                const truc = admo_title(select_html)
-                console.log(truc)
-                document.querySelector(select_html).innerHTML = truc
-
+                html = html.replace(replaceit[j], query.replace('<br>', ''));
+                console.log(html)
             }
-
         }
+        target.innerHTML = html;
+
     }
 }
 admo_noblock(document.querySelector('.content'))
+
+var tags = (function (win,doc) {
+"use strict";
+  var entries = doc.querySelectorAll("div.content > p"),
+    i;
+  if (entries.length > 0) {
+    for (i = 0; i < entries.length; i = i + 1) {
+        let html = entries[i].innerHTML;
+        const html_search = entries[i].innerHTML.match(/(?<!background-color:)(?<!color: )#\w+/g)
+        if (html_search) {
+            for (var k = 0; k < html_search.length; k++) {
+                    entries[i].innerHTML = html.replace(
+                        /(?<!background-color:)(?<!color: )#\w+/g,
+                        '<a class="hashtag">' + html_search[k] + '</a>'
+                    );
+                }
+            }
+        }
+    }
+  })
+
+tags(this, this.document)
