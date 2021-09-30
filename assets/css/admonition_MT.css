@@ -120,6 +120,20 @@
 
 .admo-note {
     border-left: 3px solid #448aff;
+}
 
+/* Warning */
 
+.admo-warning {
+    border-left: 3px solid #ff9100;
+}
+
+.title-admo-warning {
+    color: #ff9100;
+    background-color: rgba(255, 145, 0, .1);
+}
+
+.title-admo-warning::before {
+    content: '\e8b2';
+    color: #ff9100;
 }

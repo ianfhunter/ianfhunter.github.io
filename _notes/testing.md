@@ -6,8 +6,17 @@ share: true
 title: testing
 ---
 
-!!!ad-tip  
+!!!ad-warning  
 title: coucou  
 test  
     
 Hello it's a normal blocks my body boy
+   
+!!!ad-note  
+title: coucou2  
+test  
+  
+!!!ad-warning
+title: coucou3  
+test  
+  
