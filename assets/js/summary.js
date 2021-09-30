@@ -33,13 +33,14 @@ var admo_noblock = function (target) {
             select_html = '.admo-note'
             const replaced = new RegExp(`<p>[!?]{3}ad-${select}`, 'gi')
             const replaceit = html.match(replaced)
-            console.log(html)
-            for (var j = 0; j < replaceit.length; j++) {
+            if (replaceit) {
+                for (var j = 0; j < replaceit.length; j++) {
                 html = html.replace(replaceit[j], query.replace('<br>', ''));
                 console.log(html)
             }
+        target.innerHTML = html;}
         }
-        target.innerHTML = html;
+
 
     }
 }

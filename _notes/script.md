@@ -1,3 +1,9 @@
+---
+title: Python Scripting
+category: Setup
+flux: true
+---
+
 ⚠️ The script and site are not a replacement for [Obsidian Publish](https://obsidian.md/publish), which is a much more efficient way to share Obsidian files.
 
 # Goal 
@@ -117,8 +123,8 @@ Also, you can add emoji on title to add some nice formatting.
 
 !!!ad-note
 **🍎 Title**{:.title}  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus at ex in ultricies. Etiam ac sodales mi, non aliquam lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac lectus quam. Proin sed velit eget dui aliquet sodales. Duis sed urna eleifend, dictum neque eu, elementum neque. Quisque efficitur, justo ut malesuada faucibus, magna libero tempor elit, at fermentum libero mauris aliquam magna. Quisque ultrices tortor nec enim bibendum sodales.
-$~$
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus at ex in ultricies. Etiam ac sodales mi, non aliquam lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac lectus quam. Proin sed velit eget dui aliquet sodales. Duis sed urna eleifend, dictum neque eu, elementum neque. Quisque efficitur, justo ut malesuada faucibus, magna libero tempor elit, at fermentum libero mauris aliquam magna. Quisque ultrices tortor nec enim bibendum sodales.  
+$~$  
 It supports latex : $1+1$ and *markdown* 
 
 
