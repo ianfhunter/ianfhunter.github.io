@@ -35,5 +35,4 @@ gem 'rouge'
 gem "webrick"
 gem 'jekyll-spaceship'
 gem 'kramdown-syntax-coderay'
-gem 'jekyll-hashtags'
 gem 'kramdown-parser-gfm'
