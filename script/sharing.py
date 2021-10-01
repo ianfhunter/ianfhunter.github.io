@@ -337,6 +337,14 @@ def file_convert(file, option=0):
                 final_text = transluction_note(final_text)
             if re.search("\%{2}(.*)\%{2}", final_text, re.DOTALL):
                 final_text = re.sub('\%{2}(.*)\%{2}', '', final_text)
+            elif re.search('[!?]{3}ad-\w+', final_text):
+                final_text = final_text.replace('  \n', '\n')
+            if re.search('#\w+', final_text) and not re.search('`#\w+`', final_text):
+                token = re.findall("#\w+", final_text)
+                token = list(set(token))
+                for i in range(0, len(token)) :
+                    IAL = "**" + token[i] +"**{: .hash}"
+                    final_text=final_text.replace(token[i], IAL, 1)
             elif re.search("==(.*)==", final_text):
                 final_text = re.sub("==", "[[", final_text, 1)
                 final_text = re.sub("( ?)==", "::highlight]] ", final_text, 2)
