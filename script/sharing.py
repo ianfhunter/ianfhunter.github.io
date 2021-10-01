@@ -128,7 +128,7 @@ def frontmatter_check(filename):
 
 
 
-def admonition_trad_content(line):
+def admonition_trad_content(line,type):
     title = line
     if "collapse:" in line:
         title = ""
@@ -138,6 +138,8 @@ def admonition_trad_content(line):
         title = ""
     elif len(line) == 1:
         title = "$~$  \n"
+    elif 'title:' in line:
+        title = "**[" + type + '] ' + line.replace('title:','')+'**{: .title}  \n'
     return title
 
 
@@ -147,7 +149,7 @@ def admonition_trad(file_data):
     start_list = []
     end_list = []
     for i in range(0, len(file_data)):
-        if re.search("```ad-(.*)", file_data[i]):
+        if re.search("[`?!]{3}ad-(.*)", file_data[i]):
             start = i
             start_list.append(start)
         elif re.match("```", file_data[i]) or re.match('--- admonition', file_data[i]) :
@@ -160,10 +162,26 @@ def admonition_trad(file_data):
     for ad, ln in code_dict.items():
         ad_start = ln[0]
         ad_end = ln[1]
+        type = re.search('[`!?]{3}ad-(.*)',file_data[ad_start])
+        type = type.group(1)
+        adm='b'
+        if re.search('[!?]{3}ad-(\w+) (.*)',file_data[ad_start]):
+          title = re.search('[!?]{3}ad-(\w+) (.*)',file_data[ad_start])
+          adm='MT'
+          title = title.group(2)
         file_data[ad_start] = file_data[ad_start].replace('```ad-', '!!!ad-')
         file_data[ad_end]='  '
         for i in range(ad_start, ad_end):
-            file_data[i] = admonition_trad_content(file_data[i])
+            file_data[i] = admonition_trad_content(file_data[i], type)
+        if adm=='MT':
+          if len(title) > 0:
+file_data=file_data.insert(ad_start+1,f'**[${type}] title**{: .title}')
+          else:
+file_data=file.insert(ad_start+1,'**['+type+']**{: .title}')
+        else:
+         converted= [file_data[i] for i in range(ad_start, ad_end)]
+         if not any(re.match('.*title.*', line) for line in converted): 
+         file_data = file_data.insert(ad_start+1, '**['+type+']**{: .title}')
     return file_data
 
 
