@@ -29,7 +29,7 @@ Style Settings option :
 - Mobile support.   
   
 !!!ad-warning
-title: Mobile support  
+**⚠️ Mobile support**{: .title}  
 On mobile, the code mirror version used is **Code Mirror 6**, not **Code Mirror 5**. So, activeline doesn’t work. I use another “tricks” to create a WYSIWYG, but it’s not really better than the PC Ver.   
     
 # B. This is a heading 1 **#test**{: .hash}  

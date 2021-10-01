@@ -7,15 +7,9 @@ title: testing
 ---
 
 !!!ad-tip
-title: coucou  
-test  
+**🔥 coucou**{: .title}  
 $~$  
-doulble line   
-$~$  
-$~$  
-$~$  
-double line  
-$~$  
+content  
 $~$  
     
 Hello it's a normal blocks my body boy  
