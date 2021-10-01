@@ -137,7 +137,7 @@ def admonition_trad_content(line):
     elif "color:" in line:
         title = ""
     elif len(line) == 1:
-        title = "$~$"  
+        title = "$~$  \n"
     return title
 
 
