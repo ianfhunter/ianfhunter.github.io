@@ -175,13 +175,13 @@ def admonition_trad(file_data):
             file_data[i] = admonition_trad_content(file_data[i], type)
         if adm=='MT':
           if len(title) > 0:
-file_data=file_data.insert(ad_start+1,f'**[${type}] title**{: .title}')
+file_data.insert(ad_start+1,f'**[${type}] title**{: .title}')
           else:
-file_data=file.insert(ad_start+1,'**['+type+']**{: .title}')
+file_data.insert(ad_start+1,'**['+type+']**{: .title}')
         else:
          converted= [file_data[i] for i in range(ad_start, ad_end)]
          if not any(re.match('.*title.*', line) for line in converted): 
-         file_data = file_data.insert(ad_start+1, '**['+type+']**{: .title}')
+         file_data.insert(ad_start+1, '**['+type+']**{: .title}')
     return file_data
 
 
