@@ -43,18 +43,18 @@ Au final, c'est une organisation très mêlée à la vie humaine, faisant presqu
   
 **Grade :**   
 *Les membres à partir du grade de Chevalier ont le choix de coordonner, ou non, certaines régions ou diriger des projets plus spécifiques. Ils sont peu nombreux et ne peuvent pas réellement avoir l'œil sur le monde entier, mais ils tentent de se tenir au courant d'environ tout.*  
-1. #Égide : Coordonne l'organisation à l'échelle planétaire. À l'heure actuel, il n'en existe que cinq. La plupart des membres connaissent les Égides de nom.   
-2. #Paladin : Surveille l'ensemble des évènements d'un pays. Ils sont peu nombreux, et se sont surtout des anciens Chevaliers qui ont accomplis des actes héroïques — du point de vue de l'organisation. La plupart le sont devenus suite à la Seconde Guerre Mondiale.   
-3. #Chevalier : Les chevaliers coordonne un groupe, sans de régions précise. Certains chevaliers, grâce à leurs actions, choisissent de rester en solitaire.  
-4. #Gardien : Membre d'un groupe, sous la direction d'un chevalier, ils ont le droit de prendre un initié ou un apprenti.   
-5. #Initié : Un apprenti passe directement comme initié après ses 18 ans. De fait, si un nouveau membre est un adulte, il est directement initié.   
-6. #Apprenti : Ce grade est réservé aux enfants uniquement, souvent les enfants des membres de l'organisation, ou des orphelins pris sous leur aile.   
+1. **#Égide**{: .hash} : Coordonne l'organisation à l'échelle planétaire. À l'heure actuel, il n'en existe que cinq. La plupart des membres connaissent les Égides de nom.   
+2. **#Paladin**{: .hash} : Surveille l'ensemble des évènements d'un pays. Ils sont peu nombreux, et se sont surtout des anciens Chevaliers qui ont accomplis des actes héroïques — du point de vue de l'organisation. La plupart le sont devenus suite à la Seconde Guerre Mondiale.   
+3. **#Chevalier**{: .hash} : Les chevaliers coordonne un groupe, sans de régions précise. Certains chevaliers, grâce à leurs actions, choisissent de rester en solitaire.  
+4. **#Gardien**{: .hash} : Membre d'un groupe, sous la direction d'un chevalier, ils ont le droit de prendre un initié ou un apprenti.   
+5. **#Initié**{: .hash} : Un apprenti passe directement comme initié après ses 18 ans. De fait, si un nouveau membre est un adulte, il est directement initié.   
+6. **#Apprenti**{: .hash} : Ce grade est réservé aux enfants uniquement, souvent les enfants des membres de l'organisation, ou des orphelins pris sous leur aile.   
   
 **Membres actifs** :   
-* [[Mnémosyne]] : #Gardien   
-  * [[Hayleen May]] : #Gardien   
-  * [[Salem]] : #Chevalier   
-  * [[Zéphyr]] : #Paladin   
-    
+* [[Mnémosyne]] : **#Gardien**{: .hash}   
+* [[Hayleen May]] : **#Gardien**{: .hash}   
+* [[Salem]] : **#Chevalier**{: .hash}   
+* [[Zéphyr]] : **#Paladin**{: .hash}   
+  
 **Membres retirés** :  
-- [[Capricorne]] : Retirée, ancienne #Égide
+- [[Capricorne]] : Retirée, ancienne **#Égide**{: .hash}

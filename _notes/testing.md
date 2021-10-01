@@ -6,10 +6,18 @@ share: true
 title: testing
 ---
 
-!!!ad-tip  
+!!!ad-tip
 title: coucou  
 test  
+$~$  
 doulble line   
+$~$  
+$~$  
+$~$  
 double line  
+$~$  
+$~$  
     
-Hello it's a normal blocks my body boy
+Hello it's a normal blocks my body boy  
+  
+**#tags**{: .hash} #tags **#tags2**{: .hash}

@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 16-09-2021
+date: 01-10-2021
 genre: PJ
 resume: null
 share: true
@@ -14,6 +14,6 @@ type: Personnage, OC
 univers: FFXIV
 ---
 
-#Mhach #ChevalierNoir #Immortalité  
+**#Mhach**{: .hash} **#ChevalierNoir**{: .hash} **#Immortalité**{: .hash}  
 ![](../assets/img/Pasted image 20210809173114.png)  
 ![](../assets/img/Pasted image 20210821121957.png)

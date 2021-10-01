@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 29-09-2021
+date: 01-10-2021
 genre: PNJ
 name: Zéphyr
 resume: Notes relation & autres pour Zephyr
@@ -56,4 +56,4 @@ univers: Azelyss
 # ─────༺ Relation ༻──────  
 - Ami / Ex/Meuf de [[Salem]]  
   - Maître en magie de [[Hayleen May]]  
-  - Membre de l'[[Echo]] #Chevalier
+  - Membre de l'[[Echo]] **#Chevalier**{: .hash}

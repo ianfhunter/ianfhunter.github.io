@@ -9,17 +9,18 @@ details.forEach((targetDetail) => {
     });
 });
 
-var admo_noblock = function (target) {
+var admo_noblock = function(target) {
     var html = target.innerHTML;
     let select = '';
     let query = '';
     const adm = ['note', 'seealso', 'abstract', 'summary', 'tldr', 'info',
-                 'todo', 'tip',
-                 'hint', 'important', 'success', 'check', 'done', 'question',
-                 'help', 'faq', 'warning',
-                 'caution', 'attention', 'failure', 'fail', 'missing', 'danger',
-                 'error', 'bug', 'example', 'exemple', "abstract",
-                 'quote', 'cite'];
+        'todo', 'tip',
+        'hint', 'important', 'success', 'check', 'done', 'question',
+        'help', 'faq', 'warning',
+        'caution', 'attention', 'failure', 'fail', 'missing', 'danger',
+        'error', 'bug', 'example', 'exemple', "abstract",
+        'quote', 'cite'
+    ];
     const p_search = /<p>[?!]{3}ad-([A-Za-zÀ-ÖØ-öø-ÿ]+)/gi;
     const found_p = html.match(p_search);
     let select_html = ''
@@ -44,25 +45,3 @@ var admo_noblock = function (target) {
     }
 }
 admo_noblock(document.querySelector('.content'))
-
-var tags = (function (win,doc) {
-"use strict";
-  var entries = doc.querySelectorAll("div.content > p"),
-    i;
-  if (entries.length > 0) {
-    for (i = 0; i < entries.length; i = i + 1) {
-        let html = entries[i].innerHTML;
-        const html_search = entries[i].innerHTML.match(/(?<!background-color:)(?<!color: )#\w+/g)
-        if (html_search) {
-            for (var k = 0; k < html_search.length; k++) {
-                    entries[i].innerHTML = html.replace(
-                        /(?<!background-color:)(?<!color: )#\w+/g,
-                        '<a class="hashtag">' + html_search[k] + '</a>'
-                    );
-                }
-            }
-        }
-    }
-  })
-
-tags(this, this.document)

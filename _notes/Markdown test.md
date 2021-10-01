@@ -1,7 +1,7 @@
 ---
 category: false
 created: 01-07-2021
-date: 29-09-2021
+date: 01-10-2021
 flux: false
 share: true
 title: Markdown test
@@ -28,16 +28,16 @@ Style Settings option :
 - Quote block color  
 - Mobile support.   
   
-!!!ad-warning  
+!!!ad-warning
 title: Mobile support  
 On mobile, the code mirror version used is **Code Mirror 6**, not **Code Mirror 5**. So, activeline doesn’t work. I use another “tricks” to create a WYSIWYG, but it’s not really better than the PC Ver.   
     
-# B. This is a heading 1 #test  
-## B.1. This is a heading 2 #test   
-### B.1.1. This is a heading 3 #test  
-#### B.1.1.1. This is a heading 4 #test  
-##### B.1.1.1.1. This is a heading 5 #test   
-###### B.1.1.1.1.1. This is a heading 6 #test  
+# B. This is a heading 1 **#test**{: .hash}  
+## B.1. This is a heading 2 **#test**{: .hash}   
+### B.1.1. This is a heading 3 **#test**{: .hash}  
+#### B.1.1.1. This is a heading 4 **#test**{: .hash}  
+##### B.1.1.1.1. This is a heading 5 **#test**{: .hash}   
+###### B.1.1.1.1.1. This is a heading 6 **#test**{: .hash}  
   
 *This text will be italic*  
 _This will also be italic_  
@@ -81,7 +81,7 @@ _You **can** combine them_
   
 # G. Tags  
   
-#Draft   
+**#Draft**{: .hash}   
   
 # H. HTML & Codes  
   
