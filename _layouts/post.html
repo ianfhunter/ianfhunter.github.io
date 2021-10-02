@@ -23,7 +23,12 @@
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
     <meta name="description" content="{{ site.description }}">
-    <meta property="og:description" content="{{page.description}}">
+    {% if page.description %}
+        <meta name="twitter:description" content="{{ page.description }}">
+        <meta property="og:description" content="{{page.description}}">
+    {% else %}
+        <meta name="twitter:description" content="{{ site.description }}">
+        <meta property="og:description" content="{{site.description}}">
     {%- if page.title -%}
         <meta content="{{ page.title }}" property="og:title">
         <meta content="article" property="og:type">
@@ -33,14 +38,16 @@
         <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {%- endif -%}
     {% if page.image %}
+        <meta name="twitter:card"  content="summary_large_image">
         <meta content="{{site.url}}/assets/img/{{page.image}}.png"
               property="og:image">
         <meta name="twitter:image"
-              content="{{site.url}}/assets/img/{{page.image}}.png">
+              content="{{site.url}}assets/img/{{page.image}}.png">
     {% else %}
+        <meta name="twitter:card"  content="summary">
         <meta content="{{site.url}}/assets/site/LOGO_SEO.png"
               property="og:image">
-        <meta content="{{site.url}}/assets/site/LOGO_SEO.png"
+        <meta content="{{site.url}}assets/site/LOGO_SEO.png"
               name="twitter:image">
     {% endif%}
     <meta content="{{page.categories}}" property="article:section">
