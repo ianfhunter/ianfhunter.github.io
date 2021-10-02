@@ -5,7 +5,7 @@ created: 03-09-2021
 date: 02-10-2021
 description: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
 image: Mnémosyne
-link: https://owlly-house.netlify.app/notes/!-Mnémosyne
+link: https://owlly-house.netlify.app/notes/Mnémosyne-(Fiche)
 share: true
 state: "\U0001F4DD"
 tag:
@@ -17,7 +17,9 @@ type: OC, Fiche
 univers: Azelyss
 ---
 
-# DATA  
+[[Anges\|Notes]] [Google Docs](https://docs.google.com/document/d/1z4TKYcAQZI_N7CrW67Q0ewIT3YlwOGCPiwhmGCO-NqA/edit?usp=sharing) → [[Mnémosyne]]%%  
+  <h1 align="center"><a href="https://docs.google.com/document/d/1z4TKYcAQZI_N7CrW67Q0ewIT3YlwOGCPiwhmGCO-NqA/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>  
+  
 ```dataview  
 LIST  
 FROM [[! Mnémosyne]] or [[Mnémosyne]]  
