@@ -156,8 +156,10 @@ def update_frontmatter(file, share=0):
             meta['share'] = 'true'
             update= frontmatter.dumps(meta,sort_keys=False)
             meta = frontmatter.loads(update)
-        if tag != '':
+        if 'tag' in meta.keys():
             meta['tag']=tag
+        elif 'tags' in meta.keys():
+            meta['tags']=tag
         update=frontmatter.dumps(meta, sort_keys=False)
         f.write(update)
     return
