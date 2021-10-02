@@ -22,7 +22,16 @@
     <![endif]-->
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
-    {% seo %}
+    <meta name="description" content="{{ site.description }}">
+    <meta property="og:description" content="{{site.description}}">
+    {%- if page.title -%}
+        <meta content="{{ page.title }}" property="og:title">
+        <meta content="article" property="og:type">
+        <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {%- else -%}
+        <meta content="website" property="og:type">
+        <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {%- endif -%}
     {% if page.image %}
         <meta content="{{site.url}}/assets/img/{{page.image}}.png"
               property="og:image">
