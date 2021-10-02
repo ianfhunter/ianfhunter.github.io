@@ -136,7 +136,12 @@ def update_frontmatter(file, share=0):
     meta = frontmatter.load(metadata)
     update = frontmatter.dumps(meta, sort_keys=False)
     metadata.close()
-    tag = meta['tag']
+    if 'tag' in meta.keys() :
+        tag = meta['tag']
+    elif 'tags' in meta.keys():
+        tag = meta['tags']
+    else:
+        tag = ''
     meta.metadata.pop('tag', None)
     with open(file, 'w', encoding="utf-8") as f:
         if not "link" in meta.keys():
@@ -151,7 +156,8 @@ def update_frontmatter(file, share=0):
             meta['share'] = 'true'
             update= frontmatter.dumps(meta,sort_keys=False)
             meta = frontmatter.loads(update)
-        meta['tag']=tag
+        if tag != '':
+            meta['tag']=tag
         update=frontmatter.dumps(meta, sort_keys=False)
         f.write(update)
     return

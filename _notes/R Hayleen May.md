@@ -5,7 +5,7 @@ date: 02-10-2021
 description: (Azelyss) Fiche de personnage de Hayleen May, une élève demi-démone.
 genre: PJ
 image: Hayleen_portrait
-link: https://owlly-house.netlify.app/notes/Hayleen-May-(Fiche)
+link: https://owlly-house.netlify.app/notes/R-Hayleen-May
 share: true
 state: "\U0001F7E2"
 tags:
@@ -18,8 +18,6 @@ type: OC, Fiche
 univers: Azelyss
 ---
 
-Race:: Démon, Sorcière  
-  
 ```dataview  
 List  
 From [[Hayleen May (Fiche)]] or [[Hayleen May]]  
