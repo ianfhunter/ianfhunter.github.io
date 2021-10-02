@@ -2,6 +2,7 @@
 category: Azelyss
 date: 02-10-2021
 description: (AZELYSS) Élement de références pour le personnage de Salem
+image: Salem
 link: https://owlly-house.netlify.app/notes/Salem
 race: Démon
 share: true

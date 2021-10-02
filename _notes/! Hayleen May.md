@@ -4,6 +4,7 @@ category: Fiche RP
 date: 02-10-2021
 description: (Azelyss) Fiche de personnage de Hayleen May, une élève demi-démone.
 genre: PJ
+image: Hayleen_portrait
 link: https://owlly-house.netlify.app/notes/!-Hayleen-May
 share: true
 state: "\U0001F7E2"
@@ -17,7 +18,6 @@ type: OC, Fiche
 univers: Azelyss
 ---
 
-# DATA  
 ```dataview  
 List  
 From [[! Hayleen May]] or [[Hayleen May]]  
@@ -27,8 +27,8 @@ From [[! Hayleen May]] or [[Hayleen May]]
 <h1 align="center"><a href="https://docs.google.com/document/d/1bGOITC8zoes1RLDj6ybWDtKiszTnBq5jZe1icx6itnI/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>  
   
 # IDENTITÉ  
-![+side\|-med](https://lh6.googleusercontent.com/rzSmM8e1pxHowh8iu74khSmuoa1aaWspZbHY3vq9qcfUGrrlylAMLqHMvY84lkailKvWQvIgPYr_hQh4Ac4f6Bx0Xgmp-cY-fevxSDHrHXel8o3AiBEQhCup5jIklBDg_1RNxV_I)  
-  **Prénom et nom :** Hayleen May  
+![+side-med](../assets/img/Hayleen_portrait.png)  
+**Prénom et nom :** Hayleen May  
 *Alias :* Grimalkin  
 **Genre :** F.  
 **Âge :** 23 ans  
