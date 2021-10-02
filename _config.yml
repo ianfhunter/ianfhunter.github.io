@@ -5,7 +5,7 @@ tagline: Pensées et écrits d'un petit hibou.
 notes_url: "https://owlly-house.netlify.app"
 profile_pic: /assets/site/profile.gif
 favicon: /assets/site/favicon.png
-logo: /assets/site/profile.gif
+logo: /assets/site/LOGO_SEO.png
 copyright_name: MIT
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://owlly-house.netlify.app/" # the base hostname & protocol for your site, e.g. http://example.com
@@ -50,6 +50,7 @@ defaults:
       layout: post
       permalink: /posts/:title
       content-type: post
+      image: /assets/site/LOGO_SEO.png
   - scope:
       path: ""
       type: notes
