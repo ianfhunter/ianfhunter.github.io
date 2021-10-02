@@ -27,9 +27,8 @@ univers: Azelyss
 3. **Chaine** : Il est capable de créer des chaines qu'il peut utiliser pour attraper ou blesser.  
 4. **Couteau** : À force d'utiliser des couteaux pendant 1500 ans, il est devenu un expert et les utilise principalement pour se battre. Il rate rarement sa cible. De plus, il les attache souvent à ses chaines pour se battre.   
   
-![+side](../assets/img/Salem.png)  
 # ──────༺ Physique ༻──────  
-  
+![+side](../assets/img/Salem.png)  
 **Yeux** : Rouges  
 **Cheveux** : Noirs  
 **Taille** : 1m70  
