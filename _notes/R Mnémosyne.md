@@ -8,10 +8,6 @@ image: Mnémosyne
 link: https://owlly-house.netlify.app/notes/Mnémosyne-(Fiche)
 share: true
 state: "\U0001F7E2R"
-tag:
-- Fiche/PJ
-- RP/Azelyss/Fiche/PJ
-- RP/Race/Ange
 title: Mnémosyne
 type: OC, Fiche
 univers: Azelyss

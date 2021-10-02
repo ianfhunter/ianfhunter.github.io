@@ -8,6 +8,11 @@ image: Hayleen_portrait
 link: https://owlly-house.netlify.app/notes/R-Hayleen-May
 share: true
 state: "\U0001F7E2"
+tag:
+- Fiche
+- PJ
+- RP/Azelyss/Fiche/PJ
+- RP/Azelyss/Étudiant
 title: Hayleen May
 type: OC, Fiche
 univers: Azelyss

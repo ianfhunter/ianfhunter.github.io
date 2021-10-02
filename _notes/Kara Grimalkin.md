@@ -5,11 +5,6 @@ description: null
 genre: PJ
 link: https://owlly-house.netlify.app/notes/Kara-Grimalkin
 share: true
-tag:
-- FFXIV
-- RP/FFXIV
-- Kara-Grimalkin
-- FFXIV/Personnage
 title: Kara Grimalkin
 type: Personnage, OC
 univers: FFXIV

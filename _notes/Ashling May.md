@@ -1,18 +1,12 @@
 ---
 alias: Ashling, Ash
 category: Fiche RP
-date: 20-09-2021
+date: 02-10-2021
 doc: Personnalisé
 genre: PJ
+link: https://owlly-house.netlify.app/notes/Ashling-May
 obsidian_ui_mode: preview
 share: true
-tag:
-- OC
-- ❌
-- Humaine
-- Magie
-- Futuriste
-- Ashling-May/Référence
 title: Ashling May
 type: OC
 univers: ❌

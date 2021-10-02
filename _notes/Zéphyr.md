@@ -7,9 +7,6 @@ image: Zephyr
 link: https://owlly-house.netlify.app/notes/Zéphyr
 name: Zéphyr
 share: true
-tag:
-- RP/Azelyss/Relation
-- RP/Azelyss/Fiche/PNJ
 title: Zéphyr
 type: Personnage, PNJ, Notes, Relation
 univers: Azelyss

@@ -5,8 +5,6 @@ description: Note diverses sur le groupe de l'Echo
 link: https://owlly-house.netlify.app/notes/Echo
 name: Echo
 share: true
-tag:
-- RP/Azelyss/Echo
 title: Echo
 type: Notes, Informations
 univers: Azelyss
