@@ -6,20 +6,9 @@
 <head>
 	<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/fantasque-sans-mono" type="text/css"/> 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Owlly House" property="og:site_name"/>
-    <meta content="Partage de fichier Obsidian" property="og:description">
-    <meta content="{{ site.url }}/about/" property="article:author">
 
 
-    {%- if page.title -%}
-    <meta content="{{ page.title }}" property="og:title">
-    <meta content="article" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-    {%- else -%}
-    <meta content="website" property="og:type">
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-    {%- endif -%}
-
+    {
     <title>{{site.title}}</title>
 
     <link rel="canonical" href="{{site.url}}{{page.url}}"/>
@@ -36,7 +25,7 @@
     <![endif]-->
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
-
+    {% seo %}
 </head>
 
 <body>
