@@ -12,6 +12,7 @@ tag:
 title: Zéphyr
 type: Personnage, PNJ, Notes, Relation
 univers: Azelyss
+image: Zephyr
 ---
 
 # ─────༺ Présentation ༻─────  
