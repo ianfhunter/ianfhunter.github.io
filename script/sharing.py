@@ -123,9 +123,7 @@ def frontmatter_check(filename):
     final.close()
     return
 
-
 # ADMONITION CURSED THINGS
-
 def admonition_logo(type, line):
     admonition = {
         "note": "🖊️",
@@ -400,8 +398,10 @@ def file_convert(file, option=0):
                 final_text = convert_no_embed(final_text)
             else:
                 final_text = transluction_note(final_text)
-            if re.search("\%{2}(.*)\%{2}", final_text, re.DOTALL):
+            if re.search("\%{2}(.*)\%{2}", final_text):
                 final_text = re.sub('\%{2}(.*)\%{2}', '', final_text)
+            elif final_text.endswith('%%') or final_text.startswith('%%'):
+                final_text = ''
             elif re.search('[!?]{3}ad-\w+', final_text):
                 final_text = final_text.replace('  \n', '\n')
             if re.search('#\w+', final_text) and not re.search('`#\w+`', final_text):
