@@ -131,6 +131,33 @@ def frontmatter_check(filename):
     final.close()
     return
 
+def update_frontmatter(file, share=0):
+    metadata= open(file, 'r', encoding='utf8')
+    meta = frontmatter.load(metadata)
+    update = frontmatter.dumps(meta, sort_keys=False)
+    metadata.close()
+    tag = meta['tag']
+    meta.metadata.pop('tag', None)
+    with open(file, 'w', encoding="utf-8") as f:
+        if not "link" in meta.keys():
+            filename = os.path.basename(file)
+            filename = filename.replace(".md", "")
+            filename = filename.replace(" ", "-")
+            clip = f"{web}{filename}"
+            meta['link'] = clip
+            update = frontmatter.dumps(meta,sort_keys=False)
+            meta = frontmatter.loads(update)
+        if share == 1 and meta['share'] == 'false':
+            meta['share'] = 'true'
+            update= frontmatter.dumps(meta,sort_keys=False)
+            meta = frontmatter.loads(update)
+        meta['tag']=tag
+        update=frontmatter.dumps(meta, sort_keys=False)
+        f.write(update)
+    return
+
+
+
 # ADMONITION CURSED THINGS
 def admonition_logo(type, line):
     admonition = {
@@ -390,7 +417,11 @@ def file_convert(file, option=0):
                 meta["share"] = True
                 update = frontmatter.dumps(meta)
                 meta = frontmatter.loads(update)
+                update_frontmatter(file, 1)
+            else:
+                update_frontmatter(file, 0)
         else:
+            update_frontmatter(file, 0)
             if "share" not in meta.keys() or meta["share"] is False :
                 return final
         lines = admonition_trad(lines)
