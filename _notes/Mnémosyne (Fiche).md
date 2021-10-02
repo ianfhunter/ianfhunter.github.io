@@ -17,8 +17,7 @@ type: OC, Fiche
 univers: Azelyss
 ---
 
-[[Anges\|Notes]] [Google Docs](https://docs.google.com/document/d/1z4TKYcAQZI_N7CrW67Q0ewIT3YlwOGCPiwhmGCO-NqA/edit?usp=sharing) → [[Mnémosyne]] %%  
-  <h1 align="center"><a href="https://docs.google.com/document/d/1z4TKYcAQZI_N7CrW67Q0ewIT3YlwOGCPiwhmGCO-NqA/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>  
+<h1 align="center"><a href="https://docs.google.com/document/d/1z4TKYcAQZI_N7CrW67Q0ewIT3YlwOGCPiwhmGCO-NqA/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>  
   
 ```dataview  
 LIST  

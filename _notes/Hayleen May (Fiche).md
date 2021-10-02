@@ -19,7 +19,6 @@ univers: Azelyss
 ---
 
 Race:: Démon, Sorcière  
-Statut:: Étudiant %%  
   
 ```dataview  
 List  
