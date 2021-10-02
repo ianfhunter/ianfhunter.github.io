@@ -1,8 +1,9 @@
 ---
 category: Azelyss
-date: 01-10-2021
+date: 02-10-2021
+description: Note diverses sur le groupe de l'Echo
+link: https://owlly-house.netlify.app/notes/Echo
 name: Echo
-resume: Note diverses sur le groupe de l'Echo
 share: true
 tag:
 - RP/Azelyss/Echo

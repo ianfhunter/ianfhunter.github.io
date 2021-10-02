@@ -27,11 +27,11 @@ img = Path(f"{BASEDIR}/assets/img/")
 # Seems to have problem with dotenv with pyto on IOS 15
 try:
     vault = Path(env["vault"])
-    blog = env["blog"]
+    web = env["blog"]
 except KeyError:
     with open(Path(f"{BASEDIR}/.env")) as f:
         vault = Path("".join(f.readlines(1)).replace("vault=", ""))
-        blog = "".join(f.readlines(2)).replace("blog=", "")
+        web = "".join(f.readlines(2)).replace("blog=", "")
 
 
 def retro(filepath, opt=0):
@@ -50,6 +50,7 @@ def remove_frontmatter(meta):
     meta.pop('title', None)
     meta.pop('created', None)
     meta.pop('update', None)
+    meta.pop('link', None)
     return meta
 
 def diff_file(file, update=0):
@@ -119,6 +120,13 @@ def frontmatter_check(filename):
     if not "title" in meta.keys():
         meta["title"] = filename.replace(".md", "")
         update = frontmatter.dumps(meta)
+    if not "link" in meta.keys():
+        filename = filename.replace(".md", "")
+        filename = filename.replace(" ", "-")
+        clip = f"{web}{filename}"
+        meta['link'] = clip
+        update = frontmatter.dumps(meta)
+        meta = frontmatter.loads(update)
     final.write(update)
     final.close()
     return
@@ -325,7 +333,7 @@ def clipboard(filepath):
     filename = os.path.basename(filepath)
     filename = filename.replace(".md", "")
     filename = filename.replace(" ", "-")
-    clip = f"{blog}{filename}"
+    clip = f"{web}{filename}"
     if sys.platform == "ios":
         try:
             import pasteboard  # work with pyto

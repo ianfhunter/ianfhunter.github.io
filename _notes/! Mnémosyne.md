@@ -2,8 +2,9 @@
 alias: Mnemosyne, Némo, Nemo, Mnémosyne
 category: Fiche RP
 created: 03-09-2021
-date: 29-09-2021
-resume: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
+date: 02-10-2021
+description: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
+link: https://owlly-house.netlify.app/notes/!-Mnémosyne
 share: true
 state: "\U0001F4DD"
 tag:

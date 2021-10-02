@@ -1,8 +1,9 @@
 ---
-category: Fiche RP
+category: Azelyss
 date: 02-10-2021
+description: (AZELYSS) Élement de références pour le personnage de Salem
+link: https://owlly-house.netlify.app/notes/Salem
 race: Démon
-resume: (AZELYSS) Élement de références pour le personnage de Salem
 share: true
 state: "\U0001F5D2️"
 tags:

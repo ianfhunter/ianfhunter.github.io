@@ -60,7 +60,8 @@ summary {
 										<li style="padding: 0 5px; border-radius: 10px;" class="tag">{{item.date | date_to_string | capitalize }}</li>
 									</ul>
 									<p style="margin-top: 0px;" class="feed-title">{{ item.title }}</p>
-									<p class="feed-excerpt">{{item.resume }}</p>
+									<p class="feed-excerpt">{{item.description
+										}}</p>
 								</a>
 							</div>
 						{% endfor %}

@@ -1,8 +1,9 @@
 ---
 category: Fiche RP
-date: 01-10-2021
+date: 02-10-2021
+description: null
 genre: PJ
-resume: null
+link: https://owlly-house.netlify.app/notes/Kara-Grimalkin
 share: true
 tag:
 - FFXIV

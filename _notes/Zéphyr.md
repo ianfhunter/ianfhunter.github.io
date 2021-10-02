@@ -1,9 +1,10 @@
 ---
-category: Fiche RP
-date: 01-10-2021
+category: Azelyss
+date: 02-10-2021
+description: Notes relation & autres pour Zephyr
 genre: PNJ
+link: https://owlly-house.netlify.app/notes/Zéphyr
 name: Zéphyr
-resume: Notes relation & autres pour Zephyr
 share: true
 tag:
 - RP/Azelyss/Relation
