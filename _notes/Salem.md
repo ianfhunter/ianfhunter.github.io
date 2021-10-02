@@ -7,7 +7,7 @@ link: https://owlly-house.netlify.app/notes/Salem
 race: Démon
 share: true
 state: "\U0001F5D2️"
-tags:
+tag:
 - RP/Azelyss/Fiche/PNJ
 - RP/Azelyss/Relation
 title: Salem

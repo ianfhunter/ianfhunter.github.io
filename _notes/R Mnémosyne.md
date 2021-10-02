@@ -5,9 +5,13 @@ created: 03-09-2021
 date: 02-10-2021
 description: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
 image: Mnémosyne
-link: https://owlly-house.netlify.app/notes/Mnémosyne-(Fiche)
+link: https://owlly-house.netlify.app/notes/R-Mnémosyne
 share: true
-state: "\U0001F7E2R"
+state: "\U0001F7E2"
+tag:
+- Fiche/PJ
+- RP/Azelyss/Fiche/PJ
+- RP/Race/Ange
 title: Mnémosyne
 type: OC, Fiche
 univers: Azelyss
@@ -17,7 +21,7 @@ univers: Azelyss
   
 ```dataview  
 LIST  
-FROM [[Mnémosyne (Fiche)]] or [[Mnémosyne]]  
+FROM [[R Mnémosyne]] or [[Mnémosyne]]  
   ```  
 ---  
 ![+side](../assets/img/Mnémosyne.png)  
