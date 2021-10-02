@@ -23,6 +23,13 @@
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
     {% seo %}
+    <meta content="{{site.url}}/assets/site/LOGO_SEO.png" property="og:image">
+    <meta content="{{page.categories}}" property="article:section">
+    {% if page. tags %}
+        {% for tag in page.tags %}
+            <meta content="{{ tag }}" property="article:tag">
+        {% endfor %}
+    {% endif %}
 </head>
 
 <body>
