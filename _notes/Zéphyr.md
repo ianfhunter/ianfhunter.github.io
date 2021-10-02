@@ -1,8 +1,9 @@
 ---
 category: Azelyss
 date: 02-10-2021
-description: Notes relation & autres pour Zephyr
+description: (Azelyss) Fiche référence de Zéphyr, une nymphe.
 genre: PNJ
+image: Zephyr
 link: https://owlly-house.netlify.app/notes/Zéphyr
 name: Zéphyr
 share: true
@@ -12,7 +13,6 @@ tag:
 title: Zéphyr
 type: Personnage, PNJ, Notes, Relation
 univers: Azelyss
-image: Zephyr
 ---
 
 # ─────༺ Présentation ༻─────  
