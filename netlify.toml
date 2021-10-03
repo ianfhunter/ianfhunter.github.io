@@ -13,6 +13,6 @@
 
 [build]
   publish = "_site"
-  command = "jekyll build"
+  command = "jekyll clean && jekyll build"
 [build.environment]
   TZ = 'Europe/Paris'

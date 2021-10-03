@@ -27,11 +27,11 @@ img = Path(f"{BASEDIR}/assets/img/")
 # Seems to have problem with dotenv with pyto on IOS 15
 try:
     vault = Path(env["vault"])
-    blog = env["blog"]
+    web = env["blog"]
 except KeyError:
     with open(Path(f"{BASEDIR}/.env")) as f:
         vault = Path("".join(f.readlines(1)).replace("vault=", ""))
-        blog = "".join(f.readlines(2)).replace("blog=", "")
+        web = "".join(f.readlines(2)).replace("blog=", "")
 
 
 def retro(filepath, opt=0):
@@ -50,6 +50,7 @@ def remove_frontmatter(meta):
     meta.pop('title', None)
     meta.pop('created', None)
     meta.pop('update', None)
+    meta.pop('link', None)
     return meta
 
 def diff_file(file, update=0):
@@ -119,13 +120,52 @@ def frontmatter_check(filename):
     if not "title" in meta.keys():
         meta["title"] = filename.replace(".md", "")
         update = frontmatter.dumps(meta)
+    if not "link" in meta.keys():
+        filename = filename.replace(".md", "")
+        filename = filename.replace(" ", "-")
+        clip = f"{web}{filename}"
+        meta['link'] = clip
+        update = frontmatter.dumps(meta)
+        meta = frontmatter.loads(update)
     final.write(update)
     final.close()
     return
 
+def update_frontmatter(file, share=0):
+    metadata= open(file, 'r', encoding='utf8')
+    meta = frontmatter.load(metadata)
+    update = frontmatter.dumps(meta, sort_keys=False)
+    metadata.close()
+    if 'tag' in meta.keys() :
+        tag = meta['tag']
+    elif 'tags' in meta.keys():
+        tag = meta['tags']
+    else:
+        tag = ''
+    meta.metadata.pop('tag', None)
+    meta.metadata.pop('tags', None)
+    with open(file, 'w', encoding="utf-8") as f:
+        if not "link" in meta.keys():
+            filename = os.path.basename(file)
+            filename = filename.replace(".md", "")
+            filename = filename.replace(" ", "-")
+            clip = f"{web}{filename}"
+            meta['link'] = clip
+            update = frontmatter.dumps(meta,sort_keys=False)
+            meta = frontmatter.loads(update)
+        if share == 1 and meta['share'] == 'false':
+            meta['share'] = 'true'
+            update= frontmatter.dumps(meta,sort_keys=False)
+            meta = frontmatter.loads(update)
+        if tag != '':
+            meta['tag']=tag
+        update=frontmatter.dumps(meta, sort_keys=False)
+        f.write(update)
+    return
+
+
 
 # ADMONITION CURSED THINGS
-
 def admonition_logo(type, line):
     admonition = {
         "note": "🖊️",
@@ -327,7 +367,7 @@ def clipboard(filepath):
     filename = os.path.basename(filepath)
     filename = filename.replace(".md", "")
     filename = filename.replace(" ", "-")
-    clip = f"{blog}{filename}"
+    clip = f"{web}{filename}"
     if sys.platform == "ios":
         try:
             import pasteboard  # work with pyto
@@ -384,7 +424,11 @@ def file_convert(file, option=0):
                 meta["share"] = True
                 update = frontmatter.dumps(meta)
                 meta = frontmatter.loads(update)
+                update_frontmatter(file, 1)
+            else:
+                update_frontmatter(file, 0)
         else:
+            update_frontmatter(file, 0)
             if "share" not in meta.keys() or meta["share"] is False :
                 return final
         lines = admonition_trad(lines)
@@ -400,8 +444,11 @@ def file_convert(file, option=0):
                 final_text = convert_no_embed(final_text)
             else:
                 final_text = transluction_note(final_text)
-            if re.search("\%{2}(.*)\%{2}", final_text, re.DOTALL):
-                final_text = re.sub('\%{2}(.*)\%{2}', '', final_text)
+            final_text = re.sub('\%{2}(.*)\%{2}', '', final_text)
+            final_text=re.sub('^\%{2}(.*)', '', final_text)
+            final_text=re.sub('(.*)\%{2}$', '', final_text)
+            if final_text.strip().endswith('%%') or final_text.strip().startswith('%%'):
+                final_text = ''
             elif re.search('[!?]{3}ad-\w+', final_text):
                 final_text = final_text.replace('  \n', '\n')
             if re.search('#\w+', final_text) and not re.search('`#\w+`', final_text):
