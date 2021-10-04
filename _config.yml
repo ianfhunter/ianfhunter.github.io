@@ -18,7 +18,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-toc
   - jekyll-spaceship
-  - jekyll-seo-tag
 
 markdown: kramdown
 
