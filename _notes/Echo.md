@@ -1,6 +1,6 @@
 ---
 category: Azelyss
-date: 02-10-2021
+date: 05-10-2021
 description: Note diverses sur le groupe de l'Echo
 link: https://owlly-house.netlify.app/notes/Echo
 name: Echo
@@ -24,7 +24,7 @@ Très active jusqu'au milieu du XXe Siècle, l'organisation a été quasiment d�
   
 Aujourd'hui, l'organisation est constituée de petits groupes indépendants mais ayant (la plupart du temps) les mêmes valeurs : protéger les monstres, d'eux-même, et des humains.   
 Cependant, chaque membre rejoint pour des raisons différentes, si bien que les points de vue divergent régulièrement sur les actions à suivre, au point de devenir une source de conflits régulier.  
-L'histoire de l'Écho est donc parsemé de luttes intestines.  
+L'histoire de l'Écho est donc parsemé de lutte intestine.de luttes intestines.  
   
 On ne rejoint pas l'Écho n'importe comment : généralement, l'hérédité, les rapports de maître à élève, voire de protection prime.   
   
