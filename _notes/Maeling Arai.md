@@ -7,7 +7,7 @@ link: https://owlly-house.netlify.app/notes/Maeling-Arai
 share: true
 state: "\U0001F533"
 tag: RP/Néo-Tokio/Fiche/PJ
-title: Maeling
+title: Maeling Arai
 type: Fiche
 univers: Néo-Tokio
 ---
@@ -34,9 +34,8 @@ univers: Néo-Tokio
 - *Lien* : Maeling est capable d'emprisonner des âmes dans des objets afin de pouvoir communiquer avec eux sans interruption, mais aussi de les rappeler plus tard afin de fusionner avec eux.  
 - *Nécron* : Maeling peut attacher un cadavre à une âme et la contrôler à distance. Cette technique lui demande énormément d'énergie, et l'épuise énormément.  
   
-# ──────༺ Physique ༻──────  
-  
 ![+side](../assets/img/Maeling.png)  
+# ──────༺ Physique ༻──────  
 **Yeux** :  
 **Cheveux** :   
 **Taille** :   
