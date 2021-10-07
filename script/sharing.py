@@ -56,7 +56,7 @@ def remove_frontmatter(meta):
 
 def diff_file(file, update=0, priv=0):
     file_name = os.path.basename(file)
-    if check_file(file_name) == "EXIST" :
+    if check_file(file_name, priv) == "EXIST" :
         if update == 1 : #Update : False / Don't check
             return False
         notes_path = Path(f"{post}/{file_name}")
@@ -431,7 +431,7 @@ def file_write(file, contents, priv = 0):
             for line in contents:
                 new_notes.write(line)
             new_notes.close()
-            frontmatter_check(file_name)
+            frontmatter_check(file_name, priv)
             return True
         else:
             meta = frontmatter.load(file)
@@ -523,6 +523,8 @@ def search_share(option=0, stop_share=1):
                     yaml_front = frontmatter.load(filepath)
                     if "private" in yaml_front.keys() and yaml_front["private"] is True:
                         priv = 1
+                    else:
+                        priv = 0
                     if "share" in yaml_front.keys() and yaml_front["share"] is True :
                         if option == 1:
                             if 'update' in yaml_front and yaml_front['update'] is False:
