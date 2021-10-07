@@ -5,6 +5,7 @@ tags: Theme
 toc: true
 comments: true
 category: Setup
+date: 31-10-2020
 ---
 
 ## The default features

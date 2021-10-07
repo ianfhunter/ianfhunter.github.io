@@ -3,6 +3,7 @@ title: Test page to see how the raw markdown is rendered
 tags: markdown 
 category: Markdown
 flux: true
+date: 31-10-2020
 ---
 
 This is intended as a quick reference and showcase. 

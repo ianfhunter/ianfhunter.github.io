@@ -2,6 +2,7 @@
 title: Python Scripting
 category: Setup
 flux: true
+date: 07-10-2021
 ---
 
 ⚠️ The script and site are not a replacement for [Obsidian Publish](https://obsidian.md/publish), which is a much more efficient way to share Obsidian files.
