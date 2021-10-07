@@ -4,14 +4,19 @@ http://github.com/lithou/sandbox
 
 */
 
-.view-content .markdown-preview-view img {
-    max-width: max-content;
-}
-
+img.image-embed,
 img {
     --coremarg: 1%;
     --extramarg: 1%;
-    --defaultwidth: 120px;
+    /* This margin is used for any added margin between items */
+    --defaultwidth: 60%;
+    /*This is the default width for core flags such as the "side" and "tape" */
+    --minwidth: 50px;
+    /* This specifies the minimum width that %based width images will go to*/
+    --defaultzoomwidth: 100%;
+    /* this specifies the default width when an image is zoomed in (usually set active which is clicking with mouse) */
+    --defaultscale: 1.5;
+    /* this specifies the default ratio that an image is zoomed in (usually set to hover) */
 }
 
 
@@ -21,27 +26,11 @@ img {
 /*side */
 
 img[alt*="+side"] {
-    position: relative;
-    width: 20em !important;
+    width: var(--defaultwidth);
+    min-width: var(--minwidth);
     float: right;
     margin: 0px;
     margin-left: var(--coremarg);
-}
-
-img[alt*="+side"]>.markdown-embed {
-    margin: 0px;
-}
-
-img[alt*="+left"] {
-    position: relative;
-    width: 20em !important;
-    float: right;
-    margin: 0px;
-    margin-left: var(--coremarg);
-}
-
-img[alt*="+left"]>.markdown-embed {
-    margin: 0px;
 }
 
 
@@ -50,52 +39,24 @@ img[alt*="+left"]>.markdown-embed {
 img[alt*="+tape"] {
     position: relative;
     float: right;
-    width: 20em !important;
+    width: var(--defaultwidth);
+    min-width: var(--minwidth);
+    margin: auto;
     margin-left: var(--coremarg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
     transform: rotate(2deg);
 }
 
 img[alt*="+tape"]::before {
     content: "";
-    display: block;
-    position: relative;
+    position: absolute;
     margin: auto;
-    width: 100px !important;
-    height: 30px;
-    top: 12px;
+    width: 30%;
+    height: 14%;
+    top: -7%;
+    left: 35%;
     background: rgba(255, 234, 118, 0.377);
     /*here you can chosse the scotch tape background*/
-    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
-    z-index: 10;
     clip-path: polygon(50% 0%, 100% 0%, 98% 10%, 100% 20%, 98% 30%, 100% 40%, 98% 50%, 100% 60%, 98% 70%, 100% 80%, 98% 90%, 100% 100%, 0% 100%, 2% 90%, 0% 80%, 2% 70%, 0% 60%, 2% 50%, 0% 40%, 2% 30%, 0% 20%, 2% 10%, 0% 0%);
-}
-
-img[alt*="-lg"]::before {
-    width: 100px !important;
-    height: 30px;
-}
-
-img[alt*="-med"]::before {
-    width: 70px !important;
-    height: 25px;
-}
-
-img[alt*="-sm"]::before {
-    width: 45px !important;
-    height: 15px;
-    top: 8px;
-}
-
-img[alt*="-thumb"]::before {
-    width: 25px !important;
-    height: 5px;
-    top: 2px;
 }
 
 
@@ -104,7 +65,8 @@ img[alt*="-thumb"]::before {
 img[alt*="+pin"] {
     position: relative;
     float: right;
-    width: var(--defaultwidth) !important;
+    width: var(--defaultwidth);
+    min-width: var(--minwidth);
     margin: auto;
     margin-left: var(--coremarg);
     -webkit-transform: rotate(0deg);
@@ -114,10 +76,10 @@ img[alt*="+pin"] {
     transform: rotate(2deg);
 }
 
-span[alt*="+pin"]::before {
+img[alt*="+pin"]::before {
     content: "";
     position: absolute;
-    width: 5px !important;
+    width: 5px;
     height: 5px;
     background-color: #4588cc;
     top: -3%;
@@ -133,62 +95,66 @@ span[alt*="+pin"]::before {
 img[alt*="+portrait"] {
     float: right;
     position: relative;
-    width: calc(var(--defaultwidth)/2) !important;
-    vertical-align: middle;
-    clip-path: ellipse(35% 45% at 50% 50%);
+    width: calc(var(--defaultwidth)/1.5);
+    min-width: var(--minwidth);
+    vertical-align: top;
+    border: solid 5px;
+    background-color: black;
+    /*this is the "border colour around the image */
+    clip-path: ellipse(40% 45% at 50% 50%);
 }
 
-span[alt*="+landscape"] {
+img[alt*="+portrait"] {
+    clip-path: ellipse(40% 45% at 50% 50%);
+    vertical-align: top;
+}
+
+img[alt*="+landscape"] {
     position: relative;
-    width: var(--defaultwidth) !important;
+    width: var(--defaultwidth);
+    min-width: var(--minwidth);
     float: right;
-    /* background-color:blue; This setting will create a border effect of set color */
+    border: solid 3px;
+    background-color: black;
+    /* This setting will create a border effect of set color */
     clip-path: ellipse(46% 36% at 50% 50%);
 }
 
-img[alt*="+landscape"]>img {
-    vertical-align: middle;
-    /* clip-path: ellipse(45% 35% at 50% 50%); */
+img[alt*="+landscape"] {
+    vertical-align: top;
+    clip-path: ellipse(45% 35% at 50% 50%);
 }
 
 
-/* Banner and HR
+/* Banner and HR */
 
-    Note: images were moved from block elements to inline elements. The HR and Banner elements don't currently work. Will need to change how they are rendered. Commenting them out for now.
+img[alt*="+banner"] {
+    display: block;
+    height: 100px;
+    overflow: hidden;
+}
 
-    */
+img[alt*="+banner"]>img {
+    margin-top: -130px;
+}
 
+img[alt*="+hr"] {
+    display: block;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+}
 
-/* span[alt*="+banner"]{
-            height: 100px;
-            overflow: hidden;
-
-        } */
-
-
-/* span[alt*="+banner"]>img{
-             margin-top: -130px;
-            } */
-
-
-/* span[alt*="+hr"]{
-            height: 10px;
-            overflow: hidden;
-            border-radius: 20px;
-
-        } */
-
-
-/* span[alt*="+hr"]>img{
-            margin-top: -200px;
-            } */
+img[alt*="+hr"]>img {
+    margin-top: -200px;
+}
 
 
 /*Custom Core Flags */
 
 img[alt*="+custom1"] {
     position: relative;
-    width: var(--defaultwidth) !important;
+    width: var(--defaultwidth);
     float: right;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -196,7 +162,7 @@ img[alt*="+custom1"] {
 
 img[alt*="+custom2"] {
     position: relative;
-    width: var(--defaultwidth) !important;
+    width: var(--defaultwidth);
     float: right;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -208,13 +174,19 @@ img[alt*="+custom2"] {
 
 /* Orientation and position */
 
-img[alt*="+right"] {
-    position: relative;
+img[alt*="-left"] {
+    float: left;
+    margin: 0px;
+    margin-right: var(--extramarg);
+}
+
+img[alt*="-right"] {
     float: right;
+    margin: 0px;
+    margin-left: var(--extramarg);
 }
 
 img[alt*="-fix"] {
-    width: var(--defaultwidth) !important;
     position: fixed;
 }
 
@@ -226,133 +198,160 @@ img[alt*="-abs"] {
 /* Size */
 
 img[alt*="-thumb"] {
-    width: 3em !important;
+    width: 3rem;
 }
 
 img[alt*="-sm"] {
-    width: 8em !important;
+    width: 5rem;
 }
 
 img[alt*="-med"] {
-    width: 10em !important;
+    width: 8rem;
 }
 
 img[alt*="-lg"] {
-    width: 12em !important;
+    width: 10rem;
 }
 
 img[alt*="-huge"] {
-    width: 15em !important;
+    width: 12rem;
 }
 
 img[alt*="-cwidth"] {
     float: none;
     margin-left: -10%;
-    width: 25em !important;
+    width: 15rem;
 }
 
 
 /* Borders */
 
-span[alt*="-border1"]>img {
+img[alt*="-border1"] {
     border: solid black 3px;
 }
 
-span[alt*="-border2"]>img {
+img[alt*="-border2"] {
     border: solid white 3px;
 }
 
-span[alt*="-bradius1"]>img {
+img[alt*="-bradius1"] {
     border-radius: 5px;
 }
 
-span[alt*="-bradius2"]>img {
+img[alt*="-bradius2"] {
     border-radius: 20px;
 }
 
-span[alt*="-bradiustl"]>img {
+img[alt*="-bradiustl"] {
     border-top-left-radius: 20px;
 }
 
-span[alt*="-bradiusbr"]>img {
+img[alt*="-bradiusbr"] {
     border-bottom-right-radius: 20px;
 }
 
-span[alt*="-bradiustr"]>img {
+img[alt*="-bradiustr"] {
     border-top-right-radius: 20px;
 }
 
-span[alt*="-bradiusbl"]>img {
+img[alt*="-bradiusbl"] {
     border-bottom-left-radius: 20px;
 }
 
-span[alt*="-bthick"]>img {
+img[alt*="-bthick"] {
     border-width: 5px;
 }
 
-span[alt*="-bthin"]>img {
+img[alt*="-bthin"] {
     border-width: 1px;
 }
 
 
-/* img Borders */
-
-img[alt*="-imgborder1"] {
-    border: solid #336699 2px;
-}
-
-img[alt*="-imgborder2"] {
-    border: solid black 2px;
-}
-
-img[alt*="-imgbradius1"] {
-    border-radius: 5px;
-}
-
-img[alt*="-imgbradius2"] {
-    border-radius: 20px;
-}
-
-img[alt*="-cimgbradius1"] {
-    border-radius: 50px;
-}
+/* Shadows */
 
 img[alt*="-shadow1"]>img {
     box-shadow: darkgrey -2px 2px 2px;
 }
 
-img[alt*="-glow"]>img {
+img[alt*="-glow"] {
     box-shadow: darkgrey 0px 0px 20px;
 }
 
 img[alt*="-nofloat"] {
-    float: none
+    display: inline-block;
+    float: unset;
 }
 
 
-/* Hover/Click to Zoom */
-
-
-/* Add any flags desired to enable a zoom for that flag */
-
-img[alt*="+side"]:active,
-img[alt*="+left"]:active,
-img[alt*="+right"]:active,
-img[alt*="+tape"]:active,
-img[alt*="+pin"]:active,
-img[alt*="+portrait"]:active,
-img[alt*="+zoom"]:active,
-img[alt*="+landscape"]:active {
-    width: 100% !important;
-}
+/* Zoom on Hover */
 
 img[alt*="+side"]:not(:active):hover,
-img[alt*="+right"]:not(:active):hover,
-img[alt*="+left"]:not(:active):hover,
-img[alt*="+tape"]:not(:active):hover,
-img[alt*="+pin"]:not(:active):hover,
 img[alt*="+portrait"]:not(:active):hover,
-img[alt*="+zoom"]:not(:active):hover,
 img[alt*="+landscape"]:not(:active):hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
+}
+
+
+/* zoom and reverse rotate on hover */
+
+img[alt*="+tape"]:not(:active):hover,
+img[alt*="+pin"]:not(:active):hover {
+    transform: scale(1.5) rotate(-2deg);
+}
+
+
+/* Grid View */
+
+img[alt*="+grid"] {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3px;
+}
+
+img[alt*="+grid"] {
+    max-height: 30vh;
+}
+
+img[alt*="+grid"]:hover {
+    transform: scale(1.5);
+}
+
+
+/* Grid View Alternative
+
+/* I'm adding explaination commments here so you know how this works.
+
+I'm also writing this so next time I edit this code I don't forget why
+I did it this way and sit there confused for 30mins trying to figure it out.
+
+BTW. Hello future Lithou. If you're reading this: You're welcome
+
+How it works:
+This applies to an image if two conditions are met.
+First condition is if the page has a css class of "grid"
+Second conditions is if no pipe is used when calling an image
+
+examples:
+![[test.jpg|alt text]] <-- will not apply as pipe used to make custom alt text
+![[test.jpg]] <-- will apply since no pipe used
+
+When no pipe is used, no alt attribute is called by the user.
+Obsidian will therefore set the alt attribute equal to the file name. (this is default if it changes, this will pobably break so look here first if it stops working)
+This rule will target any image with an alt attribute that has a period in it.
+Since all image files should follow "name.extension" all will contain a period.
+
+Note: One key to keep in mind is to not use a period as part of any other img flags. */
+
+.img-grid img.image-embed[alt*="."] {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3px;
+}
+
+.img-grid img[alt*="."] {
+    max-height: 30vh;
+}
+
+.img-grid img[alt*="."]:hover {
+    transform: scale(1.5);
 }

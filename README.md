@@ -1,16 +1,26 @@
+- [Notenote.link](#notenotelink)
+  * [What is this?](#what-is-this-)
+  * [What is different?](#what-is-different-)
+  * [How do I use this?](#how-do-i-use-this-)
+  * [How can I participate?](#how-can-i-participate-)
+  * [How do I customize this for my needs?](#how-do-i-customize-this-for-my-needs-)
+- [Python script](#python-script)
+  * [Requirements](#requirements)
+  * [Environment](#environment)
+- [Script](#script)
+- [Frontmatter and metadata](#frontmatter-and-metadata)
+  * [Script](#script-1)
+  * [Blog frontmatter options](#blog-frontmatter-options)
+---
+
 # Notenote.link
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7b37d412-1240-44dd-8539-a7001465b57a/deploy-status)](https://app.netlify.com/sites/notenotelink/deploys)
-
-## Update !
-
-Hi everyone ! I've been very busy lately, so I didn't check all of the issues and the PR, but as I have more free time now I'll restart working on the project. Thanks for all the kind messages by the way!
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b37d412-1240-44dd-8539-a7001465b57a/deploy-status)](https://app.netlify.com/sites/owlly-house/deploys)
 
 ## What is this?
-
 A digital garden using a custom version of `simply-jekyll`, optimised for integration with [Obsidian](https://obsidian.md). It is more oriented on note-taking and aims to help you build a nice knowledge base that can scale with time. 
 
-**Demo is here: [notenote.link](https://notenote.link)**
+[**DEMO**](https://master--owlly-house.netlify.app/)
 
 If you want to see a more refined example, you can check my notes (in french) at [arboretum.link](https://www.arboretum.link/). Build time is approx. 15 seconds, FYI.
 
@@ -30,7 +40,7 @@ Issues are welcome, including feedback ! Don't hesitate to ask if you can't find
 
 You can click on this link and let the deploy-to-netlify-for-free-script do the rest !
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Maxence-L/notenote.link)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Mara-Li/yet-another-free-publish-alternative)
 
 Follow the [How to setup this site](https://notenote.link/notes/how-to-setup-this-site) guide, written by [raghuveerdotnet](https://github.com/raghuveerdotnet) and then adapted for this fork.
 
@@ -44,58 +54,72 @@ Open an issue to share feedback or propose features. Star the repo if you like i
 
 Things to modify to make it yours:
 
-- Meta content in [\_layouts/post.html](_layouts/post.html):
-    ```html
-    <meta content="My linked notebook" property="og:site_name"/>
-    ```
-- The favicon and profile are here: [assets/img/](assets/img/)
+- The favicon and profile are here: [assets/site/](assets/site)
 - The main stuff is in [\_config.yml](_config.yml):
     ```yaml
-    title: notenotelink.netlify.com
-    name: notenote.link
+    title: My obsidian notebook
+    name: Obsidian Notebook
     user_description: My linked notebook
-
-    notes_url: "https://notenotelink.netlify.com/"
-    profile_pic: /assets/img/profile.png
-    favicon: /assets/img/favicon.png
+    tagline: My linked notebook
+    notes_url: "https://yourlink.netlify.app"
+    profile_pic: /assets/site/profile.gif
+    favicon: /assets/site/favicon.png
+    logo: /assets/site/LOGO_SEO.png
     copyright_name: MIT
-
     baseurl: "/" # the subpath of your site, e.g. /blog
-    url: "https://notenotelink.netlify.com/" # the base hostname & protocol for your site, e.g. http://example.com
+    url: "https://owlly-house.netlify.app/" # the base hostname & protocol for your site, e.g. http://example.com
     encoding: utf-8
     ```
 - You may want to change the copyright in [\_includes/footer.html](_includes/footer.html):
    ```html
    <p id="copyright-notice">Licence MIT</p>
    ```
-
-## How do I remove the "seasons" feature for the notes?
-
-Delete what's inside [\_includes/feed.html](_includes/feed.html) and replace it with:
-
-```liquid
-{%- if page.permalink == "/" -%}
-    {%- for item in site.notes -%}
-        <div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
-            <a href="{{ item.url }}" style="text-decoration: none; color: #555555;">
-            {%- if item.status == "Ongoing" or item.status == "ongoing" -%}
-                <ul style="padding-left: 20px; margin-top: 20px;" class="tags">
-                    <li style="padding: 0 5px; border-radius: 10px;" class="tag"><b>Status: </b>{{item.status | capitalize }}</li>
-                </ul>
-                <p style="margin-top: 0px;" class="feed-title">{{ item.title }}</p>
-            {%- else -%}
-                <p class="feed-title">{{ item.title }}</p>
-            {%- endif -%}
-                <p class="feed-excerpt">{{ item.content | strip_html | strip | escape | truncate: 200}}</p>
-            </a>
-        </div>
-    {%- endfor -%}
-{%- endif -%}
-````
-
 On command-line, you can run `bundle exec jekyll serve` then go to `localhost:4000` to check the result.
 
-## What's coming?
+# Python script
+Having files written in Markdown on Obsidian, I created a python script in order to semi-automatically share some of my files, on a static site in JEKYLL.
 
-- [Open-transclude](https://subpixel.space/entries/open-transclude/) integration in the template, if possible.
-- Different themes! - Please tell me which you'd like to have!
+## Requirements
+- [Python](https://www.python.org/)
+- [PyGithub](https://github.com/PyGithub/PyGithub)
+- [Python-dotenv](https://github.com/theskumar/python-dotenv)
+- [python-frontmatter](https://github.com/eyeseast/python-frontmatter)
+- [Pyperclip](https://github.com/asweigart/pyperclip) on Windows/MacOS/Linux | IOS : Pasteboard (Pyto) or clipboard (Pythonista)
+You can install all with `pip install -r requirements.txt`
+
+## Environment
+You need to create a `.env` in your root folder, with : 
+```
+vault="G:\path\vault\"
+blog="https://your-website.netlify.app/"
+```
+
+# Script
+Usage: `sharing.py  [-h] [--Preserve | --update] [--filepath FILEPATH] [--Git]`
+
+Create file in `_notes`, move image in assets, convert to relative path, add share support, and push to git
+
+Optional arguments:
+-  `-h`, `--help` : Show this help message and exit  
+- `--Preserve`, `--P` : Don't delete file if already exist  
+- `--update`, `--U` : Force update : delete all file and reform.  
+- `--filepath FILEPATH`, `--F FILEPATH` : Filepath of the file you want to 
+  convert  
+- `--Git`, `--G` : No commit and no push to git (work for github, gitlab...) 
+
+For more information, see [script Readme](script/README.md)
+
+# Frontmatter and metadata
+## Script
+The script work with the frontmatter :
+- `share: true` : Share the file
+- `embed: false` : remove the transluction (convert to normal wikilinks)
+- `update: false` : Don't update the file at all. 
+- `current: false` : Don't update the date
+- `private : true` : Use the `_private` folder collection instead of the `_notes` default folder. 
+
+## Blog frontmatter options
+- `flux: false` : remove the file from the feed
+- `category` : Add a category for the category page ; `category: false` remove it from this page too.
+- `resume` : Add a resume of the file in the feed. 
+

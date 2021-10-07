@@ -1,3 +1,23 @@
+**Table Of Content**
+- [Goal](#goal)
+- [Get Started](#get-started)
+  * [Requirements](#requirements)
+  * [Environment](#environment)
+- [Script](#script)
+  * [Checking differences](#checking-differences)
+  * [Options](#options)
+    + [About the private folder](#about-the-private-folder)
+    + [Share all](#share-all)
+    + [Share only a file](#share-only-a-file)
+  * [How it works](#how-it-works)
+    + [Frontmatter settings](#frontmatter-settings)
+    + [Admonition](#admonition)
+    + [IOS Shortcuts](#ios-shortcuts)
+    + [IOS](#ios)
+    + [Obsidian](#obsidian)
+  * [Windows bonus](#windows-bonus)
+---
+  
 ⚠️ The script and site are not a replacement for [Obsidian Publish](https://obsidian.md/publish), which is a much more efficient way to share Obsidian files.
 
 # Goal 
@@ -40,13 +60,11 @@ Optional arguments:
   convert  
 - `--Git`, `--G` : No commit and no push to git (work for github, gitlab...) 
 
-## Checking differences 
-
+## Checking differences
 The script will convert all file with `share:true` and check if the contents 
 are differents with the version in `_notes`. The only things that are 
 ignored is the contents of the metadata. If you want absolutely change the 
-metadata you can: 
-- 
+metadata you can:
 - Use `share --file <filepath>` directly
 - Use `--u` to force update all file 
 - Continue to work on the file before pushing it.
@@ -60,10 +78,13 @@ metadata you can:
 The script will bug because **I don't check folder** (It's volontary). In this unique case, you need to rename one of the files. 
 
 ## Options
+### About the private folder
+The private folder create a secondary collection, it prevents file to appear in the search, so it create a sort of "second blog" more secret. To create a "private" file, just use `private: true` in your frontmatter. 
+
 ### Share all
 By adding, in the yaml of your file, the key `share: true`, you allow the script to publish the file. In fact, the script will read all the files in your vault before selecting the ones meeting the condition.
 
-By default, the script will check the difference between line [(*cf checking difference*)](https://github.com/Mara-Li/yes-another-free-publish/tree/owlly-house#checking-differences), and convert only the file with difference. You can use `--u` to force update. 
+By default, the script will check the difference between line [(*cf checking difference*)](README.md#checking-differences), and convert only the file with difference. You can use `--u` to force update. 
 
 ### Share only a file
 
@@ -85,7 +106,7 @@ The script :
 - Frontmatter :  Update the date. If there is already a `date` key, save it to `created` and update `date`.
 - Frontmatter : In absence of title, add the file's title.
 - Copy the link to your clipboard if one file is edited.
-- ⭐ Support Admonition Plugin (⚠ Doesn't support admonition "no blocks")
+- ⭐ Admonition convertion to "callout inspired notion"
 
 Finally, the plugin will add, commit and push if supported.
 
@@ -97,41 +118,20 @@ Note : I **can't** testing on these 3 OS, so I can't create a clipboard option o
 - `embed: false` : remove the transluction (convert to normal wikilinks)
 - `update: false` : Don't update the file at all. 
 - `current: false` : Don't update the date
+- `private: true` : Use the `_private` folder collection instead of the `_notes` collection.
 
-You can totally use the `owlly-house` branch, who add more option in the yaml ; as :
-- `flux: false` : remove the file from the feed
-- `category` : Add a category for the category page ; `category: false` remove it from this page too.
-- `resume` : Add a resume of the file in the feed. 
 
 ### Admonition 
-Admonition work on this blog using CSS and IAL. It uses : `{: .type}` and `{: .ad-title-type}`.
-The script will add `**title**{: .ad-title-type}` if found `title:` in the admonition block.
+As admonition is very tricky, I choose to convert all admonition to a "callout Notion".
+The script will : 
+- Remove codeblock for admonition codeblocks
+- Convert ` ```ad-``` ` to ```!!!ad-```
+- Bold title and add a IAL `{: .title}`
 
-It doesn't support :
-- Collapse
-- Color
-- Icon
-- Custom admonition (convert to note by default)
-Collapse, color, and icon are just removed in the conversion.
+JavaScript will niced all things.
 
-The final admonition part will be :
-```md
-{: .admonition-type}
-> **title**{: .ad-title-type}
-> Word
-> Word
-```
-
-If no title is found, the admonition will be one line, as that :
-```md
-{: .admonition-type}
-> Admonition content
-```
-It also supports markdown and latex.
-
-The "non-block code" methods of Admonition are also supported.
-
-Note : For the custom type, the type become the title of the note, so you don't lost the information about the type.
+⚠ As always with markdown, you will see some problem with new paragraph inside admonition. You can use `$~$` to fake line. The script will automatically add this.
+Also, you can add emoji on title to add some nice formatting.
 
 ### IOS Shortcuts
 
@@ -173,6 +173,16 @@ You could also create an alias for sharing using `~/.profile`:
 
 ### Obsidian 
 → Please use Wikilinks with "short links" (I BEG YOU)
+You can integrate the script within obsidian using the nice plugin [Obsidian ShellCommands](https://github.com/Taitava/obsidian-shellcommands).
+
+You could create two commands :
+1. `share all` : `python3 path/to/your/script/sharing.py`
+2. `share one` : `python3 path/to/your/script/sharing.py --f {{file_path:absolute}}`
+
+You can use :
+- [Customizable Sidebar](https://github.com/phibr0/obsidian-customizable-sidebar)
+- [Obsidian Customizable Menu](https://github.com/kzhovn/obsidian-customizable-menu)
+To have a button to share your file directly in Obsidian !
 
 ## Windows bonus
 
