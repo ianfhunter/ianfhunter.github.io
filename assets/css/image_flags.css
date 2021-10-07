@@ -198,29 +198,29 @@ img[alt*="-abs"] {
 /* Size */
 
 img[alt*="-thumb"] {
-    width: 11.50%;
+    width: 3rem;
 }
 
 img[alt*="-sm"] {
-    width: 24%;
+    width: 5rem;
 }
 
 img[alt*="-med"] {
-    width: 32.3333%;
+    width: 8rem;
 }
 
 img[alt*="-lg"] {
-    width: 49%;
+    width: 10rem;
 }
 
 img[alt*="-huge"] {
-    width: 67%;
+    width: 12rem;
 }
 
 img[alt*="-cwidth"] {
     float: none;
     margin-left: -10%;
-    width: 120%;
+    width: 15rem;
 }
 
 
@@ -321,17 +321,17 @@ img[alt*="+grid"]:hover {
 
 /* I'm adding explaination commments here so you know how this works.
 
-I'm also writing this so next time I edit this code I don't forget why 
-I did it this way and sit there confused for 30mins trying to figure it out. 
+I'm also writing this so next time I edit this code I don't forget why
+I did it this way and sit there confused for 30mins trying to figure it out.
 
 BTW. Hello future Lithou. If you're reading this: You're welcome
 
-How it works: 
-This applies to an image if two conditions are met. 
+How it works:
+This applies to an image if two conditions are met.
 First condition is if the page has a css class of "grid"
-Second conditions is if no pipe is used when calling an image 
+Second conditions is if no pipe is used when calling an image
 
-examples: 
+examples:
 ![[test.jpg|alt text]] <-- will not apply as pipe used to make custom alt text
 ![[test.jpg]] <-- will apply since no pipe used
 
