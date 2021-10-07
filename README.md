@@ -1,10 +1,23 @@
+- [Notenote.link](#notenotelink)
+  * [What is this?](#what-is-this-)
+  * [What is different?](#what-is-different-)
+  * [How do I use this?](#how-do-i-use-this-)
+  * [How can I participate?](#how-can-i-participate-)
+  * [How do I customize this for my needs?](#how-do-i-customize-this-for-my-needs-)
+- [Python script](#python-script)
+  * [Requirements](#requirements)
+  * [Environment](#environment)
+- [Script](#script)
+- [Frontmatter and metadata](#frontmatter-and-metadata)
+  * [Script](#script-1)
+  * [Blog frontmatter options](#blog-frontmatter-options)
+---
+
 # Notenote.link
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7b37d412-1240-44dd-8539-a7001465b57a/deploy-status)](https://app.netlify.com/sites/owlly-house/deploys)
 
-
 ## What is this?
-
 A digital garden using a custom version of `simply-jekyll`, optimised for integration with [Obsidian](https://obsidian.md). It is more oriented on note-taking and aims to help you build a nice knowledge base that can scale with time. 
 
 [**DEMO**](https://master--owlly-house.netlify.app/)
@@ -61,6 +74,52 @@ Things to modify to make it yours:
    ```html
    <p id="copyright-notice">Licence MIT</p>
    ```
-
-
 On command-line, you can run `bundle exec jekyll serve` then go to `localhost:4000` to check the result.
+
+# Python script
+Having files written in Markdown on Obsidian, I created a python script in order to semi-automatically share some of my files, on a static site in JEKYLL.
+
+## Requirements
+- [Python](https://www.python.org/)
+- [PyGithub](https://github.com/PyGithub/PyGithub)
+- [Python-dotenv](https://github.com/theskumar/python-dotenv)
+- [python-frontmatter](https://github.com/eyeseast/python-frontmatter)
+- [Pyperclip](https://github.com/asweigart/pyperclip) on Windows/MacOS/Linux | IOS : Pasteboard (Pyto) or clipboard (Pythonista)
+You can install all with `pip install -r requirements.txt`
+
+## Environment
+You need to create a `.env` in your root folder, with : 
+```
+vault="G:\path\vault\"
+blog="https://your-website.netlify.app/"
+```
+
+# Script
+Usage: `sharing.py  [-h] [--Preserve | --update] [--filepath FILEPATH] [--Git]`
+
+Create file in `_notes`, move image in assets, convert to relative path, add share support, and push to git
+
+Optional arguments:
+-  `-h`, `--help` : Show this help message and exit  
+- `--Preserve`, `--P` : Don't delete file if already exist  
+- `--update`, `--U` : Force update : delete all file and reform.  
+- `--filepath FILEPATH`, `--F FILEPATH` : Filepath of the file you want to 
+  convert  
+- `--Git`, `--G` : No commit and no push to git (work for github, gitlab...) 
+
+For more information, see [script Readme](script/README.md)
+
+# Frontmatter and metadata
+## Script
+The script work with the frontmatter :
+- `share: true` : Share the file
+- `embed: false` : remove the transluction (convert to normal wikilinks)
+- `update: false` : Don't update the file at all. 
+- `current: false` : Don't update the date
+- `private : true` : Use the `_private` folder collection instead of the `_notes` default folder. 
+
+## Blog frontmatter options
+- `flux: false` : remove the file from the feed
+- `category` : Add a category for the category page ; `category: false` remove it from this page too.
+- `resume` : Add a resume of the file in the feed. 
+
