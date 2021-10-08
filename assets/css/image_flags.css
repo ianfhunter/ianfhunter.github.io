@@ -198,29 +198,29 @@ img[alt*="-abs"] {
 /* Size */
 
 img[alt*="-thumb"] {
-    width: 3rem;
+    width: 6rem;
 }
 
 img[alt*="-sm"] {
-    width: 5rem;
+    width: 13rem;
 }
 
 img[alt*="-med"] {
-    width: 8rem;
+    width: 18rem;
 }
 
 img[alt*="-lg"] {
-    width: 10rem;
+    width: 27rem;
 }
 
 img[alt*="-huge"] {
-    width: 12rem;
+    width: 37rem;
 }
 
 img[alt*="-cwidth"] {
     float: none;
     margin-left: -10%;
-    width: 15rem;
+    width: 67rem;
 }
 
 
@@ -281,9 +281,6 @@ img[alt*="-nofloat"] {
     display: inline-block;
     float: unset;
 }
-
-
-/* Zoom on Hover */
 
 img[alt*="+side"]:not(:active):hover,
 img[alt*="+portrait"]:not(:active):hover,
