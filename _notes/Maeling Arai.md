@@ -13,6 +13,7 @@ univers: Néo-Tokio
 ---
 
 # ─────༺ Présentation ༻─────  
+![+portrait](../assets/img/Maeling.png)  
 **Nom** : Arai  
 **Prénoms** : Maeling  
 **Métatype** : Humaine  
@@ -37,8 +38,7 @@ Maeling est capable de communiquer et de contrôler les morts. Elle peut notamme
 - *Nécron* : Maeling peut attacher un cadavre à une âme et la contrôler à distance. Cette technique lui demande énormément d'énergie, et l'épuise énormément.  
 - *Fonderie* : Elle est capable de "réparer" un cadavre, c'est-à-dire soigner ses blessures, sans pour autant le ranimer ou apaiser sa douleur. En vérité, plus elle utilise cette technique, plus le zombie deviendra fou de douleur.   
   
-# ──────༺ Physique ༻──────  
-![+portrait](../assets/img/Maeling.png)  
+# ──────༺ Description ༻──────  
 **Yeux** : Vairon. Le droit est vert, le gauche est bleu.   
 **Cheveux** : Roux; mi-long, attaché en un chignon sévère.  
 **Taille** : 1m70   
