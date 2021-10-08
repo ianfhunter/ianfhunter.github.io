@@ -77,7 +77,7 @@ Things to modify to make it yours:
 On command-line, you can run `bundle exec jekyll serve` then go to `localhost:4000` to check the result.
 
 # Python script
-Having files written in Markdown on Obsidian, I created a python script in order to semi-automatically share some of my files, on a static site in JEKYLL.
+Having files written in Markdown on Obsidian, I created a python script in order to semi-automatically share selected file, not all file, in my blog. 
 
 ## Requirements
 - [Python](https://www.python.org/)

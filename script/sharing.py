@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import re
 import sys
 import os
@@ -12,6 +10,7 @@ import frontmatter
 import yaml
 import argparse
 import glob
+from unidecode import unidecode
 
 sys.stdin.reconfigure(encoding="utf-8")
 sys.stdout.reconfigure(encoding="utf-8")
@@ -22,6 +21,7 @@ if "script" in BASEDIR:
 env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
 post = Path(f"{BASEDIR}/_notes")
+private = Path(f"{BASEDIR}/_private")
 img = Path(f"{BASEDIR}/assets/img/")
 
 # Seems to have problem with dotenv with pyto on IOS 15
@@ -53,17 +53,19 @@ def remove_frontmatter(meta):
     meta.pop('link', None)
     return meta
 
-def diff_file(file, update=0):
+def diff_file(file, update=0, priv=0):
     file_name = os.path.basename(file)
     if check_file(file_name, priv) == "EXIST" :
         if update == 1 : #Update : False / Don't check
             return False
-        notes_path = Path(f"{BASEDIR}/_notes/{file_name}")
+        notes_path = Path(f"{post}/{file_name}")
+        if priv == 1:
+            notes_path = Path(f"{private}/{file_name}")
         retro_old = retro(notes_path)
         meta_old= frontmatter.load(notes_path)
         meta_old = remove_frontmatter(meta_old.metadata)
 
-        temp = file_convert(file)
+        temp = file_convert(file, priv)
         front_temp = frontmatter.loads(''.join(temp))
         meta_new = remove_frontmatter(front_temp.metadata)
         new_version = retro(temp, 1)
@@ -75,13 +77,16 @@ def diff_file(file, update=0):
         return True #Si le fichier existe pas, il peut pas être identique
 
 # PATH WORKING #
-def delete_file(filepath):
-    for file in os.listdir(post):
+def delete_file(filepath, priv=0):
+    path = post
+    if priv == 1:
+        path = private
+    for file in os.listdir(path):
         filepath = os.path.basename(filepath)
         filecheck = os.path.basename(file)
         if filecheck == filepath:
-            os.remove(Path(f"{BASEDIR}/_notes/{file}"))
-            return True
+                os.remove(Path(f"{path}/{file}"))
+                return True
     return False
 
 def delete_not_exist():
@@ -92,26 +97,41 @@ def delete_not_exist():
     for file in glob.iglob(f"{post}/**"):
         if os.path.basename(file) not in vault_file:
             os.remove(Path(file))
+    for file in glob.iglob(f"{private}/**"):
+        if os.path.basename(file) not in vault_file:
+            os.remove(Path(file))
 
-def check_file(filepath):
+def check_file(filepath, priv=0):
     post_file = []
-    for file in glob.iglob(f"{post}/**"):
-        post_file.append(os.path.basename(file))
+    if priv == 0:
+        for file in glob.iglob(f"{post}/**"):
+            post_file.append(os.path.basename(file))
+    else:
+        for file in glob.iglob(f"{private}/**"):
+            post_file.append(os.path.basename(file))
     if filepath in post_file:
         return 'EXIST'
     else:
         return "NE"
-def dest(filepath):
+def dest(filepath, priv = 0):
     file_name = os.path.basename(filepath)
-    dest = Path(f"{BASEDIR}/_notes/{file_name}")
+    dest = Path(f"{post}/{file_name}")
+    if priv == 1:
+        dest=Path(f"{private}/{file_name}")
     return str(dest)
 
-def frontmatter_check(filename):
-    metadata = open(Path(f"{BASEDIR}/_notes/{filename}"), "r", encoding="utf-8")
+def frontmatter_check(filename, priv=0):
+    if priv == 0:
+        metadata = open(Path(f"{post}/{filename}"), "r", encoding="utf-8")
+    else:
+        metadata = open(Path(f"{private}/{filename}"), "r", encoding="utf-8")
     meta = frontmatter.load(metadata)
     update = frontmatter.dumps(meta)
     metadata.close()
-    final = open(Path(f"{BASEDIR}/_notes/{filename}"), "w", encoding="utf-8")
+    if priv == 0:
+        final = open(Path(f"{post}/{filename}"), "w", encoding="utf-8")
+    else:
+        final = open(Path(f"{private}/{filename}"), "w", encoding="utf-8")
     now = datetime.now().strftime("%d-%m-%Y")
     if not 'current' in meta.keys() or meta['current'] != False:
         meta["date"] = now
@@ -123,7 +143,9 @@ def frontmatter_check(filename):
     if not "link" in meta.keys():
         filename = filename.replace(".md", "")
         filename = filename.replace(" ", "-")
-        clip = f"{web}{filename}"
+        clip = f"{web}/notes/{filename}"
+        if priv == 1:
+            clip = f"{web}/private/{filename}"
         meta['link'] = clip
         update = frontmatter.dumps(meta)
         meta = frontmatter.loads(update)
@@ -131,10 +153,9 @@ def frontmatter_check(filename):
     final.close()
     return
 
-def update_frontmatter(file, share=0):
+def update_frontmatter(file, share=0, priv=0):
     metadata= open(file, 'r', encoding='utf8')
     meta = frontmatter.load(metadata)
-    update = frontmatter.dumps(meta, sort_keys=False)
     metadata.close()
     if 'tag' in meta.keys() :
         tag = meta['tag']
@@ -145,25 +166,31 @@ def update_frontmatter(file, share=0):
     meta.metadata.pop('tag', None)
     meta.metadata.pop('tags', None)
     with open(file, 'w', encoding="utf-8") as f:
-        if not "link" in meta.keys():
-            filename = os.path.basename(file)
-            filename = filename.replace(".md", "")
-            filename = filename.replace(" ", "-")
-            clip = f"{web}{filename}"
-            meta['link'] = clip
-            update = frontmatter.dumps(meta,sort_keys=False)
-            meta = frontmatter.loads(update)
-        if share == 1 and meta['share'] == 'false':
+        filename = os.path.basename(file)
+        filename = filename.replace(".md", "")
+        filename = filename.replace(" ", "-")
+        clip = f"{web}notes/{filename}"
+        if priv == 1:
+            clip = f"{web}private/{filename}"
+        meta['link'] = clip
+        update = frontmatter.dumps(meta,sort_keys=False)
+        meta = frontmatter.loads(update)
+        if share == 1 and ('share' not in meta.keys() or meta['share'] == 'false'):
             meta['share'] = 'true'
             update= frontmatter.dumps(meta,sort_keys=False)
             meta = frontmatter.loads(update)
         if tag != '':
             meta['tag']=tag
         update=frontmatter.dumps(meta, sort_keys=False)
+        if re.search(r'\\U\w+', update):
+            emojiz = re.search(r'\\U\w+', update)
+            emojiz = emojiz.group().strip()
+            convert_emojiz = emojiz.encode('ascii').decode('unicode-escape').encode(
+                'utf-16', 'surrogatepass'
+                ).decode('utf-16')
+            update = re.sub(r'"\\U\w+"', convert_emojiz, update)
         f.write(update)
     return
-
-
 
 # ADMONITION CURSED THINGS
 def admonition_logo(type, line):
@@ -363,11 +390,13 @@ def transluction_note(line):
     return final_text
 
 
-def clipboard(filepath):
+def clipboard(filepath, priv = 0):
     filename = os.path.basename(filepath)
     filename = filename.replace(".md", "")
     filename = filename.replace(" ", "-")
-    clip = f"{web}{filename}"
+    clip = f"{web}notes/{filename}"
+    if priv == 1:
+        clip=f"{web}private/{filename}"
     if sys.platform == "ios":
         try:
             import pasteboard  # work with pyto
@@ -393,13 +422,17 @@ def clipboard(filepath):
                 "Please, report issue with your OS and configuration to check if it possible to use another clipboard manager"
             )
 
-def file_write(file, contents):
+def file_write(file, contents, priv = 0):
     file_name = os.path.basename(file)
     if contents == '':
         return False
     else:
-        if not os.path.exists(Path(f"{BASEDIR}/_notes/{file_name}")):
-            new_notes = open(Path(f"{BASEDIR}/_notes/{file_name}"), "w", encoding="utf-8")
+        if priv == 0:
+            path = Path(f"{post}/{file_name}")
+        else:
+            path = Path(f"{private}/{file_name}")
+        if not os.path.exists(path):
+            new_notes = open(path, "w", encoding="utf-8")
             for line in contents:
                 new_notes.write(line)
             new_notes.close()
@@ -411,24 +444,26 @@ def file_write(file, contents):
                 delete_file(file)
             return False
 
-def file_convert(file, option=0):
+def file_convert(file, option=0, priv=0):
     final =[]
     file_name = os.path.basename(file)
-    if not "_notes" in file:
+    if not "_notes" in file or not "_private" in file:
         data = open(file, "r", encoding="utf-8")
         meta = frontmatter.load(file)
         lines = data.readlines()
         data.close()
         if option == 1:
+            if "private" in meta.keys() and meta['private'] is True:
+                priv = 1
             if "share" not in meta.keys() or meta["share"] is False:
                 meta["share"] = True
                 update = frontmatter.dumps(meta)
                 meta = frontmatter.loads(update)
-                update_frontmatter(file, 1)
+                update_frontmatter(file, 1, priv)
             else:
-                update_frontmatter(file, 0)
+                update_frontmatter(file, 0, priv)
         else:
-            update_frontmatter(file, 0)
+            update_frontmatter(file, 0, priv)
             if "share" not in meta.keys() or meta["share"] is False :
                 return final
         lines = admonition_trad(lines)
@@ -447,6 +482,11 @@ def file_convert(file, option=0):
             final_text = re.sub('\%{2}(.*)\%{2}', '', final_text)
             final_text=re.sub('^\%{2}(.*)', '', final_text)
             final_text=re.sub('(.*)\%{2}$', '', final_text)
+            if re.search(r'\\U\w+', final_text):
+                emojiz = re.search(r'\\U\w+', final_text)
+                emojiz = emojiz.group().strip().replace('"', "")
+                convert_emojiz = emojiz.encode('ascii').decode('unicode-escape').encode('utf-16', 'surrogatepass').decode('utf-16')
+                final_text=re.sub(r'\\U\w+', convert_emojiz, final_text)
             if final_text.strip().endswith('%%') or final_text.strip().startswith('%%'):
                 final_text = ''
             elif re.search('[!?]{3}ad-\w+', final_text):
@@ -483,6 +523,7 @@ def file_convert(file, option=0):
 
 def search_share(option=0, stop_share=1):
     filespush = []
+    priv = 0
     check = False
     for sub, dirs, files in os.walk(vault):
         for file in files:
@@ -500,29 +541,29 @@ def search_share(option=0, stop_share=1):
                                 update = 1
                             else:
                                 update = 0
-                            if diff_file(filepath, update):
-                                delete_file(filepath)
-                                contents = file_convert(filepath)
-                                check = file_write(filepath, contents)
+                            if diff_file(filepath, update, priv):
+                                delete_file(filepath, priv)
+                                contents = file_convert(filepath, priv)
+                                check = file_write(filepath, contents, priv)
                             else:
                                 check = False
                         if option == 2:
-                            delete_file(filepath)
-                            contents = file_convert(filepath)
-                            check = file_write(filepath, contents)
-                        destination = dest(filepath)
+                            delete_file(filepath, priv)
+                            contents = file_convert(filepath, priv)
+                            check = file_write(filepath, contents, priv)
+                        destination = dest(filepath, priv)
                         if check:
                             filespush.append(destination)
                     else:
                         if stop_share == 1:
-                            delete_file(filepath)
+                            delete_file(filepath, priv)
                 except (
                     yaml.scanner.ScannerError,
                     yaml.constructor.ConstructorError,
                 ) as e:
                     pass
 
-    return filespush
+    return filespush, priv
 
 
 def git_push(COMMIT):
@@ -543,21 +584,25 @@ def git_push(COMMIT):
 
 def convert_one(ori, delopt, git):
     file_name = os.path.basename(ori).upper()
+    yaml_front = frontmatter.load(ori)
+    priv = 0
+    if 'private' in yaml_front.keys() and yaml_front['private'] is True:
+        priv = 1
     if delopt is False:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [{file_name}] OPTIONS :\n- UPDATE "
         )
-        delete_file(ori)
+        delete_file(ori, priv)
     else:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [{file_name}] OPTIONS :\n- PRESERVE"
         )
-    contents = file_convert(ori, 1)
-    check = file_write(ori, contents)
+    contents = file_convert(ori, 1, priv)
+    check = file_write(ori, contents, priv)
     if check and not git:
         COMMIT = f"Pushed {file_name.lower()} to blog"
         git_push(COMMIT)
-        clipboard(ori)
+        clipboard(ori, priv)
     elif check and git:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] 🎉 Successfully converted {file_name.lower()}"
@@ -578,17 +623,17 @@ def convert_all(delopt=False, git=False, force=False, stop_share=0):
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- PRESERVE FILES"
         )
-        new_files = search_share(0,stop_share)
+        new_files, priv = search_share(0,stop_share)
     elif force:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- FORCE UPDATE"
         )
-        new_files = search_share(2, stop_share)
+        new_files, priv = search_share(2, stop_share)
     else:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- UPDATE MODIFIED FILES"
         )
-        new_files = search_share(1, stop_share)
+        new_files, priv = search_share(1, stop_share)
     commit = "Add to blog:\n"
     if len(new_files) > 0:
         for md in new_files:
@@ -597,7 +642,7 @@ def convert_all(delopt=False, git=False, force=False, stop_share=0):
             if len(new_files) == 1:
                 md = "".join(new_files)
                 commit = md
-                clipboard(md)
+                clipboard(md, priv)
             commit = f"Add to blog: \n {commit}"
             git_push(commit)
         else:

@@ -1,13 +1,29 @@
+**Table Of Content**
+- [Goal](#goal)
+- [Get Started](#get-started)
+  * [Requirements](#requirements)
+  * [Environment](#environment)
+- [Script](#script)
+  * [Checking differences](#checking-differences)
+  * [Options](#options)
+    + [About the private folder](#about-the-private-folder)
+    + [Share all](#share-all)
+    + [Share only a file](#share-only-a-file)
+  * [How it works](#how-it-works)
+    + [Frontmatter settings](#frontmatter-settings)
+    + [Admonition](#admonition)
+    + [IOS Shortcuts](#ios-shortcuts)
+    + [IOS](#ios)
+    + [Obsidian](#obsidian)
+  * [Windows bonus](#windows-bonus)
+---
+  
 ⚠️ The script and site are not a replacement for [Obsidian Publish](https://obsidian.md/publish), which is a much more efficient way to share Obsidian files.
 
-# Goal 
-Having files written in Markdown on Obsidian, I created a python script in order to semi-automatically share some of my files, on a static site in JEKYLL.
-
-The site uses [notenote.link](https://github.com/Maxence-L/notenote.link) (thanks to Maxence-L) template which is the easiest to set up with Netlify, but there's nothing stopping you to modify the css.
 
 # Get Started
 
-The best way is to fork the original template and delete files in `_notes` (which are the original files).
+The best way is to use the template with the **master branch** and delete files in `_notes` (which are the original files).
 Otherwise, just copy `sharing.py` script and use it for your own template.
 
 ## Requirements
@@ -16,7 +32,7 @@ The script uses :
 - [PyGithub](https://github.com/PyGithub/PyGithub)
 - [Python-dotenv](https://github.com/theskumar/python-dotenv)
 - [python-frontmatter](https://github.com/eyeseast/python-frontmatter)
-- [Pyperclip](https://github.com/asweigart/pyperclip) on Windows/MacOS/Linux | IOS : Pasteboard (Pyto) or clipboard (Pythonista)
+- [Pyperclip](https://github.com/asweigart/pyperclip) on Windows/MacOS/Linux | IOS : Pasteboard (Pyto) or clipboard (Pythonista) | Clipboard function doesn't work (yet) on a-shell.
 
 You can install all with `pip install -r requirements.txt`
 
@@ -40,19 +56,17 @@ Optional arguments:
   convert  
 - `--Git`, `--G` : No commit and no push to git (work for github, gitlab...) 
 
-## Checking differences 
-
+## Checking differences
 The script will convert all file with `share:true` and check if the contents 
 are differents with the version in `_notes`. The only things that are 
 ignored is the contents of the metadata. If you want absolutely change the 
-metadata you can: 
-- 
+metadata you can:
 - Use `share --file <filepath>` directly
 - Use `--u` to force update all file 
 - Continue to work on the file before pushing it.
 - Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
 - Manually delete the file 
-- Add or edit the metadata keys (unless `date`/`title`/`created`/`update`). 
+- Add or edit the metadata keys (unless `date`/`title`/`created`/`update`/`link`). 
 
 :warning: In case you have two files with the same name but :
 - In different folder
@@ -60,10 +74,13 @@ metadata you can:
 The script will bug because **I don't check folder** (It's volontary). In this unique case, you need to rename one of the files. 
 
 ## Options
+### About the private folder
+The private folder create a secondary collection, it prevents file to appear in the search, so it create a sort of "second blog" more secret. To create a "private" file, just use `private: true` in your frontmatter. 
+
 ### Share all
 By adding, in the yaml of your file, the key `share: true`, you allow the script to publish the file. In fact, the script will read all the files in your vault before selecting the ones meeting the condition.
 
-By default, the script will check the difference between line [(*cf checking difference*)](https://github.com/Mara-Li/yes-another-free-publish/tree/owlly-house#checking-differences), and convert only the file with difference. You can use `--u` to force update. 
+By default, the script will check the difference between line [(*cf checking difference*)](README.md#checking-differences), and convert only the file with difference. You can use `--u` to force update. 
 
 ### Share only a file
 
@@ -86,6 +103,7 @@ The script :
 - Frontmatter : In absence of title, add the file's title.
 - Copy the link to your clipboard if one file is edited.
 - ⭐ Admonition convertion to "callout inspired notion"
+- Update the frontmatter in the original file, adding the link and change `share` to true if one file is shared.
 
 Finally, the plugin will add, commit and push if supported.
 
@@ -97,11 +115,8 @@ Note : I **can't** testing on these 3 OS, so I can't create a clipboard option o
 - `embed: false` : remove the transluction (convert to normal wikilinks)
 - `update: false` : Don't update the file at all. 
 - `current: false` : Don't update the date
+- `private: true` : Use the `_private` folder collection instead of the `_notes` collection.
 
-You can totally use the `owlly-house` branch, who add more option in the yaml ; as :
-- `flux: false` : remove the file from the feed
-- `category` : Add a category for the category page ; `category: false` remove it from this page too.
-- `resume` : Add a resume of the file in the feed. 
 
 ### Admonition 
 As admonition is very tricky, I choose to convert all admonition to a "callout Notion".
@@ -114,13 +129,6 @@ JavaScript will niced all things.
 
 ⚠ As always with markdown, you will see some problem with new paragraph inside admonition. You can use `$~$` to fake line. The script will automatically add this.
 Also, you can add emoji on title to add some nice formatting.
-
-!!!ad-note
-**🍎 Title**{:.title}  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus at ex in ultricies. Etiam ac sodales mi, non aliquam lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac lectus quam. Proin sed velit eget dui aliquet sodales. Duis sed urna eleifend, dictum neque eu, elementum neque. Quisque efficitur, justo ut malesuada faucibus, magna libero tempor elit, at fermentum libero mauris aliquam magna. Quisque ultrices tortor nec enim bibendum sodales.
-$~$
-It supports latex : $1+1$ and *markdown* 
-
 
 ### IOS Shortcuts
 
@@ -162,6 +170,16 @@ You could also create an alias for sharing using `~/.profile`:
 
 ### Obsidian 
 → Please use Wikilinks with "short links" (I BEG YOU)
+You can integrate the script within obsidian using the nice plugin [Obsidian ShellCommands](https://github.com/Taitava/obsidian-shellcommands).
+
+You could create two commands :
+1. `share all` : `python3 path/to/your/script/sharing.py`
+2. `share one` : `python3 path/to/your/script/sharing.py --f {{file_path:absolute}}`
+
+You can use :
+- [Customizable Sidebar](https://github.com/phibr0/obsidian-customizable-sidebar)
+- [Obsidian Customizable Menu](https://github.com/kzhovn/obsidian-customizable-menu)
+To have a button to share your file directly in Obsidian !
 
 ## Windows bonus
 
