@@ -38,7 +38,7 @@ Maeling est capable de communiquer et de contrôler les morts. Elle peut notamme
 - *Fonderie* : Elle est capable de "réparer" un cadavre, c'est-à-dire soigner ses blessures, sans pour autant le ranimer ou apaiser sa douleur. En vérité, plus elle utilise cette technique, plus le zombie deviendra fou de douleur.   
   
 # ──────༺ Physique ༻──────  
-![+side-med](../assets/img/Maeling.png)  
+![+portrait](../assets/img/Maeling.png)  
 **Yeux** : Vairon. Le droit est vert, le gauche est bleu.   
 **Cheveux** : Roux; mi-long, attaché en un chignon sévère.  
 **Taille** : 1m70   
