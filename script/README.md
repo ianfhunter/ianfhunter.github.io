@@ -20,14 +20,10 @@
   
 ⚠️ The script and site are not a replacement for [Obsidian Publish](https://obsidian.md/publish), which is a much more efficient way to share Obsidian files.
 
-# Goal 
-Having files written in Markdown on Obsidian, I created a python script in order to semi-automatically share some of my files, on a static site in JEKYLL.
-
-The site uses [notenote.link](https://github.com/Maxence-L/notenote.link) (thanks to Maxence-L) template which is the easiest to set up with Netlify, but there's nothing stopping you to modify the css.
 
 # Get Started
 
-The best way is to fork the original template and delete files in `_notes` (which are the original files).
+The best way is to use the template with the **master branch** and delete files in `_notes` (which are the original files).
 Otherwise, just copy `sharing.py` script and use it for your own template.
 
 ## Requirements
@@ -36,7 +32,7 @@ The script uses :
 - [PyGithub](https://github.com/PyGithub/PyGithub)
 - [Python-dotenv](https://github.com/theskumar/python-dotenv)
 - [python-frontmatter](https://github.com/eyeseast/python-frontmatter)
-- [Pyperclip](https://github.com/asweigart/pyperclip) on Windows/MacOS/Linux | IOS : Pasteboard (Pyto) or clipboard (Pythonista)
+- [Pyperclip](https://github.com/asweigart/pyperclip) on Windows/MacOS/Linux | IOS : Pasteboard (Pyto) or clipboard (Pythonista) | Clipboard function doesn't work (yet) on a-shell.
 
 You can install all with `pip install -r requirements.txt`
 
@@ -70,7 +66,7 @@ metadata you can:
 - Continue to work on the file before pushing it.
 - Add a newline with `$~$` or `<br>` (it will be not converted and displayed on page / obsidian so...)
 - Manually delete the file 
-- Add or edit the metadata keys (unless `date`/`title`/`created`/`update`). 
+- Add or edit the metadata keys (unless `date`/`title`/`created`/`update`/`link`). 
 
 :warning: In case you have two files with the same name but :
 - In different folder
@@ -107,6 +103,7 @@ The script :
 - Frontmatter : In absence of title, add the file's title.
 - Copy the link to your clipboard if one file is edited.
 - ⭐ Admonition convertion to "callout inspired notion"
+- Update the frontmatter in the original file, adding the link and change `share` to true if one file is shared.
 
 Finally, the plugin will add, commit and push if supported.
 

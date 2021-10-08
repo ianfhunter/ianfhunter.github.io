@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import re
 import sys
 import os
@@ -12,6 +10,7 @@ import frontmatter
 import yaml
 import argparse
 import glob
+from unidecode import unidecode
 
 sys.stdin.reconfigure(encoding="utf-8")
 sys.stdout.reconfigure(encoding="utf-8")
@@ -157,7 +156,6 @@ def frontmatter_check(filename, priv=0):
 def update_frontmatter(file, share=0, priv=0):
     metadata= open(file, 'r', encoding='utf8')
     meta = frontmatter.load(metadata)
-    update = frontmatter.dumps(meta, sort_keys=False)
     metadata.close()
     if 'tag' in meta.keys() :
         tag = meta['tag']
@@ -177,13 +175,20 @@ def update_frontmatter(file, share=0, priv=0):
         meta['link'] = clip
         update = frontmatter.dumps(meta,sort_keys=False)
         meta = frontmatter.loads(update)
-        if share == 1 and meta['share'] == 'false':
+        if share == 1 and ('share' not in meta.keys() or meta['share'] == 'false'):
             meta['share'] = 'true'
             update= frontmatter.dumps(meta,sort_keys=False)
             meta = frontmatter.loads(update)
         if tag != '':
             meta['tag']=tag
         update=frontmatter.dumps(meta, sort_keys=False)
+        if re.search(r'\\U\w+', update):
+            emojiz = re.search(r'\\U\w+', update)
+            emojiz = emojiz.group().strip()
+            convert_emojiz = emojiz.encode('ascii').decode('unicode-escape').encode(
+                'utf-16', 'surrogatepass'
+                ).decode('utf-16')
+            update = re.sub(r'"\\U\w+"', convert_emojiz, update)
         f.write(update)
     return
 
@@ -477,6 +482,11 @@ def file_convert(file, option=0, priv=0):
             final_text = re.sub('\%{2}(.*)\%{2}', '', final_text)
             final_text=re.sub('^\%{2}(.*)', '', final_text)
             final_text=re.sub('(.*)\%{2}$', '', final_text)
+            if re.search(r'\\U\w+', final_text):
+                emojiz = re.search(r'\\U\w+', final_text)
+                emojiz = emojiz.group().strip().replace('"', "")
+                convert_emojiz = emojiz.encode('ascii').decode('unicode-escape').encode('utf-16', 'surrogatepass').decode('utf-16')
+                final_text=re.sub(r'\\U\w+', convert_emojiz, final_text)
             if final_text.strip().endswith('%%') or final_text.strip().startswith('%%'):
                 final_text = ''
             elif re.search('[!?]{3}ad-\w+', final_text):
