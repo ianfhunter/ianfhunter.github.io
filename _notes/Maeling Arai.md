@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 08-10-2021
+date: 09-10-2021
 description: Fiche de Maeling sur Néo-Tokio
 image: Maeling
 link: https://owlly-house.netlify.app/notes/Maeling-Arai
@@ -16,7 +16,7 @@ univers: Néo-Tokio
 ![+portrait](../assets/img/Maeling.png)  
 **Nom** : Arai  
 **Prénoms** : Maeling  
-**Métatype** : Humaine  
+**Métatype** : Humaine — Mage  
 **Âge** : 26 ans  
   
 **Affiliation** : Police Métropolitaine de Néo-Tokyo  
