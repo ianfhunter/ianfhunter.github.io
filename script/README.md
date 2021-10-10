@@ -10,6 +10,7 @@
     + [Share all](#share-all)
     + [Share only a file](#share-only-a-file)
   * [How it works](#how-it-works)
+    + [Custom CSS](#custom-CSS)
     + [Frontmatter settings](#frontmatter-settings)
     + [Admonition](#admonition)
     + [IOS Shortcuts](#ios-shortcuts)
@@ -99,6 +100,7 @@ The script :
   "wikilinks")
 - Edit link to support transluction (if not `embed: False`)
 - Remove block id (no support)
+- Add CSS settings for inline tags (no link support) ; Tags are : class = .hash ; id = #tag_name (so you can style each tags you use)
 - Frontmatter :  Update the date. If there is already a `date` key, save it to `created` and update `date`.
 - Frontmatter : In absence of title, add the file's title.
 - Copy the link to your clipboard if one file is edited.
@@ -109,6 +111,15 @@ Finally, the plugin will add, commit and push if supported.
 
 Note : The clipboard maybe not work in your configuration. I have (and can) only test the script on IOS and Windows, so I use `pyperclip` and `pasteboard` to do that. If you are on MacOS, Linux, Android, please, check your configuration on your python and open an issue if it doesn't work. 
 Note : I **can't** testing on these 3 OS, so I can't create a clipboard option on my own. 
+
+### Custom CSS 
+You can add CSS using the file (custom.css)[/assets/css/custom.css]. The plugin [Markdown Attribute](https://github.com/valentine195/obsidian-markdown-attributes) allow to use the creation of inline css. 
+Some information about this :
+- You need to add `:` after the first `{`
+- The inline IAL work only if there is stylized markdown. In absence, the text will be bolded. 
+- It won't work with highlight (removed automatically by the script)
+
+:warning: As I use CodeMirror Options and Contextual Typography, I warn you : the use of `#tags` to stylize the text before it doesn't work with my build. So, as an option to don't have a random tag in a text, you can use `custom.css` to remove it with `display: none` (you can have an example with `#left`). 
 
 ### Frontmatter settings
 - `share: true` : Share the file
