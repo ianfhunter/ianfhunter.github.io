@@ -1516,7 +1516,6 @@ img[src*='#center'] {
 
 
 /* tags */
-
 .hash {
     background-color: #80cbee67;
     border: 1px solid #0493ec;
@@ -1529,7 +1528,7 @@ img[src*='#center'] {
 
 .hash:hover {
     text-decoration: none !important;
-    background-color: rgba(0, 171, 255, 0.4) !important;
+    background-color: rgba(0, 171, 255, 0.4) ;
 }
 
 .admo-note {
@@ -1550,7 +1549,3 @@ p.admo-note>.title {
     text-align: center;
 }
 
-.logo-tip::before {
-    content: '\e79a';
-    font-family: 'Material Icons';
-}

@@ -495,8 +495,27 @@ def file_convert(file, option=0, priv=0):
                 token = re.findall("#\w+", final_text)
                 token = list(set(token))
                 for i in range(0, len(token)) :
-                    IAL = "**" + token[i] +"**{: .hash}"
+                    IAL = "**" + token[i].replace('#', " ") +"**{: "+ token[i] +"}{: .hash}"
                     final_text=final_text.replace(token[i], IAL, 1)
+            elif re.search('\{\: (id=|class=|\.).*\}', final_text):
+                IAL = re.search("\{\: (id=|class=|\.).*\}", final_text)
+                contentIAL = re.search('(.*)\{', final_text)
+                if contentIAL :
+                    contentIAL=contentIAL.group().replace('{', '')
+                    IAL=IAL.group()
+                    IAL=IAL.replace('id=', "#")
+                    IAL=IAL.replace('class=', '.')
+                    if re.search('[\*\_]', contentIAL): #markdown found
+                        syntax=re.search('(\*\*|\*|_)', contentIAL)
+                        new=re.sub('(\*\*|\*|_)', "", contentIAL) #clear md syntax
+                        new = syntax.group() + new + syntax.group() + IAL
+                    else:
+                        new = "**"+contentIAL.rstrip()+"**"+IAL
+                    final_text=re.sub("(.*)\{\: (id=|class=|\.).*\}(\*\*|\*|_)( ?)", new, final_text)
+                if re.search("==(.*)==", final_text):
+                    final_text = re.sub("==", "[[", final_text, 1)
+                    final_text = re.sub("( ?)==", "::highlight]]", final_text, 2)
+                    final_text = re.sub("\{\: (id=|class=|\.).*\}", "", final_text)
             elif re.search("==(.*)==", final_text):
                 final_text = re.sub("==", "[[", final_text, 1)
                 final_text = re.sub("( ?)==", "::highlight]] ", final_text, 2)
