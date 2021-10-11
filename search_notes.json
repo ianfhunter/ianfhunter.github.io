@@ -3,6 +3,7 @@
 
 [
   {% for note in site.documents %}
+    {% if note.collection != "private" %}
     {
 
       "title"    : "{{ note.title | strip_html | escape }}",
@@ -12,5 +13,6 @@
       "content"  : {{ note.content | strip_html | strip_newline | strip | jsonify }}
 
     } {% unless forloop.last %},{% endunless %}
+  {% endif %}
   {% endfor %}
 ]

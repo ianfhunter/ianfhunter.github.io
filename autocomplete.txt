@@ -3,6 +3,8 @@
 {%- for post in site.posts -%}
 {{ post.title | strip_html | escape }};
 {%- endfor -%}
-{%- for post in site.document -%}
+{%- for post in site.documents -%}
+{%- if post.collection != "private" -%}
 {{ post.title | strip_html | escape }}{% unless foorloop.last %};{% endunless %}
+{%- endif -%}
 {%- endfor -%}

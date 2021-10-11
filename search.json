@@ -12,7 +12,8 @@
     },
   {% endfor %}
 
-  {% for note in site.document %}
+  {% for note in site.documents %}
+    {% if note.collection != 'private' %}
     {
 
       "title"    : "{{ note.title | strip_html | escape }}",
@@ -20,5 +21,6 @@
       "content"  : {{ note.content | newline_to_br | strip_newlines | replace: '<br/>', '' | strip | strip_html | strip | jsonify }}
 
     }{% unless forloop.last %},{% endunless %}
+  {% endif %}
   {% endfor %}
 ]
