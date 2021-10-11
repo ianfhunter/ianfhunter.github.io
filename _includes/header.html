@@ -89,15 +89,18 @@
                     resultsContainer: document.getElementById('results-container'),
                     json: '/search.json',
                     searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="{{ site.url }}{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: \'IBM Plex Sans\', Inter, \'Segoe UI\', Roboto, \'Helvetica Neue\', Arial, sans-serif; font-weight: 600;">{title}</p></a></li>',
-                    noResultsText: 'No results found',
+                    noResultsText: 'Aucun résultat',
                     fuzzy: false,
                     limit: 4,
                     })
     </script>
-    {%- if page.permalink != "/" and page.permalink != "/collection/"
-    -%}
+    {%- if page.collection -%}
+        {%- assign link = "/" -%}
+        {%- if page.collection -%}
+            {%- assign link = "/" | append:page.collection -%}
+        {%- endif -%}
     <div class="main-site-subheader disable-select" id="scroll-head"
-         onclick="window.location.assign('/');">
+         onclick="window.location.assign('{{link}}');">
         <div class="back-icon">
             <svg class="ripple" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                 <path d="M0 0h24v24H0z" fill="none"/>
@@ -107,6 +110,5 @@
         <p class="back-p">Accueil</p>
     </div>
     {%- endif -%}
-
 
 </header>

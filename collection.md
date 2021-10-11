@@ -1,32 +1,29 @@
 ---
 layout: post
-title: Collections
 permalink: /collection/
 content-type: eg
 ---
 
 <style>
-summary {
-position: revert;
+summary.cat {
+	position: sticky;
+	top: 0;
+	background-color: white;
 }
 </style>
 
-<main>
-  {%- if page.permalink =="/collection/" -%}
+{%- if page.permalink == "/collection/"-%}
   {% for collection in site.collections %}
     {%- if collection.label != "private" and collection.label != "posts" -%}
         {%- assign docs = "/" | append: collection.label -%}
-        {%- if collection.label == "notes" -%}
-            {%- assign docs = "/" -%}
-        {%- endif -%}
-        <details>
+        <details class="first">
             <summary><a href="{{ docs }}">{{ collection.label | capitalize}}</a></summary>
                 <ul>
                     {%- assign documents = site[collection.label] | group_by:'category' -%}
                     {% for cat in documents reversed %}
                         {%- if cat.name != 'false' -%}
-                            <details>
-                                <summary>{{ cat.name | upcase }}</summary>
+                            <details class="second">
+                                <summary class="cat">{{ cat.name | upcase }}</summary>
                                 <ul>
                                 {% assign items = cat.items | sort: 'date' | reverse %}
                                 {% for item in items %}
@@ -50,4 +47,3 @@ position: revert;
     {%- endif -%}
   {% endfor %}
 {%- endif -%}
-</main>
