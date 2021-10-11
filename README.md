@@ -148,3 +148,5 @@ The metadata key `folder` allow to use another folder than `_note`. There is sev
    3. change `{% assign mydocs = site.folder_name | group_by: 'category' %}`
 
 And there is it !
+
+**Notes about Private folder** : the private folder doesn't have a page, and doesn't appear in the feed or in search. The only way to access it is with the link (adding `/private` at the end) 
