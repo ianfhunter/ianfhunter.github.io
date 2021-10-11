@@ -11,6 +11,8 @@
 - [Frontmatter and metadata](#frontmatter-and-metadata)
   * [Script](#script-1)
   * [Blog frontmatter options](#blog-frontmatter-options)
+   + [Folders options](#Folder-options)
+
 ---
 
 # Notenote.link
@@ -141,10 +143,12 @@ The metadata key `folder` allow to use another folder than `_note`. There is sev
     values: 
       layout: post
       content-type: notes
-  ```
+```
 3. Duplicate the `private.md` and rename it with the folder name you want. 
    1. In this new file, change the line `{%- if page.permalink == "/private/" -%}` for `{%- if page.permalink == "/folder_name/" -%}` 
    2. Change the `permalink` key with `permalink: /folder_name/` 
    3. change `{% assign mydocs = site.folder_name | group_by: 'category' %}`
 
 And there is it !
+
+**Notes about Private folder** : the private folder doesn't have a page, and doesn't appear in the feed. The only way to access it is with the link (adding `/private` at the end) 
