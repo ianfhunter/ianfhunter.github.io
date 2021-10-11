@@ -20,24 +20,39 @@
         </a>
     </div>
     <div class="main-site-subheader menu disable-select">
+        <div class="categories">
+            <a style="text-decoration: none;" href="/collection/">
+                <img src="/assets/site/folder.svg" class="icon-collection"
+                     width="32" height="32" viewBox="0 0 24 25" fill="none"
+                     xmlns="https://www.w3.org/2000/svg"/>
+            <p class="categories-p">Collections</p>
+            </a>
+        </div>
 		<div class="categories">
 		<a style="text-decoration: none;" href="/feed">
 			<!-- icon Author : https://www.flaticon.com/authors/freepik -->
-			<img src="/assets/site/open-book.svg" class="icon-category" width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="https://www.w3.org/2000/svg"/>
+			<img src="/assets/site/open-book.svg" class="icon-category"
+                 width="32" height="32" viewBox="0 0 24 25" fill="none"
+                 xmlns="https://www.w3.org/2000/svg"/>
 		<p class="categories-p">Articles</p>
 		</a>
         </div>
-				<div class="categories">
+
+        <div class="categories">
             <a style="text-decoration: none;" href="/tags">
 				<!-- icon Author : https://www.flaticon.com/authors/smalllikeart -->
-				<img src="/assets/site/wisdom.svg" class="icon-category" width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="https://www.w3.org/2000/svg"/>
+				<img src="/assets/site/hashtag.png" class="icon-tags"
+                     width="32" height="32" viewBox="0 0 24 25" fill="none"
+                     xmlns="https://www.w3.org/2000/svg"/>
             <p class="categories-p">Tags</p>
             </a>
         </div>
         <div class="home">
             <a style="text-decoration: none;" href="/about">
 				<!-- icon author : www.dariusdan.com -->
-                <img src="/assets/site/owl.svg" class="icon-home" width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="https://www.w3.org/2000/svg"/>
+                <img src="/assets/site/owl.svg" class="icon-home" width="32"
+                     height="32" viewBox="0 0 24 25" fill="none"
+                     xmlns="https://www.w3.org/2000/svg"/>
                 <p class="home-p">À propos</p>
             </a>
         </div>
@@ -73,15 +88,16 @@
                     searchInput: document.getElementById('search-input'),
                     resultsContainer: document.getElementById('results-container'),
                     json: '/search.json',
-                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="{{ site.url }}{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: Inter !important; font-weight: 600;">{title}</p></a></li>',
+                    searchResultTemplate: '<li class="search_res" style="list-style: none;"><a href="{{ site.url }}{url}" style="text-decoration: none; color: #555555;"><p style="font-size: 1.0rem; font-family: \'IBM Plex Sans\', Inter, \'Segoe UI\', Roboto, \'Helvetica Neue\', Arial, sans-serif; font-weight: 600;">{title}</p></a></li>',
                     noResultsText: 'No results found',
                     fuzzy: false,
                     limit: 4,
                     })
     </script>
-    {%- if page.permalink != "/" -%}
-	
-    <div class="main-site-subheader disable-select" id="scroll-head" onclick="window.location.assign('/');">
+    {%- if page.permalink != "/" and page.permalink != "/collection/"
+    -%}
+    <div class="main-site-subheader disable-select" id="scroll-head"
+         onclick="window.location.assign('/');">
         <div class="back-icon">
             <svg class="ripple" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                 <path d="M0 0h24v24H0z" fill="none"/>
