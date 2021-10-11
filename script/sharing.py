@@ -10,7 +10,6 @@ import frontmatter
 import yaml
 import argparse
 import glob
-from unidecode import unidecode
 
 sys.stdin.reconfigure(encoding="utf-8")
 sys.stdout.reconfigure(encoding="utf-8")
@@ -21,7 +20,6 @@ if "script" in BASEDIR:
 env = dotenv_values(Path(f"{BASEDIR}/.env"))
 path = Path(f"{BASEDIR}/.git")  # GIT SHARED
 post = Path(f"{BASEDIR}/_notes")
-private = Path(f"{BASEDIR}/_private")
 img = Path(f"{BASEDIR}/assets/img/")
 
 # Seems to have problem with dotenv with pyto on IOS 15
@@ -32,6 +30,14 @@ except KeyError:
     with open(Path(f"{BASEDIR}/.env")) as f:
         vault = Path("".join(f.readlines(1)).replace("vault=", ""))
         web = "".join(f.readlines(2)).replace("blog=", "")
+
+
+def check_folder(folder_key):
+    path = f"{BASEDIR}/_{folder_key}"
+    if os.path.isdir(path):
+        return path
+    else:
+        return post
 
 
 def retro(filepath, opt=0):
@@ -45,95 +51,89 @@ def retro(filepath, opt=0):
         notes.append(n)
     return notes
 
+
 def remove_frontmatter(meta):
-    meta.pop('date', None)
-    meta.pop('title', None)
-    meta.pop('created', None)
-    meta.pop('update', None)
-    meta.pop('link', None)
+    meta.pop("date", None)
+    meta.pop("title", None)
+    meta.pop("created", None)
+    meta.pop("update", None)
+    meta.pop("link", None)
     return meta
 
-def diff_file(file, update=0, priv=0):
+
+def diff_file(file, folder, update=0):
     file_name = os.path.basename(file)
-    if check_file(file_name, priv) == "EXIST" :
-        if update == 1 : #Update : False / Don't check
+    if check_file(file_name, folder) == "EXIST":
+        if update == 1:  # Update : False / Don't check
             return False
-        notes_path = Path(f"{post}/{file_name}")
-        if priv == 1:
-            notes_path = Path(f"{private}/{file_name}")
+        notes_path = Path(f"{folder}/{file_name}")
         retro_old = retro(notes_path)
-        meta_old= frontmatter.load(notes_path)
+        meta_old = frontmatter.load(notes_path)
         meta_old = remove_frontmatter(meta_old.metadata)
 
-        temp = file_convert(file, priv)
-        front_temp = frontmatter.loads(''.join(temp))
+        temp = file_convert(file, folder)
+        front_temp = frontmatter.loads("".join(temp))
         meta_new = remove_frontmatter(front_temp.metadata)
         new_version = retro(temp, 1)
-        if new_version == retro_old and sorted(meta_old.keys()) == sorted(meta_new.keys()):
+        if new_version == retro_old and sorted(meta_old.keys()) == sorted(
+            meta_new.keys()
+        ):
             return False
         else:
             return True
     else:
-        return True #Si le fichier existe pas, il peut pas être identique
+        return True  # Si le fichier existe pas, il peut pas être identique
+
 
 # PATH WORKING #
-def delete_file(filepath, priv=0):
-    path = post
-    if priv == 1:
-        path = private
+def delete_file(filepath, folder):
+    path = Path(folder)
     for file in os.listdir(path):
         filepath = os.path.basename(filepath)
         filecheck = os.path.basename(file)
         if filecheck == filepath:
-                os.remove(Path(f"{path}/{file}"))
-                return True
+            os.remove(Path(f"{path}/{file}"))
+            return True
     return False
 
+
 def delete_not_exist():
-    #for file in poste : if file not in vault : delete file
-    vault_file=[]
+    # for file in poste : if file not in vault : delete file
+    vault_file = []
+    important_folder=["_includes", "_layout", "_site", "assets", "script"]
     for filename in glob.iglob(f"{vault}**/**", recursive=True):
         vault_file.append(os.path.basename(filename))
-    for file in glob.iglob(f"{post}/**"):
-        if os.path.basename(file) not in vault_file:
-            os.remove(Path(file))
-    for file in glob.iglob(f"{private}/**"):
-        if os.path.basename(file) not in vault_file:
+    for file in glob.iglob(f"{BASEDIR}/_*/**"):
+        if not any(folder in file for folder in important_folder) and os.path.basename(file) not in vault_file:
             os.remove(Path(file))
 
-def check_file(filepath, priv=0):
+
+def check_file(filepath, folder):
     post_file = []
-    if priv == 0:
-        for file in glob.iglob(f"{post}/**"):
-            post_file.append(os.path.basename(file))
-    else:
-        for file in glob.iglob(f"{private}/**"):
-            post_file.append(os.path.basename(file))
+    folder = Path(folder)
+    for file in glob.iglob(f"{folder}/**"):
+        post_file.append(os.path.basename(file))
     if filepath in post_file:
-        return 'EXIST'
+        return "EXIST"
     else:
         return "NE"
-def dest(filepath, priv = 0):
+
+
+def dest(filepath, folder):
     file_name = os.path.basename(filepath)
-    dest = Path(f"{post}/{file_name}")
-    if priv == 1:
-        dest=Path(f"{private}/{file_name}")
+    dest = Path(f"{folder}/{file_name}")
     return str(dest)
 
-def frontmatter_check(filename, priv=0):
-    if priv == 0:
-        metadata = open(Path(f"{post}/{filename}"), "r", encoding="utf-8")
-    else:
-        metadata = open(Path(f"{private}/{filename}"), "r", encoding="utf-8")
+
+def frontmatter_check(filename, folder):
+    metadata = open(Path(f"{folder}/{filename}"), "r", encoding="utf-8")
     meta = frontmatter.load(metadata)
     update = frontmatter.dumps(meta)
+    folder_key = folder.replace(f"{BASEDIR}/", "")
     metadata.close()
-    if priv == 0:
-        final = open(Path(f"{post}/{filename}"), "w", encoding="utf-8")
-    else:
-        final = open(Path(f"{private}/{filename}"), "w", encoding="utf-8")
+    final = open(Path(f"{folder}/{filename}"), "w", encoding="utf-8")
     now = datetime.now().strftime("%d-%m-%Y")
-    if not 'current' in meta.keys() or meta['current'] != False:
+    if not "current" in meta.keys() or meta["current"] != False:
         meta["date"] = now
         update = frontmatter.dumps(meta)
         meta = frontmatter.loads(update)
@@ -143,54 +143,55 @@ def frontmatter_check(filename, priv=0):
     if not "link" in meta.keys():
         filename = filename.replace(".md", "")
         filename = filename.replace(" ", "-")
-        clip = f"{web}/notes/{filename}"
-        if priv == 1:
-            clip = f"{web}/private/{filename}"
-        meta['link'] = clip
+        clip = f"{web}{folder_key}/{filename}"
+        meta["link"] = clip
         update = frontmatter.dumps(meta)
-        meta = frontmatter.loads(update)
     final.write(update)
     final.close()
     return
 
-def update_frontmatter(file, share=0, priv=0):
-    metadata= open(file, 'r', encoding='utf8')
+
+def update_frontmatter(file, folder, share=0):
+    metadata = open(file, "r", encoding="utf8")
     meta = frontmatter.load(metadata)
     metadata.close()
-    if 'tag' in meta.keys() :
-        tag = meta['tag']
-    elif 'tags' in meta.keys():
-        tag = meta['tags']
+    folder_key = folder.replace(f"{BASEDIR}/_", "")
+    if "tag" in meta.keys():
+        tag = meta["tag"]
+    elif "tags" in meta.keys():
+        tag = meta["tags"]
     else:
-        tag = ''
-    meta.metadata.pop('tag', None)
-    meta.metadata.pop('tags', None)
-    with open(file, 'w', encoding="utf-8") as f:
+        tag = ""
+    meta.metadata.pop("tag", None)
+    meta.metadata.pop("tags", None)
+    with open(file, "w", encoding="utf-8") as f:
         filename = os.path.basename(file)
         filename = filename.replace(".md", "")
         filename = filename.replace(" ", "-")
-        clip = f"{web}notes/{filename}"
-        if priv == 1:
-            clip = f"{web}private/{filename}"
-        meta['link'] = clip
-        update = frontmatter.dumps(meta,sort_keys=False)
+        clip = f"{web}{folder_key}/{filename}"
+        meta["link"] = clip
+        update = frontmatter.dumps(meta, sort_keys=False)
         meta = frontmatter.loads(update)
-        if share == 1 and ('share' not in meta.keys() or meta['share'] == 'false'):
-            meta['share'] = 'true'
-            update= frontmatter.dumps(meta,sort_keys=False)
+        if share == 1 and ("share" not in meta.keys() or meta["share"] == "false"):
+            meta["share"] = "true"
+            update = frontmatter.dumps(meta, sort_keys=False)
             meta = frontmatter.loads(update)
-        if tag != '':
-            meta['tag']=tag
-        update=frontmatter.dumps(meta, sort_keys=False)
-        if re.search(r'\\U\w+', update):
-            emojiz = re.search(r'\\U\w+', update)
+        if tag != "":
+            meta["tag"] = tag
+        update = frontmatter.dumps(meta, sort_keys=False)
+        if re.search(r"\\U\w+", update):
+            emojiz = re.search(r"\\U\w+", update)
             emojiz = emojiz.group().strip()
-            convert_emojiz = emojiz.encode('ascii').decode('unicode-escape').encode(
-                'utf-16', 'surrogatepass'
-                ).decode('utf-16')
+            convert_emojiz = (
+                emojiz.encode("ascii")
+                .decode("unicode-escape")
+                .encode("utf-16", "surrogatepass")
+                .decode("utf-16")
+            )
             update = re.sub(r'"\\U\w+"', convert_emojiz, update)
         f.write(update)
     return
+
 
 # ADMONITION CURSED THINGS
 def admonition_logo(type, line):
@@ -224,18 +225,19 @@ def admonition_logo(type, line):
         "exemple": "📌",
         "quote": "📋",
         "cite": "📋",
-        }
+    }
     if type in admonition.keys():
         logo = admonition[type]
     else:
-        logo = '[' + type.title() + ']'
-    if line == '':
-        title = '**' + logo + "**{: .title}"
+        logo = "[" + type.title() + "]"
+    if line == "":
+        title = "**" + logo + "**{: .title}"
     else:
-        title = '**' + logo + " " + line + '**{: .title}\n'
+        title = "**" + logo + " " + line + "**{: .title}\n"
     return title
 
-def admonition_trad_content(line,type):
+
+def admonition_trad_content(line, type):
 
     title = line
     if "collapse:" in line:
@@ -246,8 +248,8 @@ def admonition_trad_content(line,type):
         title = ""
     elif len(line) == 1:
         title = "$~$  \n"
-    elif 'title:' in line:
-       title = admonition_logo(type, line.replace('title:', '').strip())
+    elif "title:" in line:
+        title = admonition_logo(type, line.replace("title:", "").strip())
     return title
 
 
@@ -260,7 +262,7 @@ def admonition_trad(file_data):
         if re.search("[`?!]{3}( ?)ad-(.*)", file_data[i]):
             start = i
             start_list.append(start)
-        elif re.match("```", file_data[i]) or re.match('--- admonition', file_data[i]) :
+        elif re.match("```", file_data[i]) or re.match("--- admonition", file_data[i]):
             end = i
             end_list.append(end)
     for i, j in zip(start_list, end_list):
@@ -270,37 +272,38 @@ def admonition_trad(file_data):
     for ad, ln in code_dict.items():
         ad_start = ln[0]
         ad_end = ln[1]
-        type = re.search('[`!?]{3}( ?)ad-\w+',file_data[ad_start])
-        type = re.sub('[`!?]{3}( ?)ad-', '', type.group())
-        adm='b'
-        title = ''
-        if re.search('[!?]{3} ad-(\w+) (.*)',file_data[ad_start]):
-          title = re.search('[!?]{3} ad-(\w+) (.*)',file_data[ad_start])
-          adm='MT'
-          title = title.group(2)
-        first_block = re.search('ad-(\w+)', file_data[ad_start])
-        first_block='!!!'+ first_block.group()
-        file_data[ad_start] = re.sub('[`!?]{3}( ?)ad-(.*)', first_block, file_data[ad_start])
-        file_data[ad_end]='  '
+        type = re.search("[`!?]{3}( ?)ad-\w+", file_data[ad_start])
+        type = re.sub("[`!?]{3}( ?)ad-", "", type.group())
+        adm = "b"
+        title = ""
+        if re.search("[!?]{3} ad-(\w+) (.*)", file_data[ad_start]):
+            title = re.search("[!?]{3} ad-(\w+) (.*)", file_data[ad_start])
+            adm = "MT"
+            title = title.group(2)
+        first_block = re.search("ad-(\w+)", file_data[ad_start])
+        first_block = "!!!" + first_block.group()
+        file_data[ad_start] = re.sub(
+            "[`!?]{3}( ?)ad-(.*)", first_block, file_data[ad_start]
+        )
+        file_data[ad_end] = "  "
         for i in range(ad_start, ad_end):
             file_data[i] = admonition_trad_content(file_data[i], type)
-        if adm=='MT':
-          if len(title) > 0:
-              title_admo = admonition_logo(type, title)
-              file_data.insert(ad_start+1,title_admo)
-          else:
-            title_admo = admonition_logo(type, '')
-            file_data.insert(ad_start+1,title_admo)
+        if adm == "MT":
+            if len(title) > 0:
+                title_admo = admonition_logo(type, title)
+                file_data.insert(ad_start + 1, title_admo)
+            else:
+                title_admo = admonition_logo(type, "")
+                file_data.insert(ad_start + 1, title_admo)
         else:
-            converted= [file_data[i] for i in range(ad_start, ad_end)]
-            if not any(re.search('.*title.*', line) for line in converted):
-                title_admo=admonition_logo(type, '')
-                file_data.insert(ad_start+1, title_admo)
+            converted = [file_data[i] for i in range(ad_start, ad_end)]
+            if not any(re.search(".*title.*", line) for line in converted):
+                title_admo = admonition_logo(type, "")
+                file_data.insert(ad_start + 1, title_admo)
     return file_data
 
 
 # IMAGES
-
 def get_image(image):
     image = os.path.basename(image)
     for sub, dirs, files in os.walk(vault):
@@ -309,9 +312,10 @@ def get_image(image):
             if image in file:
                 return filepath
 
+
 def move_img(line):
     img_flags = re.search("[\|\+\-](.*)[]{1,2})]", line)
-    if img_flags and not re.search('\-\d+', line):
+    if img_flags and not re.search("\-\d+", line):
         img_flags = img_flags.group(0)
         img_flags = img_flags.replace("|", "")
         img_flags = img_flags.replace("]", "")
@@ -342,14 +346,13 @@ def move_img(line):
     return final_text
 
 
-
-
 def excalidraw_convert(line):
-    if '.excalidraw' in line:
-        #take the png img from excalidraw
-        line = line.replace('.excalidraw', '.excalidraw.png')
-        line = line.replace('.md', '')
+    if ".excalidraw" in line:
+        # take the png img from excalidraw
+        line = line.replace(".excalidraw", ".excalidraw.png")
+        line = line.replace(".md", "")
     return line
+
 
 def convert_no_embed(line):
     final_text = line
@@ -382,7 +385,11 @@ def transluction_note(line):
     # image from that)
     # Note : Doesn't support partial transluction for the moment ; remove title
     final_text = line
-    if re.search("\!\[", line) and not re.search("(png|jpg|jpeg|gif)", line) and not re.search('https', line):
+    if (
+        re.search("\!\[", line)
+        and not re.search("(png|jpg|jpeg|gif)", line)
+        and not re.search("https", line)
+    ):
         final_text = line.replace("!", "")  # remove "!"
         final_text = re.sub("#(.*)", "]]", final_text)
         final_text = re.sub("\\|(.*)", "]]", final_text)  # remove Alternative title
@@ -390,13 +397,12 @@ def transluction_note(line):
     return final_text
 
 
-def clipboard(filepath, priv = 0):
+def clipboard(filepath, folder):
     filename = os.path.basename(filepath)
     filename = filename.replace(".md", "")
     filename = filename.replace(" ", "-")
-    clip = f"{web}notes/{filename}"
-    if priv == 1:
-        clip=f"{web}private/{filename}"
+    folder_key = folder.replace(f"{BASEDIR}/_")
+    clip = f"{web}{folder_key}/{filename}"
     if sys.platform == "ios":
         try:
             import pasteboard  # work with pyto
@@ -422,96 +428,108 @@ def clipboard(filepath, priv = 0):
                 "Please, report issue with your OS and configuration to check if it possible to use another clipboard manager"
             )
 
-def file_write(file, contents, priv = 0):
+
+def file_write(file, contents, folder):
     file_name = os.path.basename(file)
-    if contents == '':
+    if contents == "":
         return False
     else:
-        if priv == 0:
-            path = Path(f"{post}/{file_name}")
-        else:
-            path = Path(f"{private}/{file_name}")
+        path = Path(f"{folder}/{file_name}")
         if not os.path.exists(path):
             new_notes = open(path, "w", encoding="utf-8")
             for line in contents:
                 new_notes.write(line)
             new_notes.close()
-            frontmatter_check(file_name, priv)
+            frontmatter_check(file_name, folder)
             return True
         else:
             meta = frontmatter.load(file)
             if not meta["share"] or meta["share"] == False:
-                delete_file(file)
+                delete_file(file, folder)
             return False
 
-def file_convert(file, option=0, priv=0):
-    final =[]
-    file_name = os.path.basename(file)
-    if not "_notes" in file or not "_private" in file:
+
+def file_convert(file, folder, option=0):
+    final = []
+    path_folder = folder.replace(f"{BASEDIR}/", "")
+    if not path_folder in file:
         data = open(file, "r", encoding="utf-8")
         meta = frontmatter.load(file)
         lines = data.readlines()
         data.close()
         if option == 1:
-            if "private" in meta.keys() and meta['private'] is True:
-                priv = 1
             if "share" not in meta.keys() or meta["share"] is False:
                 meta["share"] = True
                 update = frontmatter.dumps(meta)
                 meta = frontmatter.loads(update)
-                update_frontmatter(file, 1, priv)
+                update_frontmatter(file, folder, 1)
             else:
-                update_frontmatter(file, 0, priv)
+                update_frontmatter(file, folder, 0)
         else:
-            update_frontmatter(file, 0, priv)
-            if "share" not in meta.keys() or meta["share"] is False :
+            update_frontmatter(file, folder, 0)
+            if "share" not in meta.keys() or meta["share"] is False:
                 return final
         lines = admonition_trad(lines)
         for ln in lines:
-            final_text = ln.replace("  \n", '\n')
+            final_text = ln.replace("  \n", "\n")
             final_text = final_text.replace("\n", "  \n")
             final_text = convert_to_wikilink(final_text)
-            final_text=excalidraw_convert(final_text)
-            if re.search("\^\w+", final_text) and not re.search('\[\^\w+\]', final_text):
+            final_text = excalidraw_convert(final_text)
+            if re.search("\^\w+", final_text) and not re.search(
+                "\[\^\w+\]", final_text
+            ):
                 final_text = re.sub("\^\w+", "", final_text)  # remove block id
             if "embed" in meta.keys() and meta["embed"] == False:
                 final_text = convert_to_wikilink(final_text)
                 final_text = convert_no_embed(final_text)
             else:
                 final_text = transluction_note(final_text)
-            final_text = re.sub('\%{2}(.*)\%{2}', '', final_text)
-            final_text=re.sub('^\%{2}(.*)', '', final_text)
-            final_text=re.sub('(.*)\%{2}$', '', final_text)
-            if re.search(r'\\U\w+', final_text):
-                emojiz = re.search(r'\\U\w+', final_text)
+            final_text = re.sub("\%{2}(.*)\%{2}", "", final_text)
+            final_text = re.sub("^\%{2}(.*)", "", final_text)
+            final_text = re.sub("(.*)\%{2}$", "", final_text)
+            if re.search(r"\\U\w+", final_text):
+                emojiz = re.search(r"\\U\w+", final_text)
                 emojiz = emojiz.group().strip().replace('"', "")
-                convert_emojiz = emojiz.encode('ascii').decode('unicode-escape').encode('utf-16', 'surrogatepass').decode('utf-16')
-                final_text=re.sub(r'\\U\w+', convert_emojiz, final_text)
-            if final_text.strip().endswith('%%') or final_text.strip().startswith('%%'):
-                final_text = ''
-            elif re.search('[!?]{3}ad-\w+', final_text):
-                final_text = final_text.replace('  \n', '\n')
-            if re.search('#\w+', final_text) and not re.search('`#\w+`', final_text):
+                convert_emojiz = (
+                    emojiz.encode("ascii")
+                    .decode("unicode-escape")
+                    .encode("utf-16", "surrogatepass")
+                    .decode("utf-16")
+                )
+                final_text = re.sub(r"\\U\w+", convert_emojiz, final_text)
+            if final_text.strip().endswith("%%") or final_text.strip().startswith("%%"):
+                final_text = ""
+            elif re.search("[!?]{3}ad-\w+", final_text):
+                final_text = final_text.replace("  \n", "\n")
+            if re.search("#\w+", final_text) and not re.search("`#\w+`", final_text):
                 token = re.findall("#\w+", final_text)
                 token = list(set(token))
-                for i in range(0, len(token)) :
-                    IAL = "**" + token[i].replace('#', " ") +"**{: "+ token[i] +"}{: .hash}"
-                    final_text=final_text.replace(token[i], IAL, 1)
-            elif re.search('\{\: (id=|class=|\.).*\}', final_text):
+                for i in range(0, len(token)):
+                    IAL = (
+                        "**"
+                        + token[i].replace("#", " ")
+                        + "**{: "
+                        + token[i]
+                        + "}{: .hash}"
+                    )
+                    final_text = final_text.replace(token[i], IAL, 1)
+            elif re.search("\{\: (id=|class=|\.).*\}", final_text):
                 IAL = re.search("\{\: (id=|class=|\.).*\}", final_text)
-                contentIAL = re.search('(.*)\{', final_text)
-                if contentIAL :
-                    contentIAL=contentIAL.group().replace('{', '')
-                    IAL=IAL.group()
-                    IAL=IAL.replace('id=', "#")
-                    IAL=IAL.replace('class=', '.')
-                    if re.search('[\*\_]', contentIAL): #markdown found
-                        syntax=re.search('(\*\*|\*|_)', contentIAL)
-                        new=re.sub('(\*\*|\*|_)', "", contentIAL) #clear md syntax
+                contentIAL = re.search("(.*)\{", final_text)
+                if contentIAL:
+                    contentIAL = contentIAL.group().replace("{", "")
+                    IAL = IAL.group()
+                    IAL = IAL.replace("id=", "#")
+                    IAL = IAL.replace("class=", ".")
+                    if re.search("[\*\_]", contentIAL):  # markdown found
+                        syntax = re.search("(\*\*|\*|_)", contentIAL)
+                        new = re.sub("(\*\*|\*|_)", "", contentIAL)  # clear md syntax
                         new = syntax.group() + new + syntax.group() + IAL
                     else:
-                        new = "**"+contentIAL.rstrip()+"**"+IAL
-                    final_text=re.sub("(.*)\{\: (id=|class=|\.).*\}(\*\*|\*|_)( ?)", new, final_text)
+                        new = "**" + contentIAL.rstrip() + "**" + IAL
+                    final_text = re.sub(
+                        "(.*)\{\: (id=|class=|\.).*\}(\*\*|\*|_)( ?)", new, final_text
+                    )
                 if re.search("==(.*)==", final_text):
                     final_text = re.sub("==", "[[", final_text, 1)
                     final_text = re.sub("( ?)==", "::highlight]]", final_text, 2)
@@ -523,8 +541,8 @@ def file_convert(file, option=0, priv=0):
                 "(\[{2}|\().*\.(png|jpg|jpeg|gif)", final_text
             ):  # CONVERT IMAGE
                 final_text = move_img(final_text)
-            elif (
-                re.fullmatch('\\\\', final_text.strip())
+            elif re.fullmatch(
+                "\\\\", final_text.strip()
             ):  # New line when using "\" in obsidian file
                 final_text = "  \n"
             elif re.search("(\[{2}|\[).*", final_text):
@@ -542,47 +560,48 @@ def file_convert(file, option=0, priv=0):
 
 def search_share(option=0, stop_share=1):
     filespush = []
-    priv = 0
     check = False
+    folder = "_notes"
     for sub, dirs, files in os.walk(vault):
         for file in files:
             filepath = sub + os.sep + file
             if filepath.endswith(".md") and "excalidraw" not in filepath:
                 try:
                     yaml_front = frontmatter.load(filepath)
-                    if "private" in yaml_front.keys() and yaml_front["private"] is True:
-                        priv = 1
+                    if "folder" in yaml_front.keys():
+                        folder = yaml_front["folder"]
+                        folder = check_folder(folder)
                     else:
-                        priv = 0
-                    if "share" in yaml_front.keys() and yaml_front["share"] is True :
+                        folder = check_folder("_notes")
+                    if "share" in yaml_front.keys() and yaml_front["share"] is True:
                         if option == 1:
-                            if 'update' in yaml_front and yaml_front['update'] is False:
+                            if "update" in yaml_front and yaml_front["update"] is False:
                                 update = 1
                             else:
                                 update = 0
-                            if diff_file(filepath, update, priv):
-                                delete_file(filepath, priv)
-                                contents = file_convert(filepath, priv)
-                                check = file_write(filepath, contents, priv)
+                            if diff_file(filepath, folder, update):
+                                delete_file(filepath, folder)
+                                contents = file_convert(filepath, folder)
+                                check = file_write(filepath, contents, folder)
                             else:
                                 check = False
                         if option == 2:
-                            delete_file(filepath, priv)
-                            contents = file_convert(filepath, priv)
-                            check = file_write(filepath, contents, priv)
-                        destination = dest(filepath, priv)
+                            delete_file(filepath, folder)
+                            contents = file_convert(filepath, folder)
+                            check = file_write(filepath, contents, folder)
+                        destination = dest(filepath, folder)
                         if check:
                             filespush.append(destination)
                     else:
                         if stop_share == 1:
-                            delete_file(filepath, priv)
+                            delete_file(filepath, folder)
                 except (
                     yaml.scanner.ScannerError,
                     yaml.constructor.ConstructorError,
                 ) as e:
                     pass
 
-    return filespush, priv
+    return filespush, folder
 
 
 def git_push(COMMIT):
@@ -592,7 +611,7 @@ def git_push(COMMIT):
         repo = git.Repo(Path(f"{BASEDIR}/.git"))
         repo.git.add(".")
         repo.git.commit("-m", f"{COMMIT}")
-        origin = repo.remote('origin')
+        origin = repo.remote("origin")
         origin.push()
         print(f"[{datetime.now().strftime('%H:%M:%S')}] {COMMIT} successfully 🎉")
     except ImportError:
@@ -604,9 +623,10 @@ def git_push(COMMIT):
 def convert_one(ori, delopt, git):
     file_name = os.path.basename(ori).upper()
     yaml_front = frontmatter.load(ori)
-    priv = 0
-    if 'private' in yaml_front.keys() and yaml_front['private'] is True:
-        priv = 1
+    priv = "_notes"
+    if "folder" in yaml_front.keys():
+        priv = yaml_front["folder"]
+        priv=check_folder(priv)
     if delopt is False:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [{file_name}] OPTIONS :\n- UPDATE "
@@ -616,7 +636,7 @@ def convert_one(ori, delopt, git):
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [{file_name}] OPTIONS :\n- PRESERVE"
         )
-    contents = file_convert(ori, 1, priv)
+    contents = file_convert(ori, priv, 1)
     check = file_write(ori, contents, priv)
     if check and not git:
         COMMIT = f"Pushed {file_name.lower()} to blog"
@@ -642,7 +662,7 @@ def convert_all(delopt=False, git=False, force=False, stop_share=0):
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- PRESERVE FILES"
         )
-        new_files, priv = search_share(0,stop_share)
+        new_files, priv = search_share(0, stop_share)
     elif force:
         print(
             f"[{datetime.now().strftime('%H:%M:%S')}] STARTING CONVERT [ALL] OPTIONS :\n- {git_info}\n- FORCE UPDATE"
@@ -687,7 +707,8 @@ def blog():
         "--u",
         "--U",
         help="force update : delete all file and reform.",
-        action="store_true")
+        action="store_true",
+    )
     parser.add_argument(
         "--filepath",
         "--f",
@@ -699,7 +720,12 @@ def blog():
     parser.add_argument(
         "--git", "--g", "--G", help="No commit and no push to git", action="store_true"
     )
-    parser.add_argument('--keep', "--k", help = "Keep deleted file from vault and removed shared file", action="store_true")
+    parser.add_argument(
+        "--keep",
+        "--k",
+        help="Keep deleted file from vault and removed shared file",
+        action="store_true",
+    )
     args = parser.parse_args()
     ori = args.filepath
     delopt = False
@@ -709,11 +735,11 @@ def blog():
     ng = args.git
     if not args.keep:
         delete_not_exist()
-        stop_share=1
+        stop_share = 1
     else:
         stop_share = 0
-    if ori :
-        if os.path.exists(ori): #Share ONE
+    if ori:
+        if os.path.exists(ori):  # Share ONE
             convert_one(ori, delopt, ng)
         else:
             print(f"Error : {ori} doesn't exist.")

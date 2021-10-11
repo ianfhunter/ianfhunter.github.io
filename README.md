@@ -116,10 +116,35 @@ The script work with the frontmatter :
 - `embed: false` : remove the transluction (convert to normal wikilinks)
 - `update: false` : Don't update the file at all. 
 - `current: false` : Don't update the date
-- `private : true` : Use the `_private` folder collection instead of the `_notes` default folder. 
+- `folder` : Use another folder than `_notes`
 
 ## Blog frontmatter options
 - `flux: false` : remove the file from the feed
 - `category` : Add a category for the category page ; `category: false` remove it from this page too.
 - `resume` : Add a resume of the file in the feed. 
 
+### Folder options
+The metadata key `folder` allow to use another folder than `_note`. There is several steps before you can fully use this options :
+1. Create a new folder with the name you want, prefixed with `_` (as `_notes` or `_private`)
+2. Add to the `_config.yml` : 
+   1. collection : 
+```yml
+  private:
+     output: true
+     permalink: /folder_name/:title
+   ```
+   2. defaults
+```yml
+   - scope: 
+       path: ""
+       type: folder_name
+    values: 
+      layout: post
+      content-type: notes
+  ```
+3. Duplicate the `private.md` and rename it with the folder name you want. 
+   1. In this new file, change the line `{%- if page.permalink == "/private/" -%}` for `{%- if page.permalink == "/folder_name/" -%}` 
+   2. Change the `permalink` key with `permalink: /folder_name/` 
+   3. change `{% assign mydocs = site.folder_name | group_by: 'category' %}`
+
+And there is it !

@@ -90,8 +90,9 @@
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
         });
     </script>
-	<script type="text/javascript" src="../assets/js/summary.js"></script>
-
+    {%- if page.title != "Collections" -%}
+	    <script type="text/javascript" src="../assets/js/summary.js"></script>
+    {%- endif -%}
     {%- include contextmenu.html -%}
 	{%- include text-expand.html -%}
 </body>

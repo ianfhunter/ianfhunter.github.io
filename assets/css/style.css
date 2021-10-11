@@ -452,10 +452,13 @@ hr {
 .icon-home,
 .icon-category,
 .icon-projects,
-.icon-rss {
+.icon-rss,
+.icon-collection,
+.icon-tags{
     margin-top: 7px;
     justify-content: center;
     stroke: #555555;
+    display: grid;
 }
 
 .icon-home {
@@ -463,7 +466,11 @@ hr {
 }
 
 .icon-category {
-    margin-left: 21%;
+    margin-left: 10%;
+}
+
+.icon-collection {
+    margin-left: 20%;
 }
 
 .icon-projects {

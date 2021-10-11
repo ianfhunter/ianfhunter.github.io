@@ -6,7 +6,6 @@
 - [Script](#script)
   * [Checking differences](#checking-differences)
   * [Options](#options)
-    + [About the private folder](#about-the-private-folder)
     + [Share all](#share-all)
     + [Share only a file](#share-only-a-file)
   * [How it works](#how-it-works)
@@ -75,9 +74,6 @@ metadata you can:
 The script will bug because **I don't check folder** (It's volontary). In this unique case, you need to rename one of the files. 
 
 ## Options
-### About the private folder
-The private folder create a secondary collection, it prevents file to appear in the search, so it create a sort of "second blog" more secret. To create a "private" file, just use `private: true` in your frontmatter. 
-
 ### Share all
 By adding, in the yaml of your file, the key `share: true`, you allow the script to publish the file. In fact, the script will read all the files in your vault before selecting the ones meeting the condition.
 
