@@ -1,9 +1,9 @@
 ---
-category: false
+category: true
 date: 11-10-2021
-flux: false
-folder: private
-link: https://owlly-house.netlify.app//_private/testing
+flux: true
+folder: school
+link: https://owlly-house.netlify.app/_school/testing
 share: true
 stat: "\U0001F534"
 title: testing

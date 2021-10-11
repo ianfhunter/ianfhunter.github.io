@@ -40,7 +40,9 @@ collections:
     private:
      output: true
      permalink: /private/:title
-
+    school:
+     output: true
+     permalink: /school/:title
 toc:
   max_level: 3
 
@@ -63,6 +65,12 @@ defaults:
       path: ""
       type: private
     values: 
+     layout: post
+     content-type: notes
+  - scope:
+      path: ""
+      type: school
+    values:
      layout: post
      content-type: notes
 # Where things are
