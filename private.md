@@ -4,13 +4,20 @@ title: Private
 permalink: /private/
 content-type: eg
 ---
+<style>
+summary {
+	position: sticky;
+	top: 0;
+	background-color: white;
+}
+</style>
 <main>
 	{%- if page.permalink == "/private/" -%}
 		<h1 style='text-align:center'> MENU </h1>
 		{% assign mydocs = site.private | group_by: 'category' %}
 		{% for cat in mydocs reversed%}
 			{%- if cat.name != 'false' -%} 
-				<details>
+				<details class="second">
 					<summary>{{ cat.name | upcase }}</summary>
 					<ul>
 						{% assign items = cat.items | sort: 'date' | reverse %}

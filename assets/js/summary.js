@@ -1,9 +1,24 @@
-details = document.querySelectorAll("details");
+details = document.querySelectorAll("details.second");
 details.forEach((targetDetail) => {
+    console.log("detail", details)
+    console.log("target", targetDetail)
     targetDetail.addEventListener("click", () => {
         details.forEach((detail) => {
-            if (detail !== targetDetail) {
+            if (detail !== targetDetail && targetDetail.className == "second") {
                 detail.removeAttribute("open");
+                console.log("second")
+            }
+        });
+    });
+});
+
+detailsF = document.querySelectorAll("details.first");
+detailsF.forEach((targetDetailF) => {
+    targetDetailF.addEventListener("click", () => {
+        detailsF.forEach((detailF) => {
+            if (detailF !== targetDetailF && targetDetailF.className == "first") {
+                detailF.removeAttribute("open");
+                console.log("premier")
             }
         });
     });
