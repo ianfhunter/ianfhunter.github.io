@@ -1,16 +1,23 @@
 ---
 layout: post
-title: Fac
+title: Cours
 permalink: /school/
 content-type: eg
 ---
+<style>
+summary {
+	position: sticky;
+	top: 0;
+	background-color: white;
+}
+</style>
 <main>
 	{%- if page.permalink == "/school/" -%}
 		<h1 style='text-align:center'> MENU </h1>
 		{% assign mydocs = site.school | group_by: 'category' %}
 		{% for cat in mydocs reversed%}
 			{%- if cat.name != 'false' -%} 
-				<details>
+				<details class="second">
 					<summary>{{ cat.name | upcase }}</summary>
 					<ul>
 						{% assign items = cat.items | sort: 'date' | reverse %}
