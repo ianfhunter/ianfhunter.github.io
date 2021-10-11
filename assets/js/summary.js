@@ -1,12 +1,9 @@
 details = document.querySelectorAll("details.second");
 details.forEach((targetDetail) => {
-    console.log("detail", details)
-    console.log("target", targetDetail)
     targetDetail.addEventListener("click", () => {
         details.forEach((detail) => {
             if (detail !== targetDetail && targetDetail.className == "second") {
                 detail.removeAttribute("open");
-                console.log("second")
             }
         });
     });
@@ -18,7 +15,6 @@ detailsF.forEach((targetDetailF) => {
         detailsF.forEach((detailF) => {
             if (detailF !== targetDetailF && targetDetailF.className == "first") {
                 detailF.removeAttribute("open");
-                console.log("premier")
             }
         });
     });
@@ -49,10 +45,9 @@ var admo_noblock = function(target) {
             select_html = '.admo-note'
             const replaced = new RegExp(`<p>[!?]{3}ad-${select}`, 'gi')
             const replaceit = html.match(replaced)
-            console.log(html)
+
             for (var j = 0; j < replaceit.length; j++) {
                 html = html.replace(replaceit[j], query.replace('<br>', ''));
-                console.log(html)
             }
         }
         target.innerHTML = html;
