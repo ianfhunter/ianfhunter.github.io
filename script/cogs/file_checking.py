@@ -11,7 +11,7 @@ post = settings.post
 vault = settings.vault
 
 def check_folder(folder_key):
-    path = f"{BASEDIR}/_{folder_key}"
+    path = Path(f"{BASEDIR}/_{folder_key}")
     if os.path.isdir(path):
         return path
     else:

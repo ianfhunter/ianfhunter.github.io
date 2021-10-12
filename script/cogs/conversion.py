@@ -66,6 +66,36 @@ def file_write(file, contents, folder):
                 check.delete_file(file, folder)
             return False
 
+def read_custom():
+    css = open(f"{BASEDIR}/assets/css/custom.css", "r", encoding="utf-8")
+    id = []
+    css_data = css.readlines()
+    for i in css_data:
+        if i.startswith("#"):
+            id.append(i.replace("{\n", "").strip())
+    css.close()
+    return id
+
+def convert_hashtags(final_text):
+    css = read_custom()
+    token = re.findall("#\w+", final_text)
+    token = list(set(token))
+    for i in range(0, len(token)):
+        if token[i] in css:
+            final_text = final_text.replace(token[i], "")
+            IAL = "**" + final_text.strip() + "**{: " + token[i] + "}"
+            final_text = final_text.replace(final_text, IAL)
+        else:
+            IAL = (
+                    "**"
+                    + token[i].replace("#", " ").strip()
+                    + "**{: "
+                    + token[i].strip()
+                    + "}{: .hash}"
+            )
+            final_text = final_text.replace(token[i], IAL, 1)
+    return final_text
+
 def file_convert(file, folder, option=0):
     final = []
     path_folder = str(folder).replace(f"{BASEDIR}", "")
@@ -121,17 +151,7 @@ def file_convert(file, folder, option=0):
             elif re.search("[!?]{3}ad-\w+", final_text):
                 final_text = final_text.replace("  \n", "\n")
             if re.search("#\w+", final_text) and not re.search("`#\w+`", final_text):
-                token = re.findall("#\w+", final_text)
-                token = list(set(token))
-                for i in range(0, len(token)):
-                    IAL = (
-                        "**"
-                        + token[i].replace("#", " ")
-                        + "**{: "
-                        + token[i]
-                        + "}{: .hash}"
-                    )
-                    final_text = final_text.replace(token[i], IAL, 1)
+                final_text = convert_hashtags(final_text)
             elif re.search("\{\: (id=|class=|\.).*\}", final_text):
                 IAL = re.search("\{\: (id=|class=|\.).*\}", final_text)
                 contentIAL = re.search("(.*)\{", final_text)
