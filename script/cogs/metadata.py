@@ -50,7 +50,9 @@ def update_frontmatter(file, folder, share=0):
     metadata = open(file, "r", encoding="utf8")
     meta = frontmatter.load(metadata)
     metadata.close()
-    folder_key = str(folder).replace(f"{BASEDIR}\\_", "")
+    folder_key = str(folder).replace(f"{BASEDIR}", "")
+    folder_key=folder_key.replace(os.sep, '')
+    folder_key=folder_key.replace('_', '')
     if "tag" in meta.keys():
         tag = meta["tag"]
     elif "tags" in meta.keys():
