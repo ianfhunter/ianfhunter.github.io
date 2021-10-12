@@ -298,10 +298,11 @@ hr {
 /* Blogposts: Post-heading, Post-subheading, Post-content, Related Posts*/
 
 .site-heading {
-    border-bottom: 2px solid #f7f7f7;
-    flex: 0 0 20px;
-    align-self: stretch;
-    align-content: flex-end;
+    background-image: url("../../assets/site/header.jpg");
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position-y: -10em;
+    background-size: cover;
 }
 
 .site-heading h4 {
