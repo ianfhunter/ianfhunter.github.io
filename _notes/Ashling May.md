@@ -1,7 +1,7 @@
 ---
 alias: Ashling, Ash
 category: Fiche RP
-date: 02-10-2021
+date: 12-10-2021
 doc: Personnalisé
 genre: PJ
 link: https://owlly-house.netlify.app/notes/Ashling-May
@@ -16,7 +16,8 @@ $~$
 ```dataview  
 table state AS Status  
 FROM [[Ashling May]]  
-  ```  
+  where type = "Fiche"  
+```  
   
 ---  
 # ─────༺ Présentation ༻─────  

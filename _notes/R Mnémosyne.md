@@ -2,12 +2,12 @@
 alias: Mnemosyne, Némo, Nemo, Mnémosyne
 category: Fiche RP
 created: 03-09-2021
-date: 07-10-2021
+date: 12-10-2021
 description: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
 image: Mnémosyne
 link: https://owlly-house.netlify.app/notes/R-Mnémosyne
 share: true
-state: "\U0001F7E2"
+state: "\U0001F534"
 tag:
 - Fiche/PJ
 - RP/Azelyss/Fiche/PJ
@@ -59,8 +59,8 @@ La forme angélique et les pouvoirs liés composent la majeure partie de ses pou
   
 [[Bloqué : Actuellement, cette forme est bloquée et n'est pas utilisable en l'état.::highlight]]   
   
-Issue de sa fusion avec un être informe lors de sa résurrection, Obsius est la part sombre de Mnémosyne.  
-Lorsqu'elle se fait posséder, puisque c'est le seul moyen de débloquer ses pouvoirs, Mnémosyne change physiquement :  
+Issue de sa fusion avec un être informe lors de sa résurrection, [[Obsius]] est la part sombre de Mnémosyne.  
+  Lorsqu'elle se fait posséder, puisque c'est le seul moyen de débloquer ses pouvoirs, Mnémosyne change physiquement :  
   
 - Des écailles sombres apparaissent sur ses joues, cou, jambes et bras.  
 - Des griffes noires et effilées poussent à la place de ses ongles  

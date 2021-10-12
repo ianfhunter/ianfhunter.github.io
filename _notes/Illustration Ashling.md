@@ -1,19 +1,21 @@
 ---
 alias: Illustration
 category: false
-date: 17-09-2021
+date: 12-10-2021
 flux: false
+link: https://owlly-house.netlify.app/notes/Illustration-Ashling
 share: true
 title: Illustration Ashling
+update: true
 ---
 
-[[Ashling May::rmn-transclude]]
-  
+OC:: [[Ashling May\|Ashling]]  
+    
+---  
   
 # 2017  
-![+side](../assets/img/Ref 2017.png)  
-![+left-medium](../assets/img/Ashling hermite.png)  
-![+zoom](../assets/img/Clothes ref.png)  
+![+grid](../assets/img/Ref 2017.png)![+grid](../assets/img/Ashling hermite.png)   
+![+grid](../assets/img/Clothes ref.png)  
   
 ---  
 # 2018  
@@ -24,28 +26,8 @@ title: Illustration Ashling
 ![+zoom](../assets/img/Ref.png)  
   
 # 2020  
-![+left-lg](../assets/img/Unlimited Breaks Point.png)  
-![+right-lg](../assets/img/Ashling_project_nucleus_.png)  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+![+grid](../assets/img/Unlimited Breaks Point.png)   
+![+grid](../assets/img/Ashling_project_nucleus_.png)  
   
 ---  
 # 2021  
@@ -53,10 +35,10 @@ title: Illustration Ashling
   
 ---  
 # Autres  
-![+side-lg](../assets/img/ref1.png)  
-![+left-lg](../assets/img/ref2.png)  
-![-med+right](../assets/img/ref4.png)  
-![](../assets/img/ref3.png)  
+![+grid](../assets/img/ref1.png)  
+![+grid](../assets/img/ref2.png)  
+![+grid](../assets/img/ref4.png)  
+![+grid](../assets/img/ref3.png)  
   
   
 ---  

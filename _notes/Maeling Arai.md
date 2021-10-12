@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 09-10-2021
+date: 12-10-2021
 description: Fiche de Maeling sur Néo-Tokio
 image: Maeling
 link: https://owlly-house.netlify.app/notes/Maeling-Arai
