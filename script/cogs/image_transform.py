@@ -15,10 +15,9 @@ def get_image(image):
             if image in file:
                 return filepath
 
-
-def move_img(line):
-    img_flags = re.search("[\|\+\-](.*)[]{1,2})]", line)
-    if img_flags and not re.search("\-\d+", line):
+def flags_transform(line,flag):
+    img_flags = re.search("[\|\+\-](.*)[]{1,2})]", flag)
+    if img_flags:
         img_flags = img_flags.group(0)
         img_flags = img_flags.replace("|", "")
         img_flags = img_flags.replace("]", "")
@@ -26,27 +25,32 @@ def move_img(line):
         img_flags.replace("(", "")
     else:
         img_flags = ""
-    final_text = re.search("(\[{2}|\().*\.(png|jpg|jpeg|gif)", line)
-    final_text = final_text.group(0)
+    link = re.search("(\[{2}|\().*\.(png|jpg|jpeg|gif)", flag)
+    final_text = link.group(0)
     final_text = final_text.replace("(", "")
     final_text = final_text.replace("%20", " ")
     final_text = final_text.replace("[", "")
     final_text = final_text.replace("]", "")
     final_text = final_text.replace(")", "")
-    image_path = get_image(final_text)
     final_text = os.path.basename(final_text)
-    img_flags = img_flags.replace(final_text, "")
-    img_flags = img_flags.replace("(", "")
+    image_path = get_image(final_text)
     if image_path:
         shutil.copyfile(image_path, f"{img}/{final_text}")
         final_text = f"../assets/img/{final_text}"
-        final_text = f"![{img_flags}]({final_text})"
-        final_text = re.sub(
-            "!?(\[{1,2}|\().*\.(png|jpg|jpeg|gif)(.*)(\]{2}|\))", final_text, line
-        )
+        IAL= f"[{img_flags}]({final_text})"
+        line = line.replace(flag, IAL)
+    return line
+
+def move_img(line):
+    flags = re.search("(\[{2}|\().*\.(png|jpg|jpeg|gif)(\|[-+].*)?\]{2}", line)
+    flags = flags.group().split('!')
+    if len(flags) > 1:
+        for flag in flags:
+            line = flags_transform(line, flag)
     else:
-        final_text = line
-    return final_text
+        flags = flags[0]
+        line = flags_transform(line, flags)
+    return line
 
 
 def excalidraw_convert(line):
