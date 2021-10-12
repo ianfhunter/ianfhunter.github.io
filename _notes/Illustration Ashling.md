@@ -9,12 +9,13 @@ title: Illustration Ashling
 update: true
 ---
 
-OC:: [[Ashling May\|Ashling]]  
+[[Ashling May::rmn-transclude]]
     
+  
 ---  
   
 # 2017  
-![+grid](../assets/img/Ref 2017.png)![+grid](../assets/img/Ashling hermite.png)   
+![+grid](../assets/img/Ref 2017.png)![+grid](../assets/img/Ashling hermite.png)  
 ![+grid](../assets/img/Clothes ref.png)  
   
 ---  
@@ -26,8 +27,7 @@ OC:: [[Ashling May\|Ashling]]
 ![+zoom](../assets/img/Ref.png)  
   
 # 2020  
-![+grid](../assets/img/Unlimited Breaks Point.png)   
-![+grid](../assets/img/Ashling_project_nucleus_.png)  
+![+grid](../assets/img/Unlimited Breaks Point.png)![+grid](../assets/img/Ashling_project_nucleus_.png)  
   
 ---  
 # 2021  
@@ -35,10 +35,8 @@ OC:: [[Ashling May\|Ashling]]
   
 ---  
 # Autres  
-![+grid](../assets/img/ref1.png)  
-![+grid](../assets/img/ref2.png)  
-![+grid](../assets/img/ref4.png)  
-![+grid](../assets/img/ref3.png)  
+![+grid](../assets/img/ref1.png)![+grid](../assets/img/ref2.png)  
+![+grid](../assets/img/ref4.png)![+grid](../assets/img/ref3.png)  
   
   
 ---  
