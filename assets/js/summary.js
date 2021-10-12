@@ -54,4 +54,3 @@ var admo_noblock = function(target) {
     }
 }
 admo_noblock(document.querySelector('.content'))
-

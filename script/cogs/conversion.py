@@ -106,7 +106,7 @@ def file_convert(file, folder, option=0):
             final_text = re.sub("\%{2}(.*)\%{2}", "", final_text)
             final_text = re.sub("^\%{2}(.*)", "", final_text)
             final_text = re.sub("(.*)\%{2}$", "", final_text)
-            if re.search(r"\\U\w+", final_text):
+            if re.search(r"\\U\w+", final_text) and not "Users" in final_text:
                 emojiz = re.search(r"\\U\w+", final_text)
                 emojiz = emojiz.group().strip().replace('"', "")
                 convert_emojiz = (
