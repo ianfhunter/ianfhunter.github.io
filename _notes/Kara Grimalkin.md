@@ -12,6 +12,6 @@ type: Personnage, OC
 univers: FFXIV
 ---
 
-** Mhach**{: #Mhach}{: .hash} ** ChevalierNoir**{: #ChevalierNoir}{: .hash} ** Immortalité**{: #Immortalité}{: .hash}  
+**Mhach**{: #Mhach}{: .hash} **ChevalierNoir**{: #ChevalierNoir}{: .hash} **Immortalité**{: #Immortalité}{: .hash}  
 ![](../assets/img/Kara.png)  
 ![](../assets/img/Pasted image 20210821121957.png)
