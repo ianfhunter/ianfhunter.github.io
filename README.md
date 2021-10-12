@@ -11,8 +11,7 @@
 - [Frontmatter and metadata](#frontmatter-and-metadata)
   * [Script](#script-1)
   * [Blog frontmatter options](#blog-frontmatter-options)
-   + [Folders options](#Folder-options)
-
+- [Custom CSS](#custom-css)
 ---
 
 # Notenote.link
@@ -152,3 +151,16 @@ The metadata key `folder` allow to use another folder than `_note`. There is sev
 And there is it !
 
 **Notes about Private folder** : the private folder doesn't have a page, and doesn't appear in the feed or in search. The only way to access it is with the link (adding `/private` at the end) 
+
+# Custom CSS
+
+You can add custom css in [custom css](assets/css/custom.css). It will be read when you use hashtag to stylize your text according to [ContextualTypography](https://github.com/mgmeyers/obsidian-contextual-typography) and/or [CodeMirror Options](https://github.com/nothingislost/obsidian-codemirror-options).
+
+To add custom tag to customize your text, you need to edit the `custom.css` file with :
+```css
+#tag_name {
+    css_value : css;
+    . . . 
+}
+```
+The script will read the file and change `#tag_name` to `{: .tag_name}`. 
