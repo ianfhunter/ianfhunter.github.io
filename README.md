@@ -164,3 +164,5 @@ To add custom tag to customize your text, you need to edit the `custom.css` file
 }
 ```
 The script will read the file and change `#tag_name` to `{: .tag_name}`. 
+
+Note : The text will be bolded by default, so you can use `font-weight: normal !important` to change that!
