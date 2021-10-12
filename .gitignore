@@ -10,3 +10,5 @@ vendor
 .vscode/
 
 test.py
+
+script/cogs/__pycache__/
