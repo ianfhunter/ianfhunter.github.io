@@ -306,11 +306,19 @@ img[alt*="+grid"] {
 }
 
 img[alt*="+grid"] {
-    max-height: 30vh;
+    max-height: 80vh;
 }
 
 img[alt*="+grid"]:hover {
     transform: scale(1.5);
+}
+img[alt*="+zoom"] {
+    width: var(--defaultwidth);
+
+}
+
+img[alt*="+zoom"]:hover {
+    width:100%;
 }
 
 
