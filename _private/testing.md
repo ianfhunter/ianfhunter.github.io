@@ -9,6 +9,4 @@ stat: "\U0001F534"
 title: testing
 ---
 
-Ta mère la pute borgne ?  
-b	ezz  
-erzerrezr
+INDEX TA MERE
