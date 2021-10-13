@@ -90,7 +90,6 @@ def convert_to_wikilink(line):
     final_text = line
     if re.search("\[(.*)]\((.*)\)", final_text) :
         links=re.search("\[(.*)]\((.*)\)", final_text).group().split()
-        print(links)
         if len(links) > 1:
             for link in links:
                 if not re.search('https?:\/\/', link) or link == '':
