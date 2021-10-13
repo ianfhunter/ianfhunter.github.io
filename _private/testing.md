@@ -9,4 +9,4 @@ stat: "\U0001F534"
 title: testing
 ---
 
-[[testing) [internal 2](Markdown test\|internal links] (testing) [internal 2]]
+[[github1::rmn-transclude]] [[github2::rmn-transclude]]

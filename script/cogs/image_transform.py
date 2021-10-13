@@ -69,31 +69,37 @@ def convert_no_embed(line):
     return final_text
 
 def transform_link(line, link):
-    title = re.search("\[(.*)]", line)
-    
+    title = re.search("\[(.*)]", link)
+    if title:
+        title = title.group(0)
+        title = title.replace("[", '')
+        title = title.replace("]", '')
+    else:
+        title = ""
+    links = re.search("\((.*)\)", link)
+    final_text=links.group(1)
+    final_text = final_text.replace("%20", " ")
+    final_text = final_text.replace(".md", "")
+    IAL = f"[[{final_text}\|{title}]]"
+    line = line.replace(link, IAL)
+    return line
+
 
 def convert_to_wikilink(line):
+    # Space in normal link for markdown link are always %20
     final_text = line
-    if re.search("\[(.*)]\((.*)\)", final_text):
-        links=re.search("\[(.*)]\((.*)\)", final_text).group().split('[')
+    if re.search("\[(.*)]\((.*)\)", final_text) :
+        links=re.search("\[(.*)]\((.*)\)", final_text).group().split()
+        print(links)
         if len(links) > 1:
             for link in links:
-                transform_link(line, link)
-
-    if (
-        not re.search("\[\[", final_text)
-        and re.search("\[(.*)]\((.*)\)", final_text)
-        and not re.search("https", final_text)
-    ):  # link : [name](file#title) (and not convert external_link)
-        title = re.search("\[(.*)]", final_text)
-        title = title.group(1)
-        link = re.search("\((.*)\)", final_text)
-        link = link.group(1)
-        link = link.replace("%20", " ")
-        wiki = f"[[{link.replace('.md', '')}|{title}]] "
-        final_text = re.sub("\[(.*)]\((.*)\)", wiki, final_text)
-
-    return final_text
+                if not re.search('https?:\/\/', link) or link == '':
+                    line = transform_link(line, link)
+        else:
+            links = links[0]
+            if not re.search('https?:\/\/', links):
+                line = transform_link(line, links)
+    return line
 
 
 def transluction_note(line):
