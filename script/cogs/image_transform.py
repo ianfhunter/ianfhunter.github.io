@@ -68,9 +68,18 @@ def convert_no_embed(line):
         final_text = re.sub("#\^(.*)", "]]", final_text)  # Link to block doesn't work
     return final_text
 
+def transform_link(line, link):
+    title = re.search("\[(.*)]", line)
+    
 
 def convert_to_wikilink(line):
     final_text = line
+    if re.search("\[(.*)]\((.*)\)", final_text):
+        links=re.search("\[(.*)]\((.*)\)", final_text).group().split('[')
+        if len(links) > 1:
+            for link in links:
+                transform_link(line, link)
+
     if (
         not re.search("\[\[", final_text)
         and re.search("\[(.*)]\((.*)\)", final_text)
