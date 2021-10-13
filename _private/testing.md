@@ -9,4 +9,4 @@ stat: "\U0001F534"
 title: testing
 ---
 
-[[github1::rmn-transclude]] [[github2::rmn-transclude]]
+Ta mère la pute borgne ?
