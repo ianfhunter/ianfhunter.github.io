@@ -79,6 +79,9 @@ On command-line, you can run `bundle exec jekyll serve` then go to `localhost:40
 
 # Python script
 Having files written in Markdown on Obsidian, I created a python script in order to semi-automatically share selected file, not all file, in my blog. 
+To install it use `pip install YAFPA`
+
+[You can have more information here](https://pypi.org/project/YAFPA/)
 
 ## Requirements
 - [Python](https://www.python.org/)
@@ -89,26 +92,28 @@ Having files written in Markdown on Obsidian, I created a python script in order
 You can install all with `pip install -r requirements.txt`
 
 ## Environment
-You need to create a `.env` in your root folder, with : 
-```
-vault="G:\path\vault\"
-blog="https://your-website.netlify.app/"
-```
+
+The first time you use the script, it will ask you three things :
+- Your vault path (absolute path !)
+- The path of the blog (absolute too !)
+- The link of your blog, as `https://my-awesome-blog.netlify.app/`
+
+The script will be in `$HOME/.YAFPA-env` so you can edit it with VIM/notepad/your hands…
+You can also edit it with `yafpa --config`
 
 # Script
-Usage: `sharing.py  [-h] [--Preserve | --update] [--filepath FILEPATH] [--Git]`
+usage: yafpa [-h] [--preserve | --update] [--filepath FILEPATH] [--git] [--keep] [--config]
 
-Create file in `_notes`, move image in assets, convert to relative path, add share support, and push to git
+Create file in folder, move image in assets, convert to relative path, add share support, and push to git
 
-Optional arguments:
--  `-h`, `--help` : Show this help message and exit  
-- `--Preserve`, `--P` : Don't delete file if already exist  
-- `--update`, `--U` : Force update : delete all file and reform.  
-- `--filepath FILEPATH`, `--F FILEPATH` : Filepath of the file you want to 
-  convert  
-- `--Git`, `--G` : No commit and no push to git (work for github, gitlab...) 
-
-For more information, see [script Readme](script/README.md)
+optional arguments:
+  - `-h, --help`: show this help message and exit
+  - `--preserve, --p, --P` : Don't delete file if already exist
+  - `--update, --u, --U` : force update : delete all file and reform.
+  - `--filepath FILEPATH, --f FILEPATH, --F FILEPATH `: Filepath of the file you want to convert
+  - `--git, --g, --G` : No commit and no push to git
+  - `--keep, --k` : Keep deleted file from vault and removed shared file
+  - `--config, --c` : Edit the config file
 
 # Frontmatter and metadata
 ## Script
@@ -164,5 +169,3 @@ To add custom tag to customize your text, you need to edit the `custom.css` file
 }
 ```
 The script will read the file and change `#tag_name` to `{: .tag_name}`. 
-
-Note : The text will be bolded by default, so you can use `font-weight: normal !important` to change that!
