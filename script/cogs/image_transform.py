@@ -71,18 +71,17 @@ def convert_no_embed(line):
 
 def convert_to_wikilink(line):
     final_text = line
-    if (
-        not re.search("\[\[", final_text)
-        and re.search("\[(.*)]\((.*)\)", final_text)
-        and not re.search("https", final_text)
-    ):  # link : [name](file#title) (and not convert external_link)
-        title = re.search("\[(.*)]", final_text)
-        title = title.group(1)
-        link = re.search("\((.*)\)", final_text)
-        link = link.group(1)
-        link = link.replace("%20", " ")
-        wiki = f"[[{link.replace('.md', '')}|{title}]] "
-        final_text = re.sub("\[(.*)]\((.*)\)", wiki, final_text)
+    if re.search("\[(.*)]\((.*)\)", final_text) :
+        links=re.search("\[(.*)]\((.*)\)", final_text).group().split()
+        if len(links) > 1:
+            for link in links:
+                if not re.search('https?:\/\/', link) or link == '':
+                    line = transform_link(line, link)
+        else:
+            links = links[0]
+            if not re.search('https?:\/\/', links):
+                line = transform_link(line, links)
+    return line
 
     return final_text
 
