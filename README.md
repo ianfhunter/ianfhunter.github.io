@@ -56,6 +56,7 @@ Open an issue to share feedback or propose features. Star the repo if you like i
 Things to modify to make it yours:
 
 - The favicon and profile are here: [assets/site/](assets/site)
+- You can change the header in [assets/site/](assets/site) (don't forget the name) and/or [change this line](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/9d8ae99d867be79a45b5bfbf687e03b95bf8ebd2/assets/css/style.css#L301)
 - The main stuff is in [\_config.yml](_config.yml):
     ```yaml
     title: My obsidian notebook
