@@ -9,4 +9,4 @@ stat: "\U0001F534"
 title: testing
 ---
 
-**INDEX TA MERE**{: #left}
+Update testing from obsidian.
