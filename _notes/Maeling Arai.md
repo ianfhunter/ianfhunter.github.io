@@ -75,4 +75,7 @@ Je n'ai jamais fait attention à mes parent. M'aimait-il ? Je sais qu'ils faisai
   
 $~~~~$ J'avais 3 ans quand j'ai rencontré mon premier fantôme. Je me souviens avoir baraguinée quelque chose à ma mère, qui m'avait observée en haussant un sourcil, mettant l'évènement sur simplement des bêtises d'un enfant de 3 ans.  
   
-Elle fut plus inquiète lorsque que je lui dis, deux ans plus tard, avoir rencontré ma grand-mère, décédée deux jours plus tôt. Cette fois là, ils mirent ça sur la tristesse de perdre quelqu'un. Dans les faits, je n'avais rien ressenti.Lorsque ce fut le tour de mon oncle, à mes 10 ans, ils ne purent trouver d'excuse : j'étais une mage.
+Elle fut plus inquiète lorsque que je lui dis, deux ans plus tard, avoir rencontré ma grand-mère, décédée deux jours plus tôt. Cette fois là, ils mirent ça sur la tristesse de perdre quelqu'un. Dans les faits, je n'avais rien ressenti.Lorsque ce fut le tour de mon oncle, à mes 10 ans, ils ne purent trouver d'excuse : j'étais une mage.  
+  
+  
+$~~~~~~$
