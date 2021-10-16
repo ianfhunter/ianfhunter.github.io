@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 15-10-2021
+date: 16-10-2021
 description: Fiche de Maeling sur Néo-Tokio
 image: Maeling
 link: https://owlly-house.netlify.app/notes/Maeling-Arai
@@ -24,8 +24,8 @@ univers: Néo-Tokio
   
 # ─────༺ Compétence ༻─────  
 **Implants** :   
-- Implants Matriciels : Datajack, Comlink  
-- Interface de contrôle   
+- *Implants Matriciels* : Datajack, Comlink  
+- *Interface de contrôle*  
   
 !!!ad-tip
 **🔥 Nécromancie**{: .title}  
@@ -39,7 +39,7 @@ Maeling est capable de communiquer et de contrôler les morts. Elle peut notamme
 - *Fonderie* : Elle est capable de "réparer" un cadavre, c'est-à-dire soigner ses blessures, sans pour autant le ranimer ou apaiser sa douleur. En vérité, plus elle utilise cette technique, plus le zombie deviendra fou de douleur.   
   
 **Compétences** :   
-- *Carabine* : Maeling s'est spécialisée dans le combat à mi-distance et longue distance et sait utiliser des carabines et fusils de précision.  
+- *Carabine* : Maeling s'est spécialisée dans le combat à mi-distance et longue distance et sait utiliser carabines et fusils de précision.  
   
 # ──────༺ Description ༻──────  
 **Yeux** : Vairon. Le droit est vert, le gauche est bleu.   
@@ -75,7 +75,4 @@ Je n'ai jamais fait attention à mes parent. M'aimait-il ? Je sais qu'ils faisai
   
 $~~~~$ J'avais 3 ans quand j'ai rencontré mon premier fantôme. Je me souviens avoir baraguinée quelque chose à ma mère, qui m'avait observée en haussant un sourcil, mettant l'évènement sur simplement des bêtises d'un enfant de 3 ans.  
   
-Elle fut plus inquiète lorsque que je lui dis, deux ans plus tard, avoir rencontré ma grand-mère, décédée deux jours plus tôt. Cette fois là, ils mirent ça sur la tristesse de perdre quelqu'un. Dans les faits, je n'avais rien ressenti.Lorsque ce fut le tour de mon oncle, à mes 10 ans, ils ne purent trouver d'excuse : j'étais une mage.  
-  
-  
-$~~~~~~$
+Elle fut plus inquiète lorsque que je lui dis, deux ans plus tard, avoir rencontré ma grand-mère, décédée deux jours plus tôt. Cette fois-là, ils mirent ça sur la tristesse de perdre quelqu'un. Dans les faits, je n'avais rien ressenti. Lorsque ce fut le tour de mon oncle, à mes 10 ans, ils ne purent trouver d'excuse : j'étais une mage.
