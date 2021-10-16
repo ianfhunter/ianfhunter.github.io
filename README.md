@@ -1,20 +1,10 @@
-- [Notenote.link](#notenotelink)
-  * [What is this?](#what-is-this-)
-  * [What is different?](#what-is-different-)
-  * [How do I use this?](#how-do-i-use-this-)
-  * [How can I participate?](#how-can-i-participate-)
-  * [How do I customize this for my needs?](#how-do-i-customize-this-for-my-needs-)
-- [Python script](#python-script)
-  * [Requirements](#requirements)
-  * [Environment](#environment)
-- [Script](#script)
-- [Frontmatter and metadata](#frontmatter-and-metadata)
-  * [Script](#script-1)
-  * [Blog frontmatter options](#blog-frontmatter-options)
-- [Custom CSS](#custom-css)
-- [Obsidian Integration](#obsidian)
----
 
+[![GitHub license](https://img.shields.io/github/license/Mara-Li/yet-another-free-publish-alternative)](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/master/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/Mara-Li/yet-another-free-publish-alternative)](https://github.com/Mara-Li/yet-another-free-publish-alternative/network) ![GitHub top language](https://img.shields.io/github/languages/top/mara-li/yet-another-free-publish-alternative)
+![PyPI](https://img.shields.io/pypi/v/YAFPA?label=YAFPA)
+<p align="center"><a href="https://github.com/Mara-Li/YAFPA-python">Powerfull this template with YAFPA</a></p>
+
+---
 # Notenote.link
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7b37d412-1240-44dd-8539-a7001465b57a/deploy-status)](https://app.netlify.com/sites/owlly-house/deploys)
