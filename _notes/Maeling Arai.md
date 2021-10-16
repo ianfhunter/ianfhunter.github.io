@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 16-10-2021
+date: 17-10-2021
 description: Fiche de Maeling sur Néo-Tokio
 image: Maeling
 link: https://owlly-house.netlify.app/notes/Maeling-Arai
@@ -75,4 +75,19 @@ Je n'ai jamais fait attention à mes parent. M'aimait-il ? Je sais qu'ils faisai
   
 $~~~~$ J'avais 3 ans quand j'ai rencontré mon premier fantôme. Je me souviens avoir baraguinée quelque chose à ma mère, qui m'avait observée en haussant un sourcil, mettant l'évènement sur simplement des bêtises d'un enfant de 3 ans.  
   
-Elle fut plus inquiète lorsque que je lui dis, deux ans plus tard, avoir rencontré ma grand-mère, décédée deux jours plus tôt. Cette fois-là, ils mirent ça sur la tristesse de perdre quelqu'un. Dans les faits, je n'avais rien ressenti. Lorsque ce fut le tour de mon oncle, à mes 10 ans, ils ne purent trouver d'excuse : j'étais une mage.
+Elle fut plus inquiète lorsque que je lui dis, deux ans plus tard, avoir rencontré ma grand-mère, décédée deux jours plus tôt. Cette fois-là, ils mirent ça sur la tristesse de perdre quelqu'un. Dans les faits, je n'avais rien ressenti. Lorsque ce fut le tour de mon oncle, à mes 10 ans, ils ne purent trouver d'excuse : j'étais une mage.  
+Mon œil gauche avait changé de couleur.  
+Je ne sais pas quand il a changé, ou quand on a commencé à le remarquer. Mais cela s'est fini quand j'avais une douzaine d'années, et que je commençais réellement mes cours dans une école spécifique pour mage.  
+J'étais totalement indifférente à mon nouveau statut comme j'étais indifférente à tout.   
+  
+Parfois, je ne saurai dire que c'était car j'étais seule la majorité du temps, ou si c'était à cause de ma Vue, les autres élèves se défoulaient sur moi. Je n'ai jamais vraiment réagi, sauf un jour. Je ne saurai dire pourquoi.  
+Nous étions dans le gymnase. Un fantôme, ancien sportif, m'avais pris en affection. Il m'encourageait à répondre à ceux qui braillait, mais je n'en avais cure. Mais le bruit… Le bruit m'agaçait.  
+  
+Je me retournais.   
+Je ne sais pas comment cela s'est vraiment déroulée, mais j'ai appelé le fantôme. Il voulait tant en découdre. Nous avons fusionné, et, pendant quelque minute, j'ai senti autre chose dans ma peau, mes muscles. Une autre force, une connaissance, qui n'était pas la mienne.  
+  
+Alors je l'ai frappé.  
+  
+Suffisamment pour qu'il me laisse tranquille. Et que tout le monde me laisse tranquille.  
+  
+$~~~~$ Comme je ne ressentais rien,
