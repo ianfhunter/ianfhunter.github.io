@@ -1,9 +1,9 @@
 ---
-category: Autres
+category: false
 created: 17-10-2021
 date: 17-10-2021
 flux: false
-link: https://owlly-house.netlify.app/notes/Tree.txt
+link: https://owlly-house.netlify.app/notes/Tree
 obsidianUIMode: preview
 resume: My tree folder
 share: true
