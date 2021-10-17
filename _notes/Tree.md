@@ -7,7 +7,7 @@ link: https://owlly-house.netlify.app/notes/Tree.txt
 obsidianUIMode: preview
 resume: My tree folder
 share: true
-title: Tree.txt
+title: Tree
 ---
 
 ```  
