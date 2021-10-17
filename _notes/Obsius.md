@@ -10,6 +10,8 @@ type: info
 univers: Azelyss
 ---
 
+→ Lien : [[R Mnémosyne\|Mnémosyne]]  
+    
 Obsius est un être d'énergie pure et en permanence assoiffé de cette énergie. Sans de conscience propre, il a vécu le plus clair de sa "vie" à absorber l'énergie qui se dégage d'une personne lorsqu'elle meurt, ce qui la conduit à coller les monstres et les guerres.  
 Totalement invisible, et inoffensifs pour les vivants, personne n'a découvert son existence jusqu'à que, par hasard, il tente d'absorber l'énergie de Mnémosyne à sa mort.   
 Cependant, ce qu'il n'avait pas calculé était que Mnémosyne n'était pas tout à fait morte : il a donc absorbé l'ange entièrement.   
