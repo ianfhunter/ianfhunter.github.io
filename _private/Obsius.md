@@ -3,7 +3,7 @@ category: Azelyss
 date: 17-10-2021
 description: (Azelyss) Description de Obsius
 folder: private
-link: https://owlly-house.netlify.app/notes/Obsius
+link: https://owlly-house.netlify.app/private/Obsius
 name: Obsius
 share: true
 title: Obsius
