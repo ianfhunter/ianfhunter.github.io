@@ -1,6 +1,6 @@
 ---
 category: Fiche RP
-date: 17-10-2021
+date: 19-10-2021
 description: Fiche de Maeling sur Néo-Tokio
 image: Maeling
 link: https://owlly-house.netlify.app/notes/Maeling-Arai
@@ -90,4 +90,7 @@ Alors je l'ai frappé.
   
 Suffisamment pour qu'il me laisse tranquille. Et que tout le monde me laisse tranquille.  
   
-$~~~~$ Comme je ne ressentais rien,
+$~~~~$ Comme je ne ressentais rien, j'aurai très bien pu travailler comme mercenaire ou tueuse à gage. Mais… Cela ne m'intéressait pas. Je ne saurai pas dire pourquoi. Peut-être la perspective de mourir pour rien ? Ou que l'argent ne me faisait ni chaud ni froid ? Je ne saurai dire.  
+Dans tous les cas, quand vint l'âge de choisir une voie, j'ai choisi la mienne : quitte à parler avec les morts, autant que cela serve.  
+  
+J'ai plus ou moins fait mon bonhomme de chemin en solitaire, dans l'académie de police, et maintenant, je discute avec les morts pour résoudre des meurtres et autres affaire sordides.
