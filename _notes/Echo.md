@@ -1,6 +1,6 @@
 ---
 category: Azelyss
-date: 12-10-2021
+date: 21-10-2021
 description: (AZELYSS) Note diverses sur le groupe de l'Echo
 link: https://owlly-house.netlify.app/notes/Echo
 name: Echo
@@ -50,10 +50,11 @@ Au final, c'est une organisation très mêlée à la vie humaine, faisant presqu
 6. **Apprenti**{: #Apprenti}{: .hash} : Ce grade est réservé aux enfants uniquement, souvent les enfants des membres de l'organisation, ou des orphelins pris sous leur aile.   
   
 **Membres actifs** :   
-* [[Obsius]] : **Gardien**{: #Gardien}{: .hash}   
+* [[R Mnémosyne|Mnémosyne]] : **Gardien**{: #Gardien}{: .hash}   
 * [[Hayleen May]] : **Gardien**{: #Gardien}{: .hash}   
 * [[Salem]] : **Chevalier**{: #Chevalier}{: .hash}   
 * [[Zéphyr]] : **Paladin**{: #Paladin}{: .hash}   
+* [[Korgys]] : **Gardien**{: #Gardien}{: .hash}  *(@Koara)*  
   
 **Membres retirés** :  
-- [[Capricorne]] : Retirée, ancienne **Égide**{: #Égide}{: .hash}
+- [[Capricorne]] : Retirée, ancienne **Égide**{: #Égide}{: .hash} *(@Koara)*
