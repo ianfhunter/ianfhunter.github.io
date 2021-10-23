@@ -8,3 +8,6 @@ obsidianUIMode: preview
 share: true
 title: Testing
 ---
+
+[[Pouvoir|Pouvoir]]
+[[jexistepas]]

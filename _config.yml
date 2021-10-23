@@ -18,6 +18,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-toc
   - jekyll-spaceship
+  - jekyll-wikilinks
+  - jekyll-graph
 
 markdown: kramdown
 
@@ -133,3 +135,43 @@ jekyll-spaceship:
     css:
       class: emoji
     src: https://github.githubassets.com/images/icons/emoji/
+
+wikilinks:
+  attributes:
+    enabled: true
+  css:
+    exclude: []
+    name:
+      wiki: 'wiki-link'
+      web: 'web-link'
+      invalid_wiki: 'invalid-wiki-link'
+      embed_container: 'embed-container'
+      embed_title: 'embed-title'
+      embed_content: 'embed-content'
+      embed_link: 'embed-wiki-link'
+      embed_image_container: 'embed-image-container'
+      embed_image: 'embed-image'
+  enabled: true
+  exclude: []
+
+graph:
+  enabled: true
+  exclude: []
+  assets_path: "/assets"
+  scripts_path: "/assets/js"
+  tree:
+    enabled: true
+    force:
+      charge:
+      strength_x:
+      x_val:
+      strength_y:
+      y_val:
+  net_web:
+    enabled: true
+    force:
+      charge:
+      strength_x:
+      x_val:
+      strength_y:
+      y_val:
