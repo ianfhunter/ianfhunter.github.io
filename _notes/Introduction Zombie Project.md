@@ -4,14 +4,13 @@ created: 26-10-2021
 date: 26-10-2021
 description: Introduction mini RP Resident Evil
 flux: true
-link: https://owlly-house.netlify.app/notes/Introduction
 obsidianUIMode: source
 share: true
 title: Introduction Zombie Project
 ---
 
-Serveur : https://discord.gg/qGKFutdY4R  
-  
+Serveur : [https://discord.gg/qGKFutdY4R](https://discord.gg/qGKFutdY4R)
+    
 ---  
 *La tempête faisait rage, le vent s'était levée deux heures plus tôt et de haute et lourde vague frappait les digues de la petite ville portuaire.   
 La nuit noire était tombée depuis longtemps, plongeant la ville dans un silence apocalyptique.   
