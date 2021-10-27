@@ -10,6 +10,6 @@ share: true
 title: Illustration (Némo)
 ---
 
-![[Némo & Grimmerald.png|Medhas+grid]] ![[Némo — Dolce 1.png|Dolce+grid]]  
-![[Némo guirlande Dolce.png|Dolce+grid]] ![[Némo portrait Dolce.png|Dolce+grid]]  
-![[Némo half dolce.png|Dolce+grid]]
+![Medhas+grid](../assets/img/Némo & Grimmerald.png)![Dolce+grid](../assets/img/Némo — Dolce 1.png)  
+![Dolce+grid](../assets/img/Némo guirlande Dolce.png)![Dolce+grid](../assets/img/Némo portrait Dolce.png)  
+![Dolce+grid](../assets/img/Némo half dolce.png)
