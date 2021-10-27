@@ -1,7 +1,7 @@
 ---
 alias: Hayleen, Hayleen May
 category: Fiche RP
-date: 26-10-2021
+date: 27-10-2021
 description: (Azelyss) Fiche de personnage de Hayleen May, une élève demi-démone.
 genre: PJ
 image: Hayleen_portrait
@@ -22,8 +22,8 @@ From [[R Hayleen May]] or [[Hayleen May]]
 ```  
 ---  
   
-<h1 align="center"><a href="[https://docs.google.com/document/d/1bGOITC8zoes1RLDj6ybWDtKiszTnBq5jZe1icx6itnI/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>](https://docs.google.com/document/d/1bGOITC8zoes1RLDj6ybWDtKiszTnBq5jZe1icx6itnI/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>)
-    
+<h1 align="center"><a href="https://docs.google.com/document/d/1bGOITC8zoes1RLDj6ybWDtKiszTnBq5jZe1icx6itnI/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>  
+  
 # IDENTITÉ  
 ![+side](../assets/img/Hayleen_portrait.png)  
 **Prénom et nom :** Hayleen May  
