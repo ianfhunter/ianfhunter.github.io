@@ -1,7 +1,7 @@
 ---
 alias: Illustration
 category: false
-date: 27-10-2021
+date: 29-10-2021
 flux: false
 share: true
 title: Illustration (Hayleen)
@@ -9,10 +9,9 @@ type: Index
 univers: Azelyss
 ---
 
-OC:: [[R Hayleen May]]  
+OC:: [[(Fiche) Hayleen May]]  
     
-![](../assets/img/Hayleen May Portrait Gabrioche.jpeg)  
-![](https://lh6.googleusercontent.com/rzSmM8e1pxHowh8iu74khSmuoa1aaWspZbHY3vq9qcfUGrrlylAMLqHMvY84lkailKvWQvIgPYr_hQh4Ac4f6Bx0Xgmp-cY-fevxSDHrHXel8o3AiBEQhCup5jIklBDg_1RNxV_I)  
-  ![](https://lh5.googleusercontent.com/YGkLl1TAv5q7Z5DXwwNlFJwuAjUUVv217w6Nd9uygb-fkhd4GZkXiqC25wy5Ehpr7tW1rwqiZlnLGaNL7vFiKgMflX-ILFLfJv2Dk0J8ImFEimxJs0ufmTOJX44LiddjGQdGSsdM)  
-  ![](../assets/img/Hayleen.png)  
-![](../assets/img/Hayleen — Medhas.png)
+![Gabrioche+grid](../assets/img/Hayleen May Portrait Gabrioche.jpeg)  
+  
+![Perseith+grid](../assets/img/COMMISSION_MARA_PP.png)![Perseith+grid](../assets/img/COMMISSION_FB_MARA.png)  
+![Mara+grid](../assets/img/Hayleen.png)![Medhas+grid](../assets/img/Hayleen — Medhas.png)

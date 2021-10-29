@@ -1,10 +1,11 @@
 ---
 alias: Hayleen, Hayleen May
 category: Fiche RP
-date: 27-10-2021
+date: 29-10-2021
 description: (Azelyss) Fiche de personnage de Hayleen May, une élève demi-démone.
 genre: PJ
 image: Hayleen_portrait
+link: https://owlly-house.netlify.app/notes/R-Hayleen-May
 share: true
 state: "\U0001F7E2"
 tag:
@@ -17,7 +18,7 @@ univers: Azelyss
 
 ```dataview  
 List  
-From [[R Hayleen May]] or [[Hayleen May]]  
+From [[(Fiche) Hayleen May]] or [[Hayleen May]]  
   Where !contains(type, "index")  
 ```  
 ---  
@@ -131,6 +132,7 @@ C’est à partir de là qu’elle apprend pour son père, et qu’elle se déci
 L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen en tant qu’espionne, car ils se doutent que quelque chose s’y trafique… Et ils veulent savoir quoi.   
   
 ## Relation   
+  
   
 [[Hayleen May::rmn-transclude]]
     

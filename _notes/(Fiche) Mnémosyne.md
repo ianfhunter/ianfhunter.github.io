@@ -2,9 +2,10 @@
 alias: Mnemosyne, Némo, Nemo, Mnémosyne
 category: Fiche RP
 created: 03-09-2021
-date: 27-10-2021
+date: 29-10-2021
 description: Fiche de Mnémosyne, ange déchue, surveillante dans l'Académie Azelyss.
 image: Mnémosyne
+link: https://owlly-house.netlify.app/notes/R-Mnémosyne
 share: true
 state: "\U0001F534"
 tag:
@@ -19,8 +20,9 @@ univers: Azelyss
   
 ```dataview  
 LIST  
-FROM [[R Mnémosyne]] or [[Mnémosyne]]  
-  ```  
+FROM [[(Fiche) Mnémosyne]] or [[Mnémosyne]]  
+  WHERE !contains(type, "Index")  
+```  
 ---  
 ![+side](../assets/img/Mnémosyne.png)  
 **Prénom et nom** : Mnémosyne  
@@ -147,6 +149,8 @@ Notons : elle ne porte pas de lunettes de soleil, puisque cela la gêne fortemen
 **Style vestimentaire** : Elle a un style plutôt décontracté, presque sportif. Elle apprécie les bottines, les longs manteaux en cuir souples, les pulls, mais aussi les pantalons cargo ou les jupes souples. Cela dit, puisqu'elle est aveugle, elle ne fait pas vraiment attention à son apparence.   
 Généralement, les couleurs qu'elle portera seront plutôt neutre, type marron, beige, voire bordeaux.   
   
+→ [[Illustration (Némo)\|Illustration]]  
+    
 # Histoire  
   
 \[Guerre des Anges]  
