@@ -7,5 +7,3 @@ obsidianUIMode: preview
 share: true
 title: Testing
 ---
-
-Testing mobileyihiboff offbuvvjjxbrognfog grog g
