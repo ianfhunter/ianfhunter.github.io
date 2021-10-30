@@ -8,7 +8,4 @@ share: true
 title: Testing
 ---
 
-Testing mobile  
-Testing rognrprt  
-Testing3  
-Testing 90
+Testing mobile
