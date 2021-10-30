@@ -1,16 +1,18 @@
 ---
 category: Roleplay
 created: 26-10-2021
-date: 27-10-2021
+date: 30-10-2021
 description: Info sur le mini rp Resident Evil
 flux: true
-obsidianUIMode: source
+obsidianUIMode: preview
 share: true
 title: Informations
 ---
 
 [Serveur](https://discord.gg/qGKFutdY4R)  
-  Lieu : Windport — Côte West des USA  
+    
+  
+Lieu : Windport — Côte West des USA  
 Météo : Un typhon est en cours   
 Timeline : Une semaine après la dispersion initiale du virus.  
 Cause : Inconnue  
