@@ -7,3 +7,5 @@ obsidianUIMode: preview
 share: true
 title: Testing
 ---
+
+It's a recorded video of YAFPA with a-shell and Working copy.
