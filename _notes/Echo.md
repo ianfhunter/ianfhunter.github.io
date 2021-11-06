@@ -41,7 +41,7 @@ Au final, c'est une organisation très mêlée à la vie humaine, faisant presqu
 6. **Apprenti**{: #Apprenti}{: .hash} : Ce grade est réservé aux enfants uniquement, souvent les enfants des membres de l'organisation, ou des orphelins pris sous leur aile.   
   
 **Membres actifs** :   
-* [[R Mnémosyne|Mnémosyne]] : **Gardien**{: #Gardien}{: .hash}   
-* [[30. Références/31. Archétype/Hayleen May/Hayleen May|Hayleen]] : **Gardien**{: #Gardien}{: .hash}   
+* [[Mnémosyne]] : **Gardien**{: #Gardien}{: .hash}   
+* [[Hayleen May]] : **Gardien**{: #Gardien}{: .hash}   
 * [[Salem]] : **Chevalier**{: #Chevalier}{: .hash}   
 * [[Zéphyr]] : **Paladin**{: #Paladin}{: .hash}
