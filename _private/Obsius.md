@@ -1,6 +1,6 @@
 ---
 category: Azelyss
-date: 29-10-2021
+date: 06-11-2021
 description: (Azelyss) Description de Obsius
 folder: private
 name: Obsius
@@ -10,7 +10,7 @@ type: info
 univers: Azelyss
 ---
 
-→ Lien : [[(Fiche) Mnémosyne\|Mnémosyne]]  
+→ Lien : [[20. Projet RP/23. Projet Raudhr/20. Fiches/Mnémosyne/Mnémosyne\|Mnémosyne]]  
     
 Obsius est un être d'énergie pure et en permanence assoiffé de cette énergie. Sans de conscience propre, il a vécu le plus clair de sa "vie" à absorber l'énergie qui se dégage d'une personne lorsqu'elle meurt, ce qui la conduit à coller les monstres et les guerres.  
 Totalement invisible, et inoffensifs pour les vivants, personne n'a découvert son existence jusqu'à que, par hasard, il tente d'absorber l'énergie de Mnémosyne à sa mort.   

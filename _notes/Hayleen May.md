@@ -1,30 +1,19 @@
 ---
 alias: Hayleen, Hayleen May
 category: Fiche RP
-date: 29-10-2021
-description: (Azelyss) Fiche de personnage de Hayleen May, une élève demi-démone.
-genre: PJ
+created: 05-11-2021
+date: 06-11-2021
+description: Références pour Hayleen May
+flux: true
 image: Hayleen_portrait
-link: https://owlly-house.netlify.app/notes/R-Hayleen-May
+link: https://owlly-house.netlify.app/notes/Hayleen-May
+obsidianUIMode: source
 share: true
-state: "\U0001F7E2"
-tag:
-- RP/Azelyss/Fiche/PJ
-- RP/Azelyss/Étudiant
+tag: None
 title: Hayleen May
-type: OC, Fiche
-univers: Azelyss
+univers: ❌
 ---
 
-```dataview  
-List  
-From [[(Fiche) Hayleen May]] or [[Hayleen May]]  
-  Where !contains(type, "index")  
-```  
----  
-  
-<h1 align="center"><a href="https://docs.google.com/document/d/1bGOITC8zoes1RLDj6ybWDtKiszTnBq5jZe1icx6itnI/edit?usp=sharing">FICHE GOOGLE DOC</a></h1>  
-  
 # IDENTITÉ  
 ![+side](../assets/img/Hayleen_portrait.png)  
 **Prénom et nom :** Hayleen May  
@@ -33,8 +22,7 @@ From [[(Fiche) Hayleen May]] or [[Hayleen May]]
 **Âge :** 23 ans  
 **Date de naissance :** 15 août   
 **Race :** Sorcière démone  
-**Maison :** Chimère  
-**Statut :** Élève  
+  
   
 # Capacités  
 #### Pouvoirs et attributs  
@@ -55,7 +43,7 @@ En outre, en plus de pouvoir invoquer des objets, elle peut incanter pour renfor
 - Pour le moment, elle ne peut pas invoquer plus de deux objets à la fois.  
   
 **Circuits magiques** :  Les circuits magiques sont un deuxième système veineux renforçant la magie et le corps d’Hayleen. Cependant, ils ont tendance à chauffer lorsqu’elle les utilise. A partir d’un certain degré d’utilisation, la magie d’Hayleen est trop renforcée et lui échappe, ce qui aboutit généralement à des explosions.  
-Ces circuits ont été gravé à sa naissance ou peu après par   
+Ces circuits ont été gravé à sa naissance ou peu après par sa mère.  
   
 # Mental  
 ## Personnalité   
@@ -90,7 +78,6 @@ Elle adopte le nom de Grimalkin lors de “son passage à l’âge adulte”, bi
 - Musique : [[Joue du violoncelle::highlight]]   
 - La lecture  
   
-  
 # Physique  
   
 →  [[Illustration (Hayleen)\|Illustration]]  
@@ -114,28 +101,6 @@ Sinon, pour ses vêtements, elle est du genre à préférer les trucs proches du
 - Sa magie est dorée  
 **Style vestimentaire** : Plutôt rock et naturel.  
   
-# Élément biographique  
-## Histoire  
-Lorsque l’on parle d’Hayleen, on doit surtout parler de sa naissance.   
-Sa mère était une sorcière, liée par un pacte avec un démon, qui est tombée amoureuse de ce dernier, un fin manipulateur qui ne souhaitait en réalité qu’une descendance puissante. Les sorcières démones n’étant que des chimères, des hybrides détestées particulièrement par le Coven des May, le démon a décidé de l’abandonner et de dévoiler son existence. Ses dernières, évidemment, ont assassiné la mère, mais n'ont pas trouvé la petite. En effet, en ayant compris ce qui se passait, elle a protégé Hayleen avec une puissante magie, et Salem l’a récupéré avant que les sorcières la découvrent.  
-  
-Hayleen grandit donc en sachant que son père a trahi sa mère, et dans un petit village reculé en Italie, où vivent d’autres “chimères” et surtout “hors-la-loi” : des personnes rejetées de partout ayant fini par fonder leur propre communauté...   
-Elle prend le nom de sa mère, mais ne l’utilise que rarement.   
-  
-Salem, un démon donc, l'entraîne tout au long de sa jeunesse et, lors de ses seize ans, lui fait faire son rite de passage à l’âge adulte. Le rite, contrairement à ceux des sorcières démonistes, ne constituaient pas par un premier pacte démoniaque, mais à retirer les sceaux qui bloquait ses circuits magiques.  
-Ces derniers sont normalement extrêmement toxiques, mais la mère d’Hayleen, durant sa grossesse, a réussi à transmettre les siens… Sans faire une fausse couche, de manière évidente, grâce à ses sceaux.  
-Elle adopta le surnom de Grimalkin, un mot d’argot signifiant “Chat noir” et qui, par extension, a fini par simplement signifier “Sorcière”.   
-   
-Hayleen continue de grandir et de s'entraîner avec Salem, qui finit par l’introduire au sein d’une Organisation de protection des Marginaux (souvent des Monstres ne pouvant pas se défendre), et protéger les humains des Marginaux trop violents et dangereux, nommée “Écho”. Sans évidemment dévoiler leur existence. Une paille.  
-C’est à partir de là qu’elle apprend pour son père, et qu’elle se décide de se lancer dans une quête personnelle pour mettre fin à ses machinations.   
-  
-L’Organisation finit par entendre parler de l’Académie, et y envoie Hayleen en tant qu’espionne, car ils se doutent que quelque chose s’y trafique… Et ils veulent savoir quoi.   
-  
-## Relation   
-  
-  
-[[Hayleen May::rmn-transclude]]
-    
 # Divers  
 **Habitudes :**  
 - Du Kendo le matin  

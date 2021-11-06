@@ -1,10 +1,9 @@
 ---
 category: Azelyss
-date: 12-10-2021
+date: 06-11-2021
 description: (Azelyss) Fiche référence de Zéphyr, une nymphe.
 genre: PNJ
 image: Zephyr
-link: https://owlly-house.netlify.app/notes/Zéphyr
 name: Zéphyr
 share: true
 title: Zéphyr
@@ -54,5 +53,5 @@ univers: Azelyss
 ---  
 # ─────༺ Relation ༻──────  
 - Ami / Ex/Meuf de [[Salem]]  
-  - Maître en magie de [[Hayleen May]]  
+  - Maître en magie de [[Archive/Univers/Azelyss/Hayleen May]]  
   - Membre de l'[[Echo]] **Chevalier**{: #Chevalier}{: .hash}

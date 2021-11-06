@@ -1,21 +1,21 @@
 ---
 category: Roleplay
 created: 26-10-2021
-date: 30-10-2021
+date: 06-11-2021
 description: Info sur le mini rp Resident Evil
 flux: true
 obsidianUIMode: preview
 share: true
 title: Informations
+univers: Resident Evil
 ---
 
 [Serveur](https://discord.gg/qGKFutdY4R)  
     
-  
-Lieu : Windport — Côte West des USA  
-Météo : Un typhon est en cours   
-Timeline : Une semaine après la dispersion initiale du virus.  
-Cause : Inconnue  
+<u>Lieu</u> : Windport — Côte West des USA  
+<u>Météo</u> : Un typhon est en cours   
+<u>Timeline</u> : Une semaine après la dispersion initiale du virus.  
+<u>Cause</u> : Inconnue  
   
 ---  
 L'univers est basé sur Resident Evil 2 et 3. Il se déroule autour de la timeline du 2.  
@@ -31,4 +31,5 @@ Il est tout à fait possible d'introduire des éléments de différents univers,
   
 Il est possible de faire des personnages mutants.  
   
-→ [[Introduction Zombie Project\|Introduction]]
+---  
+[[Introduction Zombie Project::rmn-transclude]]

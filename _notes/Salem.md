@@ -1,9 +1,8 @@
 ---
 category: Azelyss
-date: 02-10-2021
+date: 06-11-2021
 description: (AZELYSS) Élement de références pour le personnage de Salem
 image: Salem
-link: https://owlly-house.netlify.app/notes/Salem
 race: Démon
 share: true
 state: "\U0001F5D2️"
@@ -51,7 +50,7 @@ Membre de l'Écho depuis sa fondation, il a décidé de maintenir le statu quo a
   
 ---  
 # ──────༺ Relations ༻──────  
-- Père adoptif de [[Hayleen May]]  
+- Père adoptif de [[Archive/Univers/Azelyss/Hayleen May]]  
   - Ancien allié de [[Iblis]]  
   - Ex-Ami-Mec de [[Zéphyr]]  
   - Chef [[Echo]] : Chevalier  

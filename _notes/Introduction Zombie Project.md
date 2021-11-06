@@ -1,12 +1,13 @@
 ---
 category: Roleplay
 created: 26-10-2021
-date: 27-10-2021
+date: 06-11-2021
 description: Introduction mini RP Resident Evil
-flux: true
-obsidianUIMode: source
+flux: false
+obsidianUIMode: preview
 share: true
 title: Introduction Zombie Project
+univers: Resident Evil
 ---
 
 [Serveur](https://discord.gg/qGKFutdY4R)  

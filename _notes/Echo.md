@@ -1,8 +1,7 @@
 ---
 category: Azelyss
-date: 21-10-2021
+date: 06-11-2021
 description: (AZELYSS) Note diverses sur le groupe de l'Echo
-link: https://owlly-house.netlify.app/notes/Echo
 name: Echo
 share: true
 title: Echo
@@ -51,7 +50,7 @@ Au final, c'est une organisation très mêlée à la vie humaine, faisant presqu
   
 **Membres actifs** :   
 * [[R Mnémosyne|Mnémosyne]] : **Gardien**{: #Gardien}{: .hash}   
-* [[Hayleen May]] : **Gardien**{: #Gardien}{: .hash}   
+* [[Archive/Univers/Azelyss/Hayleen May]] : **Gardien**{: #Gardien}{: .hash}   
 * [[Salem]] : **Chevalier**{: #Chevalier}{: .hash}   
 * [[Zéphyr]] : **Paladin**{: #Paladin}{: .hash}   
 * [[Korgys]] : **Gardien**{: #Gardien}{: .hash}  *(@Koara)*  
