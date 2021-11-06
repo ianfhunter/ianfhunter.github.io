@@ -1,22 +1,14 @@
 ---
-category: Azelyss
+category: Roleplay
 date: 06-11-2021
-description: (AZELYSS) Note diverses sur le groupe de l'Echo
+description: Note diverses sur le groupe de l'Echo
 name: Echo
 share: true
 title: Echo
 type: Notes, Informations
-univers: Azelyss
+univers: ❌
 ---
 
-```dataview  
-LIST  
-FROM [[Echo]]  
-  WHERE !contains(file.name, "!")  
-```  
-  
----  
-  
 L'Écho est une organisation secrète dont on ne connait pas la date de création. Certains racontent que le groupe aurait été fondé il y a mille an, mais les sources sont rares ; encore plus sur les fondateurs ou la raison de sa fondation.  
   
 Très active jusqu'au milieu du XXe Siècle, l'organisation a été quasiment détruite lors de la seconde guerre mondiale, dans une guerre secrète contre d'autres groupes aujourd'hui disparus.  
@@ -50,10 +42,6 @@ Au final, c'est une organisation très mêlée à la vie humaine, faisant presqu
   
 **Membres actifs** :   
 * [[R Mnémosyne|Mnémosyne]] : **Gardien**{: #Gardien}{: .hash}   
-* [[Archive/Univers/Azelyss/Hayleen May]] : **Gardien**{: #Gardien}{: .hash}   
+* [[30. Références/31. Archétype/Hayleen May/Hayleen May|Hayleen]] : **Gardien**{: #Gardien}{: .hash}   
 * [[Salem]] : **Chevalier**{: #Chevalier}{: .hash}   
-* [[Zéphyr]] : **Paladin**{: #Paladin}{: .hash}   
-* [[Korgys]] : **Gardien**{: #Gardien}{: .hash}  *(@Koara)*  
-  
-**Membres retirés** :  
-- [[Capricorne]] : Retirée, ancienne **Égide**{: #Égide}{: .hash} *(@Koara)*
+* [[Zéphyr]] : **Paladin**{: #Paladin}{: .hash}

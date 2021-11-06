@@ -1,17 +1,12 @@
 ---
-category: Azelyss
+category: Fiche RP
 date: 06-11-2021
-description: (AZELYSS) Élement de références pour le personnage de Salem
+description: Élement de références pour le personnage de Salem
 image: Salem
-race: Démon
 share: true
-state: "\U0001F5D2️"
-tag:
-- RP/Azelyss/Fiche/PNJ
-- RP/Azelyss/Relation
 title: Salem
 type: Personnages, PNJ, Notes, Relation
-univers: Azelyss
+univers: ❌
 ---
 
 # ─────༺ Présentation ༻─────  
@@ -50,8 +45,6 @@ Membre de l'Écho depuis sa fondation, il a décidé de maintenir le statu quo a
   
 ---  
 # ──────༺ Relations ༻──────  
-- Père adoptif de [[Archive/Univers/Azelyss/Hayleen May]]  
-  - Ancien allié de [[Iblis]]  
+- Père adoptif de [[30. Références/31. Archétype/Hayleen May/Hayleen May\|Hayleen]]  
   - Ex-Ami-Mec de [[Zéphyr]]  
-  - Chef [[Echo]] : Chevalier  
-  - Connaît [[Capricorne]]
+  - Chef [[Echo]] : Chevalier

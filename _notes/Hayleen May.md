@@ -9,7 +9,6 @@ image: Hayleen_portrait
 link: https://owlly-house.netlify.app/notes/Hayleen-May
 obsidianUIMode: source
 share: true
-tag: None
 title: Hayleen May
 univers: ❌
 ---
