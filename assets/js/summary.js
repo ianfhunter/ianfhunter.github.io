@@ -24,31 +24,26 @@ var admo_noblock = function(target) {
     var html = target.innerHTML;
     let select = '';
     let query = '';
-    const adm = ['note', 'seealso', 'abstract', 'summary', 'tldr', 'info',
-        'todo', 'tip',
-        'hint', 'important', 'success', 'check', 'done', 'question',
-        'help', 'faq', 'warning',
-        'caution', 'attention', 'failure', 'fail', 'missing', 'danger',
-        'error', 'bug', 'example', 'exemple', "abstract",
-        'quote', 'cite'
-    ];
     const p_search = /<p>[?!]{3}ad-([A-Za-zÀ-ÖØ-öø-ÿ]+)/gi;
     const found_p = html.match(p_search);
-    let select_html = ''
+    let select_html = '';
     if (found_p) {
         const p_len = found_p.length;
         for (var i = 0; i < p_len; i++) {
             select = found_p[i].replace("!!!ad-", '');
             select = select.replace("???ad-", '');
             select = select.replace('<p>', '')
+            console.log(select);
             query = "<p class='admo-note'>";
             select_html = '.admo-note'
-            const replaced = new RegExp(`<p>[!?]{3}ad-${select}`, 'gi')
-            const replaceit = html.match(replaced)
-
-            for (var j = 0; j < replaceit.length; j++) {
-                html = html.replace(replaceit[j], query.replace('<br>', ''));
+            const replaced = /<p>[?!]{3}ad-([A-Za-zÀ-ÖØ-öø-ÿ]+)/gi
+            const replaceit = html.match(/<p>[?!]{3}ad-([A-Za-zÀ-ÖØ-öø-ÿ]+)/gi)
+            if (replaceit) {
+                 for (var j = 0; j < replaceit.length; j++) {
+                    html = html.replace(replaceit[j], query.replace('<br>', ''));
+                 }
             }
+
         }
         target.innerHTML = html;
 
