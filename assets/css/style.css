@@ -1557,3 +1557,7 @@ p.admo-note>.title {
     text-align: center;
 }
 
+.bullet {
+    font-size: 24px;
+    vertical-align: -1%;
+}
