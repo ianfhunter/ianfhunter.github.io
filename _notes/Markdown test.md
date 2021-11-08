@@ -5,5 +5,5 @@ title: Markdown test
 ---
 
 !!!ad-note
-**📝 Test**{: .title}  
+**📝 <u>définition</u>**{: .title}  
 test
