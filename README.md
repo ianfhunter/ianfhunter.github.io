@@ -166,6 +166,29 @@ To add custom tag to customize your text, you need to edit the `custom.css` file
 ```
 The script will read the file and change `#tag_name` to `{: .tag_name}`. 
 
+# Custom Admonition
+The file [`custom_admonition`](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/master/custom_admonition.yml) allow you to create custom admonition for the script.
+The template is :
+```yml
+- admonition_type: #Admonition plugin, same name
+    - logo #emoji, ASCII...
+    - admonition_title #As in admonition plugin
+```
+
+A reference of logo used in the original script :
+- Note, seelaso : 🖊️
+- Abstract, summary, tldr: 📝
+- info, todo: ℹ️
+- tip, hint, important: 🔥
+- success, check, done: ✨
+- question, help, faq: ❓
+- warning, caution, attention: ⚠️
+- failure, fail, missing: ❌
+- danger, error: ⚡
+- bug: 🐛
+- example, exemple: 📌
+- quote, cite: 🗨️
+
 # Obsidian 
 → Please use Wikilinks with "short links" (I BEG YOU)
 You can integrate the script within obsidian using the nice plugin [Obsidian ShellCommands](https://github.com/Taitava/obsidian-shellcommands).
