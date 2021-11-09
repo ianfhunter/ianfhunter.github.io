@@ -19,7 +19,7 @@ summary.cat {
         <details class="first">
             <summary><a href="{{ docs }}">{{ collection.label | capitalize}}</a></summary>
                 <ul>
-                    {%- assign documents = site[collection.label] | group_by:'category' -%}
+                    {%- assign documents = site[collection.label] | group_by_exp: 'item', "item.category | downcase" -%}
                     {% for cat in documents reversed %}
                         {%- if cat.name != 'false' -%}
                             <details class="second">
