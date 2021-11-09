@@ -1,20 +1,14 @@
+---
+title: Test page to see how the raw markdown is rendered
+tags: python, script, Obsidian
+category: Obsidian
+flux: true
+date: 31-10-2020
+toc: true
+---
+
 ⚠️ The script and site are not a replacement for [Obsidian Publish](https://obsidian.md/publish), which is a much more efficient way to share Obsidian files.
 
-**Table Of Content**
-- [Goal](#goal)
-- [Get Started](#get-started)
-  * [Requirements](#requirements)
-  * [Environment](#environment)
-- [Script](#script)
-  * [Checking differences](#checking-differences)
-  * [Options](#options)
-    + [Share all](#share-all)
-    + [Share only a file](#share-only-a-file)
-  * [How it works](#how-it-works)
-    + [Custom CSS](#custom-CSS)
-    + [Frontmatter settings](#frontmatter-settings)
-    + [Admonition](#admonition)
-    + [Obsidian](#obsidian)
 ---
 
 # Get Started
