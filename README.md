@@ -117,7 +117,7 @@ The script work with the frontmatter :
 - `share: true` : Share the file
 - `embed: false` : remove the transluction (convert to normal wikilinks)
 - `update: false` : Don't update the file at all. 
-- `current: false` : Don't update the date
+- `present: false` : Don't update the date
 - `folder` : Use another folder than `_notes`
 
 ## Blog frontmatter options
