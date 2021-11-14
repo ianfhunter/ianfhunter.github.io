@@ -76,6 +76,8 @@ To install it use `pip install YAFPA`
 
 [You can have more information here](https://pypi.org/project/YAFPA/) and you can work on the script [here](https://github.com/Mara-Li/YAFPA-python).
 
+You need to have python 3.8 on your computer, and `pip` need to be in your PATH.
+
 ## Environment
 The first time you use the script, it will ask you three things :
 - Your vault path (absolute path !)
@@ -117,6 +119,7 @@ The script work with the frontmatter :
 - `share: true` : Share the file
 - `embed: false` : remove the transluction (convert to normal wikilinks)
 - `update: false` : Don't update the file at all. 
+- `current: false` : Don't update the date
 - `folder` : Use another folder than `_notes`
 
 ## Blog frontmatter options
@@ -165,8 +168,9 @@ To add custom tag to customize your text, you need to edit the `custom.css` file
 ```
 The script will read the file and change `#tag_name` to `{: .tag_name}`. 
 
-# Custom Admonition
-The file [`custom_admonition`](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/master/custom_admonition.yml) allow you to create custom admonition for the script.
+# Customize the script
+## Custom Admonition
+The file [`custom_admonition`](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/master/assets/script/custom_admonition.yml) allow you to create custom admonition for the script.
 The template is :
 ```yml
 - admonition_type: #Admonition plugin, same name
@@ -188,6 +192,19 @@ A reference of logo used in the original script :
 - example, exemple: 📌
 - quote, cite: 🗨️
 
+## Exclude folder
+Sometimes, you want to exclude folder for privacy, or just because you move a file in your archive, and forgot about the share state !
+So, you can exclude folder with [`exclude_folder`](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/master/assets/script/exclude_folder.yml).
+
+The template is :
+```yml
+- folder_name
+- folder_name2
+```
+(yes, it is just a list
+
+⚠ File in excluded folder are deleted in the blog.
+
 # Obsidian 
 → Please use Wikilinks with "short links" (I BEG YOU)
 You can integrate the script within obsidian using the nice plugin [Obsidian ShellCommands](https://github.com/Taitava/obsidian-shellcommands).
@@ -208,6 +225,7 @@ title: My files•
 date: 12-11-2021•
 embed: true•
 update: true•
+current: true•
 folder: notes•
 flux: true•
 share: false 
