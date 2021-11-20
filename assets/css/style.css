@@ -78,7 +78,8 @@ h5 {
 }
 
 h6 {
-    font-size: 13px;
+    font-size: 18px;
+    margin: 0;
 }
 
 h1,
@@ -90,6 +91,7 @@ h6 {
     color: #555555;
     font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 600;
+    clear: both;
 }
 
 .footnotes {
@@ -131,6 +133,7 @@ blockquote {
     font-size: 18px;
     /* Let's set the font-size to something old-man friendly */
     line-height: 210%;
+    clear: both;
 }
 
 p a,
@@ -298,7 +301,7 @@ hr {
 /* Blogposts: Post-heading, Post-subheading, Post-content, Related Posts*/
 
 .site-heading {
-    background-image: url("../../assets/site/header.png");
+    background-image: url("../../assets/site/header.jpg");
     background-color: black;
     background-repeat: no-repeat;
     background-position-y: -10em;
@@ -1560,4 +1563,17 @@ p.admo-note>.title {
 .bullet {
     font-size: 24px;
     vertical-align: -1%;
+}
+
+.link_error > a,
+a.link_error {
+    background-color: #f2f2f2;
+    color: #acacac !important;
+    border-radius: 5px;
+    font-weight: normal;
+}
+
+a.link_error:hover,
+.link_error > a:hover{
+    text-decoration: none !important
 }
