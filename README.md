@@ -42,6 +42,9 @@ If you want to use it with Github Pages, it is possible, [please read this](http
 
 Open an issue to share feedback or propose features. Star the repo if you like it! 🌟
 
+Also, help wanted to improve the "visual" of the template so please ! Help me ! REALLY.
+I BEG YOU. 
+
 ## How do I customize this for my needs?
 
 Things to modify to make it yours:
