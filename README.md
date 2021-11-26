@@ -14,7 +14,7 @@ A digital garden using a custom version of `simply-jekyll`, optimised for integr
 
 [**DEMO**](https://master--owlly-house.netlify.app/)
 
-If you want to see a more refined example, you can check my notes (in french) at [owlly-house](https://www.owlly-house.netlify.app/). 
+If you want to see a more refined example, you can check my notes (in french) at [owlly-house](https://owlly-house.netlify.app/). 
 
 Issues are welcome, including feedback ! Don't hesitate to ask if you can't find a solution. 💫
 
