@@ -12,7 +12,7 @@
     },
   {% endfor %}
 
-  {% for note in site.notes %}
+  {% for note in site.documents %}
     {
 
       "title"    : "{{ note.title | strip_html | escape }}",
