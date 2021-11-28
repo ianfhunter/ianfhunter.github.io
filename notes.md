@@ -49,6 +49,12 @@ summary {
 	top: 0;
 	background-color: white;
 }
+.container {
+    padding-bottom: 190px;
+}
+.scroll-to-top {
+    display: none
+}
 </style>
 
 
