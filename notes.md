@@ -19,7 +19,6 @@ details {
 	padding-left: 30px;
 	padding-bottom: 12px;
 	padding-top: 12px;
-	border-bottom: 2px dashed #b6c5d5;
 
 }
 
@@ -62,8 +61,7 @@ summary {
 	{%- if page.permalink == "/notes/" -%}
 		<h1 style='text-align:center'> MENU </h1>
 		{% assign mydocs = site.notes | group_by_exp: 'item', "item.category | downcase"  %}
-		{% assign mydocsSorted = mydocs | sort: "name"  %}
-		{% for cat in mydocsSorted %}
+		{% for cat in mydocs %}
 			{%- if cat.name != 'false' -%} 
 				<details class="second">
 					<summary>{{ cat.name | upcase }}</summary>

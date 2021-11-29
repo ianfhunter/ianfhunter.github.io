@@ -16,22 +16,21 @@ html {
 
 body {
     counter-reset: sidenote-counter;
+    margin: 0;
 }
 
 .container {
     display: flex;
     position: relative;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    top: 0px;
+    top: -10px;
     left: 0px;
     right: 0px;
     bottom: 0px;
-    align-items: center;
-    max-width: 1100px;
-    margin-right: auto;
     margin-left: auto;
+    margin-right:auto;
+    flex-wrap: nowrap;
+    align-items: first baseline;
+    background-color: #f7f7f7;
 }
 
 .box {
@@ -339,7 +338,6 @@ hr {
 .avatar {
     position: absolute;
     top: 40px;
-    left: 10px;
 }
 
 .avatar-link {
@@ -429,6 +427,7 @@ hr {
 .main-site-subheader {
     border-bottom: 1px solid #f7f7f7;
     padding-left: 15px;
+    background-color:  #f7f7f7;
 }
 
 .home,
@@ -771,7 +770,6 @@ a {
 }
 
 .back-icon {
-    background-color: white;
     fill: currentColor;
     color: #555555;
     margin-top: 5px;
@@ -1452,8 +1450,6 @@ img[src*='#center'] {
 }
 
 @media screen and (max-width: 800px) {
-    .box {
-        width: 80%;
     }
     label {
         cursor: pointer;

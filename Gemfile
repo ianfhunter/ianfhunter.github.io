@@ -36,3 +36,4 @@ gem "webrick"
 gem 'jekyll-spaceship'
 gem 'kramdown-syntax-coderay'
 gem 'kramdown-parser-gfm'
+gem 'jekyll-seo-tag'

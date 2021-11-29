@@ -306,7 +306,7 @@ img[alt*="+grid"] {
 }
 
 img[alt*="+grid"] {
-    max-height: 80vh;
+    max-height: 50vh;
 }
 
 img[alt*="+grid"]:hover {

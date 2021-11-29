@@ -23,6 +23,7 @@
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
     <meta name="description" content="{{ site.user_description }}">
+    <meta content="{{site.name}}" property="og:site_name">
     {%- if page.description -%}
         <meta name="twitter:description" content="{{ page.description }}">
         <meta property="og:description" content="{{page.description}}">
@@ -81,6 +82,8 @@
                 <p class="title-sans">{{site.user_description}}</p>
             </div>
 
+        </div>
+                    {%- include header.html -%}
 
     </div>
         <div class="avatar disable-select" title="POUIC !">
@@ -97,7 +100,6 @@
             {%- include sidenav.html -%}
         </div>
         <div class = "box">
-            {%- include header.html -%}
             {%- include feed.html -%}
 
             {%- if page.content-type == "notes" 
@@ -106,7 +108,6 @@
             <main>
                 <h1>{{page.title}}</h1>
                 {%- include content.html -%}
-                <hr>
                 {%- include backlinks.html -%}
                 {%- include related.html -%}
                 <button class="scroll-to-top" onclick="moveLine(this)"><i
@@ -116,7 +117,6 @@
             {%- include comments.html -%}
             {%- include footer.html -%}
         </div>
-        <button class="scroll-to-top" id="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
     </div>
 
     <script>
@@ -169,6 +169,10 @@
 {%- if page.content-type == "notes"
 or page.content-type == "post" -%}
 {%- if page.title != "Tags" -%}
-<script>for(let h of document.querySelectorAll('h1[id],h2[id],h3[id],h4[id]'))h.innerHTML+=` <a href="#${h.id}" aria-hidden="true">#</a>`</script>
+<script>for(let h of
+    document.querySelectorAll('h1[id],h2[id],h3[id],h4[id], h5[id], h6[id]')) {
+  h.innerHTML+=` <a href="#${h.id}" aria-hidden="true">#</a>`;
+}
+</script>
 {%- endif -%}
 {%- endif -%}

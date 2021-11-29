@@ -14,7 +14,7 @@ A digital garden using a custom version of `simply-jekyll`, optimised for integr
 
 [**DEMO**](https://master--owlly-house.netlify.app/)
 
-If you want to see a more refined example, you can check my notes (in french) at [owlly-house](https://owlly-house.netlify.app/). 
+If you want to see a more refined example, you can check my notes (in french) at [owlly-house](https://www.owlly-house.netlify.app/). 
 
 Issues are welcome, including feedback ! Don't hesitate to ask if you can't find a solution. 💫
 
@@ -141,7 +141,7 @@ The metadata key `folder` allow to use another folder than `_note`.
 
 There are two ways to create the files needed to use this option: 
 - You can use the little python script in `assets/script`, with : `python3 assets/script/folder.py folder_name`
-- You can use the long way, modify the `_config.md`, `content.html`, `search.json`, creating the main page and the folder. 
+- You can use the long way, modify the `_config.md` file and creating folder and main page. 
 
 Here is the steps for the long way :
 1. Create a new folder with the name you want, prefixed with `_` (as `_notes` or `_private`)
@@ -165,25 +165,6 @@ Here is the steps for the long way :
    1. In this new file, change the line `{%- if page.permalink == "/private/" -%}` for `{%- if page.permalink == "/folder_name/" -%}` 
    2. Change the `permalink` key with `permalink: /folder_name/` 
    3. change `{% assign mydocs = site.folder_name | group_by: 'category' %}`
-4. In [`_includes/content.html`](_includes/content.html) :
-    1. Add this line after [`result_page`](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/9539de63eafb8612d8bede34b96463e273708411/_includes/content.html#L51) (change `folder` for your folder name)
-    `{%- assign result_folder = site.folder | where: 'title',internal_link -%}`
-    2. Add the end of [`assign internal url`](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/9539de63eafb8612d8bede34b96463e273708411/_includes/content.html#L54) add : `| append: result_folder[0].url`
-    3. Add the end of [`assign internal urls alt`](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/9539de63eafb8612d8bede34b96463e273708411/_includes/content.html#L60) add : `| append: result_folder[0].url`
-5. In [`search.json`](search.json) :
-    - Add a `,` after the last `}`, remove `{% unless forloop.last %},{% endunless %}` 
-    - Add, after `{% endfor %}` : 
-```
-    {% for note in site.folder_name %}
-      {
-
-        "title"    : "{{ note.title | strip_html | escape }}",
-        "url"      : "{{ note.url }}",
-        "content"  : {{ note.content | newline_to_br | strip_newlines | replace: '<br/>', '' | strip | strip_html | strip | jsonify }}
-
-      }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-```
 
 And there is it !
 
