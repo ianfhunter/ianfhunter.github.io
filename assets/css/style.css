@@ -1160,6 +1160,7 @@ img[src*='#center'] {
     overflow: hidden;
     font-size: 18px;
     z-index: 100;
+    transform: rotate(0);
 }
 
 .scroll-to-bot {
@@ -1176,6 +1177,7 @@ img[src*='#center'] {
     overflow: hidden;
     font-size: 18px;
     z-index:100;
+    transform: rotate(0.5turn)
 }
 
 .context-menu-res {
