@@ -42,9 +42,6 @@ If you want to use it with Github Pages, it is possible, [please read this](http
 
 Open an issue to share feedback or propose features. Star the repo if you like it! 🌟
 
-Also, help wanted to improve the "visual" of the template so please ! Help me ! REALLY.
-I BEG YOU. 
-
 ## How do I customize this for my needs?
 
 Things to modify to make it yours:
@@ -96,16 +93,19 @@ The first time you use the script, it will ask you three things :
 The script will be in `$HOME/.YAFPA-env` so you can edit it with VIM/notepad/your hands…
 You can also edit it with `yafpa --config`
 
-The environment file looks like that :
+Here is a blank sheet to help you if you want to manually write / edit it :
 ```
 vault=
 blog_path=
 blog=
+share=
 ```
 With :
 - `vault`: Vault Absolute Path
 - `blog_path` : Blog repository absolute path
 - `blog` : Blog link
+- `share` : your wanted share key ; by default : `share`
+
 
 ## Usage
 `usage: yafpa [-h] [--preserve | --update] [--filepath FILEPATH] [--git] [--keep] [--config]`
@@ -123,18 +123,32 @@ optional arguments:
 
 # Frontmatter and metadata
 ## Script
-
 The script work with the frontmatter :
-- `share: true` : Share the file
+- `share: true` : Share the file (this key can be changed in the configuration !)
 - `embed: false` : remove the transluction (convert to normal wikilinks)
 - `update: false` : Don't update the file at all. 
 - `current: false` : Don't update the date
-- `folder` : Use another folder than `_notes`
+- `folder` : Use another folder than `_notes` alternatively you can use the `category` key
+- `category` : Choose a folder and a category for the file as : `folder/category`
+    - `folder` is optional ; as default : `_notes`
+    -  `category` can be `false` to prevent apparence in the feed
+NB : if `category` and `folder` is used at the same time, `folder` will be used as the folder. 
+
 
 ## Blog frontmatter options
 - `flux: false` : remove the file from the feed
-- `category` : Add a category for the category page ; `category: false` remove it from this page too.
 - `description` : Add a description of the file in the feed. 
+- `category: false` : Remove the file from the category feed ; Category is a classement for your file. 
+
+## Exemple of frontmatter :
+```yml
+category: Roleplay/Application
+date: 21-12-2021
+share: true
+tag: RP/Darkness-Haunted/Application/PC
+title: (Darkness Haunted) Alwyn Kallendris
+```
+The file will be added in the `Roleplay` folder ; and the `Application` will now show the file in the sidebar, the Roleplay page and the collections page. 
 
 ### Folder options
 The metadata key `folder` allow to use another folder than `_note`.

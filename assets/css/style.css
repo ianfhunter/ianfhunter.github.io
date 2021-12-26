@@ -1531,20 +1531,6 @@ img[src*='#center'] {
 }
 
 
-/* DISQUS THREAD MARGIN OVERRIDE FOR LEGIBILITY, DO NOT TOUCH */
-
-#disqus_thread {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-[id]>a {
-    display: none;
-}
-
-[id]:hover>a {
-    display: inline;
-}
 
 
 /* Dataview */
@@ -1699,7 +1685,7 @@ a.link_error:hover,
 }
 
 .sidenav .feed-title {
-    width: 15ch;
+    width: 25ch;
     margin-left: -5px;
     margin-bottom: 0;
 }
