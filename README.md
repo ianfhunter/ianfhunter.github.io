@@ -1,4 +1,9 @@
+⚠️**THIS TEMPLATE AND SCRIPT IS NO LONGER MAINTENED [PLEASE CHECK THE NEW TEMPLATE AND WORKFLOW USING MKDOCS](https://github.com/Mara-Li/mkdocs_obsidian_publish)** ⚠️
 
+<br>
+<br>
+
+---
 [![GitHub license](https://img.shields.io/github/license/Mara-Li/yet-another-free-publish-alternative)](https://github.com/Mara-Li/yet-another-free-publish-alternative/blob/master/LICENSE)
 [![GitHub forks](https://img.shields.io/github/forks/Mara-Li/yet-another-free-publish-alternative)](https://github.com/Mara-Li/yet-another-free-publish-alternative/network) ![GitHub top language](https://img.shields.io/github/languages/top/mara-li/yet-another-free-publish-alternative)
 ![PyPI](https://img.shields.io/pypi/v/YAFPA?label=YAFPA)
