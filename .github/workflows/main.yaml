@@ -1,0 +1,81 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Note Syncing
+
+# Controls when the workflow will run
+on:
+  schedule:
+  - cron: "0 * * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with: 
+          repository: ianfhunter/ianfhunter.github.io
+          token: ${{ secrets.YAFPA_ACTION_TOKEN }}
+          submodules: true
+      - uses: actions/setup-python@v2
+        
+      - name: Set Variables
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions - update submodules"
+        
+      - name: Pull & Get latest from Vault
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote 
+          git pull origin main
+          cd my-vault
+          git pull origin main
+          cd ..
+      - name: Compile Notes
+        run: |
+          python -m pip install -r requirements.txt
+          python3 obsidian_to_jekyll.py   
+
+      - name: File Check
+        if: always()
+        run: |
+           echo "Notes"
+           ls -las _posts/
+           echo "Note Assets"
+           ls -las assets/img/notes/
+          
+      - name: Commit to Main
+        run: |
+          git add my-vault _posts/ assets/
+          set +e
+          git commit -m "Update notes automatically"
+          commited=$?
+          set -e
+          if [[ $commited == 0 ]]; then
+            git push origin main
+          else
+            echo "Nothing in commit. Not pushing"
+          fi
+      
+      - uses:  helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Publish to GH-Pages
+        run: |
+          git add -A
+          git rm my-vault -f
+          set +e
+          git commit -m "Don't keep private submodule"
+          git checkout origin gh-pages
+          commited=$?
+          set -e
+          if [[ $commited == 0 ]]; then
+            git push origin gh-pages -f
+          else
+            echo "Nothing in commit. Not pushing"
+          fi

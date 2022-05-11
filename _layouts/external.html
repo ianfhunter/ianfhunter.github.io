@@ -1,0 +1,20 @@
+---
+layout: page
+---
+
+{% include lang.html %}
+
+{% for tp in site.data.thirdparty %}
+    <div style="display:inline-block">
+        <a href="{{tp.link}}">
+            <div class="third_party_card" > 
+                <di class="card__profile">
+                    <div class="card__profile__text">
+                        <h2>{{tp.type}}</h2>
+                        <p>via <b>{{tp.site}}</b></p>
+                    </div>
+                </di>
+            </div>
+        </a>
+    </div>
+{% endfor %}
