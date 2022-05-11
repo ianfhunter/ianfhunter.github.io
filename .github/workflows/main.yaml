@@ -61,11 +61,11 @@ jobs:
             echo "Nothing in commit. Not pushing"
           fi
       
-      - uses:  helaili/jekyll-action@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+#      - uses:  helaili/jekyll-action@v2
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Publish to GH-Pages
+      - name: Publish to GH-Pages Branch
         run: |
           git add -A
           git rm my-vault -f
