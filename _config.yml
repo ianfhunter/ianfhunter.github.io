@@ -203,3 +203,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+# Extra GHPages Testing
+gems:
+- jekyll-seo-tag
