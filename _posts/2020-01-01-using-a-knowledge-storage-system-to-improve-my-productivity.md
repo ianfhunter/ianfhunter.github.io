@@ -19,8 +19,6 @@ This article is a first draft and needs review + editing. This is not its final 
 
 In [my previous article](../the-value-of-unstructured-thought), I write about how I found a bullet journal really useful for allowing unstructured thoughts to be stored in a single place, without the implicit pressure of wasting space. 
 
-[A Test](../a-test)
-
 Obsidian scratches the same itch. I can develop my notes and knowledge base as much (or as little) as I want. And it's freeing.
 
 ## Daily Notes
