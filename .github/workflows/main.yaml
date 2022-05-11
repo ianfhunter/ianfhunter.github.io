@@ -50,6 +50,7 @@ jobs:
           
       - name: Commit to Main
         run: |
+          git fetch
           git add my-vault _posts/ assets/
           set +e
           git commit -m "Update notes automatically"
