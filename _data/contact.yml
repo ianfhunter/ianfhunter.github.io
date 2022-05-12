@@ -10,9 +10,9 @@
   type: email
   icon: 'fas fa-envelope'
   noblank: true            # open link in current tab
--
-  type: steam
-  icon: 'fa-brands fa-steam'
+# -
+#   type: steam
+#   icon: 'fas fa-brands fa-steam'
 
 # Uncomment and complete the url below to enable more contact options
 # -

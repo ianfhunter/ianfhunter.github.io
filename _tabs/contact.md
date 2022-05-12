@@ -1,6 +1,6 @@
 ---
 title: Contact
-icon: fas fa-info-circle
+icon: fas fa-solid fa-id-badge
 order: 5
 ---
 
