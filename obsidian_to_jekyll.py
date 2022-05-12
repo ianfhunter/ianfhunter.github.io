@@ -1,8 +1,9 @@
 from ast import Bytes
 import re
 import frontmatter
-from datetime import datetime
+from datetime import datetime, timezone
 import dateutil.parser as dp
+import calendar
 from yaml.constructor import ConstructorError
 from os import walk, path, rename, sep, mkdir
 from shutil import copyfile, rmtree
@@ -21,7 +22,12 @@ def get_new_name(f, old_f):
     new_f = f
     if not valid_form:
         post = frontmatter.load(old_f)
-        date = dp.parse(post.get("date", "01-01-2020")).strftime("%Y-%m-%d")
+        date = post.get("date", None)
+        if date is None:
+            uxt = path.getmtime(old_f)
+            date = datetime.fromtimestamp(uxt).strftime("%Y-%m-%d")
+            
+        date = dp.parse(date).strftime("%Y-%m-%d")
         ff = f"{date}-{post_format(f)}"
 
         new_f = path.join(JEKYLL_POSTS_FOLDER, ff)
