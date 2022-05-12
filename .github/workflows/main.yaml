@@ -72,11 +72,10 @@ jobs:
           git rm my-vault -f
           set +e
           git commit -m "Don't keep private submodule"
-          # git checkout origin gh-pages
           commited=$?
           set -e
           if [[ $commited == 0 ]]; then
-            git push origin --force +main:gh-pages 
+            git push origin --force main:gh-pages 
           else
             echo "Nothing in commit. Not pushing"
           fi
