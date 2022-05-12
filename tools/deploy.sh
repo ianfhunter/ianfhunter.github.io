@@ -108,10 +108,12 @@ deploy() {
   git update-ref -d HEAD
   git add -A
   # get rid of submodules
+  set +e
   rm -rf my-vault/
   rm -rf assets/lib/
   git rm my-vault/
   git rm assets/lib/
+  set -e
   
   git commit -m "[Automation] Site update No.${GITHUB_RUN_NUMBER}"
 
