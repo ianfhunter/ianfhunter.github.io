@@ -17,8 +17,11 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   white-space: break-spaces;
   overflow-y: unset;
 }
+
 .third_party_card{
   width:300px;
   background-color: #4e4e4e;
   text-align: center;
+  display: inline-grid;
+  padding: 3px;
 }
