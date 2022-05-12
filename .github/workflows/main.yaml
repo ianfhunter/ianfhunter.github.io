@@ -66,12 +66,12 @@ jobs:
 #        with:
 #          token: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Publish to GH-Pages Branch
-        run: |
-          git rm my-vault -f
-          set +e
-          git commit -m "remove private submodule from gh-pages"
-          commited=$?
-          set -e
-          git push origin --force main:gh-pages 
+#      - name: Publish to GH-Pages Branch
+#        run: |
+#          git rm my-vault -f
+#          set +e
+#          git commit -m "remove private submodule from gh-pages"
+#          commited=$?
+#          set -e
+#          git push origin --force main:gh-pages 
           
