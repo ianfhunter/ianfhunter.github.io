@@ -205,8 +205,3 @@ jekyll-archives:
     category: /categories/:name/
 
 # Extra GHPages Testing
-gems:
-- jekyll-seo-tag
-
-plugins:
-- jekyll-seo-tag
