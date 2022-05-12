@@ -50,7 +50,6 @@ build() {
   if [[ -d $SITE_DIR ]]; then
     rm -rf "$SITE_DIR"
   fi
-  rm -rf my-vault/
 
   # build
   JEKYLL_ENV=production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
@@ -108,6 +107,12 @@ deploy() {
 
   git update-ref -d HEAD
   git add -A
+  # get rid of submodules
+  rm -rf my-vault/
+  rm -rf assets/lib/
+  git rm my-vault/
+  git rm assets/lib/
+  
   git commit -m "[Automation] Site update No.${GITHUB_RUN_NUMBER}"
 
   if $_no_pages_branch; then
