@@ -207,3 +207,6 @@ jekyll-archives:
 # Extra GHPages Testing
 gems:
 - jekyll-seo-tag
+
+plugins:
+- jekyll-seo-tag
