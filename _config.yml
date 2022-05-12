@@ -24,7 +24,7 @@ timezone: Europe/Dublin
 
 title: Ian F.V.G. Hunter                          # the main title
 
-tagline: A Personal Site   # it will display as the sub-title
+tagline: Boop.   # it will display as the sub-title
 
 
 # used by seo meta and the atom feed
@@ -39,6 +39,9 @@ github:
 twitter:
   username: twitter_username            # change to your twitter username
 
+linkedin:
+  username: ianfhunter
+
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
@@ -46,13 +49,13 @@ social:
   email: ianfhunter@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
     - https://github.com/ianfhunter       # change to your github homepage
     - https://steamcommunity.com/id/kawaiimaster
     - https://stackexchange.com/users/1522198/
     - https://www.linkedin.com/in/ianfhunter/
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
+    #- https://twitter.com/username      # change to your twitter homepage
     # - https://www.linkedin.com/in/username
 
 google_site_verification:               # fill in to your verification string
