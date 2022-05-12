@@ -50,6 +50,7 @@ build() {
   if [[ -d $SITE_DIR ]]; then
     rm -rf "$SITE_DIR"
   fi
+  rm -rf my-vault/
 
   # build
   JEKYLL_ENV=production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
