@@ -31,7 +31,8 @@ tagline: Boop.   # it will display as the sub-title
 description: Ian Hunter's Personal Website
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: 'https://ianfhunter.github.io'
+#url: 'https://ianfhunter.github.io'
+url: 'https://ianhunter.ie'
 
 github:
   username: ianfhunter             # change to your github username
