@@ -51,13 +51,13 @@ jobs:
       - name: Commit to Main
         run: |
           git fetch
-          git add my-vault _posts/ assets/
+          git add -A
           set +e
-          git commit -m "Update notes automatically"
+          git commit -m "Poll: Sync Notes" 
           commited=$?
           set -e
           if [[ $commited == 0 ]]; then
-            git push origin main
+            git push origin main 
           else
             echo "Nothing in commit. Not pushing"
           fi
@@ -68,14 +68,10 @@ jobs:
           
       - name: Publish to GH-Pages Branch
         run: |
-          git add -A
           git rm my-vault -f
           set +e
-          git commit -m "Don't keep private submodule"
+          git commit -m "remove private submodule from gh-pages"
           commited=$?
           set -e
-          if [[ $commited == 0 ]]; then
-            git push origin --force main:gh-pages 
-          else
-            echo "Nothing in commit. Not pushing"
-          fi
+          git push origin --force main:gh-pages 
+          
