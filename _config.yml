@@ -205,3 +205,5 @@ jekyll-archives:
     category: /categories/:name/
 
 # Extra GHPages Testing
+plugins:
+- jekyll-paginate
