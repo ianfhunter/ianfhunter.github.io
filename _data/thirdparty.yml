@@ -66,3 +66,9 @@
   site: BoardGameGeek
   link: https://boardgamegeek.com/collection/user/ianfhunter?own=1&subtype=boardgame&ff=1
   image: N/A
+
+- 
+  type: Tabletop RPGs
+  site: RPGGeek
+  link: https://rpggeek.com/collection/user/ianfhunter?own=1&subtype=rpgitem&ff=1
+  image: N/A
