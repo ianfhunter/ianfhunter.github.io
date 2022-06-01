@@ -8,6 +8,8 @@ tags:
 - avrae
 ---
 
+# Argument Parsing
+
 ```python
 a = argparse(&ARGS&)
 ``` 
