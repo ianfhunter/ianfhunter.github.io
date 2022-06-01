@@ -1,6 +1,6 @@
 ---
 author: ianfhunter
-category: 1 Technical
+category: 1 technical
 math: true
 mermaid: true
 share: true
