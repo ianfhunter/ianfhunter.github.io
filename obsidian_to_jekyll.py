@@ -39,6 +39,7 @@ def get_new_name(f, old_f):
 
 def copy_over_published_markdown(f, d):
     old_f = path.join(d, f)
+    print(f"Copy Published Markdown::File: {old_f}")
     try:
         post = frontmatter.load(old_f)
         publishable = post.get("share", False)
