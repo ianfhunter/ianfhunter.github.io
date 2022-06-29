@@ -16,7 +16,7 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
   Extensions](https://arxiv.org/abs/2205.13430) (Extended Abstract Under Review for JCDCGGG '22, Full Paper Preprint available)
 - 2022 - [Towards Optimal VPU Compiler Cost Modeling by using Neural Networks to Infer Hardware Performances](https://www.researchgate.net/publication/360512691_Towards_Optimal_VPU_Compiler_Cost_Modeling_by_using_Neural_Networks_to_Infer_Hardware_Performances) (Pre-Print. Under Review for NeurIPS 2022)
 - 2020 - [Effective Index-Mapping of Quantized Values for Low-Precision Neural Networks on Power-Efficient Embedded Devices](https://www.researchgate.net/publication/359218626_Effective_Index-Mapping_of_Quantized_Values_for_Low-Precision_Neural_Networks_on_Power-Efficient_Embedded_Devices) (Master's Thesis)
-- 2016 - [Movidius Fathom: Deep Learning in a USB stick] (Demonstration)
+- 2016 - Movidius Fathom: Deep Learning in a USB stick (Demonstration)
 - 2014 - [Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project)
 
 # Personal
