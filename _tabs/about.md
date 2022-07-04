@@ -24,3 +24,6 @@ Ian is living in Ireland along the border of the counties of Cavan & Meath. He i
 
 ## Interests
 Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies
+
+# In the Press
+- 2017 - [OTIA](https://otia.io/2017/11/03/ian-hunter-embedded-systems-engineer-on-tracing-family-history/)
