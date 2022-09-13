@@ -23,4 +23,6 @@ Grabs only the last entry of that argument
 ```python
 a = argparse(&ARGS&).get('t')
 ``` 
-Grab all the targets and put them in a list
+Grab all the targets and put them in a list 
+
+# Maps
