@@ -3,7 +3,6 @@ author: ianfhunter
 category: 6 Lists
 math: true
 mermaid: true
-publish: true
 share: true
 tags:
 - catalogue
@@ -18,8 +17,8 @@ tags:
 -Icewind Dale: Rime of the Frostmaiden (Winter, 1489 DR)  
 -Storm King’s Thunder (1490 or 1491 DR)  
 -Lost Mine of Phandelver (1491 DR)  
-- [Princes of the Apocalypse](../princes-of-the-apocalypse) (1491 DR)  
-- [Curse of Strahd](../curse-of-strahd) (1491 DR)  
+- Princes of the Apocalypse (1491 DR)  
+- Curse of Strahd (1491 DR)  
 - Tomb of Annihilation (1490 or 1491 DR)  
 - Waterdeep: Dragon Heist (1492 DR)
 - Waterdeep: Dungeon of the Mad Mage (1492 DR)  
