@@ -46,7 +46,7 @@ So, Fire in the Distance was often sleeping rough. Graveyards being a particular
 
 That is when they came upon Haidon Jorora, who was exploring. After some pleasant conversation, Haidon introduced Fire in the Distance to the adventuring life and they followed a local lead on work - a necromancer in the nearby mountains. Fire in the Distance helped track the way and Haidon lead the charge.
 
-  
+  ,,,,,,,,,,,,,,,,                                                                                    
 
 Fire in the Distance hopes to one day remove their curse - or at least be able to suppress it enough to reintegrate into society. They would like to return to their clan - or even - start a new one.
 
@@ -84,7 +84,6 @@ Don’t expect me to save those who can’t save themselves. It is nature’s wa
     
 (False - Neg) “Fire in the Distance has a scar on his face that he got when the left the clan. The clan wanted him to leave even before his curse.”
 -   They left voluntarily
-    
 
 (True - Neg) Fire in the Distance has killed some Giant children
 (True - Pos) Fire in the Distance has saved some human adventurers from falling off the mountain
@@ -101,4 +100,8 @@ Some of the more notable clan members included:
 - Hare in a Trap - The lead hunter who often lead the giant hunts
 - Carriage on the Road - One of the more learned tabaxi, who interacts with traders and travellers often
 
-As they mostly hunted small animals, or foraged in the wake of giants, the tribe's hunting equipment isnt partic
+As they mostly hunted small animals, or foraged in the wake of giants, the tribe's hunting equipment is mostly typical of hunters: spears, bows, traps. But they do have several traps and weapons at their camp in case of intrusion.
+
+The tribe moves location on no fixed schedule, only when a location has run dry of resources or there is a particular calling to another place (e.g. intercepting a trade caravan).
+
+The giants would possess many fine treasures, from some unknown place, which would sell well - and so stealing? reclaiming these from them, while dangerous, was lucrative. It didn't seem that the giants knew what to do with the pieces anyway.
