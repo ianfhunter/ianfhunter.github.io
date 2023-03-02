@@ -34,3 +34,4 @@ Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Gu
 
 ## Interviews 
 - 2017 - [OTIA "Ian Hunter, Embedded Systems Engineer on Tracing Family History"](https://otia.io/2017/11/03/ian-hunter-embedded-systems-engineer-on-tracing-family-history/)
+- 2012 - [The University Times "Manga on the High Seas"](https://universitytimes.ie/2012/11/manga-on-the-high-seas/)
