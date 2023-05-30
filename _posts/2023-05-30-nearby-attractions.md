@@ -27,17 +27,32 @@ tags: null
 - Steep
 
 **Girley Bog**
+<img src='/assets/img/notes/Pasted image 20230530130653.png' />
+- Short / Medium
+- Free
 
 **Spire of Llyod**
+<img src='/assets/img/notes/Pasted image 20230530130721.png' />
+> Ireland's only inland lighthouse.
+- Short
+- Free
+
+**Deer Park**
+<img src='/assets/img/notes/Pasted image 20230530130915.png' />
+- Medium
+- Free
 
 ## Further Afield
-**Tullynally Castle**
+**Tullynally Castle & Gardens**
+<img src='/assets/img/notes/Pasted image 20230530130800.png' />
 
 **Mullaghmeen**
+<img src='/assets/img/notes/Pasted image 20230530130828.png' />
 - Long walks
 - Forest
 
 **Jamestown Bog**
+<img src='/assets/img/notes/Pasted image 20230530131010.png' />
 
 **Fore Monastry + Walk**
 
