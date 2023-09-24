@@ -10,37 +10,49 @@ tags:
 ---
 
 # Adventures
+
 ## 5E
--Out of the Abyss (1485 DR or later)  
--Hoard of the Dragon Queen  (1489 DR)
-- Rise of Tiamat (1489 DR)  
--Icewind Dale: Rime of the Frostmaiden (Winter, 1489 DR)  
--Storm King’s Thunder (1490 or 1491 DR)  
--Lost Mine of Phandelver (1491 DR)  
-- Princes of the Apocalypse (1491 DR)  
-- Curse of Strahd (1491 DR)  
-- Tomb of Annihilation (1490 or 1491 DR)  
-- Waterdeep: Dragon Heist (1492 DR)
-- Waterdeep: Dungeon of the Mad Mage (1492 DR)  
-- Dragons of Icespire Peak (1492 DR)  
-- Candlekeep Mysteries (1492 DR)  
-- Descent Into Avernus (1494 DR)  
-- Acquisitions Incorporated (1496 DR)
+
+- [ ] Out of the Abyss (1485 DR or later)  
+- [x] Hoard of the Dragon Queen  (1489 DR)
+- [ ] Rise of Tiamat (1489 DR)  
+- [ ] Icewind Dale: Rime of the Frostmaiden (Winter, 1489 DR)  
+- [ ] Storm King’s Thunder (1490 or 1491 DR)  
+- [x] Lost Mine of Phandelver (1491 DR)  
+- [ ] Princes of the Apocalypse (1491 DR)  
+- [x] Curse of Strahd (1491 DR)  
+- [ ] Tomb of Annihilation (1490 or 1491 DR)  
+- [ ] Waterdeep: Dragon Heist (1492 DR)
+- [ ] Waterdeep: Dungeon of the Mad Mage (1492 DR)  
+- [ ] Dragons of Icespire Peak (1492 DR)  
+- [ ] Candlekeep Mysteries (1492 DR)  
+- [ ] Descent Into Avernus (1494 DR)  
+- [ ] Acquisitions Incorporated (1496 DR)
 
 # Faerun
+
 ## Drizzt
+
+### Dark Elf
+
+- [x] Homeland (Comic available)
+- [x] Exile (Comic available)
+- [x] Sojourn (Comic available)
+
+### Icewind Dale
+
+- [x] Crystal Shard (Comic available)
+- [x] Streams of Silver  (Comic available)
+- [x] Halfling's Gem (Comic available)
+
+### Stone of Tymora
+
+- [x] Stowaway
+- [x] Shadowmask
+- [x] Sentinels
 
 | Series             | Book                                          | Owned | Comic Available | Finished |
 | ------------------ | --------------------------------------------- | ----- | --------------- | -------- |
-| Dark Elf           | Homeland                                      | Y     | Y               | Y        |
-| Dark Elf           | Exile                                         | Y     | Y               | Y        |
-| Dark Elf           | Sojourn                                       | Y     | Y               | Y        |
-| Icewind Dale       | Crystal Shard                                 | Y     | Y               | Y        |
-| Icewind Dale       | Streams of Silver                             | Y     | Y               | Y        |
-| Icewind Dale       | Halfling's Gem                                | Y     | Y               | Y        |
-| Stone of Tymora    | Stowaway                                      | Y*    |                 | Y        |
-| Stone of Tymora    | Shadowmask                                    | Y*    |                 | Y        |
-| Stone of Tymora    | Sentinels                                     | Y*    |                 | Y        |
 | Cleric Quintet     | Canticle                                      |       |                 |          | 
 | Cleric Quintet     | Sylvan Shadows                                |       |                 |          |
 | Cleric Quintet     | Night Masks                                   |       |                 |          |
@@ -85,7 +97,7 @@ tags:
 
 | Book                 | Owned | Read |
 | -------------------- | ----- | ---- |
-| The Savage Caves     | Y     |      |
+| The Savage Caves     | Y     |  .   |
 | The Living Dead      |       |      |
 | Oath of Nerull       |       |      |
 | City of Fire         |       |      |
@@ -94,23 +106,21 @@ tags:
 | Plague of Ice        |       |      |
 | The Sundered Arms    |       |      |
 | Return of the Damned |       |      |
-| The Death Ray                     |       |      |
+| The Death Ray        |       |      |
 
 ## Pools
 
-| Series                                             | Book | Owned |
-| -------------------------------------------------- | ---- | ----- |
-| Pool of Radiance (1989)                            |      |       |
-| Pools of Darkness (1992)                           |      |       |
-| Pool of Twilight (1993)                            |      |       |
-| Pool of Radiance: The Ruins of Myth Drannor (2000) |      |       |
+- [ ] Pool of Radiance (1989)
+- [ ] Pools of Darkness (1992)
+- [ ] Pool of Twilight (1993)
+- [ ] Pool of Radiance: The Ruins of Myth Drannor (2000)
 
 ## Standalone
 
 | Series                                             | Book | Owned |
 | -------------------------------------------------- | ---- | ----- |
 | Realms of the Deep (1988)                          |      |       |
-| Waterdeep and the North (1988)                     |      |       |
+| Waterdeep and the North (1988)                     | .    |  .     |
 | The Magister (1988)                                |      |       |
 | Adventures (1990)                                  |      |       |
 | Halls of the High King (1991)                      |      |       |
@@ -158,7 +168,7 @@ tags:
 
 | Series                                             | Book | Owned |
 | -------------------------------------------------- | ---- | ----- |
-| Unbroken Chain (2010)                              |      |       |
+| Unbroken Chain (2010)                              | .     | .      |
 | Unbroken Chain: The Darker Road (2011)             |      |       |
 
 
