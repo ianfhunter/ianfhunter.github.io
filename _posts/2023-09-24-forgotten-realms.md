@@ -82,6 +82,7 @@ tags:
 "The Last Threshold" and "The Companions" run concurrently to each other. The immediate SEQUEL to "The Companions" is "Night of the Hunter."
 
 ## Iconic
+
 | Book                 | Owned | Read |
 | -------------------- | ----- | ---- |
 | The Savage Caves     | Y     |      |
@@ -96,6 +97,7 @@ tags:
 | The Death Ray                     |       |      |
 
 ## Pools
+
 | Series                                             | Book | Owned |
 | -------------------------------------------------- | ---- | ----- |
 | Pool of Radiance (1989)                            |      |       |
@@ -104,6 +106,7 @@ tags:
 | Pool of Radiance: The Ruins of Myth Drannor (2000) |      |       |
 
 ## Standalone
+
 | Series                                             | Book | Owned |
 | -------------------------------------------------- | ---- | ----- |
 | Realms of the Deep (1988)                          |      |       |
@@ -160,6 +163,7 @@ tags:
 
 
 ## Waterdeep
+
 | Series | Book             | Owned |
 | ------ | ---------------- | ----- |
 |        | Blackstaff Tower |       |
@@ -171,6 +175,7 @@ tags:
 
 
 ## Abyssal Plague
+
 | Series                      | Book                                 | Owned |
 | --------------------------- | ------------------------------------ | ----- |
 | Origins                     | The Gates of Madness                 |       |
@@ -192,11 +197,13 @@ tags:
 
 
 ## Sembia
+
 | Series | Book                      | Owned |
 | ------ | ------------------------- | ----- |
 | Sembia | The Halls of Stormweather |       |
 
 ## Mysteries
+
 | Series   | Book              | Owned |
 | -------- | ----------------- | ----- |
 | Mysteres | Murder in Corymr  |       |
@@ -205,6 +212,7 @@ tags:
 
 
 ## Cormyr
+
 | Series | Book                 | Owned |
 | ------ | -------------------- | ----- |
 | Cormyr | Cormyr               |       |
@@ -212,6 +220,7 @@ tags:
 |        | Death of the Dragon  |       |
 
 ## Lost Gods    
+
 | Series | Book                 | Owned |
 | ------ | -------------------- | ----- |
 | Cormyr | Cormyr               |       |
@@ -219,6 +228,7 @@ tags:
 |        | Death of the Dragon  |       |
 
 ## Netheril
+
 | Series   | Book                | Owned |
 | -------- | ------------------- | ----- |
 | Netheril | Swordplay           |       |
@@ -226,6 +236,7 @@ tags:
 |          | Mortal Consequences |       |
 
 ## Starlight & Shadows
+
 | Series              | Book                 | Owned |
 | ------------------- | -------------------- | ----- |
 | Starlight & Shadows | Daughter of the Drow |       |
@@ -233,6 +244,7 @@ tags:
 |                     | Windwalker           |       |
 
 ## Druidhome
+
 | Series | Book                | Owned |
 | ------ | ------------------- | ----- |
 |        | Prophet of Moonshae |       |
@@ -240,6 +252,7 @@ tags:
 |        | The Druid Queen     |       |
 
 ## Twilight Giants
+
 | Series | Book                | Owned |
 | ------ | ------------------- | ----- |
 |        | The Ogre's Pact |       |
@@ -247,24 +260,31 @@ tags:
 |        | The Titan Twilight  |       |
 
 ## Moonshae
+
 | Series   | Book                   | Owned |
 | -------- | ---------------------- | ----- |
 | Moonshae | Darkwalker on Moonshae |       |
 |          | Back Wizards           |       |
 |          | Darkwell                       |       |
+
 ## Finder's Stone
+
 | Series         | Book                 | Owned |
 | -------------- | -------------------- | ----- |
 | Finder's Stone | Azure Bonds          |       |
 |                | The Wyvern's Spur    |       |
 |                | Song of the Sauriels |       |
+
 ## Shandril's Saga
+
 | Series          | Book          | Owned |
 | --------------- | ------------- | ----- |
 | Shandril's Saga | Spellfire     |       |
 |                 | Crown of Fire |       |
 |                 | Hand of Fire              |       |
+
 ## Avatar
+
 | Series | Book                                        | Owned |
 | ------ | ------------------------------------------- | ----- |
 | Avatar | Shadowdale (1989)                           |       |
@@ -272,7 +292,9 @@ tags:
 |        | Waterdeep (1989)                            |       |
 |        | Prince of Lies (1993)                       |       |
 |        | Crucible: The Trial of Cyric the Mad (1998) |       |
+
 ## Maztica
+
 | Series  | Book             | Owned |
 | ------- | ---------------- | ----- |
 | Maztica | Ironhelm         |       |
@@ -280,6 +302,7 @@ tags:
 |         | Feathered Dragon |       |
 
 ## Elminster
+
 | Series    | Book                        | Owned |
 | --------- | --------------------------- | ----- |
 | Elminster | Making of a Mage            |       |
@@ -289,6 +312,7 @@ tags:
 |           | Elminster's Daughter        |       |
 
 ## Shadow of the Avatar
+
 | Series               | Book                 | Owned |
 | -------------------- | -------------------- | ----- |
 | Shadow of the Avatar | Shadows of Doom      |       |
@@ -296,6 +320,7 @@ tags:
 |                      | All Shadows Fled     |       |
 
 ## Nobles
+
 | Series | Book                      | Owned |
 | ------ | ------------------------- | ----- |
 | Nobles | King Pinch                |       |
@@ -306,6 +331,7 @@ tags:
 |        | The Simbul's Gift         |       |
 
 ## Empires
+
 | Series  | Book       | Owned |
 | ------- | ---------- | ----- |
 | Empires | Horselords |       |
@@ -313,6 +339,7 @@ tags:
 |         | Crusade    |       |
 
 ## Harpers
+
 | Series        | Book                    | Owned |
 | ------------- | ----------------------- | ----- |
 |               | The Parched Sea         |       |
@@ -342,6 +369,7 @@ tags:
 
 
 # Dragonlance
+
 | Series               | Book                             | Owned | Finished | Comic Available | 
 | -------------------- | -------------------------------- | ----- | -------- | --------------- |
 | Chronicles           | Dragons of Autumn Twilight       | Y     | Y        |                 |
@@ -391,11 +419,13 @@ tags:
     
 
 ## Comics
+
 | Series   | Book                 | Volumes | Owned | Notes |
 | -------- | -------------------- | ------- | ----- | ----- |
 | Classics | DragonLance Classics | 3       |       |       |
 
 # Ravenloft
+
 | Series             | Book                              | Owned | Read |
 | ------------------ | --------------------------------- | ----- | ---- |
 | Covenant / RL(1)   | Vampire of the Mists              |       |      |
@@ -433,6 +463,7 @@ https://forgottenrealms.fandom.com/wiki/List_of_comic_books
 | DC Comics | TSR World's Annual |         |       |      |
 
 ## Faerun
+
 | Series                  | Book                                   | Volumes | Owned                                                                         | Notes |
 | ----------------------- | -------------------------------------- | ------- | ----------------------------------------------------------------------------- | ----- |
 | Classics                | Dungeon & Dragons Classics v1          | 4       | 1,2,3,4                                                                       |       |
@@ -453,6 +484,7 @@ https://forgottenrealms.fandom.com/wiki/List_of_comic_books
 | Dungeons & Dragons      | Down (3)                               |         |                                                                               |       |
 
 ## Eberron
+
 | Series     | Book                    | Owned | Notes                                                                         |     |
 | ---------- | ----------------------- | ----- | ----------------------------------------------------------------------------- | --- |
 | Standalone | Abraxis Wren of Eberron | Y     | Includes: 2012 Annual, Infestation 2: Dungeons & Dragons, and Eye of the Wolf |     |
