@@ -25,7 +25,7 @@ And in 3D:
 
 
 <img src='/assets/img/notes/3d_Heatmap_1.png' />
-<img src='/assets/img/notes/3d_Heatmap_2.png' />
+<img src='/assets/img/notes/3D_Heatmap_2.png' />
 
 This is a very simple algorithm to implement, but quite effective for what it does. You can change the random variant to increase the choppiness/smoothness of the resultant graph. The more points in the grid, the better this looks. Take this high-N example from playful.js for example:
 
