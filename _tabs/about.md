@@ -11,13 +11,13 @@ They are a Deep Learning Software Engineer Lead at Intel (Movidius).
 
 For more up-to-date information, visit their <a href="https://www.linkedin.com/in/ianfhunter/">LinkedIn</a> or <a href="https://registry.jsonresume.org/ianfhunter">JSONResume</a>
 
-## Publications
-- 2023 - [GNOLL: Efficient Software for Real-World Dice Notation and
-  Extensions](https://joss.theoj.org/papers/10.21105/joss.04816) (Published in the Journal of Open Source Software)
-- 2022 - [Towards Optimal VPU Compiler Cost Modeling by using Neural Networks to Infer Hardware Performances](https://www.researchgate.net/publication/360512691_Towards_Optimal_VPU_Compiler_Cost_Modeling_by_using_Neural_Networks_to_Infer_Hardware_Performances) (Modified public version. Published in the Intel Design & Test Technology Conference) (Citations: [1](https://arxiv.org/pdf/2302.11405.pdf))
-- 2020 - [Effective Index-Mapping of Quantized Values for Low-Precision Neural Networks on Power-Efficient Embedded Devices](https://www.researchgate.net/publication/359218626_Effective_Index-Mapping_of_Quantized_Values_for_Low-Precision_Neural_Networks_on_Power-Efficient_Embedded_Devices) (Master's Thesis)
-- 2016 - Movidius Fathom: Deep Learning in a USB stick (Demonstration, NIPS)
-- 2014 - [Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project)
+## Publications & Presentations
+- 2024 \[Poster\] - Confidential Title (AMD EMEA Tech Summit)
+- 2023 \[Journal Paper\] - [GNOLL: Efficient Software for Real-World Dice Notation and Extensions](https://joss.theoj.org/papers/10.21105/joss.04816) (Published in the Journal of Open Source Software)
+- 2022 \[Conference Paper\] - [Towards Optimal VPU Compiler Cost Modeling by using Neural Networks to Infer Hardware Performances](https://www.researchgate.net/publication/360512691_Towards_Optimal_VPU_Compiler_Cost_Modeling_by_using_Neural_Networks_to_Infer_Hardware_Performances) (Modified public version. Published in the Intel Design & Test Technology Conference) (Citations: [1](https://arxiv.org/pdf/2302.11405.pdf))
+- 2020 \[Thesis\] - [Effective Index-Mapping of Quantized Values for Low-Precision Neural Networks on Power-Efficient Embedded Devices](https://www.researchgate.net/publication/359218626_Effective_Index-Mapping_of_Quantized_Values_for_Low-Precision_Neural_Networks_on_Power-Efficient_Embedded_Devices) (Master's Thesis)
+- 2016 \[Demo\] - Movidius Fathom: Deep Learning in a USB stick (NIPS)
+- 2014 \[Thesis\] - [Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project)
 
 ## Conference/Journal Reviewer
 - 2019 - Intel Design and Test Technology Conference
@@ -33,6 +33,12 @@ Ian is living in Ireland along the border of the counties of Cavan & Meath. He i
 
 ## Interests
 Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies
+
+## Publications (Humourous)
+
+- "It's Complicated" - Love Pyramids, Love in the Seventh Dimension and other Geometric Romances (Pending Beer Review, Approved for the Journal of Immaterial Science)
+- Programming Socks: Is it high time for thigh-highs? An investigation into the perceived unreasonable effectiveness of Programming Socks on productivity levels in the field of Software Engineering (SIGBOVIK 2024)
+- Solving C’s biggest flaw — Hemispheric divergence (SIGBOVIK 2024)
 
 # In the Press
 
