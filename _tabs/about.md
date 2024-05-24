@@ -20,8 +20,12 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2014 \[Thesis\] - [Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project)
 
 ## Conference/Journal Reviewer
-- 2019 - Intel Design and Test Technology Conference
 - 2023 - Journal of Open Source Software (Post-Publication)
+- 2019 - Intel Design and Test Technology Conference
+
+## Patents (Filed/Accepted)
+- 2023 - Graph neural network model for neural network scheduling decisions
+- 2022 - NEURAL NETWORK BASED POWER AND PERFORMANCE MODEL FOR VERSATILE PROCESSING UNITS
 
 ## Projects
 - 2023 - [Tone Indicator Chrome Extension](https://chrome.google.com/webstore/detail/tone-indicators-explained/oahffmgbcaeeadnhlnhpaifemijpfddn)
