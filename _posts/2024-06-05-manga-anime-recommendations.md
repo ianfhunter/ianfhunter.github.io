@@ -6,10 +6,16 @@ mermaid: true
 share: true
 ---
 
-My favourite genre is Psychological.
+My favourite genre is Psychological Thrillers.
 
 Recommendations:
-- Author: Shūzō Oshimi
 
+**Authors:**
+Shūzō Oshimi
+
+**Books:**
 Chihayafuru:
 > A Josei about Competitive Karuta (A traditional card game)
+
+**Anime:**
+Delicious in Dungeon ("Dungeon Meshi")
