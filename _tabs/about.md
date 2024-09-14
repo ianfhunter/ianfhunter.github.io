@@ -40,7 +40,7 @@ Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Gu
 
 ## Publications (Humourous)
 
-- "It's Complicated" - Love Pyramids, Love in the Seventh Dimension and other Geometric Romances (Pending Beer Review, Approved for the Journal of Immaterial Science)
+- "It's Complicated" - Love Pyramids, Love in the Seventh Dimension and other Geometric Romances (Journal of Immaterial Science)
 - Programming Socks: Is it high time for thigh-highs? An investigation into the perceived unreasonable effectiveness of Programming Socks on productivity levels in the field of Software Engineering (SIGBOVIK 2024)
 - Solving C’s biggest flaw — Hemispheric divergence (SIGBOVIK 2024)
 
