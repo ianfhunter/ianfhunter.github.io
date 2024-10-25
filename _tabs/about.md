@@ -7,7 +7,7 @@ order: 4
 # Working Life
 Ian has an MSc and BA(Mod) in Computer Science from Trinity College Dublin.
 
-They are a Deep Learning Software Engineer Lead at Intel (Movidius). 
+They have been working in NPU Architecture teams since 2015 in significant roles at Intel (Movidius) and AMD (Xilinx). 
 
 For more up-to-date information, visit their <a href="https://www.linkedin.com/in/ianfhunter/">LinkedIn</a> or <a href="https://registry.jsonresume.org/ianfhunter">JSONResume</a>
 
