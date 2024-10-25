@@ -12,6 +12,7 @@ They are a Deep Learning Software Engineer Lead at Intel (Movidius).
 For more up-to-date information, visit their <a href="https://www.linkedin.com/in/ianfhunter/">LinkedIn</a> or <a href="https://registry.jsonresume.org/ianfhunter">JSONResume</a>
 
 ## Publications & Presentations
+- 2024 \[Journal Paper\] - Kyōgi Karuta Overseas:Analysing how Phonetic Variation in the Kimari-Ji of The Hyakunin Isshu affects Gameplay in International Adaptations (Forthcoming in the [Electronic Journal of Contemporary Japanese Studies](https://www.japanesestudies.org.uk)
 - 2024 \[Poster\] - Confidential Title (AMD EMEA Tech Summit)
 - 2023 \[Journal Paper\] - [GNOLL: Efficient Software for Real-World Dice Notation and Extensions](https://joss.theoj.org/papers/10.21105/joss.04816) (Published in the Journal of Open Source Software) (Citations: [1](https://www.researchgate.net/publication/384297154_Comprehensive_Benchmarks_for_LLM_Tool_Utilization_Exploring_New_Real-World_Complex_Scenarios))
 - 2022 \[Conference Paper\] - [Towards Optimal VPU Compiler Cost Modeling by using Neural Networks to Infer Hardware Performances](https://www.researchgate.net/publication/360512691_Towards_Optimal_VPU_Compiler_Cost_Modeling_by_using_Neural_Networks_to_Infer_Hardware_Performances) (Modified public version. Published in the Intel Design & Test Technology Conference) (Citations: [1](https://arxiv.org/pdf/2302.11405.pdf), [2](https://www.semanticscholar.org/paper/ML-driven-Hardware-Cost-Model-for-MLIR-Das-Mannarswamy/1cc62a6efb8c6988b1bc4398f49d04994636fb7b))
