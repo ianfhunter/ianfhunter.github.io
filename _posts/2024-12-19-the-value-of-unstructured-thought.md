@@ -15,15 +15,15 @@ This article is a first draft and needs review + editing. This is not its final 
 
 # Bullet Journals
 
-I recently treated myself to a dotted notebook to use as a ‘Bullet Journal’. It was my girlfriend who introduced me to the concept, and while I was skeptical, the book was cheap and the idea intriguing.
+I recently treated myself to a dotted notebook to use as a ‘Bullet Journal’. It was my girlfriend (now wife) who introduced me to the concept, and while I was skeptical, the book was cheap and the idea intriguing.
 
 I’ve always struggled with self-driven routine. I have learnt that I enthusiastically throw myself into going to the gym, keeping a diary, going rock-climbing - but I never keep it up for longer than a few months. I’ve taught myself to not even bother starting, as I can save the expense and the guilt.
 
-The concept within a bullet journal has changed all that. No longer am I beholden to the shame of returning to a diary 40 days after my last entry. There will be no blank pages as proof, and the design of the journal is such that the content is transient, momentary organizations.
+The concept within a bullet journal has changed all that. No longer am I beholden to the shame of returning to a diary 40 days after my last entry. There will be no blank pages as proof, and the design of the journal is such that the content is transient, all momentary organizations.
 
-So sure, I can now keep my calender a bit more organized, but the ethos that the journal starts follows through to your other pages. I don’t have to start a separate notebook if I want to do some finance calculations, or shopping lists. I’ll just stick it after my previous page. Before I’d start subdividing my notebooks ad infinitum, until I sections started clashing into each other.
+The flexible ethos of bullet journalling is fantastic - I don’t feel the urge to start a fresh notebook if I want to do some finance calculations, or shopping lists. Instead of doing that and writing only a few days worth before the notebook goes stale - I just stick it after my previous page about a different topic. In the past I’d start subdividing my notebooks (e.g. from the last page forward, from the middle) until sections started clashing into each other.
 
-The whole concept emphasizes pressureless contribution. One of the other ‘spreads’ I have is a monthly tracker, and this is mostly my own twist, but instead of logging exactly how much I have done and intensely pushing it, I simply put some arrows that show my improvement/slip. The rate or absolute number of gym visits doesn’t matter, what matters is that I am improving, or stabilizing from before. I’m not out to get personal bests on the weights machine, I’m there to improve myself.
+The whole concept emphasizes contribution over procedure. One of the other ‘spreads’ I have is a monthly tracker, and this is mostly my own twist, but instead of logging exactly how much I have done and intensely pushing it, I simply put some arrows that show my improvement/slip. The rate or absolute number of gym visits doesn’t matter, what matters is that I am improving, or stabilizing from before. I’m not out to get personal bests on the weights machine, I’m there to improve myself.
 
 The blankness of the journal really allows a great degree of freedom and creativity with the book. I’m sure others find different parts of it useful, but for me that power of all-in pressure-free logging is revolutionary.
 
