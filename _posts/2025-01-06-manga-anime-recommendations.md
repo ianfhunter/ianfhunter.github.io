@@ -3,6 +3,7 @@ author: ianfhunter
 category: 6 Lists
 math: true
 mermaid: true
+publish: 'True'
 share: true
 ---
 
