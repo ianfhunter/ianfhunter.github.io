@@ -15,4 +15,5 @@ Recommendations:
 - Baldur's Gate 3
 - Divinity: Original Sin
 - A Plague Tale: Innocence
-	-
+	- and its sequel
+-
