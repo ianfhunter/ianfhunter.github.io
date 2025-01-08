@@ -5,7 +5,7 @@ order: 4
 ---
 
 # Working Life
-Ian has an MSc and BA(Mod) in Computer Science from Trinity College Dublin.
+Ian has an MSc(Ind) and BA(Mod) in Computer Science from Trinity College Dublin.
 
 They have been working in NPU Architecture teams since 2015 in significant roles at Intel (Movidius) and AMD (Xilinx). 
 
