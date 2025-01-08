@@ -18,6 +18,7 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2022 \[Conference Paper\] - [Towards Optimal VPU Compiler Cost Modeling by using Neural Networks to Infer Hardware Performances](https://www.researchgate.net/publication/360512691_Towards_Optimal_VPU_Compiler_Cost_Modeling_by_using_Neural_Networks_to_Infer_Hardware_Performances) (Modified public version. Published in the Intel Design & Test Technology Conference) (Citations: [1](https://arxiv.org/pdf/2302.11405.pdf), [2](https://www.semanticscholar.org/paper/Neural-Architecture-Search-for-Intel-Movidius-VPU-Xu-Li/4cd8e67aabfbf637c9b820888cb4911b226af719), [3](https://llvm.org/devmtg/2022-11/slides/Panel1-MLGO.pdf))
 - 2020 \[Thesis\] - [Effective Index-Mapping of Quantized Values for Low-Precision Neural Networks on Power-Efficient Embedded Devices](https://www.researchgate.net/publication/359218626_Effective_Index-Mapping_of_Quantized_Values_for_Low-Precision_Neural_Networks_on_Power-Efficient_Embedded_Devices) (Master's Thesis)
 - 2016 \[Demo\] - Movidius Fathom: Deep Learning in a USB stick (NIPS)
+- 2016 \[Demo\] - Fathom: Myriad2 Neural Compute Stick (EVS - Embedded Vision Summit)
 - 2014 \[Thesis\] - [Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project)
 
 ## Conference/Journal Reviewer
