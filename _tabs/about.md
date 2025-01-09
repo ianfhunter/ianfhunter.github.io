@@ -21,15 +21,16 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2016 \[Demo\] - Fathom: Myriad2 Neural Compute Stick (EVS - Embedded Vision Summit)
 - 2014 \[Thesis\] - [Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project)
 
-## Conference/Journal Reviewer
-- 2023 - Journal of Open Source Software (Post-Publication)
+## Peer Reviewer
+- 2023 - Journal of Open Source Software
+- 2020 - Intel Software Professionals Conference
 - 2019 - Intel Design and Test Technology Conference
 
 ## Patents (Filed/Accepted)
 - 2023 - Graph neural network model for neural network scheduling decisions
 - 2022 - NEURAL NETWORK BASED POWER AND PERFORMANCE MODEL FOR VERSATILE PROCESSING UNITS
 
-## Projects
+## Notable Projects
 - 2023 - [Tone Indicator Chrome Extension](https://chrome.google.com/webstore/detail/tone-indicators-explained/oahffmgbcaeeadnhlnhpaifemijpfddn)
 - 2014 - [WordQuest - An RPG inside your Wordpress Blog](https://github.com/ianfhunter/WordQuest)
 - 2013 - Androkon Convention Organizer App
@@ -38,11 +39,11 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 Ian is living in Ireland along the border of the counties of Cavan & Meath. He is enjoying remote working and his dog loves to sit under his desk. 
 
 ## Interests
-Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies
+Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies, Geocaching
 
 ## Publications (Humourous)
 
-- "It's Complicated" - Love Pyramids, Love in the Seventh Dimension and other Geometric Romances (Journal of Immaterial Science)
+- "It's Complicated" - Love Pyramids, Love in the Seventh Dimension and other Geometric Romances ([Journal of Immaterial Science](https://jabde.com/wp-content/uploads/2024/05/LoveGeometry%E2%80%93GS.pdf))
 - Programming Socks: Is it high time for thigh-highs? An investigation into the perceived unreasonable effectiveness of Programming Socks on productivity levels in the field of Software Engineering (SIGBOVIK 2024) ([Also picked up by a popular YouTuber](https://m.youtube.com/watch?v=V6NolFlhALY&t=68s&pp=2AFEkAIB))
 - Solving C’s biggest flaw — Hemispheric divergence (SIGBOVIK 2024)
 
