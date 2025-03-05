@@ -44,8 +44,8 @@ Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Gu
 ## Publications (Humourous)
 
 - "It's Complicated" - Love Pyramids, Love in the Seventh Dimension and other Geometric Romances ([Journal of Immaterial Science](https://jabde.com/wp-content/uploads/2024/05/LoveGeometry%E2%80%93GS.pdf))
-- Programming Socks: Is it high time for thigh-highs? An investigation into the perceived unreasonable effectiveness of Programming Socks on productivity levels in the field of Software Engineering (SIGBOVIK 2024) ([Also picked up by a popular YouTuber](https://m.youtube.com/watch?v=V6NolFlhALY&t=68s&pp=2AFEkAIB))
-- Solving C’s biggest flaw — Hemispheric divergence (SIGBOVIK 2024)
+- Programming Socks: Is it high time for thigh-highs? An investigation into the perceived unreasonable effectiveness of Programming Socks on productivity levels in the field of Software Engineering ([SIGBOVIK 2024](https://sigbovik.org/2024/)) ([Also picked up by a popular YouTuber](https://m.youtube.com/watch?v=V6NolFlhALY&t=68s&pp=2AFEkAIB))
+- Solving C’s biggest flaw — Hemispheric divergence ([SIGBOVIK 2024](https://sigbovik.org/2024/))
 - Scrum-volutional Neural Networks: Revolutionizing Agile Development with JIRA-Net (SIGBOVIK 2025 - In Press)
 - brat summer of code (SIGBOVIK 2025 - In Press)
 
