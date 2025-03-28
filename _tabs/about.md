@@ -21,6 +21,11 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2016 \[Demo\] - Fathom: Myriad2 Neural Compute Stick (EVS - Embedded Vision Summit)
 - 2014 \[Thesis\] - [Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project)
 
+### Forthcoming / In Progress
+- ZUBat: Bayesian Search Strategies for Single-Player Battleship --- Shielded Cells, Missile Choice and Bogus Items in the Pokémon Underground
+- Automating Pedigree Construction on a National Scale Using Early 20th-Century Ireland Census Records (1901-1926)
+
+
 ## Peer Reviewer
 - 2023 - Journal of Open Source Software
 - 2020 - Intel Software Professionals Conference
