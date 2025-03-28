@@ -1754,3 +1754,27 @@ $sidebar-display: "sidebar-display";
     margin-left: 41px;
   }
 }
+
+
+.badge{
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #337ab7;
+    border-radius: 2px;
+    margin-right:1em;
+}
+.danger {
+  background-color: #dc3545; /* Red */
+}
+.warning {
+  background-color: #ffc107; /* Yellow */
+}
+.primary {
+   background-color: #007bff; /* Blue */
+}
+.secondary {
+  background-color: #6c757d; /* Gray */
+}
