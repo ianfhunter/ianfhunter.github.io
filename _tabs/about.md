@@ -39,7 +39,7 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 Ian is living in Ireland along the border of the counties of Cavan & Meath. He is enjoying remote working and his dog loves to sit under his desk. 
 
 ## Interests
-Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies, Geocaching
+Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies, Geocaching, Japanese Language Learning, HYROX, Fitness Video Games, Parody Publications, Dogs.
 
 ## Publications (Humourous)
 
@@ -48,6 +48,7 @@ Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Gu
 - Solving C’s biggest flaw — Hemispheric divergence ([SIGBOVIK 2024](https://sigbovik.org/2024/))
 - Scrum-volutional Neural Networks: Revolutionizing Agile Development with JIRA-Net (SIGBOVIK 2025 - In Press)
 - brat summer of code (SIGBOVIK 2025 - In Press)
+- "Introducing: Field-Programmable Gate Arrays (FPGAs)" (Forthcoming - SIGBOVIK 2026)
 
 # In the Press
 
