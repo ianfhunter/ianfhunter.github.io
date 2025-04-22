@@ -16,4 +16,4 @@ Recommendations:
 - Divinity: Original Sin
 - A Plague Tale: Innocence
 	- and its sequel
--
+- [Detention](https://store.steampowered.com/app/555220/Detention/)
