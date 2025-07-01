@@ -22,8 +22,10 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2014 <span class="badge warning">THESIS</span>[Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project)
 
 ### Forthcoming / In Progress
-- ZUBat: Bayesian Search Strategies for Single-Player Battleship --- Shielded Cells, Missile Choice and Bogus Items in the Pokémon Underground
+- Bayesian Search Strategies for Single-Player Battleship --- Shielded Cells, Missile Choice and Bogus Items in the Pokémon Underground
 - Automating Pedigree Construction on a National Scale Using Early 20th-Century Ireland Census Records (1901-1926)
+- Old Stories for New Audiences: A Case Study in Localizing a Japanese Visual Novel on the Game Boy Advance
+- Confidential Title for internal AMD conference
 
 
 ## Peer Reviewer
