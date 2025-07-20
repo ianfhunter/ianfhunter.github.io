@@ -25,7 +25,7 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - Bayesian Search Strategies for Single-Player Battleship --- Shielded Cells, Missile Choice and Bogus Items in the Pokémon Underground
 - Automating Pedigree Construction on a National Scale Using Early 20th-Century Ireland Census Records (1901-1926)
 - Old Stories for New Audiences: A Case Study in Localizing a Japanese Visual Novel on the Game Boy Advance
-- Confidential Title for internal AMD conference
+- Unlocking Industry-Leading Inference on XDNA2 NPUs - internal AMD GTAC conference
 
 
 ## Peer Reviewer
