@@ -29,6 +29,7 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 
 
 ## Peer Reviewer
+- 2025 - Journal of Open Research Software
 - 2023 - Journal of Open Source Software
 - 2020 - Intel Software Professionals Conference
 - 2019 - Intel Design and Test Technology Conference
