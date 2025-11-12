@@ -1,4 +1,4 @@
----
+<img width="3501" height="210" alt="image" src="https://github.com/user-attachments/assets/7c12de8b-bcc5-48ae-9c65-5ab232f84c4a" />---
 title: About
 icon: fas fa-info-circle
 order: 4
@@ -9,12 +9,12 @@ Ian has a MSc(Ind) and BA(Mod) in Computer Science from Trinity College Dublin.
 
 They have been working in NPU Architecture teams since 2015 in significant roles at Intel (Movidius) and AMD (Xilinx). 
 
-For more up-to-date information, visit their <a href="https://www.linkedin.com/in/ianfhunter/">LinkedIn</a> or <a href="https://registry.jsonresume.org/ianfhunter">JSONResume</a>
+For more up-to-date information, visit their <a href="https://www.linkedin.com/in/ianfhunter/">LinkedIn</a> or view their <a href="http://www.ianhunter.ie/autoCV">Resume</a>
 
 ## Publications & Presentations
 - 2024 <span class="badge primary">PAPER</span>Unlocking Industry-Leading Inference on XDNA2 NPUs (AMD GTAC Conference) 🏆 Best Paper SW-AI Track
 - 2024 <span class="badge primary">PAPER</span>[Kyōgi Karuta Overseas: Analysing how Phonetic Variation in the Kimari-Ji of The Hyakunin Isshu affects Gameplay in International Adaptations](https://www.japanesestudies.org.uk/ejcjs/vol24/iss3/hunter.html) (Published in the [Electronic Journal of Contemporary Japanese Studies](https://www.japanesestudies.org.uk))
-- 2024 <span class="badge danger">POSTER/DEMO</span>Confidential Title (AMD EMEA Tech Summit)
+- 2024 <span class="badge danger">POSTER/DEMO</span>Pre-silicon performance benchmarking and actionable architecture feedback (AMD EMEA Tech Summit)
 - 2023 <span class="badge primary">PAPER</span>[GNOLL: Efficient Software for Real-World Dice Notation and Extensions](https://joss.theoj.org/papers/10.21105/joss.04816) (Published in the Journal of Open Source Software) (Citations: [1](https://www.researchgate.net/publication/384297154_Comprehensive_Benchmarks_for_LLM_Tool_Utilization_Exploring_New_Real-World_Complex_Scenarios))
 - 2022 <span class="badge primary">PAPER</span>[Towards Optimal VPU Compiler Cost Modeling by using Neural Networks to Infer Hardware Performances](https://www.researchgate.net/publication/360512691_Towards_Optimal_VPU_Compiler_Cost_Modeling_by_using_Neural_Networks_to_Infer_Hardware_Performances) (Modified public version. Published in the Intel Design & Test Technology Conference) (Citations: [1](https://arxiv.org/pdf/2302.11405.pdf), [2](https://www.semanticscholar.org/paper/Neural-Architecture-Search-for-Intel-Movidius-VPU-Xu-Li/4cd8e67aabfbf637c9b820888cb4911b226af719), [3](https://llvm.org/devmtg/2022-11/slides/Panel1-MLGO.pdf))
 - 2020 <span class="badge warning">THESIS</span>[Effective Index-Mapping of Quantized Values for Low-Precision Neural Networks on Power-Efficient Embedded Devices](https://www.researchgate.net/publication/359218626_Effective_Index-Mapping_of_Quantized_Values_for_Low-Precision_Neural_Networks_on_Power-Efficient_Embedded_Devices) (Master's Thesis)
