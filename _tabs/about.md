@@ -43,10 +43,13 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2013 - Androkon Convention Organizer App
 
 # Personal
-Ian is living in Ireland along the border of the counties of Cavan & Meath. He is enjoying remote working and his dog loves to sit under his desk. 
+Ian is living in Ireland along the border of the counties of Cavan & Meath. He is enjoying remote working and his dogs love to sit under his desk. 
 
 ## Interests
-Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies, Geocaching, Japanese Language Learning, HYROX, Fitness Video Games, Parody Publications, Dogs.
+Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies, Geocaching, Japanese Language Learning, HYROX, Fitness Video Games, Parody Publications, Dogs, Running / Athletics, Puzzles.
+
+### Notable items
+- Top 3 ranked member of the Anime StackExchange network
 
 ## Publications (Humourous)
 
@@ -56,6 +59,14 @@ Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Gu
 - Scrum-volutional Neural Networks: Revolutionizing Agile Development with JIRA-Net ([SIGBOVIK 2025](https://sigbovik.org/2025/proceedings.pdf))
 - brat summer of code ([SIGBOVIK 2025](https://sigbovik.org/2025/proceedings.pdf))
 - "Introducing: Field-Programmable Gate Arrays (FPGAs)" (Forthcoming - SIGBOVIK 2026)
+
+## Non-Technical Projects
+
+- [Why Won't You Love Me?!](https://boopingboop.itch.io/why-wont-you-love-me) - A yandere-themed micro tabletop role-playing game. Submission to Yan-Jam 2025.
+- [EuroTrip](https://boopingboop.itch.io/eurotrip) - A bookmark for license-plate I-Spying rare license plates while travelling in the European Union. Submission to the Road Trip Game Jam.
+- [The Hunger](https://boopingboop.itch.io/the-hunger) - A nano RPG about scrounging food from your larder. Submission to the 36 Word Game Jam.
+- [Spin & Slay]([https://boopingboop.itch.io/the-hunger](https://boopingboop.itch.io/spin-and-slay)) - A business-card Solo TTRPG . Submission to the 36 Word Game Jam.
+
 
 # In the Press
 
