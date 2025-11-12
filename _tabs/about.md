@@ -65,7 +65,7 @@ Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Gu
 - [Why Won't You Love Me?!](https://boopingboop.itch.io/why-wont-you-love-me) - A yandere-themed micro tabletop role-playing game. Submission to Yan-Jam 2025.
 - [EuroTrip](https://boopingboop.itch.io/eurotrip) - A bookmark for license-plate I-Spying rare license plates while travelling in the European Union. Submission to the Road Trip Game Jam.
 - [The Hunger](https://boopingboop.itch.io/the-hunger) - A nano RPG about scrounging food from your larder. Submission to the 36 Word Game Jam.
-- [Spin & Slay]([https://boopingboop.itch.io/the-hunger](https://boopingboop.itch.io/spin-and-slay)) - A business-card Solo TTRPG . Submission to the 36 Word Game Jam.
+- [Spin & Slay](https://boopingboop.itch.io/spin-and-slay) - A business-card Solo TTRPG . Submission to the 36 Word Game Jam.
 
 
 # In the Press
