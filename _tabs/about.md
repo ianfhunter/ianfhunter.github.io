@@ -12,6 +12,7 @@ They have been working in NPU Architecture teams since 2015 in significant roles
 For more up-to-date information, visit their <a href="https://www.linkedin.com/in/ianfhunter/">LinkedIn</a> or <a href="https://registry.jsonresume.org/ianfhunter">JSONResume</a>
 
 ## Publications & Presentations
+- 2024 <span class="badge primary">PAPER</span>Unlocking Industry-Leading Inference on XDNA2 NPUs (AMD GTAC Conference) 🏆 Best Paper SW-AI Track
 - 2024 <span class="badge primary">PAPER</span>[Kyōgi Karuta Overseas: Analysing how Phonetic Variation in the Kimari-Ji of The Hyakunin Isshu affects Gameplay in International Adaptations](https://www.japanesestudies.org.uk/ejcjs/vol24/iss3/hunter.html) (Published in the [Electronic Journal of Contemporary Japanese Studies](https://www.japanesestudies.org.uk))
 - 2024 <span class="badge danger">POSTER/DEMO</span>Confidential Title (AMD EMEA Tech Summit)
 - 2023 <span class="badge primary">PAPER</span>[GNOLL: Efficient Software for Real-World Dice Notation and Extensions](https://joss.theoj.org/papers/10.21105/joss.04816) (Published in the Journal of Open Source Software) (Citations: [1](https://www.researchgate.net/publication/384297154_Comprehensive_Benchmarks_for_LLM_Tool_Utilization_Exploring_New_Real-World_Complex_Scenarios))
@@ -19,14 +20,12 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2020 <span class="badge warning">THESIS</span>[Effective Index-Mapping of Quantized Values for Low-Precision Neural Networks on Power-Efficient Embedded Devices](https://www.researchgate.net/publication/359218626_Effective_Index-Mapping_of_Quantized_Values_for_Low-Precision_Neural_Networks_on_Power-Efficient_Embedded_Devices) (Master's Thesis)
 - 2016 <span class="badge danger">POSTER/DEMO</span>Movidius Fathom: Deep Learning in a USB stick (NIPS)
 - 2016 <span class="badge danger">POSTER/DEMO</span>Fathom: Myriad2 Neural Compute Stick (EVS - Embedded Vision Summit)
-- 2014 <span class="badge warning">THESIS</span>[Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project)
+- 2014 <span class="badge warning">THESIS</span>[Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project) 🏆 Winner Best Poster / Q&A 🏆 Honourable Mention - Best Presentation
 
-### Forthcoming / In Progress
+### Work in Progress
 - Bayesian Search Strategies for Single-Player Battleship --- Shielded Cells, Missile Choice and Bogus Items in the Pokémon Underground
 - Automating Pedigree Construction on a National Scale Using Early 20th-Century Ireland Census Records (1901-1926)
 - Old Stories for New Audiences: A Case Study in Localizing a Japanese Visual Novel on the Game Boy Advance
-- Unlocking Industry-Leading Inference on XDNA2 NPUs - internal AMD GTAC conference
-
 
 ## Peer Reviewer
 - 2025 - Journal of Open Research Software
