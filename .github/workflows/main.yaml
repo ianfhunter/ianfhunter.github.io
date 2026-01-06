@@ -21,8 +21,8 @@ jobs:
           token: ${{ secrets.YAFPA_ACTION_TOKEN }}
           submodules: true
       - uses: actions/setup-python@v5
-          with:
-            python-version: '3.12'
+        with:
+          python-version: '3.12'
         
       - name: Set Variables
         run: |
