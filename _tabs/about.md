@@ -1,8 +1,11 @@
-<img width="3501" height="210" alt="image" src="https://github.com/user-attachments/assets/7c12de8b-bcc5-48ae-9c65-5ab232f84c4a" />---
+---
 title: About
 icon: fas fa-info-circle
 order: 4
 ---
+
+<!-- Not for sidebar, only for breadcrumbing -->
+
 
 # Working Life
 Ian has a MSc(Ind) and BA(Mod) in Computer Science from Trinity College Dublin.
