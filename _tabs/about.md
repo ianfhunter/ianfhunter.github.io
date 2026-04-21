@@ -38,7 +38,7 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 
 ## Patents (Filed/Accepted)
 - 2023 - Graph neural network model for neural network scheduling decisions
-- 2022 - NEURAL NETWORK BASED POWER AND PERFORMANCE MODEL FOR VERSATILE PROCESSING UNITS
+- 2022 - NEURAL NETWORK BASED POWER AND PERFORMANCE MODEL FOR VERSATILE PROCESSING UNITS (Citations: [1](https://patents.google.com/patent/US20250247365A1/en), [2](https://patents.google.com/patent/US12455556B2/en))
 
 ## Notable Projects
 - 2023 - [Tone Indicator Chrome Extension](https://chrome.google.com/webstore/detail/tone-indicators-explained/oahffmgbcaeeadnhlnhpaifemijpfddn)
