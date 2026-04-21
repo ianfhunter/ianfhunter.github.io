@@ -46,7 +46,7 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2013 - Androkon Convention Organizer App
 
 # Personal
-Ian is living in Ireland along the border of the counties of Cavan & Meath. He is enjoying remote working and his dogs love to sit under his desk. 
+Ian is living in Ireland along the border of the counties of Cavan & Meath. He has been working remotely since pre-COVID and has two dogs who sit under his desk. 
 
 ## Interests
 Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies, Geocaching, Japanese Language Learning, HYROX, Fitness Video Games, Parody Publications, Dogs, Running / Athletics, Puzzles.
