@@ -8,6 +8,7 @@ from yaml.constructor import ConstructorError
 from os import walk, path, rename, sep, mkdir
 from shutil import copyfile, rmtree
 from io import BytesIO
+from io import StringIO
 
 JEKYLL_POSTS_FOLDER = "_posts/"
 JEKYLL_ASSET_FOLDER = "assets/img/notes/"
@@ -62,10 +63,11 @@ def improve_metadata(f):
     # post["title"] = 
     # post["date"] = 
     # with open(f,"w") as w:
-    b = BytesIO()
+    b = StringIO()
     frontmatter.dump(post, b)
-    with open(f, "wb") as w:
-        w.write(b.getbuffer())
+
+    with open(f, "w", encoding="utf-8") as w:
+        w.write(b.getvalue())
     
 
 def copy_over_referenced_images(f):
