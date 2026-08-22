@@ -4,9 +4,10 @@ category: 1 technical
 math: true
 mermaid: true
 share: true
-tag: writing
+tags: writing
 ---
 
+tags:tags:tags:tags:tags:tags:tags:
 # Detecting Spam on Hacktoberfest
 
 Spam PRs are a plague for Hacktoberfest, with people from around the world trying to make PRs, ANY PRS! to get their hands on the exclusive tshirts.

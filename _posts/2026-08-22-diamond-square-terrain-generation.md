@@ -4,9 +4,10 @@ category: 1 technical
 math: true
 mermaid: true
 share: true
-tag: writing
+tags: writing
 ---
 
+tags:
 Here’s an interesting little algorithm I coded up before an interview – Terrain generation with the Diamond-Square Algorithm.
 
 The algorithm itself is quite simple, but makes some nice graphs.

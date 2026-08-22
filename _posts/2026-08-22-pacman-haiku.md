@@ -4,7 +4,7 @@ category: 5 Poetry
 math: true
 mermaid: true
 share: true
-tag:
+tags:
 - poetry
 - haiku
 ---

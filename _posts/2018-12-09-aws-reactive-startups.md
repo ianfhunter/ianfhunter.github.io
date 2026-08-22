@@ -6,10 +6,11 @@ description: Save money by turning machines off when they're not being used
 math: true
 mermaid: true
 share: true
-tag:
+tags:
 - writing
 ---
 
+tags:
 # Reactive Startup for Jenkins on AWS
 
 ## Motive

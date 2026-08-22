@@ -9,6 +9,8 @@ tags:
 - books
 ---
 
+(This was an attempt of mine to be up to date with FR content.)
+
 # Adventures
 
 ## 5E
