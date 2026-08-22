@@ -8,9 +8,9 @@ order: 4
 
 
 # Working Life
-Ian has a MSc(Ind) and BA(Mod) in Computer Science from Trinity College Dublin.
+Ian has a M.Sc. and B.A. in Computer Science from Trinity College Dublin.
 
-They have been working in NPU Architecture teams since 2015 in significant roles at Intel (Movidius) and AMD (Xilinx). 
+They have been working in NPU/GPU Architecture teams since 2015 in senior roles at Intel (Movidius) and AMD (Xilinx). 
 
 For more up-to-date information, visit their <a href="https://www.linkedin.com/in/ianfhunter/">LinkedIn</a> or view their <a href="http://www.ianhunter.ie/autoCV">Resume</a>
 
@@ -25,10 +25,6 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2016 <span class="badge danger">POSTER/DEMO</span>Fathom: Myriad2 Neural Compute Stick (EVS - Embedded Vision Summit)
 - 2014 <span class="badge warning">THESIS</span>[Optimizing Web Content Download in Low-Performance Networks](https://www.researchgate.net/publication/359218409_Optimizing_Web_Content_Download_in_Low-Performance_Networks) (BA(Mod) Final Year Project) 🏆 Winner Best Poster / Q&A 🏆 Honourable Mention - Best Presentation
 
-### Work in Progress
-- Bayesian Search Strategies for Single-Player Battleship --- Shielded Cells, Missile Choice and Bogus Items in the Pokémon Underground
-- Automating Pedigree Construction on a National Scale Using Early 20th-Century Ireland Census Records (1901-1926)
-- Old Stories for New Audiences: A Case Study in Localizing a Japanese Visual Novel on the Game Boy Advance
 
 ## Peer Reviewer
 - 2025 - Journal of Open Research Software
@@ -53,6 +49,7 @@ Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Gu
 
 ### Notable items
 - Top 3 ranked member of the Anime StackExchange network
+- Crosswords featured on Crosshare [1](https://crosshare.org/crosswords/KPj8X38r3fj0IMesKirt/park-clown)
 
 ## Publications (Humourous)
 
@@ -61,7 +58,8 @@ Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Gu
 - Solving C’s biggest flaw — Hemispheric divergence ([SIGBOVIK 2024](https://sigbovik.org/2024/))
 - Scrum-volutional Neural Networks: Revolutionizing Agile Development with JIRA-Net ([SIGBOVIK 2025](https://sigbovik.org/2025/proceedings.pdf))
 - brat summer of code ([SIGBOVIK 2025](https://sigbovik.org/2025/proceedings.pdf))
-- "Introducing: Field-Programmable Gate Arrays (FPGAs)" (Forthcoming - SIGBOVIK 2026)
+- "Introducing: Field-Programmable Gate Arrays (FPGAs)" ([SIGBOVIK 2026](https://sigbovik.org/2026/proceedings.pdf))
+- Instantaneous Zero-Error U.F.O. Detection with Nullary Neural Network ([SIGBOVIK 2026](https://sigbovik.org/2026/proceedings.pdf))
 
 ## Non-Technical Projects
 
@@ -76,3 +74,4 @@ Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Gu
 ## Interviews 
 - 2017 - [OTIA "Ian Hunter, Embedded Systems Engineer on Tracing Family History"](https://otia.io/2017/11/03/ian-hunter-embedded-systems-engineer-on-tracing-family-history/)
 - 2012 - [The University Times "Manga on the High Seas"](https://universitytimes.ie/2012/11/manga-on-the-high-seas/)
+
