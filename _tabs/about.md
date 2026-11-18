@@ -6,7 +6,6 @@ order: 4
 
 <!-- Not for sidebar, only for breadcrumbing -->
 
-
 # Working Life
 Ian has a M.Sc. and B.A. in Computer Science from Trinity College Dublin.
 
@@ -15,6 +14,8 @@ They have been working in NPU/GPU Architecture teams since 2015 in senior roles 
 For more up-to-date information, visit their <a href="https://www.linkedin.com/in/ianfhunter/">LinkedIn</a> or view their <a href="http://www.ianhunter.ie/autoCV">Resume</a>
 
 ## Publications & Presentations
+- 2027? <span class="badge primary">PAPER</span>Paper in review on Reverse Engineering + Translation
+- 2026 <span class="badge primary">PAPER</span>Innovations in XDNA3 NPUs (AMD GTAC Conference) 
 - 2025 <span class="badge primary">PAPER</span>Unlocking Industry-Leading Inference on XDNA2 NPUs (AMD GTAC Conference) 🏆 Best Paper SW-AI Track
 - 2024 <span class="badge primary">PAPER</span>[Kyōgi Karuta Overseas: Analysing how Phonetic Variation in the Kimari-Ji of The Hyakunin Isshu affects Gameplay in International Adaptations](https://www.japanesestudies.org.uk/ejcjs/vol24/iss3/hunter.html) (Published in the [Electronic Journal of Contemporary Japanese Studies](https://www.japanesestudies.org.uk))
 - 2024 <span class="badge danger">POSTER/DEMO</span>Pre-silicon performance benchmarking and actionable architecture feedback (AMD EMEA Tech Summit)
@@ -42,10 +43,10 @@ For more up-to-date information, visit their <a href="https://www.linkedin.com/i
 - 2013 - Androkon Convention Organizer App
 
 # Personal
-Ian is living in Ireland along the border of the counties of Cavan & Meath. He has been working remotely since pre-COVID and has two dogs who sit under his desk. 
+Ian is living in Ireland along the border of the counties of Cavan & Meath. He has been working remotely since 2018 and has two dogs who sit under his desk. 
 
 ## Interests
-Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Chillies, Geocaching, Japanese Language Learning, HYROX, Fitness Video Games, Parody Publications, Dogs, Running / Athletics, Puzzles.
+Board Games, Genealogy, Digital Rights, Hackathons, Anime/Manga, War History, Guitar, Copyright Reform, Film, Geocaching, Volleyball, Photography, Tabletop RPGs, Casual Programming, Crafting, Tea/Coffee, Travel, Fantasy Novels, Ethnography, Spicy Food, Geocaching, Japanese Language Learning, HYROX, Fitness Video Games, Parody Publications, Dogs, Running / Athletics, Puzzles, Cryptic Crosswords.
 
 ### Notable items
 - Top 3 ranked member of the Anime StackExchange network
